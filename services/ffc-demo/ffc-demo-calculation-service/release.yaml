@@ -7,7 +7,7 @@ spec:
   releaseName: ffc-demo-calculation-service
   chart: 
     spec:
-      chart: ffc-demo-calculation-service
+      chart: chart/ffc-demo-calculation-service
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
