@@ -8,6 +8,7 @@ spec:
   chart: 
     spec:
       chart: ffc-demo-calculation-service
+      version: "1.0.0"
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
