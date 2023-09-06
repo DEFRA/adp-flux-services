@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: repository-ffc-demo-calculation-service
+  namespace: ffc-demo
+spec:
+  interval: 5m
+  url: https://ssvcdoinfcr3401.azurecr.io/helm/v1/repo/
