@@ -4,7 +4,6 @@ metadata:
   name: repository-ffc-demo-calculation-service
   namespace: ffc-demo
 spec:
-  provider: azure
   type: oci
   interval: 5m
   url: oci://ssvcdoinfcr3401.azurecr.io/chart
