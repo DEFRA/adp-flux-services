@@ -6,4 +6,4 @@ metadata:
 spec:
   type: oci
   interval: 5m
-  url: oci://ssvcdoinfcr3401.azurecr.io/chart/ffc-demo-calculation-service
+  url: oci://ssvcdoinfcr3401.azurecr.io/chart
