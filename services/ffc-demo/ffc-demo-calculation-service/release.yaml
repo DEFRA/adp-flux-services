@@ -20,7 +20,7 @@ spec:
   targetNamespace: ffc-demo
   values:
     environment: development
-    image: ssvcdoinfcr3401.azurecr.io/image/ffc-demo-calculation-service:1.0.0
+    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-calculation-service:1.0.0
     appInsights:
       key:
     container:
