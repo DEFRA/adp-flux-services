@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: release-ffc-demo-payment-web
+  namespace: ffc-demo
+spec:
+  releaseName: ffc-demo-payment-web
+  chart: 
+    spec:
+      chart: ffc-demo-payment-web
+      version: "1.0.0"
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: repository-ffc-demo-payment-web
+        namespace: ffc-demo
+  install: 
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: ffc-demo
+  values:
+    environment: development
+    image: 
+      repository: sndcdoinfcr2401p.azurecr.io/ffc-demo-payment-web
+      tag: 1.0.0
