@@ -6,6 +6,5 @@ resources:
   - repository.yaml
   - release.yaml
 
-# patches:
-#   - path: snd.yaml
-  # - path: ${ENVIRONMENT}.yaml
+patches:
+  - path: snd.yaml

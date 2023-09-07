@@ -7,4 +7,4 @@ spec:
   values:
     image: 
       repository: sndcdoinfcr2401p.azurecr.io/ffc-demo-payment-web
-      tag: 1.0.0
+      tag: 1.0.1
