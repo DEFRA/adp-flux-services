@@ -1,8 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: enivironment-base
-  namespace: ffc-demo
+  name: environment-base
 spec:
   path: ./services/environments/snd/01
   postBuild:
