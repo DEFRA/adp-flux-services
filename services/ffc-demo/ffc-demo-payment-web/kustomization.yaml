@@ -2,8 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: ffc-demo
 resources:
-  # - ../base
-  - repository.yaml
+  - ../base               #to create helm repository
   - release.yaml
 
 patches:
