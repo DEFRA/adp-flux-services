@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - ../base/kustomize.yaml
   - ../base                       
   - ../ffc-demo-payment-web/
 patches:
-  - path: ../base/kustomize.yaml
   - path: ../ffc-demo-payment-web/snd.yaml
