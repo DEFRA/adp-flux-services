@@ -1,18 +1,17 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: ffc-demo-payment-web
+  name: ffc-demo-base
   namespace: ffc-demo
 spec:
-  path: ./services/ffc-demo/ffc-demo-payment-web
-  interval: 5m
-  timeout: 3m
-  prune: true
   sourceRef:
     kind: GitRepository
     name: ffc-demo
     namespace: ffc-demo
+  interval: 5m
+  timeout: 3m
+  prune: true
+  path: ./services/ffc-demo/${ENVIRONMENT}
   postBuild:
     substitute:
-      ENVIRONMENT: ${ENVIRONMENT}
-      ACR_NAME: ${ACR_NAME}
+      NAMESPACE: "ffc-demo"
