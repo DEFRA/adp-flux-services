@@ -6,7 +6,7 @@ metadata:
 spec:
   sourceRef:
     kind: GitRepository
-    name: ffc-app-repo
+    name: ffc-demo
     namespace: flux-system
   interval: 5m
   timeout: 3m

@@ -10,7 +10,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: ffc-app-repo
+    name: ffc-demo
     namespace: flux-system
   postBuild:
     substitute:
