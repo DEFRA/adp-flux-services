@@ -4,7 +4,15 @@ metadata:
   name: ffc-demo-base
   namespace: ffc-demo
 spec:
-  path: ./services/ffc-demo/${ENVIRONMENT}
+  path: ./services/ffc-demo/ffc-demo-payment-web
+  interval: 5m
+  timeout: 3m
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: ffc-demo
+    namespace: ffc-demo
   postBuild:
     substitute:
-      NAMESPACE: "ffc-demo"
+      ENVIRONMENT: ${ENVIRONMENT}
+      ACR_NAME: ${ACR_NAME}
