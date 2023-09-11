@@ -4,13 +4,6 @@ metadata:
   name: ffc-demo-base
   namespace: ffc-demo
 spec:
-  sourceRef:
-    kind: GitRepository
-    name: ffc-demo
-    namespace: ffc-demo
-  interval: 5m
-  timeout: 3m
-  prune: true
   path: ./services/ffc-demo/${ENVIRONMENT}
   postBuild:
     substitute:
