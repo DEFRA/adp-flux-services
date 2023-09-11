@@ -2,7 +2,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: apps-base
-  namespace: config-cluster-flux
+  namespace: ffc-demo
 spec:
   path: ./services/environments/snd/01
   postBuild:
