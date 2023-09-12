@@ -10,8 +10,8 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: services-repository
-    namespace: config-services-flux
+    name: repository-ffc-demo
+    namespace: ffc-demo
   postBuild:
     substitute:
       ENVIRONMENT: ${ENVIRONMENT}
