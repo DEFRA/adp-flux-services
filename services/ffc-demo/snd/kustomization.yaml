@@ -1,10 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-resources:
-  #- ../base/kustomize.yaml
-  #- ../base              
-  - ../ffc-demo-payment-web
+resources:             
+  - ../base
 patches:
   - path: ../ffc-demo-payment-web/snd.yaml
-    target:
-      kind: HelmRelease
