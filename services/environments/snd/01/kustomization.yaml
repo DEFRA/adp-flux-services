@@ -7,3 +7,4 @@ patches:
   - path: kustomize.yaml
     target:
       kind: Kustomization
+  - path: ../../../ffc-demo/snd
