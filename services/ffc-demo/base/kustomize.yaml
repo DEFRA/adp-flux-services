@@ -4,7 +4,7 @@ metadata:
   name: ffc-demo-base
   namespace: ffc-demo
 spec:
-  path: ./services/ffc-demo/ffc-demo-payment-web
+  path: ./services/ffc-demo/base
   interval: 5m
   timeout: 3m
   prune: true
