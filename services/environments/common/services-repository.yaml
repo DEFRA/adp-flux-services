@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: services-repository
+  namespace: config-services-flux
+spec:
+  interval: 5m
+  ref:
+    branch: main
+  url: https://github.com/DEFRA/adp-flux-services/
