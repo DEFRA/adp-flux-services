@@ -3,3 +3,8 @@ kind: Kustomization
 resources:
   - ../../../ffc-demo/base/kustomize.yaml
   - ../../../ffc-demo/snd
+
+patches:
+  - path: ../../../apps/base/kustomize.yaml
+    target:
+      kind: Kustomization
