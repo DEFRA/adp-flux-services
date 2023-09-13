@@ -5,3 +5,7 @@ resources:
   - ../../base
   - ../ffc-demo-payment-web
 
+patches:
+  - path: kustomize.yaml
+    target:
+      kind: Kustomization
