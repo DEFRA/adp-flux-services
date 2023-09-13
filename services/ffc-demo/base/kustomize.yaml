@@ -7,5 +7,5 @@ spec:
   path: ./services/ffc-demo/${ENVIRONMENT}
   postBuild:
     substitute:
-      NAMESPACE: "ffc-demo"
+      NAMESPACE: "ffc-demo2"
 

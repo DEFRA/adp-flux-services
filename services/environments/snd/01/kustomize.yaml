@@ -8,3 +8,4 @@ spec:
     substitute:
       ENVIRONMENT: "snd"
       ACR_NAME: "sndcdoinfcr2401p"
+
