@@ -7,4 +7,4 @@ spec:
   postBuild:
     substitute:
       ENVIRONMENT: "snd"
-      ACR_NAME: "sndcdoinfcr2401"
+      ACR_NAME: "sndcdoinfcr2401p"
