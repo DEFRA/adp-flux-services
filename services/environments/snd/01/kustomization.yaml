@@ -5,5 +5,5 @@ resources:
 
 patches:
   - path: kustomize.yaml
-    # target:
-    #   kind: Kustomization
+    target:
+      kind: Kustomization

@@ -5,5 +5,5 @@ metadata:
 spec:
   values:
     image: 
-      repository: ${ACR_NAME}.azurecr.io/image/ffc-demo-payment-web
+      repository: sndcdoinfcr2401.azurecr.io/image/ffc-demo-payment-web
       tag: 1.0.2
