@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: ffc-demo
 resources:
   - ../../base
-  - ../ffc-demo-payment-web
 
 patches:
   - path: kustomize.yaml
