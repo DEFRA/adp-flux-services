@@ -5,8 +5,4 @@ metadata:
 resources:
   - kustomize.yaml
   - ../base
-
-# patches:
-#   - path: kustomize.yaml
-#     target:
-#       kind: Kustomization
+  
