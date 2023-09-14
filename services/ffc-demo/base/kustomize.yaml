@@ -4,7 +4,7 @@ metadata:
   name: ffc-demo
   namespace: flux-system
 spec:
-  path: ./services/ffc-demo/snd
+  path: ./services/ffc-demo/${ENVIRONMENT}
   postBuild:
     substitute:
       NAMESPACE: "ffc-demo"

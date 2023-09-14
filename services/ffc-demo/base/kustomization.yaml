@@ -4,6 +4,7 @@ resources:
   - ../../base
 
 # patches:
+#   - path: workload-identity.yaml
 #   - path: kustomize.yaml
 #     target:
 #       kind: Kustomization
