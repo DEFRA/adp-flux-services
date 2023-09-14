@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
 
-patches:
-  - path: kustomize.yaml
-    target:
-      kind: Kustomization
+# patches:
+#   - path: kustomize.yaml
+#     target:
+#       kind: Kustomization
