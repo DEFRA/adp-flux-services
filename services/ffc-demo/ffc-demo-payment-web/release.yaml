@@ -12,7 +12,7 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: repository-ffc-demo-payment-web
+        name: ffc-demo-payment-web
         namespace: ffc-demo
   install: 
     createNamespace: true
