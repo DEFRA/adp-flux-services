@@ -6,8 +6,7 @@ metadata:
 spec:
   sourceRef:
     kind: GitRepository
-    name: services-repository
-    namespace: flux-system
+    name: flux-system
   interval: 5m
   timeout: 3m
   prune: true
