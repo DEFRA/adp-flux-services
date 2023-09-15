@@ -14,7 +14,7 @@ spec:
   path: ./services/ffc-demo/${ENVIRONMENT}
   postBuild:
     substitute:
-      NAMESPACE: "ffc-demo"
+      NAMESPACE: "adp-demo"
       WORKLOAD_IDENTITY_ID: "3acd7d69-86fb-40ce-a389-4632e864e425"
       TEAM_NAME: "ffc-demo-team"
       ENVIRONMENT: "${ENVIRONMENT}"
