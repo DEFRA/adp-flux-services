@@ -16,6 +16,7 @@ spec:
     substitute:
       NAMESPACE: "ffc-demo"
       WORKLOAD_IDENTITY_ID: "3acd7d69-86fb-40ce-a389-4632e864e425"
+      TEAM_NAME: "ffc-demo team"
       ENVIRONMENT: "${ENVIRONMENT}"
       ACR_NAME: "${ACR_NAME}"
 
