@@ -17,5 +17,5 @@ spec:
   install: 
     createNamespace: true
   interval: 5m0s
-  targetNamespace: adp-demo
+  targetNamespace: ffc-demo
  
