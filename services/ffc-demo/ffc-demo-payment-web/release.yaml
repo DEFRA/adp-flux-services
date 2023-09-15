@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: ffc-demo-payment-web
-  namespace: ffc-demo
+  namespace: config-services-flux
 spec:
   releaseName: ffc-demo-payment-web
   chart: 
@@ -13,7 +13,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: ffc-demo-payment-web
-        namespace: ffc-demo
+        namespace: config-services-flux
   install: 
     createNamespace: true
   interval: 5m0s
