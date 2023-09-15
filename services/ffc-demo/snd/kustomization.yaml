@@ -6,17 +6,3 @@ resources:
 
 patches:
   - path: ../ffc-demo-payment-web/snd.yaml
-
-  # - patch: |
-  #     - op: replace
-  #       path: /metadata/name
-  #       value: ffc-demo
-  #   target:
-  #     kind: ServiceAccount
-
-  # - patch: |
-  #     - op: replace
-  #       path: /metadata/name
-  #       value: ffc-demo
-  #   target:
-  #     kind: Namespace
