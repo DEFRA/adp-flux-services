@@ -15,6 +15,7 @@ spec:
   postBuild:
     substitute:
       NAMESPACE: "ffc-demo"
+      WORKLOAD_IDENTITY_ID: "3acd7d69-86fb-40ce-a389-4632e864e425"
       ENVIRONMENT: "${ENVIRONMENT}"
       ACR_NAME: "${ACR_NAME}"
 
