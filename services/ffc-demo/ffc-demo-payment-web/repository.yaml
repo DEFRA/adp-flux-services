@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
   name: ffc-demo-payment-web
-  namespace: config-services-flux
+  namespace: config-cluster-flux
 spec:
   type: oci
   interval: 5m

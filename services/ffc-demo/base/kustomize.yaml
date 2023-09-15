@@ -4,6 +4,13 @@ metadata:
   name: ffc-demo-base
   namespace: flux-system
 spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-system
+  interval: 5m
+  timeout: 3m
+  prune: true
   path: ./services/ffc-demo/${ENVIRONMENT}
   postBuild:
     substitute:
