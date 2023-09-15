@@ -14,4 +14,6 @@ spec:
   postBuild:
     substitute:
       NAMESPACE: "ffc-demo"
+      ENVIRONMENT: "${ENVIRONMENT}"
+      ACR_NAME: "${ACR_NAME}"
 
