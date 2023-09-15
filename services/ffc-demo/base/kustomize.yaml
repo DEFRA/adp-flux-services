@@ -6,7 +6,8 @@ metadata:
 spec:
   sourceRef:
     kind: GitRepository
-    name: config-cluster-flux
+    name: services-repository
+    namespace: config-cluster-flux
   interval: 5m
   timeout: 3m
   prune: true

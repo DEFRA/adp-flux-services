@@ -12,11 +12,11 @@ patches:
         path: /metadata/name
         value: ffc-demo
     target:
-      kind: ServiceAccount  
+      kind: ServiceAccount
 
   - patch: |
       - op: replace
         path: /metadata/name
         value: ffc-demo
     target:
-      kind: Namespace  
+      kind: Namespace
