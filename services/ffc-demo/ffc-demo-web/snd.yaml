@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-demo-payment-web
+  name: ffc-demo-web
   namespace: config-cluster-flux 
 spec:
   values:
