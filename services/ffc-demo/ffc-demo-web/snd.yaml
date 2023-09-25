@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-web
     namespace: ffc-demo
-    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-web:1.0.3
+    image: ${ACR_NAME}.azurecr.io/image/ffc-demo-web:1.0.0
     labels:
       component: web
     containerConfigMap:
@@ -33,6 +33,7 @@ spec:
       restClientTimeoutMillis: 20000
       staticCacheTimeoutMillis: 54000
       port: 3000
+      cookiePassword: passwordpasswordpasswordpasswordpassword
       messageQueueHost: SNDADPINFSB1401.servicebus.windows.net
       claimQueueAddress: claim
       googleTagManagerKey: GTM-N5QK7RL
