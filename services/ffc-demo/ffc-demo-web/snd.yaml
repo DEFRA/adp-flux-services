@@ -1,0 +1,73 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-demo-payment-web
+  namespace: config-cluster-flux 
+spec:
+  values:
+    environment: production
+    name: ffc-demo-web
+    namespace: ffc-demo
+    image: ${ACR_NAME}.azurecr.io/image/ffc-demo-web:1.0.0
+    labels:
+      component: web
+    containerConfigMap:
+      name: ffc-demo-web-config-map
+    appInsights:
+      connectionString:
+    containerSecret:
+      name: ffc-demo-web-container-secret
+      type: Opaque   
+    service:
+      port: 80
+      type: ClusterIP
+    container:
+      redisHostname: 
+      redisPassword: redis
+      redisPort: 6379
+      redisPartition: ffc-demo
+      imagePullPolicy: IfNotPresent
+      requestMemory: 10Mi
+      requestCpu: 10m
+      limitMemory: 80Mi
+      limitCpu: 80m
+      restClientTimeoutMillis: 20000
+      staticCacheTimeoutMillis: 54000
+      port: 3000
+      cookiePassword: passwordpasswordpasswordpasswordpassword
+      messageQueueHost: SNDADPINFSB1401.servicebus.windows.net
+      claimQueueAddress: claim
+      googleTagManagerKey: GTM-N5QK7RL
+      protectiveMonitoringUrl:
+
+    ingress:
+      class: nginx
+      endpoint: adp-ffc-g6dufgeugrgxbpa7.z01
+      server: azurefd.net
+
+    deployment:
+      restartPolicy: Always
+      priorityClassName: low
+      replicas: 1
+      minReadySeconds: 5
+      imagePullSecret:
+      useLinkerd: true
+
+    readinessProbe:
+      path: /healthy
+      port: 3000
+      initialDelaySeconds: 20
+      periodSeconds: 10
+      failureThreshold: 3
+
+    livenessProbe:
+      path: /healthz
+      port: 3000
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      failureThreshold: 3
+
+    aadWorkloadIdentity: true
+
+    serviceAccount:
+      name: ffc-demo
