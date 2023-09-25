@@ -22,7 +22,7 @@ spec:
       port: 80
       type: ClusterIP
     container:
-      redisHostname: 
+      redisHostname:
       redisPassword: redis
       redisPort: 6379
       redisPartition: ffc-demo
