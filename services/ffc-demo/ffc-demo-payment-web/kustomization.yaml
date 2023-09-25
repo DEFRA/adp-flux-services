@@ -3,3 +3,7 @@ kind: Kustomization
 resources:
   - repository.yaml
   - release.yaml
+  - image-repository.yaml  
+  - image-policy.yaml
+
+
