@@ -47,7 +47,7 @@ spec:
 
     deployment:
       restartPolicy: Always
-      priorityClassName: low
+      priorityClassName: default
       replicas: 1
       minReadySeconds: 5
       imagePullSecret:
