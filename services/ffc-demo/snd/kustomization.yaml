@@ -3,8 +3,8 @@ kind: Kustomization
 resources:
   - ../base
   - ../ffc-demo-web
-  - ../ffc-demo-payment-web
+  # - ../ffc-demo-payment-web
 
 patches:
   - path: ../ffc-demo-web/snd.yaml
-  - path: ../ffc-demo-payment-web/snd.yaml
+  # - path: ../ffc-demo-payment-web/snd.yaml
