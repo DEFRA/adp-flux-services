@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-web
     namespace: ffc-demo
-    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-web:1.0.1
+    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-web:1.0.2
     labels:
       component: web
     containerConfigMap:
