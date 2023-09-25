@@ -8,3 +8,13 @@ spec:
     image: 
       repository: ${ACR_NAME}.azurecr.io/image/ffc-demo-payment-web
       tag: 1.0.2
+
+---
+apiVersion: apps/v1
+kind: Deployment
+spec:
+  template:
+    spec:
+      containers:
+      - name: ffc-demo-payment-web
+        image: ${ACR_NAME}.azurecr.io/image/ffc-demo-payment-web:1.0.2   # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-web"}
