@@ -12,15 +12,14 @@ spec:
   git:
     checkout:
       ref:
-        branch: features/kb/update-repo-structure
+        branch: main
     commit:
       author:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
-      branch: features/kb/update-repo-structure
+      branch: main
   update:
     path: ./
-    #path: ./services/ffc-demo/ffc-demo-payment-web
     strategy: Setters
