@@ -42,7 +42,7 @@ spec:
 
     postgresService:
       postgresDb: ffc_demo_claim
-      postgresqlHost: ffcdemodb.postgres.database.azure.com
+      postgresqlHost: sndadpdbsps1401.postgres.database.azure.com
       postgresSchema: public
       postgresPort: 5432
 
