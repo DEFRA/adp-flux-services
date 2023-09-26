@@ -69,3 +69,4 @@ spec:
 
     serviceAccount:
       name: ffc-demo
+      roleArn: true
