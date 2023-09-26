@@ -22,7 +22,7 @@ spec:
       port: 80
       type: ClusterIP
     container:
-      redisHostname: rediss://SNDADPINFRD1401.redis.cache.windows.net
+      redisHostname: SNDADPINFRD1401.redis.cache.windows.net
       redisPort: 6380
       redisPartition: ffc-demo
       imagePullPolicy: Always
