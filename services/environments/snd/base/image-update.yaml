@@ -21,5 +21,6 @@ spec:
     push:
       branch: features/kb/update-repo-structure
   update:
-    path: ./services/environments/${ENVIRONMENT}/${CLUSTER}
+    #path: ./services/environments/${ENVIRONMENT}/${CLUSTER}
+    path: ./services/ffc-demo/ffc-demo-payment-web
     strategy: Setters
