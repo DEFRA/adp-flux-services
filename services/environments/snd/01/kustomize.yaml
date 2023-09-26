@@ -16,5 +16,5 @@ spec:
     substitute:
       ENVIRONMENT: "snd"
       ACR_NAME: "sndcdoinfcr2401p"
-      CLUSTER: "00"
+      CLUSTER: "01"
 
