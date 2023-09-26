@@ -5,7 +5,7 @@ metadata:
   namespace: config-cluster-flux 
 spec:
   values:
-    environment: development
+    environment: production
     name: ffc-demo-web
     namespace: ffc-demo
     image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-web:1.0.2
