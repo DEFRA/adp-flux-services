@@ -13,11 +13,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: ffc-demo-payment-web
-        namespace: config-cluster-flux
-      # values:
-      #   image:
-      #     repository: ${ACR_NAME}.azurecr.io/image/ffc-demo-payment-web
-      #     tag: 1.0.3 # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-web:tag"}        
+        namespace: config-cluster-flux       
   install:
     createNamespace: true
   interval: 5m0s
