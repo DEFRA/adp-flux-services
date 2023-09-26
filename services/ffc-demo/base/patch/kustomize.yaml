@@ -11,7 +11,7 @@ spec:
   interval: 5m
   timeout: 3m
   prune: true
-  path: ./services/ffc-demo/${ENVIRONMENT}
+  path: ./services/ffc-demo/${ENVIRONMENT}/${CLUSTER}
   postBuild:
     substitute:
       NAMESPACE: "ffc-demo"
@@ -19,4 +19,5 @@ spec:
       TEAM_NAME: "ffc-demo-team"
       ENVIRONMENT: "${ENVIRONMENT}"
       ACR_NAME: "${ACR_NAME}"
-
+      CLUSTER: "\"${CLUSTER}\""
+  
