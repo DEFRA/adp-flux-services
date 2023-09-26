@@ -1,61 +1,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-demo-claim-service
-  namespace: config-cluster-flux 
+  name: ffc-demo-payment-web
+  namespace: config-cluster-flux
 spec:
   values:
-    environment: production
-    name: ffc-demo-claim-service
-    namespace: ffc-demo
-    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-claim-service:1.0.0  # {"$imagepolicy": "config-cluster-flux:ffc-demo-claim-service:tag"}
-
-    appInsights:
-      key: 
-
-    containerConfigMap:
-      name: ffc-demo-claim-service-config-map
-
-    containerSecret:
-      name: ffc-demo-claim-service-container-secret
-      type: Opaque
-
-    deployment:
-      restartPolicy: Always
-      priorityClassName: default
-      replicas: 1
-      minReadySeconds: 5
-      imagePullSecret:
-
-    container:
-      imagePullPolicy: Always
-      requestMemory: 5Mi
-      requestCpu: 5m
-      limitMemory: 120Mi
-      limitCpu: 120m
-      port: 3003
-      calculationQueueAddress: calculation
-      claimQueueAddress: claim
-      messageQueueHost: SNDADPINFSB1401.servicebus.windows.net
-      scheduleTopicAddress: schedule
-      appInsightsConsoleDebugEnabled: true
-
-    postgresService:
-      postgresDb: ffc_demo_claim
-      postgresqlHost: ffcdemodb.postgres.database.azure.com
-      postgresSchema: public
-      postgresPort: 5432
-
-    livenessProbe:
-      path: /healthz
-      port: 3003
-      initialDelaySeconds: 10
-      periodSeconds: 10
-      failureThreshold: 3
-
-    readinessProbe:
-      path: /healthy
-      port: 3003
-      initialDelaySeconds: 10
-      periodSeconds: 10
-      failureThreshold: 3
+    image:
+      repository: ${ACR_NAME}.azurecr.io/image/ffc-demo-payment-web
+      tag: 1.0.4 # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-web:tag"}
