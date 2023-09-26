@@ -8,4 +8,4 @@ spec:
     name: ffc-demo-payment-web
   policy:
     semver:
-      range: 1.0.x
+      range: '>=1.0.0'
