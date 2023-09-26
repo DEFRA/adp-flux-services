@@ -39,14 +39,11 @@ spec:
       messageQueueHost: SNDADPINFSB1401.servicebus.windows.net
       scheduleTopicAddress: schedule
       appInsightsConsoleDebugEnabled: true
-      notifyApiKey:
-      notifyEmailTemplateKey:
 
     postgresService:
       postgresDb: ffc_demo_claim
       postgresqlHost: ffcdemodb.postgres.database.azure.com
       postgresSchema: public
-      postgresUser: demouser
       postgresPort: 5432
 
     livenessProbe:
