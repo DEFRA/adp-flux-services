@@ -26,7 +26,7 @@ spec:
       redisPassword: redis
       redisPort: 6379
       redisPartition: ffc-demo
-      imagePullPolicy: IfNotPresent
+      imagePullPolicy: Always
       requestMemory: 10Mi
       requestCpu: 10m
       limitMemory: 80Mi
