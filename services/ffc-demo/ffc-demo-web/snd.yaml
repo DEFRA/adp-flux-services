@@ -26,10 +26,10 @@ spec:
       redisPort: 6380
       redisPartition: ffc-demo
       imagePullPolicy: Always
-      requestMemory: 10Mi
-      requestCpu: 10m
-      limitMemory: 80Mi
-      limitCpu: 80m
+      requestMemory: 50Mi
+      requestCpu: 50m
+      limitMemory: 200Mi
+      limitCpu: 400m
       restClientTimeoutMillis: 20000
       staticCacheTimeoutMillis: 54000
       port: 3000
