@@ -23,7 +23,7 @@ spec:
       type: ClusterIP
     container:
       redisHostname: SNDADPINFRD1401.redis.cache.windows.net
-      redisPort: 6379
+      redisPort: 6380
       redisPartition: ffc-demo
       imagePullPolicy: Always
       requestMemory: 10Mi
