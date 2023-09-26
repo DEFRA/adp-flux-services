@@ -1,0 +1,10 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-demo-claim-service
+  namespace: config-cluster-flux
+spec:
+  values:
+    image:
+      repository: ${ACR_NAME}.azurecr.io/image/ffc-demo-claim-service
+      tag: 1.0.4 # {"$imagepolicy": "config-cluster-flux:ffc-demo-claim-service:tag"}
