@@ -40,7 +40,7 @@ spec:
 
     ingress:
       class: nginx
-      endpoint: adp-ffc-g6dufgeugrgxbpa7.z01
+      endpoint: adp-aks-gzdtdtc9cwc8g2dx.z01
       server: azurefd.net
 
     deployment:
