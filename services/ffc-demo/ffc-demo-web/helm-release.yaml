@@ -5,17 +5,20 @@ metadata:
   namespace: config-cluster-flux
 spec:
   releaseName: ffc-demo-web
-  chart: 
+  chart:
     spec:
       chart: ffc-demo-web
-      version: "1.0.0"
+      version: "1.0.1" # {"$imagepolicy": "config-cluster-flux:ffc-demo-claim-service:tag"}
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
         name: ffc-demo-web
         namespace: config-cluster-flux
-  install: 
+  install:
     createNamespace: true
   interval: 5m0s
   targetNamespace: ffc-demo
- 
+  values:
+    aadWorkloadIdentity: true
+    serviceAccount:
+      name: ffc-demo

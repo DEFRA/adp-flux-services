@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-web
     namespace: ffc-demo
-    image: ${ACR_NAME}.azurecr.io/image/ffc-demo-web:1.0.0
+    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-web:1.0.3
     labels:
       component: web
     containerConfigMap:
@@ -37,12 +37,10 @@ spec:
       claimQueueAddress: claim
       googleTagManagerKey: GTM-N5QK7RL
       protectiveMonitoringUrl:
-
     ingress:
       class: nginx
       endpoint: adp-aks-gzdtdtc9cwc8g2dx.z01
       server: azurefd.net
-
     deployment:
       restartPolicy: Always
       priorityClassName: default
@@ -50,23 +48,17 @@ spec:
       minReadySeconds: 5
       imagePullSecret:
       useLinkerd: true
-
     readinessProbe:
       path: /healthy
       port: 3000
       initialDelaySeconds: 20
       periodSeconds: 10
       failureThreshold: 3
-
     livenessProbe:
       path: /healthz
       port: 3000
       initialDelaySeconds: 30
       periodSeconds: 10
       failureThreshold: 3
-
-    aadWorkloadIdentity: true
-
     serviceAccount:
-      name: ffc-demo
       roleArn: true
