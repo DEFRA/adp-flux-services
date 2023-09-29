@@ -2,13 +2,13 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: ffc-demo-web
-  namespace: config-cluster-flux 
+  namespace: config-cluster-flux
 spec:
   values:
     environment: production
     name: ffc-demo-web
     namespace: ffc-demo
-    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-web:1.0.3 # {"$imagepolicy": "config-cluster-flux:ffc-demo-web"}
+    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-web:4.32.2 # {"$imagepolicy": "config-cluster-flux:ffc-demo-web"}
     labels:
       component: web
     containerConfigMap:
@@ -17,7 +17,7 @@ spec:
       connectionString:
     containerSecret:
       name: ffc-demo-web-container-secret
-      type: Opaque   
+      type: Opaque
     service:
       port: 80
       type: ClusterIP
@@ -60,4 +60,3 @@ spec:
       initialDelaySeconds: 30
       periodSeconds: 10
       failureThreshold: 3
-      
