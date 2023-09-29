@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-claim-service
     namespace: ffc-demo
-    image: 5.1.20 # {"$imagepolicy": "config-cluster-flux:ffc-demo-claim-service:tag"}
+    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-claim-service:1.0.0 # {"$imagepolicy": "config-cluster-flux:ffc-demo-claim-service"}
     appInsights:
       key:
     containerConfigMap:
@@ -24,10 +24,10 @@ spec:
       imagePullSecret:
     container:
       imagePullPolicy: Always
-      requestMemory: 5Mi
-      requestCpu: 5m
-      limitMemory: 120Mi
-      limitCpu: 120m
+      requestMemory: 10Mi
+      requestCpu: 10m
+      limitMemory: 200Mi
+      limitCpu: 200m
       port: 3003
       calculationQueueAddress: calculation
       claimQueueAddress: claim
@@ -36,7 +36,7 @@ spec:
       appInsightsConsoleDebugEnabled: true
     postgresService:
       postgresDb: ffc_demo_claim
-      postgresqlHost: ffcdemodb.postgres.database.azure.com
+      postgresqlHost: sndadpdbsps1401.postgres.database.azure.com
       postgresSchema: public
       postgresPort: 5432
     livenessProbe:

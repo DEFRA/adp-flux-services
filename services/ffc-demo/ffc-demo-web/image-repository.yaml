@@ -1,0 +1,8 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: ffc-demo-web
+  namespace: config-cluster-flux
+spec:
+  image: ${ACR_NAME}.azurecr.io/image/ffc-demo-web
+  interval: 5m0s
