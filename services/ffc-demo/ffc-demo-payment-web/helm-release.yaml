@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: ffc-demo-payment-web
-      version: "1.0.4" # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-web:tag"}
+      version: "1.19.7" # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-web:tag"}
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository

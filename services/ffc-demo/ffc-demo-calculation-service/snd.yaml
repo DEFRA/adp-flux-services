@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-calculation-service
     namespace: ffc-demo
-    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-calculation-service:5.1.22 # {"$imagepolicy": "config-cluster-flux:ffc-demo-calculation-service"}
+    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-calculation-service:4.3.10 # {"$imagepolicy": "config-cluster-flux:ffc-demo-calculation-service"}
     containerConfigMap:
       name: ffc-demo-calculation-service-config-map
     containerSecret:
