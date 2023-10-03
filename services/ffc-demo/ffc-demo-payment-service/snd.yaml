@@ -41,7 +41,7 @@ spec:
       claimUpdateTopic: ffc-demo-claim-update
       claimUpdateFromBeginning: true
     postgresService:
-      postgresDb: ffc_demo_payment_service
+      postgresDb: ffc_demo_payment
       postgresqlHost: sndadpdbsps1401.postgres.database.azure.com
       postgresSchema: public
       postgresPort: 5432
