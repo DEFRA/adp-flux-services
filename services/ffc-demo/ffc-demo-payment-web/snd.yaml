@@ -31,7 +31,7 @@ spec:
       googleTagManagerKey: GTM-N5QK7RL
     ingress:
       class: nginx
-      endpoint: adp-aks-gzdtdtc9cwc8g2dx.z01
+      endpoint: ffc-demo-payment-web # To be changed with front door details
       server: azurefd.net
     deployment:
       restartPolicy: Always
