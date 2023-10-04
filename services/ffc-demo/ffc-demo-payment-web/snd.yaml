@@ -31,8 +31,8 @@ spec:
       googleTagManagerKey: GTM-N5QK7RL
     ingress:
       class: nginx
-      endpoint: ffc-demo-payment-web # To be changed with front door details
-      server: azurefd.net
+      endpoint: ffc-demo-payment-web
+      server: snd1.adp.defra.gov.uk
     deployment:
       restartPolicy: Always
       priorityClassName: default
