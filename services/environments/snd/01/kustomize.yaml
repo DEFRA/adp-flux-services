@@ -15,6 +15,6 @@ spec:
   postBuild:
     substitute:
       ENVIRONMENT: "snd"
-      ACR_NAME: "sndcdoinfcr2401p"
+      ACR_NAME: "sndadpinfcr1401"
       CLUSTER: "01"
 

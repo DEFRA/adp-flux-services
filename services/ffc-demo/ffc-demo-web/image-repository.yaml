@@ -6,3 +6,4 @@ metadata:
 spec:
   image: ${ACR_NAME}.azurecr.io/image/ffc-demo-web
   interval: 1m0s
+  provider: azure
