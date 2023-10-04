@@ -16,7 +16,7 @@ spec:
         namespace: config-cluster-flux
   install:
     createNamespace: true
-  interval: 1m0s
+  interval: 5m0s
   targetNamespace: ffc-demo
   values:
     aadWorkloadIdentity: true
