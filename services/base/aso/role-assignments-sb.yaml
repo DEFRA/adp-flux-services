@@ -1,0 +1,13 @@
+apiVersion: authorization.azure.com/v1api20200801preview
+kind: RoleAssignment
+metadata:
+  name: ${SUBSCRIPTION_NAME}-${SERVICEBUS_RG}-${NAMESPACE}-aso-sb-rbac
+  namespace: platform-team
+spec:
+  owner:
+    armId: /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${SERVICEBUS_RG}/providers/Microsoft.ServiceBus/namespaces/${SERVICEBUS_NS}
+  principalIdFromConfig:
+    name: ${NAMESPACE}-aso-mi-identity-settings
+    key: principalId
+  roleDefinitionReference:
+    armId: /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/090c5cfd-751d-490a-894a-3ce6f1109419 # Azure Service Bus Data Owner

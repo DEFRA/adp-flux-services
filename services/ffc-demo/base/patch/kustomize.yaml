@@ -15,9 +15,20 @@ spec:
   postBuild:
     substitute:
       NAMESPACE: "ffc-demo"
-      WORKLOAD_IDENTITY_ID: "a46a3dca-bf0e-4b30-ab10-96a144bee9a6"
+      WORKLOAD_IDENTITY_ID: "3acd7d69-86fb-40ce-a389-4632e864e425"
       TEAM_NAME: "ffc-demo-team"
+      CLIENT_ID: "1cae56e5-639c-4289-a3ef-643ced1c5ead" # TEAM MI CLIENT_ID
+      TEAM_RG: "sndadpinfrg1401"
       ENVIRONMENT: "${ENVIRONMENT}"
       ACR_NAME: "${ACR_NAME}"
       CLUSTER: "\"${CLUSTER}\""
-  
+      CLUSTER_OIDC: "${CLUSTER_OIDC}"
+      TENANT_ID: "${TENANT_ID}" 
+      SUBSCRIPTION_ID: "${SUBSCRIPTION_ID}"
+      SUBSCRIPTION_NAME: "${SUBSCRIPTION_NAME}"
+      SERVICEBUS_RG: "${SERVICEBUS_RG}"
+      SERVICEBUS_NS: "${SERVICEBUS_NS}"
+      INFRA_RG: "${INFRA_RG}"
+      TEAM_MI_NAME: "${TEAM_MI_NAME}"
+      POSTGRES_SERVER_RG: "${POSTGRES_SERVER_RG}"
+      POSTGRES_SERVER: "${POSTGRES_SERVER}"
