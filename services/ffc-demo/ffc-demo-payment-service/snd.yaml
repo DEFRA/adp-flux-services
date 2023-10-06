@@ -1,0 +1,59 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-demo-payment-service
+  namespace: config-cluster-flux
+spec:
+  values:
+    environment: production
+    name: ffc-demo-payment-service
+    namespace: ffc-demo
+    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-payment-service:4.2.9 # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-service"}
+    containerConfigMap:
+      name: ffc-demo-payment-service-config-map
+    containerSecret:
+      name: ffc-demo-payment-service-container-secret
+      type: Opaque
+    deployment:
+      restartPolicy: Always
+      priorityClassName: default
+      replicas: 1
+      minReadySeconds: 5
+      imagePullSecret:
+    container:
+      port: 3004
+      imagePullPolicy: Always
+      requestMemory: 5Mi
+      requestCpu: 5m
+      limitMemory: 120Mi
+      limitCpu: 80m
+      messageQueueHost: SNDADPINFSB1401.servicebus.windows.net
+      scheduleSubscriptionAddress: schedule
+      paymentSubscriptionAddress: payment
+      scheduleTopicAddress: schedule
+      paymentTopicAddress: payment
+      eventHost: kafka
+      eventPort: 9093
+      eventMechanism: scram-sha-512
+      eventClientId: ffc-demo-payment-service
+      eventConsumerGroupId: ffc-demo-payment-service-claim-update
+      claimUpdateTopicName: ffc-demo-collector-claim-update
+      claimUpdateTopic: ffc-demo-claim-update
+      claimUpdateFromBeginning: true
+    postgresService:
+      postgresDb: ffc_demo_payment
+      postgresqlHost: sndadpdbsps1401.postgres.database.azure.com
+      postgresSchema: public
+      postgresPort: 5432
+    readinessProbe:
+      path: /healthy
+      port: 3004
+      initialDelaySeconds: 60
+      periodSeconds: 10
+      failureThreshold: 3
+    livenessProbe:
+      path: /healthz
+      port: 3004
+      initialDelaySeconds: 70
+      periodSeconds: 10
+      failureThreshold: 3
