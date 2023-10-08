@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-claim-service
     namespace: ffc-demo
-    image: sndcdoinfcr2401.azurecr.io/image/ffc-demo-claim-service:5.1.22 # {"$imagepolicy": "config-cluster-flux:ffc-demo-claim-service"}
+    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-claim-service:5.1.22 # {"$imagepolicy": "config-cluster-flux:ffc-demo-claim-service"}
     appInsights:
       key:
     containerConfigMap:
