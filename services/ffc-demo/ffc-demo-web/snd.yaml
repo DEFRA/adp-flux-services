@@ -39,8 +39,8 @@ spec:
       protectiveMonitoringUrl:
     ingress:
       class: nginx
-      endpoint: adp-aks-gzdtdtc9cwc8g2dx.z01
-      server: azurefd.net
+      endpoint: ffc-demo
+      server: snd1.adp.defra.gov.uk
     deployment:
       restartPolicy: Always
       priorityClassName: default
