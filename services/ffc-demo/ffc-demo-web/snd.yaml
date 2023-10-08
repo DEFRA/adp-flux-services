@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-web
     namespace: ffc-demo
-    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-web:4.32.5 # {"$imagepolicy": "config-cluster-flux:ffc-demo-web"}
+    image: sndcdoinfcr2401.azurecr.io/image/ffc-demo-web:4.32.5 # {"$imagepolicy": "config-cluster-flux:ffc-demo-web"}
     labels:
       component: web
     containerConfigMap:

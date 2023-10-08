@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-payment-service
     namespace: ffc-demo
-    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-payment-service:4.2.9 # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-service"}
+    image: sndcdoinfcr2401.azurecr.io/image/ffc-demo-payment-service:4.2.9 # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-service"}
     containerConfigMap:
       name: ffc-demo-payment-service-config-map
     containerSecret:
