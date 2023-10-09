@@ -5,4 +5,5 @@ metadata:
   namespace: config-cluster-flux
 spec:
   image: ${ACR_NAME}.azurecr.io/image/ffc-demo-web
-  interval: 1m0s
+  interval: 5m0s
+  provider: azure
