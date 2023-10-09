@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     environment: production
-    image: sndcdoinfcr2401p.azurecr.io/image/ffc-demo-payment-web:1.19.7 # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-web"}
+    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-payment-web:1.19.7 # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-web"}
     name: ffc-demo-payment-web
     namespace: ffc-demo
     labels: {}
