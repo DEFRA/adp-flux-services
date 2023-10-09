@@ -12,14 +12,14 @@ spec:
   git:
     checkout:
       ref:
-        branch: features/kb/enable-private-acr
+        branch: main
     commit:
       author:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
-      branch: features/kb/enable-private-acr
+      branch: main
   update:
     path: ./
     strategy: Setters
