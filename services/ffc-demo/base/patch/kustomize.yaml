@@ -15,7 +15,7 @@ spec:
   postBuild:
     substitute:
       NAMESPACE: "ffc-demo"
-      WORKLOAD_IDENTITY_ID: "3acd7d69-86fb-40ce-a389-4632e864e425"
+      WORKLOAD_IDENTITY_ID: "448be6c3-8c30-4dee-a4ea-85ebe42cc1c5"
       TEAM_NAME: "ffc-demo-team-gg"
       CLIENT_ID: "4d6e3354-e963-4658-9ad7-b1cf28102083" # TEAM MI CLIENT_ID
       TEAM_RG: "sndadpinfrg1401-gg"
