@@ -18,7 +18,7 @@ spec:
       WORKLOAD_IDENTITY_ID: "3acd7d69-86fb-40ce-a389-4632e864e425"
       TEAM_NAME: "ffc-demo-team-gg"
       CLIENT_ID: "1cae56e5-639c-4289-a3ef-643ced1c5ead" # TEAM MI CLIENT_ID
-      TEAM_RG: "sndadpinfrg1401-GG"
+      TEAM_RG: "sndadpinfrg1401-gg"
       ENVIRONMENT: "${ENVIRONMENT}"
       ACR_NAME: "${ACR_NAME}"
       CLUSTER: "\"${CLUSTER}\""
