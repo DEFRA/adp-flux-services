@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ffc-demo-claim-service-db-migration
+  namespace: config-cluster-flux
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: ffc-demo-claim-service-db-migration
+        image: sndcdoinfcr2401p.azurecr.io/ffc-demo-claim-service-migration:dev 
+        command:
+          - sh
+          - -c
+          - "/scripts/migration/database-up"
