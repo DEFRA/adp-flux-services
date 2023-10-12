@@ -6,4 +6,4 @@ metadata:
 spec:
   type: oci
   interval: 5m
-  url: oci://${ACR_NAME}.azurecr.io/asohelm
+  url: oci://${ACR_NAME}.azurecr.io/helm
