@@ -26,4 +26,3 @@ spec:
         envFrom:
         - secretRef:
             name: ffc-demo-claim-service-db-migration-secret
-            namespace: config-cluster-flux
