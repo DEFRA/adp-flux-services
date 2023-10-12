@@ -25,6 +25,7 @@ spec:
     serviceBusNamespaceName: sndadpinfsb1401
     namespaceQueues:
       - name: queue4
-      - name: queue5
-        maxDeliveryCount: 20
+      - name: queue10
+      - name: queue6
+        maxDeliveryCount: 30
         deadLetteringOnMessageExpiration: true
