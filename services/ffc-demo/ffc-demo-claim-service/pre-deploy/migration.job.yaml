@@ -14,7 +14,6 @@ spec:
           - sh
           - -c
           - "echo $(ls)"
-          # - "/scripts/migration/database-up"
         env:
         - name: POSTGRES_HOST
           value: "sndadpdbsps1401.postgres.database.azure.com"
