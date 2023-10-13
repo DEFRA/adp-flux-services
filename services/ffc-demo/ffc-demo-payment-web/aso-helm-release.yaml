@@ -32,7 +32,7 @@ spec:
     postgresResourceGroupName: sndadpdbsrg1401
     postgresServerName: sndadpdbsps1401
     postgres:
-    db:
-      name: db-test02
-      charset: UTF8
-      collation: en_US.utf8
+      db:
+        name: db-test02
+        charset: UTF8
+        collation: en_US.utf8
