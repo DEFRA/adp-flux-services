@@ -33,6 +33,6 @@ spec:
     postgresServerName: sndadpdbsps1401
     postgres:
     db:
-      name: db_test01
+      name: db-test02
       charset: UTF8
       collation: en_US.utf8
