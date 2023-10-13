@@ -13,7 +13,7 @@ spec:
         command:
           - sh
           - -c
-          - echo "$(find $(pwd))"
+          - "echo $(find $(pwd))"
         env:
         - name: POSTGRES_HOST
           value: "sndadpdbsps1401.postgres.database.azure.com"
