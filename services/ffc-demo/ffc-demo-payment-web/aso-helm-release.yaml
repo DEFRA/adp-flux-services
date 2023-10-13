@@ -19,7 +19,7 @@ spec:
   interval: 5m0s
   targetNamespace: ffc-demo
   values:
-    QUEUE_SUFFIX: helmgg
+    namespace: ffc-demo
     subscriptionId: "55f3b8c6-6800-41c7-a40d-2adb5e4e1bd1"
     serviceBusResourceGroupName: sndadpinfrg1401
     serviceBusNamespaceName: sndadpinfsb1401
@@ -29,3 +29,10 @@ spec:
       - name: queue6
         maxDeliveryCount: 30
         deadLetteringOnMessageExpiration: true
+    postgresResourceGroupName: sndadpdbsrg1401
+    postgresServerName: sndadpdbsps1401
+    postgres:
+    db:
+      name: db_test01
+      charset: UTF8
+      collation: en_US.utf8
