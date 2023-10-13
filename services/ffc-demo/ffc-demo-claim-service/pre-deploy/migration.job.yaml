@@ -13,7 +13,7 @@ spec:
         command:
           - sh
           - -c
-          - find $(pwd) -maxdepth 1 -type f -not -path '*/\.*' | sort
+          - find $(pwd) -maxdepth 1 -type f -not -path '*/\.*'
         env:
         - name: POSTGRES_HOST
           value: "sndadpdbsps1401.postgres.database.azure.com"
