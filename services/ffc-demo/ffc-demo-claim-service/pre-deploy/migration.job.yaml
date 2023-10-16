@@ -10,10 +10,10 @@ spec:
       containers:
       - name: ffc-demo-claim-service-db-migration
         image: sndcdoinfcr2401p.azurecr.io/ffc-demo-claim-service-migration:dev-wo-cmd
-        command:
-          - /bin/bash
-          - -c
-          - "/scripts/migration/database-up"
+        # command:
+        #   - /bin/bash
+        #   - -c
+        #   - "/scripts/migration/database-up"
         env:
         - name: POSTGRES_HOST
           value: "sndadpdbsps1401.postgres.database.azure.com"
