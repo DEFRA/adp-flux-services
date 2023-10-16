@@ -11,11 +11,9 @@ spec:
       - name: ffc-demo-claim-service-db-migration
         image: sndcdoinfcr2401p.azurecr.io/ffc-demo-claim-service-migration:dev-wo-cmd
         command:
-          - sh
+          - /bin/bash
           - -c
-          - echo $(pwd)
-          # - echo $(find $(pwd))
-          # - "/liquibase/scripts/migration/database-up"
+          - "/scripts/migration/database-up"
         env:
         - name: POSTGRES_HOST
           value: "sndadpdbsps1401.postgres.database.azure.com"
