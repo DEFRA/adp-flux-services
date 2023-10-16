@@ -8,8 +8,8 @@ resources:
   # - ../../ffc-demo-payment-service
   # - ../../ffc-demo-payment-web
 
-patches:
-  - path: ../../ffc-demo-web/snd.yaml
+#patches:
+  # - path: ../../ffc-demo-web/snd.yaml
   # - path: ../../ffc-demo-claim-service/snd.yaml  
   # - path: ../../ffc-demo-calculation-service/snd.yaml 
   # - path: ../../ffc-demo-payment-service/snd.yaml 
