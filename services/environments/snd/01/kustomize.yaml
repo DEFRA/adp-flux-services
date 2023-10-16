@@ -17,5 +17,4 @@ spec:
       ENVIRONMENT: "snd"
       ACR_NAME: "sndadpinfcr1401"
       CLUSTER: "01"
-      TEAM_MI_PREFIX: "sndadpinfmid1401"
 
