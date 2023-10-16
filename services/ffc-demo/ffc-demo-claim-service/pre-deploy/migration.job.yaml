@@ -10,10 +10,10 @@ spec:
       containers:
       - name: ffc-demo-claim-service-db-migration
         image: sndcdoinfcr2401p.azurecr.io/ffc-demo-claim-service-migration:dev 
-        # command:
-        #   - sh
-        #   - -c
-        #   - "echo $(find $(pwd))"
+        command:
+          - sh
+          - -c
+          - "echo $(find $(pwd))"
         env:
         - name: POSTGRES_HOST
           value: "sndadpdbsps1401.postgres.database.azure.com"
@@ -23,6 +23,6 @@ spec:
           value: "ffc_demo_claim"
         - name: POSTGRES_PORT
           value: "5432"
-        # envFrom:
-        # - secretRef:
-        #     name: ffc-demo-claim-service-db-migration-secret
+        envFrom:
+        - secretRef:
+            name: ffc-demo-claim-service-db-migration-secret
