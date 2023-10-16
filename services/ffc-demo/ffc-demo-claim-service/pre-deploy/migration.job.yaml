@@ -14,6 +14,7 @@ spec:
         #   - /bin/bash
         #   - -c
         #   - "/scripts/migration/database-up"
+        imagePullPolicy: Always
         env:
         - name: POSTGRES_HOST
           value: "sndadpdbsps1401.postgres.database.azure.com"
