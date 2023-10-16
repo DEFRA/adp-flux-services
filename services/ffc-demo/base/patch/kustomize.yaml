@@ -17,7 +17,7 @@ spec:
       NAMESPACE: "ffc-demo"
       WORKLOAD_IDENTITY_ID: "3acd7d69-86fb-40ce-a389-4632e864e425"
       TEAM_NAME: "ffc-demo-team"
-      CLIENT_ID: "dfd41e14-a927-4dc0-bf4f-9f47b78564da" # TEAM MI CLIENT_ID
+      CLIENT_ID: "f24a5c67-faff-4597-8b4e-de6ea65f60be" # TEAM MI CLIENT_ID
       TEAM_RG: "sndadpinfrg1401"
       ENVIRONMENT: "${ENVIRONMENT}"
       ACR_NAME: "${ACR_NAME}"
