@@ -13,7 +13,8 @@ spec:
         command:
           - sh
           - -c
-          - "/scripts/migration/database-up"
+          - echo $(find $(pwd))
+          # - "/scripts/migration/database-up"
         env:
         - name: POSTGRES_HOST
           value: "sndadpdbsps1401.postgres.database.azure.com"
