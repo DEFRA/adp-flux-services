@@ -9,11 +9,11 @@ spec:
       restartPolicy: Never
       containers:
       - name: ffc-demo-claim-service-db-migration
-        image: sndcdoinfcr2401p.azurecr.io/ffc-demo-claim-service-migration:dev 
+        image: sndcdoinfcr2401p.azurecr.io/ffc-demo-claim-service-migration:dev-wo-cmd
         command:
           - sh
           - -c
-          - "echo $(find $(pwd))"
+          - "/scripts/migration/database-up"
         env:
         - name: POSTGRES_HOST
           value: "sndadpdbsps1401.postgres.database.azure.com"
