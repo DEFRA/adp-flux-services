@@ -13,8 +13,8 @@ spec:
         command:
           - sh
           - -c
-          - echo $(find $(pwd))
-          # - "/scripts/migration/database-up"
+          # - echo $(find $(pwd))
+          - "/liquibase/scripts/migration/database-up"
         env:
         - name: POSTGRES_HOST
           value: "sndadpdbsps1401.postgres.database.azure.com"
