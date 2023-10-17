@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: ffc-demo-claim-service-db-migration
-  namespace: config-cluster-flux
+  namespace: ffc-demo
   labels:
     azure.workload.identity/use: "true"
 spec:
