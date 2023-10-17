@@ -3,9 +3,12 @@ kind: Job
 metadata:
   name: ffc-demo-claim-service-db-migration
   namespace: config-cluster-flux
+  labels:
+    azure.workload.identity/use: "true"
 spec:
   template:
     spec:
+      serviceAccountName: ffc-demo
       restartPolicy: Never
       containers:
       - name: ffc-demo-claim-service-db-migration
