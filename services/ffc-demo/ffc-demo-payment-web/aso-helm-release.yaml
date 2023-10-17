@@ -23,9 +23,37 @@ spec:
     subscriptionId: "55f3b8c6-6800-41c7-a40d-2adb5e4e1bd1"
     serviceBusResourceGroupName: sndadpinfrg1401
     serviceBusNamespaceName: sndadpinfsb1401
+    postgresResourceGroupName: sndadpdbsrg1401
+    postgresServerName: sndadpdbsps1401
+    namespace: ffc-demo
+    tags:
+      Environment: dev
+      ServiceCode: FFC
+      ServiceName: DempApp
+      ServiceType: Shared
+      Purpose: Define purpose
+      ManagedBy: ASO
+      kubernetes_cluster: aks1
     namespaceQueues:
-      - name: queue4
-      - name: queue10
-      - name: queue6
+      - name: servicequeue01
+      - name: servicequeue02
         maxDeliveryCount: 30
         deadLetteringOnMessageExpiration: true
+    namespaceTopics:
+      - name: servicetopic01
+        topicSubscriptions:
+          - name: servicetopicsub01
+            topicSubscriptionRules:
+              - name: servicetopicsubrule01
+                filterType: CorrelationFilter
+                correlationFilter:
+                  contentType: "contentTypeValue"   
+    postgres:
+      db:
+        name: servicedb01
+        charset: UTF8
+        collation: en_US.utf8                   
+    teamRGName: sndadpinfrg1401-gg
+    managedIdPrefix: sndadpinfmid1401
+    userAssignedIdentity:
+      managedIdName: demo-collector-role-service           
