@@ -12,9 +12,8 @@ spec:
   timeout: 3m
   prune: true
   path: ./services/environments/snd/01
-  # postBuild:
-  #   substitute:
-  #     ENVIRONMENT: "snd"
-  #     ACR_NAME: "sndadpinfcr1401"
-  #     CLUSTER: "01"
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: platform-vars
 
