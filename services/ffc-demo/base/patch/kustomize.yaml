@@ -17,7 +17,8 @@ spec:
       NAMESPACE: "ffc-demo"
       WORKLOAD_IDENTITY_ID: "a46a3dca-bf0e-4b30-ab10-96a144bee9a6"
       TEAM_NAME: "ffc-demo-team"
-      ENVIRONMENT: "${ENVIRONMENT}"
-      ACR_NAME: "${ACR_NAME}"
-      CLUSTER: "\"${CLUSTER}\""
-  
+      TEAM_MI_CLIENT_ID: "2201bc81-ac6e-41c2-b37d-5dd7ed264b39"
+      TEAM_RG: "sndadpinfrg1401"
+    substituteFrom:
+      - kind: ConfigMap
+        name: platform-vars
