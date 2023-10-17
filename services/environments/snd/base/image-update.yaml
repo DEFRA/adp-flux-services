@@ -12,14 +12,14 @@ spec:
   git:
     checkout:
       ref:
-        branch: aa/aso-initial
+        branch: main
     commit:
       author:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
-      branch: aa/aso-initial
+      branch: main
   update:
     path: ./
     strategy: Setters
