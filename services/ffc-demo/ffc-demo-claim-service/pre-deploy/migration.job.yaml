@@ -16,7 +16,8 @@ spec:
         command:
           - sh
           - -c
-          - "/scripts/migration/get-access-token"
+          - "/scripts/migration/database-up"
+          # - "/scripts/migration/get-access-token"
         imagePullPolicy: Always
         env:
         - name: POSTGRES_HOST
