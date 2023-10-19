@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-demo-claim-service-infra
+  namespace: config-cluster-flux
+spec:
+  releaseName: ffc-demo-claim-service-infra
+  chart:
+    spec:
+      chart: ffc-demo-claim-service-infra
+      version: "0.0.1" # {"$imagepolicy": "config-cluster-flux:ffc-demo-claim-service:tag"}
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ffc-demo-claim-service-infra
+        namespace: config-cluster-flux
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: ffc-demo
+  values:
+    namespace: ffc-demo
