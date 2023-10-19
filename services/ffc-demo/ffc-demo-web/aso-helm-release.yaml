@@ -12,7 +12,7 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: ffc-demo-web-infra
+        name: ffc-demo-web
         namespace: config-cluster-flux
   install:
     createNamespace: true
