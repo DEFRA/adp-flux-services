@@ -9,7 +9,7 @@ spec:
     name: services-repository
     namespace: config-cluster-flux
   interval: 5m
-  timeout: 3m
+  timeout: 5m
   prune: true
   path: ./services/environments/snd/01
   postBuild:
