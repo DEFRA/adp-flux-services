@@ -35,7 +35,7 @@ spec:
       scheduleTopicAddress: schedule
       appInsightsConsoleDebugEnabled: true
     postgresService:
-      postgresDb: ffc_demo_claim
+      postgresDb: ffc-demo-claim
       postgresqlHost: sndadpdbsps1401.postgres.database.azure.com
       postgresSchema: public
       postgresPort: 5432
