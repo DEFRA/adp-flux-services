@@ -1,9 +1,26 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
+  name: ffc-demo-web-infra
+  namespace: config-cluster-flux
+spec:
+  releaseName: ffc-demo-web-infra
+  chart:
+    spec:
+      chart: ffc-demo-web-infra
+      version: "4.32.3" # {"$imagepolicy": "config-cluster-flux:ffc-demo-web:tag"}
+
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
   name: ffc-demo-web
   namespace: config-cluster-flux
 spec:
+  chart:
+    spec:
+      chart: ffc-demo-web
+      version: "4.32.3" # {"$imagepolicy": "config-cluster-flux:ffc-demo-web:tag"}
   values:
     environment: production
     name: ffc-demo-web

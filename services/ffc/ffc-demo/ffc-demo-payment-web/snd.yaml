@@ -4,6 +4,10 @@ metadata:
   name: ffc-demo-payment-web
   namespace: config-cluster-flux
 spec:
+  chart:
+    spec:
+      chart: ffc-demo-payment-web
+      version: "1.19.7" # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-web:tag"}
   values:
     environment: production
     image: sndadpinfcr1401.azurecr.io/image/ffc-demo-payment-web:1.19.7 # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-web"}

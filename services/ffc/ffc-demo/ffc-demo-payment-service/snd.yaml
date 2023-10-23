@@ -4,6 +4,10 @@ metadata:
   name: ffc-demo-payment-service
   namespace: config-cluster-flux
 spec:
+  chart:
+    spec:
+      chart: ffc-demo-payment-service
+      version: "4.2.9" # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-service:tag"}
   values:
     environment: production
     name: ffc-demo-payment-service
