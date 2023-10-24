@@ -11,7 +11,7 @@ spec:
     kind: GitRepository
     name: services-repository
     namespace: config-cluster-flux
-  path: ./services/ffc-demo/ffc-demo-claim-service
+  path: ./services/ffc-demo/ffc-demo-claim-service/deploy
   interval: 60m
   timeout: 5m
   prune: true
