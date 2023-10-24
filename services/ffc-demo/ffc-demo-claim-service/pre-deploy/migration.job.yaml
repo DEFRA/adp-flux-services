@@ -12,7 +12,7 @@ spec:
       restartPolicy: Never
       containers:
       - name: ffc-demo-claim-service-db-migration
-        image: sndcdoinfcr2401p.azurecr.io/ffc-demo-claim-service-migration:dev
+        image: sndadpinfcr1401p.azurecr.io/ffc-demo-claim-service-migration:dev
         command:
           - sh
           - -c
