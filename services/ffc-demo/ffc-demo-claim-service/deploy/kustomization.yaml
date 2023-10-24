@@ -4,5 +4,5 @@ resources:
   # - deploy-kustomize.yaml
   - helm-repository.yaml
   - helm-release.yaml
-  # - image-repository.yaml  
-  # - image-policy.yaml
+  - image-repository.yaml  
+  - image-policy.yaml
