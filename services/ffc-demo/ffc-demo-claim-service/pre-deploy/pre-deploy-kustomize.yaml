@@ -14,3 +14,6 @@ spec:
   prune: true
   wait: true
   force: true
+  postBuild:
+    substitute:
+      POSTGRES_SERVER: "${POSTGRES_SERVER}"

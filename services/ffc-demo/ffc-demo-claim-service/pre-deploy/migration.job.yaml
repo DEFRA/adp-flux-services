@@ -21,11 +21,11 @@ spec:
         imagePullPolicy: Always
         env:
         - name: POSTGRES_HOST
-          value: "sndadpdbsps1401.postgres.database.azure.com"
+          value: "${POSTGRES_SERVER}.postgres.database.azure.com"
         - name: SCHEMA_NAME
           value: "public"
         - name: POSTGRES_DB
-          value: "ffc_demo_claim"
+          value: "ffc-demo-claim"
         - name: POSTGRES_PORT
           value: "5432"
         envFrom:
