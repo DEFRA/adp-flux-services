@@ -9,7 +9,7 @@ spec:
     name: services-repository
     namespace: config-cluster-flux
   path: ./services/ffc-demo/ffc-demo-claim-service/pre-deploy
-  interval: 60m
+  interval: 5m
   timeout: 5m
   prune: true
   wait: true
