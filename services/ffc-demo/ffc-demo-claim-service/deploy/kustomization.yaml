@@ -8,4 +8,4 @@ resources:
   - image-policy.yaml
 
 patches:
-  - path: ../"${ENVIRONMENT}"-"${CLUSTER}".yaml
+  - path: "../${ENVIRONMENT}-${CLUSTER}.yaml"
