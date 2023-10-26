@@ -19,3 +19,5 @@ spec:
   postBuild:
     substitute:
       ACR_NAME: "${ACR_NAME}"
+      ENVIRONMENT: "${ENVIRONMENT}"
+      CLUSTER: "${CLUSTER}"
