@@ -2,7 +2,7 @@ apiVersion: authorization.azure.com/v1api20200801preview
 kind: RoleAssignment
 metadata:
   name: ${SUBSCRIPTION_NAME}-${INFRA_RG}-${APPCONFIG_SERVICE}-aso-ac-rbac
-  namespace: platform-team
+  namespace: flux-config
 spec:
   owner:
     armId: /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${INFRA_RG}/providers/Microsoft.AppConfiguration/configurationStores/${APPCONFIG_SERVICE}

@@ -2,12 +2,12 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: ffc-demo-base
-  namespace: config-cluster-flux
+  namespace: flux-config
 spec:
   sourceRef:
     kind: GitRepository
     name: services-repository
-    namespace: config-cluster-flux
+    namespace: flux-config
   interval: 5m
   timeout: 3m
   prune: true
@@ -20,5 +20,8 @@ spec:
       TEAM_MI_CLIENT_ID: "68c81540-2166-4f10-84b4-765999ff5941"
       TEAM_RG: "sndadpinfrg1401"
     substituteFrom:
+      - kind: ConfigMap
+        name: ffc-demo-aso-mi-identity-settings
+        optional: true
       - kind: ConfigMap
         name: platform-vars
