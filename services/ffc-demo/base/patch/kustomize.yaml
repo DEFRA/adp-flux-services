@@ -17,7 +17,6 @@ spec:
       NAMESPACE: "ffc-demo"
       WORKLOAD_IDENTITY_ID: "a46a3dca-bf0e-4b30-ab10-96a144bee9a6"
       TEAM_NAME: "ffc-demo-team"
-      TEAM_MI_CLIENT_ID: "68c81540-2166-4f10-84b4-765999ff5941"
       TEAM_RG: "sndadpinfrg1401"
     substituteFrom:
       - kind: ConfigMap
