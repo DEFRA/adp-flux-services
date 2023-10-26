@@ -18,6 +18,6 @@ spec:
   wait: true
   postBuild:
     substitute:
-      ACR_NAME: "${ACR_NAME}"
+      ACR_NAME: "snd"
       ENVIRONMENT: "${ENVIRONMENT}"
-      CLUSTER: "${CLUSTER}"
+      CLUSTER: "01"
