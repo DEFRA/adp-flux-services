@@ -2,7 +2,7 @@ apiVersion: authorization.azure.com/v1api20200801preview
 kind: RoleAssignment
 metadata:
   name: ${SUBSCRIPTION_NAME}-${POSTGRES_SERVER_RG}-${POSTGRES_SERVER}-${NAMESPACE}-aso-pgdb-rbac
-  namespace: platform-team
+  namespace: flux-config
 spec:
   owner:
     armId: /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${POSTGRES_SERVER_RG}/providers/Microsoft.DBforPostgreSQL/flexibleServers/${POSTGRES_SERVER}
