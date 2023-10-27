@@ -10,7 +10,7 @@ resources:
 
 patches:
   # - path: ../../ffc-demo-web/snd.yaml
-  - path: ../../ffc-demo-claim-service/snd.yaml  
+  - path: ../../ffc-demo-claim-service/snd-01.yaml  
     target:
       kind: HelmRelease
       name: ffc-demo-claim-service
