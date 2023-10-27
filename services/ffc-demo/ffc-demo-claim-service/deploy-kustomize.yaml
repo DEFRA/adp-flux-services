@@ -16,6 +16,7 @@ spec:
   timeout: 5m
   prune: true
   wait: true
+  force: true
   postBuild:
     substitute:
       ACR_NAME: "${ACR_NAME}"
