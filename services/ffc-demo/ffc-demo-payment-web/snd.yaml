@@ -2,11 +2,11 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: ffc-demo-payment-web
-  namespace: config-cluster-flux
+  namespace: flux-config
 spec:
   values:
     environment: production
-    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-payment-web:1.19.7 # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-web"}
+    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-payment-web:1.19.7 # {"$imagepolicy": "flux-config:ffc-demo-payment-web"}
     name: ffc-demo-payment-web
     namespace: ffc-demo
     labels: {}

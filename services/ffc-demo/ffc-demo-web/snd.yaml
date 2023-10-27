@@ -2,13 +2,13 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: ffc-demo-web
-  namespace: config-cluster-flux
+  namespace: flux-config
 spec:
   values:
     environment: production
     name: ffc-demo-web
     namespace: ffc-demo
-    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-web:4.32.3 # {"$imagepolicy": "config-cluster-flux:ffc-demo-web"}
+    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-web:4.32.3 # {"$imagepolicy": "flux-config:ffc-demo-web"}
     labels:
       component: web
     containerConfigMap:

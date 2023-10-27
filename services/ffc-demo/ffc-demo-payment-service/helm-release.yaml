@@ -2,18 +2,18 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: ffc-demo-payment-service
-  namespace: config-cluster-flux
+  namespace: flux-config
 spec:
   releaseName: ffc-demo-payment-service
   chart:
     spec:
       chart: ffc-demo-payment-service
-      version: "4.2.9" # {"$imagepolicy": "config-cluster-flux:ffc-demo-payment-service:tag"}
+      version: "4.2.9" # {"$imagepolicy": "flux-config:ffc-demo-payment-service:tag"}
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
         name: ffc-demo-payment-service
-        namespace: config-cluster-flux
+        namespace: flux-config
   install:
     createNamespace: true
   interval: 5m0s
