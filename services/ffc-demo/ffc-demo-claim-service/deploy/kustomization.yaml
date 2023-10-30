@@ -7,4 +7,5 @@ resources:
   # - image-policy.yaml
 
 patches:
-  - path: "../${ENVIRONMENT}-${CLUSTER}.yaml"
+  - path: ../snd-01.yaml
+  # - path: ../${ENVIRONMENT}-${CLUSTER}.yaml
