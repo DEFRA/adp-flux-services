@@ -22,4 +22,3 @@ spec:
     aadWorkloadIdentity: true
     serviceAccount:
       name: ffc-demo
-      roleArn: true

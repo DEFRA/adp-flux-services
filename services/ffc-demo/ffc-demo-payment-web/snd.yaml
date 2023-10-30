@@ -10,45 +10,32 @@ spec:
     name: ffc-demo-payment-web
     namespace: ffc-demo
     labels: {}
-    containerConfigMap:
-      name: ffc-demo-payment-web-config-map
-    containerSecret:
-      name: ffc-demo-payment-web-container-secret
-      type: Opaque
-    service:
-      port: 80
-      type: ClusterIP
     container:
       requestMemory: 20Mi
       requestCpu: 20m
       limitMemory: 100Mi
       limitCpu: 100m
       imagePullPolicy: Always
-      staticCacheTimeoutMillis: 54000
-      restClientTimeoutMillis: 20000
       paymentServiceUrl: http://ffc-demo-payment-service.ffc-demo
-      port: 3000
-      googleTagManagerKey: GTM-N5QK7RL
     ingress:
       class: nginx
       endpoint: ffc-demo-payment-web
       server: snd1.adp.defra.gov.uk
     deployment:
-      restartPolicy: Always
       priorityClassName: default
-      replicas: 1
-      minReadySeconds: 5
-      imagePullSecret:
-      useLinkerd: true
-    readinessProbe:
-      path: /healthy
-      port: 3000
-      initialDelaySeconds: 20
-      periodSeconds: 10
-      failureThreshold: 3
-    livenessProbe:
-      path: /healthz
-      port: 3000
-      initialDelaySeconds: 30
-      periodSeconds: 10
-      failureThreshold: 3
+    containerConfigMap:
+      name: 'ffc-demo-payment-web-config-map'
+      configServiceUrl: 'https://sndadpinfac1401.azconfig.io'
+      keyValues:
+        labelFilter: 'ffc-demo-payment-web'
+        refresh:
+          interval: 2m
+          monitorKey: 'Sentinel'
+          monitorLabel: 'ffc-demo-payment-web'
+        keyVaults:
+          secretName: ffc-demo-payment-web-container-secret
+          refresh:
+            interval: 2m
+    managedIdPrefix: sndadpinfmid1401
+    userAssignedIdentity:
+      managedIdName: ffc-demo-services
