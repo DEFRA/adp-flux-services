@@ -21,4 +21,4 @@ spec:
     substitute:
       ACR_NAME: "${ACR_NAME}"
       ENVIRONMENT: "${ENVIRONMENT}"
-      CLUSTER: "${CLUSTER}"
+      CLUSTER: ${CLUSTER}
