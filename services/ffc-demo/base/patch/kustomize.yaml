@@ -21,7 +21,7 @@ spec:
       TEAM_RG: "sndadpinfrg1401-gg"
       ENVIRONMENT: "${ENVIRONMENT}"
       ACR_NAME: "${ACR_NAME}"
-      CLUSTER: "\"${CLUSTER}\""
+      CLUSTER: "${CLUSTER}"
       CLUSTER_OIDC: "${CLUSTER_OIDC}"
       TENANT_ID: "${TENANT_ID}" 
       SUBSCRIPTION_ID: "${SUBSCRIPTION_ID}"
