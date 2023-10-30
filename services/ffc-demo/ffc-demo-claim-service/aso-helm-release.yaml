@@ -12,7 +12,7 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: ffc-demo-claim-service-infra
+        name: ffc-demo-helm-repo
         namespace: flux-config
   install:
     createNamespace: true

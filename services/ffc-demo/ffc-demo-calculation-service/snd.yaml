@@ -9,33 +9,23 @@ spec:
     name: ffc-demo-calculation-service
     namespace: ffc-demo
     image: sndadpinfcr1401.azurecr.io/image/ffc-demo-calculation-service:4.3.10 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service"}
-    containerConfigMap:
-      name: ffc-demo-calculation-service-config-map
-    containerSecret:
-      name: ffc-demo-calculation-service-container-secret
-      type: Opaque
     deployment:
-      restartPolicy: Always
       priorityClassName: default
-      replicas: 1
-      minReplicas: 1
-      maxReplicas: 3
-      cpuThreshold: 80
-      memoryThreshold: 80
-      minReadySeconds: 5
-      imagePullSecret:
     container:
       imagePullPolicy: Always
       requestMemory: 5Mi
       requestCpu: 5m
       limitMemory: 60Mi
       limitCpu: 40m
-      messageQueueHost: SNDADPINFSB1401.servicebus.windows.net
-      calculationQueueAddress: calculation
-      paymentTopicAddress: payment
-      protectiveMonitoringUrl:
-    livenessProbe:
-      initialDelaySeconds: 70
-      periodSeconds: 10
-      failureThreshold: 3
-      script: /home/node/scripts/healthz
+    containerConfigMap:
+      name: 'ffc-demo-calculation-service-config-map'
+      configServiceUrl: 'https://sndadpinfac1401.azconfig.io'
+      keyValues:
+        labelFilter: 'ffc-demo-calculation-service'
+        refresh:
+          interval: 2m
+          monitorKey: 'Sentinel'
+          monitorLabel: 'ffc-demo-calculation-service'
+    managedIdPrefix: sndadpinfmid1401
+    userAssignedIdentity:
+      managedIdName: ffc-demo-services

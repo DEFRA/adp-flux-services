@@ -12,17 +12,11 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: ffc-demo-payment-service-infra
+        name: ffc-demo-helm-repo
         namespace: flux-config
   install:
     createNamespace: true
   interval: 5m0s
   targetNamespace: ffc-demo
   values:
-    namespace: ffc-demo
-    subscriptionId: ${}
-    serviceBusResourceGroupName: sndadpinfrg1401
-    serviceBusNamespaceName: sndadpinfsb1401
-    postgresResourceGroupName: sndadpdbsrg1401
-    postgresServerName: sndadpdbsps1401
-    
+    namespace: ffc-demo    

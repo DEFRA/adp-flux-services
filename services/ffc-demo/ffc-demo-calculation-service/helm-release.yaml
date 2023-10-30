@@ -12,7 +12,7 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: ffc-demo-calculation-service
+        name: ffc-demo-helm-repo
         namespace: flux-config
   install:
     createNamespace: true
@@ -22,4 +22,3 @@ spec:
     aadWorkloadIdentity: true
     serviceAccount:
       name: ffc-demo
-      roleArn: true
