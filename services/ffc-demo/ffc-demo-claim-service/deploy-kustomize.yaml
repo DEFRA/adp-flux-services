@@ -11,7 +11,7 @@ spec:
     kind: GitRepository
     name: services-repository
     namespace: config-cluster-flux
-  path: ./services/ffc-demo/ffc-demo-claim-service/deploy/${ENVIRONMENT}/${CLUSTER}
+  path: ./services/ffc-demo/ffc-demo-claim-service/deploy/${ENVIRONMENT}/0${CLUSTER}
   interval: 5m
   timeout: 5m
   prune: true
@@ -21,4 +21,3 @@ spec:
     substitute:
       ACR_NAME: "${ACR_NAME}"
       ENVIRONMENT: "${ENVIRONMENT}"
-      CLUSTER: ${CLUSTER}
