@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-demo-claim-service-infra
+  namespace: flux-config
+spec:
+  values:
+    subscriptionId: 
+    serviceBusResourceGroupName: sndadpinfrg1401
+    serviceBusNamespaceName: sndadpinfsb1401
+    postgresResourceGroupName: sndadpdbsrg1401
+    postgresServerName: sndadpdbsps1401

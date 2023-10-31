@@ -33,4 +33,3 @@ spec:
     managedIdPrefix: sndadpinfmid1401
     userAssignedIdentity:
       managedIdName: ffc-demo-services
-

@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ffc-demo-payment-service-dbmigration
+  namespace: ffc-demo
+  labels:
+    azure.workload.identity/use: "true"
+spec:
+  template:
+    spec:
+      serviceAccountName: ffc-demo
+      restartPolicy: Never
+      containers:
+      - name: ffc-demo-payment-service-dbmigration
+        command:
+          - sh
+          - -c
+          - "/scripts/migration/database-up"
+        imagePullPolicy: Always

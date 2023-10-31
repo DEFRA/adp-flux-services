@@ -1,0 +1,19 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ffc-demo-calculation-service-aso
+  namespace: flux-config
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/ffc-demo/ffc-demo-calculation-service/aso/${ENVIRONMENT}/${CLUSTER}
+  interval: 5m
+  timeout: 5m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      ACR_NAME: "${ACR_NAME}"
