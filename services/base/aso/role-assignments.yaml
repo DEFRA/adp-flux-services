@@ -1,15 +1,15 @@
 apiVersion: authorization.azure.com/v1api20200801preview
 kind: RoleAssignment
 metadata:
-  name: ${SUBSCRIPTION_NAME}-${TEAM_RG}-${NAMESPACE}-aso-rg-rbac
+  name: ${SUBSCRIPTION_NAME}-${TEAM_RG}-${TEAM_NAMESPACE}-aso-rg-rbac
   namespace: flux-config
 spec:
   owner:
-    name: ${TEAM_RG}-${NAMESPACE}
+    name: ${TEAM_RG}-${TEAM_NAMESPACE}
     group: resources.azure.com
     kind: ResourceGroup
   principalIdFromConfig:
-    name: ${NAMESPACE}-aso-mi-identity-settings
+    name: ${TEAM_NAMESPACE}-aso-mi-identity-settings
     key: principalId
   roleDefinitionReference:
     armId: /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c # Contributor
