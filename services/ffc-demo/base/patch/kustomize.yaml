@@ -11,10 +11,10 @@ spec:
   interval: 5m
   timeout: 3m
   prune: true
-  path: ./services/ffc-demo/${ENVIRONMENT}/${CLUSTER}
+  path: ./services/ffc-demo/${ENVIRONMENT}/${ENVIRONMENT_ID}
   postBuild:
     substitute:
-      NAMESPACE: "ffc-demo"
+      TEAM_NAMESPACE: "ffc-demo"
       WORKLOAD_IDENTITY_ID: "a46a3dca-bf0e-4b30-ab10-96a144bee9a6"
       TEAM_NAME: "ffc-demo-team"
       TEAM_RG: "sndadpinfrg1401"
