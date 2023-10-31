@@ -5,7 +5,7 @@ metadata:
   namespace: flux-config
 spec:
   owner:
-    armId: /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${SERVICEBUS_RG}/providers/Microsoft.ServiceBus/namespaces/${SERVICEBUS_NAMESPACE}
+    armId: /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${SERVICEBUS_RG}/providers/Microsoft.ServiceBus/namespaces/${SHARED_SERVICEBUS_NAMESPACE}
   principalIdFromConfig:
     name: ${TEAM_NAMESPACE}-aso-mi-identity-settings
     key: principalId
