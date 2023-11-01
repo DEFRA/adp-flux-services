@@ -8,7 +8,7 @@ spec:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  path: ./services/ffc-demo/ffc-demo-calculation-service/aso/${ENVIRONMENT}/${CLUSTER}
+  path: ./services/ffc-demo/ffc-demo-calculation-service/infra/${ENVIRONMENT}/${CLUSTER}
   interval: 5m
   timeout: 5m
   prune: true
@@ -16,4 +16,8 @@ spec:
   force: true
   postBuild:
     substitute:
-      ACR_NAME: "${ACR_NAME}"
+      SERVICE_NAME: "ffc-demo-calculation-service"
+    substituteFrom:
+      - kind: ConfigMap
+        name: platform-vars
+      

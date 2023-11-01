@@ -3,6 +3,3 @@ kind: Kustomization
 resources:
   - ../../base
   - helm-repository.yaml
-
-patches:
-  - path: workload-identity.yaml

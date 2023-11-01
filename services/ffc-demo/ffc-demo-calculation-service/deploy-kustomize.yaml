@@ -18,5 +18,9 @@ spec:
   wait: true
   force: true
   postBuild:
-    substitute:
-      ACR_NAME: "${ACR_NAME}"
+    SERVICE_NAME: "ffc-demo-calculation-service"
+    substituteFrom:
+      - kind: ConfigMap
+        name: platform-vars
+      - kind: ConfigMap
+        name: ffc-demo-calculation-service-aso-mi-identity-settings
