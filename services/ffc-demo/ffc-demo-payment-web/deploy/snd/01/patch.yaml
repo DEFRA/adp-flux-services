@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     environment: production
-    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-payment-web:1.19.7 # {"$imagepolicy": "flux-config:ffc-demo-payment-web"}
+    image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-payment-web:1.19.7 # {"$imagepolicy": "flux-config:ffc-demo-payment-web"}
     name: ffc-demo-payment-web
     namespace: ffc-demo
     labels: {}
@@ -25,7 +25,10 @@ spec:
       priorityClassName: default
     containerConfigMap:
       name: 'ffc-demo-payment-web-config-map'
-      configServiceUrl: 'https://sndadpinfac1401.azconfig.io'
+      configServiceUrl: 'https://${APPCONFIG_NAME}.azconfig.io'
+      auth:
+        workloadIdentity:
+          clientId: ${clientId}
       keyValues:
         labelFilter: 'ffc-demo-payment-web'
         refresh:
@@ -36,6 +39,6 @@ spec:
           secretName: ffc-demo-payment-web-container-secret
           refresh:
             interval: 2m
-    managedIdPrefix: sndadpinfmid1401
+    managedIdPrefix: ${TEAM_MI_PREFIX}
     userAssignedIdentity:
       managedIdName: ffc-demo-services

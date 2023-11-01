@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-claim-service
     namespace: ffc-demo
-    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-claim-service:5.1.20 # {"$imagepolicy": "flux-config:ffc-demo-claim-service"}
+    image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-claim-service:5.1.20 # {"$imagepolicy": "flux-config:ffc-demo-claim-service"}
     deployment:
       priorityClassName: default
     container:
@@ -19,7 +19,10 @@ spec:
       limitCpu: 200m
     containerConfigMap:
       name: 'ffc-demo-claim-service-config-map'
-      configServiceUrl: 'https://sndadpinfac1401.azconfig.io'
+      configServiceUrl: 'https://${APPCONFIG_NAME}.azconfig.io'
+      auth:
+        workloadIdentity:
+          clientId: ${clientId}
       keyValues:
         labelFilter: 'ffc-demo-claim-service'
         refresh:
@@ -30,6 +33,6 @@ spec:
           secretName: ffc-demo-claim-service-container-secret
           refresh:
             interval: 2m
-    managedIdPrefix: sndadpinfmid1401
+    managedIdPrefix: ${TEAM_MI_PREFIX}
     userAssignedIdentity:
       managedIdName: ffc-demo-services

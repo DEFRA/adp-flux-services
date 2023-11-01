@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-web
     namespace: ffc-demo
-    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-web:4.32.3 # {"$imagepolicy": "flux-config:ffc-demo-web"}
+    image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-web:4.32.3 # {"$imagepolicy": "flux-config:ffc-demo-web"}
     labels:
       component: web
     container:
@@ -25,7 +25,10 @@ spec:
       priorityClassName: default
     containerConfigMap:
       name: 'ffc-demo-web-config-map'
-      configServiceUrl: 'https://sndadpinfac1401.azconfig.io'
+      configServiceUrl: 'https://${APPCONFIG_NAME}.azconfig.io'
+      auth:
+        workloadIdentity:
+          clientId: ${clientId}
       keyValues:
         labelFilter: 'ffc-demo-web'
         refresh:
@@ -36,6 +39,6 @@ spec:
           secretName: ffc-demo-web-container-secret
           refresh:
             interval: 2m
-    managedIdPrefix: sndadpinfmid1401
+    managedIdPrefix: ${TEAM_MI_PREFIX}
     userAssignedIdentity:
       managedIdName: ffc-demo-services

@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-calculation-service
     namespace: ffc-demo
-    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-calculation-service:4.3.10 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service"}
+    image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-calculation-service:4.3.10 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service"}
     deployment:
       priorityClassName: default
     container:
@@ -19,13 +19,16 @@ spec:
       limitCpu: 40m
     containerConfigMap:
       name: 'ffc-demo-calculation-service-config-map'
-      configServiceUrl: 'https://sndadpinfac1401.azconfig.io'
+      configServiceUrl: 'https://${APPCONFIG_NAME}.azconfig.io'
+      auth:
+        workloadIdentity:
+          clientId: ${clientId}
       keyValues:
         labelFilter: 'ffc-demo-calculation-service'
         refresh:
           interval: 2m
           monitorKey: 'Sentinel'
           monitorLabel: 'ffc-demo-calculation-service'
-    managedIdPrefix: sndadpinfmid1401
+    managedIdPrefix: ${TEAM_MI_PREFIX}
     userAssignedIdentity:
       managedIdName: ffc-demo-services
