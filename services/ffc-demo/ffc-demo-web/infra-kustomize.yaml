@@ -8,12 +8,13 @@ spec:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  path: ./services/ffc-demo/ffc-demo-web/aso/${ENVIRONMENT}/${CLUSTER}
+  path: ./services/ffc-demo/ffc-demo-web/aso/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 5m
   timeout: 5m
   prune: true
   wait: true
   force: true
   postBuild:
-    substitute:
-      ACR_NAME: "${ACR_NAME}"
+    substituteFrom:
+      - kind: ConfigMap
+        name: platform-vars

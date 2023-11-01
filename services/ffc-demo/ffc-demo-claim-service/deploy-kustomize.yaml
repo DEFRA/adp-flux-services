@@ -11,12 +11,13 @@ spec:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  path: ./services/ffc-demo/ffc-demo-claim-service/deploy/${ENVIRONMENT}/${CLUSTER}
+  path: ./services/ffc-demo/ffc-demo-claim-service/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 5m
   timeout: 5m
   prune: true
   wait: true
   force: true
   postBuild:
-    substitute:
-      ACR_NAME: "${ACR_NAME}"
+    substituteFrom:
+      - kind: ConfigMap
+        name: platform-vars
