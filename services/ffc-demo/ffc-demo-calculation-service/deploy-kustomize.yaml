@@ -18,7 +18,8 @@ spec:
   wait: true
   force: true
   postBuild:
-    SERVICE_NAME: "ffc-demo-calculation-service"
+    substitute:
+      SERVICE_NAME: "ffc-demo-calculation-service"
     substituteFrom:
       - kind: ConfigMap
         name: platform-vars
