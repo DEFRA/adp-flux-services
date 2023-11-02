@@ -24,4 +24,4 @@ spec:
       - kind: ConfigMap
         name: platform-vars
       - kind: ConfigMap
-        name: ffc-demo-calculation-service-mi-identity-settings
+        name: ${TEAM_MI_PREFIX}-ffc-demo-calculation-service-mi-identity-settings
