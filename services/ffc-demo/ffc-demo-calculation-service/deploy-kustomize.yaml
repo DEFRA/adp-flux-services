@@ -25,4 +25,3 @@ spec:
         name: platform-vars
       - kind: ConfigMap
         name: ${TEAM_MI_PREFIX}-ffc-demo-calculation-service-mi-identity-settings
-        namespace: ${TEAM_NAMESPACE}
