@@ -22,6 +22,7 @@ spec:
       SERVICE_NAME: "ffc-demo-calculation-service"
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
     substituteFrom:
       - kind: ConfigMap
         name: platform-vars
