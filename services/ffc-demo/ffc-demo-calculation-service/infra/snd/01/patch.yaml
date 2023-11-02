@@ -10,6 +10,7 @@ spec:
     serviceBusNamespaceName: ${SHARED_SERVICEBUS_NAME}
     clusterOIDCIssuerUrl: ${CLUSTER_OIDC_ISSUER_URL}
     teamResourceGroupName: ${TEAM_RG}
+    fluxConfigNamespace: "flux-config"
     userAssignedIdentity:
       managedIdName: ${TEAM_MI_PREFIX}-${SERVICE_NAME}
       federatedCreds:
