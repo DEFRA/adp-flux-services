@@ -1,11 +1,11 @@
 apiVersion: authorization.azure.com/v1api20200801preview
 kind: RoleAssignment
 metadata:
-  name: ${SUBSCRIPTION_NAME}-${SERVICEBUS_RG}-${TEAM_NAMESPACE}-aso-sb-rbac
+  name: ${SUBSCRIPTION_NAME}-${SERVICES_INFRA_RG}-${TEAM_NAMESPACE}-aso-sb-rbac
   namespace: flux-config
 spec:
   owner:
-    armId: /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${SERVICEBUS_RG}/providers/Microsoft.ServiceBus/namespaces/${SHARED_SERVICEBUS_NAME}
+    armId: /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${SERVICES_INFRA_RG}/providers/Microsoft.ServiceBus/namespaces/${SHARED_SERVICEBUS_NAME}
   principalIdFromConfig:
     name: ${TEAM_NAMESPACE}-aso-mi-identity-settings
     key: principalId
