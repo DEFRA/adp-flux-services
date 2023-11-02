@@ -5,4 +5,5 @@ resources:
   - aso/userassigned-identity.yaml
   - aso/federated-credential.yaml
   - aso/resource-group.yaml
+  - aso/team-secret.yaml
   

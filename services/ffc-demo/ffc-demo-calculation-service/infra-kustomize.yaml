@@ -23,5 +23,3 @@ spec:
     substituteFrom:
       - kind: ConfigMap
         name: platform-vars
-      - kind: ConfigMap
-        name: ffc-demo-aso-mi-identity-settings
