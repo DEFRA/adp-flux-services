@@ -9,6 +9,8 @@ spec:
     name: ffc-demo-calculation-service
     namespace: ffc-demo
     image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-calculation-service:4.3.12 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service"}
+    serviceAccount:
+      name: ffc-demo-calculation-service
     deployment:
       priorityClassName: default
     container:

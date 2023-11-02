@@ -20,5 +20,3 @@ spec:
   targetNamespace: ffc-demo
   values:
     aadWorkloadIdentity: true
-    serviceAccount:
-      name: ffc-demo
