@@ -2,9 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - namespace.yaml
+  - aso/resource-group.yaml
   - aso/userassigned-identity.yaml
   - aso/federated-credential.yaml
-  - aso/resource-group.yaml
   - aso/role-assignments.yaml
   - aso/role-assignments-sb.yaml
   - aso/team-secret.yaml
