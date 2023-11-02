@@ -16,7 +16,7 @@ spec:
         - namespace: ${TEAM_NAMESPACE}
           serviceAccountName: ${SERVICE_NAME}
         - namespace: 'app-config-service'
-          serviceAccountName: 'az-appconfig-k8s-provide'
+          serviceAccountName: 'az-appconfig-k8s-provider'
       roleAssignments:  
         - name: calculation-queue-reader
           scope: '/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${SERVICES_INFRA_RG}/providers/Microsoft.ServiceBus/namespaces/${SHARED_SERVICEBUS_NAME}/queues/ffc-demo-calculation'
