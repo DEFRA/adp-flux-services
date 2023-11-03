@@ -11,7 +11,7 @@ spec:
         image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-payment-service-dbmigration:5.1.21 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-dbmigration"}
         env:
         - name: POSTGRES_HOST
-          value: "${POSTGRES_SERVER}.postgres.database.azure.com"
+          value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
         - name: SCHEMA_NAME
           value: "public"
         - name: POSTGRES_DB

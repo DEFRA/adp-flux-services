@@ -33,4 +33,4 @@ spec:
           monitorLabel: 'ffc-demo-calculation-service'
     managedIdPrefix: ${TEAM_MI_PREFIX}
     userAssignedIdentity:
-      managedIdName: ffc-demo-services
+      managedIdName: ffc-demo-calculation-service

@@ -9,6 +9,8 @@ spec:
     name: ffc-demo-payment-service
     namespace: ffc-demo
     image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-payment-service:4.2.9 # {"$imagepolicy": "flux-config:ffc-demo-payment-service"}
+    serviceAccount:
+      name: ffc-demo-payment-service
     deployment:
       priorityClassName: default
     container:
@@ -31,4 +33,4 @@ spec:
           monitorLabel: 'ffc-demo-payment-service'
     managedIdPrefix: ${TEAM_MI_PREFIX}
     userAssignedIdentity:
-      managedIdName: ffc-demo-services
+      managedIdName: ffc-demo-payment-service

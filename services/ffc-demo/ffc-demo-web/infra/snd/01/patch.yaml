@@ -8,3 +8,22 @@ spec:
     subscriptionId: ${SUBSCRIPTION_ID}
     serviceBusResourceGroupName: ${SERVICES_INFRA_RG}
     serviceBusNamespaceName: ${SHARED_SERVICEBUS_NAME}
+    clusterOIDCIssuerUrl: ${CLUSTER_OIDC_ISSUER_URL}
+    teamResourceGroupName: ${TEAM_RG}
+    userAssignedIdentity:
+      managedIdName: ${TEAM_MI_PREFIX}-${SERVICE_NAME}
+      federatedCreds:
+        - namespace: ${TEAM_NAMESPACE}
+          serviceAccountName: ${SERVICE_NAME}
+        - namespace: 'app-config-service'
+          serviceAccountName: 'az-appconfig-k8s-provider'
+      roleAssignments:  
+        - name: claim-queue-reader
+          scope: 
+          roleDefinitionId: 
+        - name: calculation-queue-contributor
+          scope: 
+          roleDefinitionId: 
+        - name: schedule-topic-contributor
+          scope: 
+          roleDefinitionId: 

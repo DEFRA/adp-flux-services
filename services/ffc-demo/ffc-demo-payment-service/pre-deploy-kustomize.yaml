@@ -19,4 +19,4 @@ spec:
   force: true
   postBuild:
     substitute:
-      POSTGRES_SERVER: "${POSTGRES_SERVER}"
+      SHARED_POSTGRES_SERVER_01: "${SHARED_POSTGRES_SERVER_01}"

@@ -9,6 +9,8 @@ spec:
     name: ffc-demo-web
     namespace: ffc-demo
     image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-web:4.32.3 # {"$imagepolicy": "flux-config:ffc-demo-web"}
+    serviceAccount:
+      name: ffc-demo-web
     labels:
       component: web
     container:
@@ -36,9 +38,12 @@ spec:
           monitorKey: 'Sentinel'
           monitorLabel: 'ffc-demo-web'
         keyVaults:
+          auth:
+            workloadIdentity:
+              clientId: ${clientId}
           secretName: ffc-demo-web-container-secret
           refresh:
             interval: 2m
     managedIdPrefix: ${TEAM_MI_PREFIX}
     userAssignedIdentity:
-      managedIdName: ffc-demo-services
+      managedIdName: ffc-demo-web

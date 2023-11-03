@@ -10,3 +10,25 @@ spec:
     serviceBusNamespaceName: ${SHARED_SERVICEBUS_NAME}
     postgresResourceGroupName: ${DATABASE_SERVER_RG}
     postgresServerName: ${SHARED_POSTGRES_SERVER_01}
+    clusterOIDCIssuerUrl: ${CLUSTER_OIDC_ISSUER_URL}
+    teamResourceGroupName: ${TEAM_RG}
+    userAssignedIdentity:
+      managedIdName: ${TEAM_MI_PREFIX}-${SERVICE_NAME}
+      federatedCreds:
+        - namespace: ${TEAM_NAMESPACE}
+          serviceAccountName: ${SERVICE_NAME}
+        - namespace: 'app-config-service'
+          serviceAccountName: 'az-appconfig-k8s-provider'
+      roleAssignments:  
+        - name: payment-topic-reader
+          scope: 
+          roleDefinitionId: 
+        - name: schedule-topic-reader
+          scope:
+          roleDefinitionId:
+        - name: schedule-topic-payment-subscription-reader
+          scope:
+          roleDefinitionId:
+        - name: payment-topic-payment-subscription-reader
+          scope:
+          roleDefinitionId:
