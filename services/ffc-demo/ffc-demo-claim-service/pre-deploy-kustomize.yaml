@@ -5,7 +5,7 @@ metadata:
   namespace: flux-config
 spec:
   dependsOn:
-    - name: ffc-demo-claim-service-aso
+    - name: ffc-demo-claim-service-infra
       namespace: flux-config
   sourceRef:
     kind: GitRepository

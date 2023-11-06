@@ -1,14 +1,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: ffc-demo-web-aso
+  name: ffc-demo-web-infra
   namespace: flux-config
 spec:
   sourceRef:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  path: ./services/ffc-demo/ffc-demo-web/aso/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  path: ./services/ffc-demo/ffc-demo-web/infra/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 5m
   timeout: 5m
   prune: true

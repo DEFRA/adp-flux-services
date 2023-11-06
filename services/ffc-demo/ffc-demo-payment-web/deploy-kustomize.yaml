@@ -8,6 +8,9 @@ spec:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
+  dependsOn:
+    - name: ffc-demo-payment-web-infra
+      namespace: flux-config
   path: ./services/ffc-demo/ffc-demo-payment-web/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 5m
   timeout: 5m
