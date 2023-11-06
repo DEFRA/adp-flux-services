@@ -10,17 +10,11 @@ spec:
     serviceBusNamespaceName: ${SHARED_SERVICEBUS_NAME}
     clusterOIDCIssuerUrl: ${CLUSTER_OIDC_ISSUER_URL}
     teamResourceGroupName: ${TEAM_RG}
+    teamMIPrefix: ${TEAM_MI_PREFIX}
+    serviceName: ${SERVICE_NAME}
     userAssignedIdentity:
-      managedIdName: ${TEAM_MI_PREFIX}-${SERVICE_NAME}
       federatedCreds:
         - namespace: ${TEAM_NAMESPACE}
           serviceAccountName: ${SERVICE_NAME}
         - namespace: 'app-config-service'
           serviceAccountName: 'az-appconfig-k8s-provider'
-      roleAssignments:  
-        - name: calculation-queue-reader
-          scope: '/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${SERVICES_INFRA_RG}/providers/Microsoft.ServiceBus/namespaces/${SHARED_SERVICEBUS_NAME}/queues/ffc-demo-calculation'
-          roleDefinitionId: '4f6d3b9b-027b-4f4c-9142-0e5a2a2247e0'
-        - name: payment-topic-contributor
-          scope:
-          roleDefinitionId:
