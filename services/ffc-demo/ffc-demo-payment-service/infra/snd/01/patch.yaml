@@ -26,9 +26,3 @@ spec:
         - name: schedule-topic-reader
           scope:
           roleDefinitionId:
-        - name: schedule-topic-payment-subscription-reader
-          scope:
-          roleDefinitionId:
-        - name: payment-topic-payment-subscription-reader
-          scope:
-          roleDefinitionId:
