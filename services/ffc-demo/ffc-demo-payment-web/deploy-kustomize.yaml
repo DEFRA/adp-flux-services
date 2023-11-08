@@ -26,5 +26,5 @@ spec:
     substituteFrom:
       - kind: ConfigMap
         name: platform-vars
-      - kind: ConfigMap
-        name: ${TEAM_MI_PREFIX}-ffc-demo-payment-web-mi-identity-settings
+      # - kind: ConfigMap
+      #   name: ${TEAM_MI_PREFIX}-ffc-demo-payment-web-mi-identity-settings
