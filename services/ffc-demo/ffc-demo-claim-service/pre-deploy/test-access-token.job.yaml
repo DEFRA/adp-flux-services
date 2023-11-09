@@ -13,5 +13,5 @@ spec:
       restartPolicy: Never
       containers:
       - name: test-access-token
-        image: sndadpinfcr1401p.azurecr.io/image/test-access-token:dev
+        image: sndadpinfcr1401p.azurecr.io/image/test-access-token:dev1
         imagePullPolicy: Always
