@@ -7,6 +7,9 @@ metadata:
     azure.workload.identity/use: "true"
 spec:
   template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
     spec:
       serviceAccountName: ffc-demo
       restartPolicy: Never

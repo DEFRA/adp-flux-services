@@ -13,7 +13,5 @@ spec:
       restartPolicy: Never
       containers:
       - name: test-access-token
-        # labels:
-        #   azure.workload.identity/use: "true"
         image: sndadpinfcr1401p.azurecr.io/image/test-access-token:dev
         imagePullPolicy: Always
