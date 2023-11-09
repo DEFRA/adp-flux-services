@@ -18,3 +18,5 @@ spec:
         env:
         - name: CLIENT_ID
           value: ${WORKLOAD_IDENTITY_ID}
+        - name: TENANT_ID
+          value: ${TENANT_ID}
