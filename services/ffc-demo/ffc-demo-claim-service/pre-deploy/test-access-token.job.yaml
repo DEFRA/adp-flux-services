@@ -13,5 +13,8 @@ spec:
       restartPolicy: Never
       containers:
       - name: test-access-token
-        image: sndadpinfcr1401p.azurecr.io/image/test-access-token:dev3
+        image: sndadpinfcr1401p.azurecr.io/image/test-access-token:dev4
         imagePullPolicy: Always
+        env:
+        - name: CLIENT_ID
+          value: ${WORKLOAD_IDENTITY_ID}
