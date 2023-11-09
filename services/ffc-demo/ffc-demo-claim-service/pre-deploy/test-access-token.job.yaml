@@ -3,14 +3,17 @@ kind: Job
 metadata:
   name: test-access-token
   namespace: ffc-demo
-  labels:
-    azure.workload.identity/use: "true"
 spec:
   template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
     spec:
       serviceAccountName: ffc-demo
       restartPolicy: Never
       containers:
       - name: test-access-token
+        # labels:
+        #   azure.workload.identity/use: "true"
         image: sndadpinfcr1401p.azurecr.io/image/test-access-token:dev
         imagePullPolicy: Always
