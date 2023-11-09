@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-access-token
+  namespace: ffc-demo
+  labels:
+    azure.workload.identity/use: "true"
+spec:
+  template:
+    spec:
+      serviceAccountName: ffc-demo
+      restartPolicy: Never
+      containers:
+      - name: test-access-token
+        image: sndadpinfcr1401p.azurecr.io/image/test-access-token:dev
+        imagePullPolicy: Always
