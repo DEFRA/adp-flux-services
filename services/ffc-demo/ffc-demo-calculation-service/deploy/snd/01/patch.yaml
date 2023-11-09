@@ -22,9 +22,6 @@ spec:
     containerConfigMap:
       name: 'ffc-demo-calculation-service-config-map'
       configServiceUrl: 'https://${APPCONFIG_NAME}.azconfig.io'
-      auth:
-        workloadIdentity:
-          clientId: ${clientId}
       keyValues:
         labelFilter: 'ffc-demo-calculation-service'
         refresh:

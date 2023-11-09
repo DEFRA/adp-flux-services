@@ -28,9 +28,6 @@ spec:
     containerConfigMap:
       name: 'ffc-demo-web-config-map'
       configServiceUrl: 'https://${APPCONFIG_NAME}.azconfig.io'
-      auth:
-        workloadIdentity:
-          clientId: ${clientId}
       keyValues:
         labelFilter: 'ffc-demo-web'
         refresh:
@@ -38,12 +35,11 @@ spec:
           monitorKey: 'Sentinel'
           monitorLabel: 'ffc-demo-web'
         keyVaults:
-          auth:
-            workloadIdentity:
-              clientId: ${clientId}
           secretName: ffc-demo-web-container-secret
           refresh:
             interval: 2m
+    containerSecret:
+      name: ffc-demo-web-container-secret
     managedIdPrefix: ${TEAM_MI_PREFIX}
     userAssignedIdentity:
       managedIdName: ffc-demo-web
