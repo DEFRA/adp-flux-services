@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: ffc-demo-payment-service-infra
-      version: "4.32.3" # {"$imagepolicy": "flux-config:ffc-demo-payment-service:tag"}
+      version: "4.2.12" # {"$imagepolicy": "flux-config:ffc-demo-payment-service:tag"}
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
@@ -19,4 +19,4 @@ spec:
   interval: 5m0s
   targetNamespace: ffc-demo
   values:
-    namespace: ffc-demo    
+    namespace: ffc-demo

@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-payment-service
     namespace: ffc-demo
-    image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-payment-service:4.2.9 # {"$imagepolicy": "flux-config:ffc-demo-payment-service"}
+    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-payment-service:4.2.12 # {"$imagepolicy": "flux-config:ffc-demo-payment-service"}
     serviceAccount:
       name: ffc-demo-payment-service
     deployment:
