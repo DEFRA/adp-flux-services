@@ -20,7 +20,7 @@ spec:
           serviceAccountName: ${SERVICE_NAME}
         - namespace: 'app-config-service'
           serviceAccountName: 'az-appconfig-k8s-provider'
-    commonTags:
+    commontags:
       Environment: ${ENVIRONMENT}
       ServiceCode: ${SERVICE_CODE}
       ServiceName: ${SERVICE_NAME}
