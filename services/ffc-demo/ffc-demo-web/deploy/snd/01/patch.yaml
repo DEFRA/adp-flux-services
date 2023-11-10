@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-web
     namespace: ffc-demo
-    image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-web:4.32.3 # {"$imagepolicy": "flux-config:ffc-demo-web"}
+    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-web:4.32.6 # {"$imagepolicy": "flux-config:ffc-demo-web"}
     serviceAccount:
       name: ffc-demo-web
     labels:
