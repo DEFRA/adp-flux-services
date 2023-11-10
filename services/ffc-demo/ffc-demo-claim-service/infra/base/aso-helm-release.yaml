@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: ffc-demo-claim-service-infra
-      version: "5.1.20" # {"$imagepolicy": "flux-config:ffc-demo-claim-service:tag"}
+      version: "5.1.23" # {"$imagepolicy": "flux-config:ffc-demo-claim-service:tag"}
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
