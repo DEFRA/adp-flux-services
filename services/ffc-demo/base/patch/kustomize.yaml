@@ -20,6 +20,7 @@ spec:
       TEAM_RG: "${SERVICES_INFRA_RG}-ffc-demo"
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
       APPCONFIG_NAME: ${APPCONFIG_NAME}
+      SERVICE_CODE: "FCP"
     substituteFrom:
       - kind: ConfigMap
         name: ffc-demo-aso-mi-identity-settings
