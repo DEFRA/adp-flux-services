@@ -18,3 +18,5 @@ spec:
         env:
         - name: CLIENT_ID
           value: ${WORKLOAD_IDENTITY_ID}
+        - name: OBJECT_ID
+          value: "3ad8c7f6-8291-4e2a-b115-b6c395da9266"
