@@ -42,4 +42,4 @@ spec:
       name: ffc-demo-web-container-secret
     managedIdPrefix: ${TEAM_MI_PREFIX}
     userAssignedIdentity:
-      managedIdName: ffc-demo-web
+      managedIdName: adp-ac-platform
