@@ -6,8 +6,6 @@ metadata:
 spec:
   owner:
     armId: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/${SERVICES_INFRA_RG}
-    group: resources.azure.com
-    kind: ResourceGroup
   principalIdFromConfig:
     name: ${TEAM_NAMESPACE}-aso-mi-identity-settings
     key: principalId
