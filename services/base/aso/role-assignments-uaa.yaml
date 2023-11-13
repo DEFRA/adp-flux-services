@@ -1,7 +1,7 @@
 apiVersion: authorization.azure.com/v1api20200801preview
 kind: RoleAssignment
 metadata:
-  name: ${SUBSCRIPTION_NAME}-${SERVICES_INFRA_RG}-aso-mi-uaa-rbac
+  name: ${SUBSCRIPTION_NAME}-${SERVICES_INFRA_RG}-aso-mi-uaa-rbac-1
   namespace: flux-config
 spec:
   owner:
