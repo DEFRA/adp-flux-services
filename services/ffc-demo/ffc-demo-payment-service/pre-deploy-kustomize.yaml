@@ -20,3 +20,6 @@ spec:
   postBuild:
     substitute:
       SHARED_POSTGRES_SERVER_01: "${SHARED_POSTGRES_SERVER_01}"
+    substituteFrom:
+      - kind: ConfigMap
+        name: platform-vars

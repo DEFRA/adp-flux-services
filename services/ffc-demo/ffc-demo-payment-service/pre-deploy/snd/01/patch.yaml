@@ -20,4 +20,4 @@ spec:
           value: "5432"
         envFrom:
         - secretRef:
-            name: ffc-demo-payment-service-dbmigration-secret
+            name: ffc-demo-payment-service-db-migration-secret

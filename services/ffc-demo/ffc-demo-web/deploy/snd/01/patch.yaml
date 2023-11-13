@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-web
     namespace: ffc-demo
-    image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-web:4.32.3 # {"$imagepolicy": "flux-config:ffc-demo-web"}
+    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-web:4.32.5 # {"$imagepolicy": "flux-config:ffc-demo-web"}
     serviceAccount:
       name: ffc-demo-web
     labels:
@@ -28,9 +28,6 @@ spec:
     containerConfigMap:
       name: 'ffc-demo-web-config-map'
       configServiceUrl: 'https://${APPCONFIG_NAME}.azconfig.io'
-      auth:
-        workloadIdentity:
-          clientId: ${clientId}
       keyValues:
         labelFilter: 'ffc-demo-web'
         refresh:
@@ -38,12 +35,11 @@ spec:
           monitorKey: 'Sentinel'
           monitorLabel: 'ffc-demo-web'
         keyVaults:
-          auth:
-            workloadIdentity:
-              clientId: ${clientId}
           secretName: ffc-demo-web-container-secret
           refresh:
             interval: 2m
+    containerSecret:
+      name: ffc-demo-web-container-secret
     managedIdPrefix: ${TEAM_MI_PREFIX}
     userAssignedIdentity:
       managedIdName: ffc-demo-web

@@ -5,6 +5,7 @@ metadata:
   namespace: flux-config
 spec:
   values:
+    namespace: ${TEAM_NAMESPACE}
     subscriptionId: ${SUBSCRIPTION_ID}
     serviceBusResourceGroupName: ${SERVICES_INFRA_RG}
     serviceBusNamespaceName: ${SHARED_SERVICEBUS_NAME}
@@ -20,3 +21,11 @@ spec:
           serviceAccountName: ${SERVICE_NAME}
         - namespace: 'app-config-service'
           serviceAccountName: 'az-appconfig-k8s-provider'
+    commontags:
+      Environment: ${ENVIRONMENT}
+      ServiceCode: ${SERVICE_CODE}
+      ServiceName: ${SERVICE_NAME}
+      ServiceType: "Dedicated"
+      kubernetes_cluster: ${CLUSTER_NAME}
+      kubernetes_namespace: ${TEAM_NAMESPACE}
+      kubernetes_label_ServiceCode: ${SERVICE_CODE}

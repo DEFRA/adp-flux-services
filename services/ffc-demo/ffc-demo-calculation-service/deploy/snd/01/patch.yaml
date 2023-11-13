@@ -8,7 +8,7 @@ spec:
     environment: production
     name: ffc-demo-calculation-service
     namespace: ffc-demo
-    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-calculation-service:4.3.17 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service"}
+    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-calculation-service:4.3.12 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service"}
     serviceAccount:
       name: ffc-demo-calculation-service
     deployment:
@@ -22,9 +22,6 @@ spec:
     containerConfigMap:
       name: 'ffc-demo-calculation-service-config-map'
       configServiceUrl: 'https://${APPCONFIG_NAME}.azconfig.io'
-      auth:
-        workloadIdentity:
-          clientId: ${clientId}
       keyValues:
         labelFilter: 'ffc-demo-calculation-service'
         refresh:

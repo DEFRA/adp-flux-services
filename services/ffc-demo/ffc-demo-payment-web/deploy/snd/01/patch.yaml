@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     environment: production
-    image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-payment-web:1.19.10 # {"$imagepolicy": "flux-config:ffc-demo-payment-web"}
+    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-payment-web:1.19.10 # {"$imagepolicy": "flux-config:ffc-demo-payment-web"}
     serviceAccount:
       name: ffc-demo-payment-web
     name: ffc-demo-payment-web
@@ -28,9 +28,6 @@ spec:
     containerConfigMap:
       name: 'ffc-demo-payment-web-config-map'
       configServiceUrl: 'https://${APPCONFIG_NAME}.azconfig.io'
-      auth:
-        workloadIdentity:
-          clientId: ${clientId}
       keyValues:
         labelFilter: 'ffc-demo-payment-web'
         refresh:
@@ -38,12 +35,11 @@ spec:
           monitorKey: 'Sentinel'
           monitorLabel: 'ffc-demo-payment-web'
         keyVaults:
-          auth:
-            workloadIdentity:
-              clientId: ${clientId}
           secretName: ffc-demo-payment-web-container-secret
           refresh:
             interval: 2m
+    containerSecret:
+      name: ffc-demo-payment-web-container-secret
     managedIdPrefix: ${TEAM_MI_PREFIX}
     userAssignedIdentity:
       managedIdName: ffc-demo-payment-web
