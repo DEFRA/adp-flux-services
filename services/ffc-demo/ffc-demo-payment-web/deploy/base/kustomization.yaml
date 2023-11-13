@@ -5,4 +5,4 @@ resources:
   - helm-release.yaml
 
 patches:
-  - path: ../../../base/workload-identity.yaml
+  - path: ../../../base/service-account.yaml
