@@ -16,11 +16,10 @@ spec:
       containers:
       - name: ffc-demo-claim-service-db-migration
         image: sndadpinfcr1401p.azurecr.io/image/ffc-demo-claim-service-migration:dev
-        command:
-          - sh
-          - -c
-          - "/scripts/migration/database-up"
-          # - "/scripts/migration/get-access-token"
+        # command:
+        #   - sh
+        #   - -c
+        #   - "/scripts/migration/database-up"
         imagePullPolicy: Always
         env:
         - name: POSTGRES_HOST
