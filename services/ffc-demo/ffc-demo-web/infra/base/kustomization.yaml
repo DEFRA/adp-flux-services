@@ -4,3 +4,5 @@ resources:
   - aso-helm-release.yaml
   - image-repository.yaml  
   - image-policy.yaml
+patches:
+  - path: ../../../base/workload-identity.yaml
