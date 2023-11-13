@@ -13,7 +13,7 @@ spec:
       namespace: flux-config
   path: ./services/ffc-demo/ffc-demo-payment-web/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 5m
-  timeout: 5m
+  timeout: 3m
   prune: true
   wait: true
   force: true
