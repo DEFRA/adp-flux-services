@@ -31,6 +31,8 @@ spec:
           value: "ffc-demo-claim"
         - name: POSTGRES_PORT
           value: "5432"
+        - name: SCHEMA_USERNAME
+          value: sndadpinfmi1401-ffc-demo-claim-service #{TEAM_MI_PREFIX}-${SERVICE_NAME}
         # envFrom:
         # - secretRef:
         #     name: ffc-demo-claim-service-db-migration-secret
