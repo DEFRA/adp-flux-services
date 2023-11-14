@@ -8,7 +8,7 @@ spec:
     kind: GitRepository
     name: services-repository
     namespace: config-cluster-flux
-  path: ./services/ffc-demo/ffc-demo-claim-service/pre-deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  path: ./services/ffc-demo/ffc-demo-claim-service/pre-deploy
   interval: 100m
   timeout: 5m
   prune: true
