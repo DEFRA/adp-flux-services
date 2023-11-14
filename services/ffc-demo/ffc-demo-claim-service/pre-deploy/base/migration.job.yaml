@@ -7,8 +7,11 @@ metadata:
     azure.workload.identity/use: "true"
 spec:
   template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
     spec:
-      serviceAccountName: ffc-demo
+      serviceAccountName: ${SERVICE_NAME}
       restartPolicy: Never
       containers:
       - name: ffc-demo-claim-service-dbmigration

@@ -20,6 +20,7 @@ spec:
   postBuild:
     substitute:
       SHARED_POSTGRES_SERVER_01: "${SHARED_POSTGRES_SERVER_01}"
+      SERVICE_NAME: "ffc-demo-payment-service"
     substituteFrom:
       - kind: ConfigMap
         name: platform-vars
