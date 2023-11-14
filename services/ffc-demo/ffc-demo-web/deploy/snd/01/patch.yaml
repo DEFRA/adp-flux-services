@@ -41,5 +41,5 @@ spec:
     containerSecret:
       name: ffc-demo-web-container-secret
     managedIdPrefix: ${TEAM_MI_PREFIX}
-    userAssignedIdentity:
+    workloadIdentity:
       managedIdName: ffc-demo-web

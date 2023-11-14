@@ -15,7 +15,7 @@ spec:
     serviceName: ${SERVICE_NAME}
     keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
     keyVaultName: SNDADPINFVT1401
-    userAssignedIdentity:
+    workloadIdentity:
       federatedCreds:
         - namespace: ${TEAM_NAMESPACE}
           serviceAccountName: ${SERVICE_NAME}
