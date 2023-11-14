@@ -20,14 +20,6 @@ spec:
       limitMemory: 60Mi
       limitCpu: 40m
     containerConfigMap:
-      name: 'ffc-demo-calculation-service-config-map'
-      configServiceUrl: 'https://${APPCONFIG_NAME}.azconfig.io'
-      keyValues:
-        labelFilter: 'ffc-demo-calculation-service'
-        refresh:
-          interval: 2m
-          monitorKey: 'Sentinel'
-          monitorLabel: 'ffc-demo-calculation-service'
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMI: ${APPCONFIG_MI_CLIENTID}
     managedIdPrefix: ${TEAM_MI_PREFIX}
-    userAssignedIdentity:
-      managedIdName: ffc-demo-calculation-service
