@@ -6,6 +6,7 @@ metadata:
 spec:
   values:
     namespace: ${TEAM_NAMESPACE}
+    teamName: ${TEAM_NAME}
     subscriptionId: ${SUBSCRIPTION_ID}
     serviceBusResourceGroupName: ${SERVICES_INFRA_RG}
     serviceBusNamespaceName: ${SHARED_SERVICEBUS_NAME}
