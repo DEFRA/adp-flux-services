@@ -22,6 +22,4 @@ spec:
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
-  valuesFrom:
-    - kind: ConfigMap
-      name: "${TEAM_MI_PREFIX}-ffc-demo-calculation-service-mi-identity-settings"                
+      serviceMIClientId: ${clientId}               
