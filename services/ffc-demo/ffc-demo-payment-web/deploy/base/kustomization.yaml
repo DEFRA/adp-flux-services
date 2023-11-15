@@ -3,6 +3,3 @@ kind: Kustomization
 resources:
   - ../../../../base/service-account.yaml
   - helm-release.yaml
-
-patches:
-  - path: ../../../base/service-account.yaml
