@@ -34,4 +34,4 @@ spec:
     valuesFrom:
       - kind: ConfigMap
         name: "my-config"
-        valuesKey: "key11"
+        valuesKey: "key1"
