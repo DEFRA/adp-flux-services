@@ -21,5 +21,7 @@ spec:
       limitCpu: 40m
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
-      configServiceMI: ${APPCONFIG_MI_CLIENTID}
-    managedIdPrefix: ${TEAM_MI_PREFIX}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+  valuesFrom:
+    - kind: ConfigMap
+      name: "${TEAM_MI_PREFIX}-ffc-demo-calculation-service-mi-identity-settings"                

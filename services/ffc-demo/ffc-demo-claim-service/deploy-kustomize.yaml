@@ -23,6 +23,7 @@ spec:
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
       APPCONFIG_NAME: ${APPCONFIG_NAME}
+      TEAM_MI_PREFIX: ${TEAM_MI_PREFIX}
     substituteFrom:
       - kind: ConfigMap
         name: platform-vars

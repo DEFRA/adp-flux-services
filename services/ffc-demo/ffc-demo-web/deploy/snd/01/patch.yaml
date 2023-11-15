@@ -26,20 +26,9 @@ spec:
     deployment:
       priorityClassName: default
     containerConfigMap:
-      name: 'ffc-demo-web-config-map'
-      configServiceUrl: 'https://${APPCONFIG_NAME}.azconfig.io'
-      keyValues:
-        labelFilter: 'ffc-demo-web'
-        refresh:
-          interval: 2m
-          monitorKey: 'Sentinel'
-          monitorLabel: 'ffc-demo-web'
-        keyVaults:
-          secretName: ffc-demo-web-container-secret
-          refresh:
-            interval: 2m
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
     containerSecret:
       name: ffc-demo-web-container-secret
-    managedIdPrefix: ${TEAM_MI_PREFIX}
     userAssignedIdentity:
       managedIdName: ffc-demo-web

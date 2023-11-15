@@ -27,7 +27,9 @@ spec:
       priorityClassName: default
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
-      configServiceMI: ${APPCONFIG_MI_CLIENTID}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
     containerSecret:
       name: ffc-demo-payment-web-container-secret
-    managedIdPrefix: ${TEAM_MI_PREFIX}
+  valuesFrom:
+    - kind: ConfigMap
+      name: "${TEAM_MI_PREFIX}-ffc-demo-payment-web-mi-identity-settings"
