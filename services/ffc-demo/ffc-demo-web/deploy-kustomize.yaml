@@ -27,4 +27,4 @@ spec:
       - kind: ConfigMap
         name: platform-vars
       - kind: ConfigMap
-        name: "fc-demo-web-mi-identity-settings"        
+        name: "sndadpinfmi1401-fc-demo-web-mi-identity-settings"        
