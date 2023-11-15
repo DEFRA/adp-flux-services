@@ -28,9 +28,7 @@ spec:
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
     containerSecret:
       name: ffc-demo-payment-web-container-secret
-  valuesFrom:
-    - kind: ConfigMap
-      name: "${TEAM_MI_PREFIX}-ffc-demo-payment-web-mi-identity-settings"
-      valuesKey: clientId
+    
