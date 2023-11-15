@@ -29,5 +29,3 @@ spec:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
       serviceMIClientId: ${clientId}
-    userAssignedIdentity:
-      managedIdName: ffc-demo-web

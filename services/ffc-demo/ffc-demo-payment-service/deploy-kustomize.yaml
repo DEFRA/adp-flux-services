@@ -28,4 +28,4 @@ spec:
       - kind: ConfigMap
         name: platform-vars
       - kind: ConfigMap
-        name: "ffc-demo-payment-service-mi-identity-settings"                
+        name: "sndadpinfmi1401-ffc-demo-payment-service-mi-identity-settings"                

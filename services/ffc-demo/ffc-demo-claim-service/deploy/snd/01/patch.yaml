@@ -22,5 +22,4 @@ spec:
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
-    userAssignedIdentity:
-      managedIdName: ffc-demo-claim-service
+      serviceMIClientId: ${clientId}
