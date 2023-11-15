@@ -29,7 +29,5 @@ spec:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
       serviceMIClientId: ${clientId}
-    containerSecret:
-      name: ffc-demo-web-container-secret
     userAssignedIdentity:
       managedIdName: ffc-demo-web

@@ -22,7 +22,5 @@ spec:
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
-    containerSecret:
-      name: ffc-demo-claim-service-container-secret
     userAssignedIdentity:
       managedIdName: ffc-demo-claim-service
