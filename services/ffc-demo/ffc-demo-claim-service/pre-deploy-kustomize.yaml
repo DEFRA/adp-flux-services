@@ -21,6 +21,10 @@ spec:
     substitute:
       SHARED_POSTGRES_SERVER_01: "${SHARED_POSTGRES_SERVER_01}"
       SERVICE_NAME: "ffc-demo-claim-service"
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
     substituteFrom:
       - kind: ConfigMap
         name: platform-vars
+      - kind: ConfigMap
+        name: "sndadpinfmi1401-ffc-demo-claim-service-mi-identity-settings"         
