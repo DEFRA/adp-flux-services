@@ -33,3 +33,4 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: "${TEAM_MI_PREFIX}-ffc-demo-payment-web-mi-identity-settings"
+      valuesKey: clientId
