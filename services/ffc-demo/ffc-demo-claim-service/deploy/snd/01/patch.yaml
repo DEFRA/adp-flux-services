@@ -35,5 +35,5 @@ spec:
     containerSecret:
       name: ffc-demo-claim-service-container-secret
     managedIdPrefix: ${TEAM_MI_PREFIX}
-    workloadIdentity:
+    userAssignedIdentity:
       managedIdName: ffc-demo-claim-service

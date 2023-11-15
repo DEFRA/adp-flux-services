@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     namespace: ${TEAM_NAMESPACE}
-    teamName: ${TEAM_NAME}
+    fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
     subscriptionId: ${SUBSCRIPTION_ID}
     serviceBusResourceGroupName: ${SERVICES_INFRA_RG}
     serviceBusNamespaceName: ${SHARED_SERVICEBUS_NAME}
@@ -18,18 +18,18 @@ spec:
     serviceName: ${SERVICE_NAME}
     keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
     keyVaultName: SNDADPINFVT1401
-    workloadIdentity:
+    userAssignedIdentity:
       federatedCreds:
         - namespace: ${TEAM_NAMESPACE}
           serviceAccountName: ${SERVICE_NAME}
         - namespace: 'app-config-service'
           serviceAccountName: 'az-appconfig-k8s-provider'
-    commontags:
-      Environment: ${ENVIRONMENT}
-      ServiceCode: ${SERVICE_CODE}
-      ServiceName: ${SERVICE_NAME}
-      ServiceType: "Dedicated"
+    commonTags:
+      environment: ${ENVIRONMENT}
+      serviceCode: ${SERVICE_CODE}
+      serviceName: ${SERVICE_NAME}
+      serviceType: "Dedicated"
       kubernetes_cluster: ${CLUSTER_NAME}
       kubernetes_namespace: ${TEAM_NAMESPACE}
-      kubernetes_label_ServiceCode: ${SERVICE_CODE}
+      kubernetes_label_serviceCode: ${SERVICE_CODE}
         

@@ -29,5 +29,5 @@ spec:
           monitorKey: 'Sentinel'
           monitorLabel: 'ffc-demo-payment-service'
     managedIdPrefix: ${TEAM_MI_PREFIX}
-    workloadIdentity:
+    userAssignedIdentity:
       managedIdName: ffc-demo-payment-service
