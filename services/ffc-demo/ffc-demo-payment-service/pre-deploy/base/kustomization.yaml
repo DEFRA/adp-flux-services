@@ -5,6 +5,3 @@ resources:
   - image-repository.yaml  
   - image-policy.yaml
   - migration.job.yaml
-
-patches:
-  - path: ../../../base/service-account.yaml
