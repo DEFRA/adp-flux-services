@@ -18,6 +18,3 @@ spec:
           value: "ffc-demo-claim"
         - name: POSTGRES_PORT
           value: "5432"
-        envFrom:
-        - secretRef:
-            name: ffc-demo-claim-service-db-migration-secret
