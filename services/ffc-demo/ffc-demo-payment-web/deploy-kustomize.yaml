@@ -1,7 +1,9 @@
+variables:
+  SERVICE_NAME: 'ffc-demo-payment-web'
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: ffc-demo-payment-web-deploy
+  name: $(SERVICE_NAME)-deploy
   namespace: flux-config
 spec:
   sourceRef:
@@ -9,9 +11,9 @@ spec:
     name: services-repository
     namespace: flux-config
   dependsOn:
-    - name: ffc-demo-payment-web-infra
+    - name: $(SERVICE_NAME)-infra
       namespace: flux-config
-  path: ./services/ffc-demo/ffc-demo-payment-web/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  path: ./services/ffc-demo/$(SERVICE_NAME)/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 5m
   timeout: 3m
   prune: true
@@ -19,7 +21,7 @@ spec:
   force: true
   postBuild:
     substitute:
-      SERVICE_NAME: "ffc-demo-payment-web"
+      SERVICE_NAME: "$(SERVICE_NAME)"
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
       APPCONFIG_NAME: ${APPCONFIG_NAME}
@@ -28,4 +30,4 @@ spec:
       - kind: ConfigMap
         name: platform-vars
       - kind: ConfigMap
-        name: "ffc-demo-payment-web-mi-identity-settings"
+        name: "$(SERVICE_NAME)-mi-identity-settings"
