@@ -1,23 +1,23 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: ffc-demo-claim-service-dbmigration
+  name: ffc-demo-payment-service-dbmigration
   namespace: ffc-demo
 spec:
   template:
     spec:
       containers:
-      - name: ffc-demo-claim-service-dbmigration
-        image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-claim-service-dbmigration:5.1.21 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-01"}
+      - name: ffc-demo-payment-service-dbmigration
+        image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-payment-service-dbmigration:5.1.21 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-snd-02"}
         env:
         - name: POSTGRES_HOST
           value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
         - name: SCHEMA_NAME
           value: "public"
         - name: POSTGRES_DB
-          value: "ffc-demo-claim"
+          value: "ffc-demo-payment"
         - name: POSTGRES_PORT
           value: "5432"
         envFrom:
         - secretRef:
-            name: ffc-demo-claim-service-db-migration-secret
+            name: ffc-demo-payment-service-db-migration-secret

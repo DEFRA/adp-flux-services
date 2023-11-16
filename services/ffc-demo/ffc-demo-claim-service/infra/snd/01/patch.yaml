@@ -4,6 +4,9 @@ metadata:
   name: ffc-demo-claim-service-infra
   namespace: flux-config
 spec:
+  chart:
+    spec:
+      version: "5.1.23" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}

@@ -11,7 +11,7 @@ spec:
     environment: production
     name: ffc-demo-calculation-service
     namespace: ffc-demo
-    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-calculation-service:4.3.12 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-snd-02"}
+    image: sndadpinfcr2401.azurecr.io/image/ffc-demo-calculation-service:4.3.12 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-snd-02"}
     serviceAccount:
       name: ffc-demo-calculation-service
     deployment:
