@@ -21,7 +21,7 @@ spec:
       limitCpu: 400m
     ingress:
       class: nginx
-      endpoint: ffc-demo
+      endpoint: ffc-demo-web
       server: snd1.adp.defra.gov.uk
     deployment:
       priorityClassName: default
