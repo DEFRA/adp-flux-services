@@ -1,7 +1,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
-  name: ffc-demo-web
+  name: ffc-demo-web-snd-03
   namespace: flux-config
 spec:
   imageRepositoryRef:
