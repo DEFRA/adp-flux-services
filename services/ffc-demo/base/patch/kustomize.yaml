@@ -15,7 +15,6 @@ spec:
   postBuild:
     substitute:
       TEAM_NAMESPACE: "ffc-demo"
-      WORKLOAD_IDENTITY_ID: "a46a3dca-bf0e-4b30-ab10-96a144bee9a6"
       TEAM_NAME: "ffc-demo-team"
       TEAM_RG: "${SERVICES_INFRA_RG}-ffc-demo"
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}

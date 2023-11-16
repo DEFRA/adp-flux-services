@@ -4,6 +4,9 @@ metadata:
   name: ffc-demo-calculation-service-infra
   namespace: flux-config
 spec:
+  chart:
+    spec:
+      version: "4.3.12" # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-snd-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}

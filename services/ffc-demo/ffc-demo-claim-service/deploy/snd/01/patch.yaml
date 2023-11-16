@@ -4,11 +4,14 @@ metadata:
   name: ffc-demo-claim-service
   namespace: flux-config
 spec:
+  chart:
+    spec:
+      version: "5.1.23" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-01:tag"}
   values:
     environment: production
     name: ffc-demo-claim-service
     namespace: ffc-demo
-    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-claim-service:5.1.23 # {"$imagepolicy": "flux-config:ffc-demo-claim-service"}
+    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-claim-service:5.1.23 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-01"}
     serviceAccount:
       name: ffc-demo-claim-service
     deployment:
