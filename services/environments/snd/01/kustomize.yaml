@@ -15,7 +15,7 @@ spec:
   postBuild:
     substituteFrom:
       - kind: ConfigMap
-        name: platform-vars
+        name: adp-platform-vars
     substitute:
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
       APPCONFIG_NAME: ${APPCONFIG_NAME}

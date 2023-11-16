@@ -23,4 +23,4 @@ spec:
       SERVICE_CODE: ${SERVICE_CODE}
     substituteFrom:
       - kind: ConfigMap
-        name: platform-vars
+        name: adp-platform-vars

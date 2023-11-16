@@ -26,6 +26,6 @@ spec:
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
     substituteFrom:
       - kind: ConfigMap
-        name: platform-vars
+        name: adp-platform-vars
       - kind: ConfigMap
-        name: "sndadpinfmi1401-ffc-demo-payment-service-mi-identity-settings"                
+        name: "ffc-demo-payment-service-mi-credential" 

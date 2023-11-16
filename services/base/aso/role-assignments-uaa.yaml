@@ -7,7 +7,7 @@ spec:
   owner:
     armId: /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${SERVICES_INFRA_RG}
   principalIdFromConfig:
-    name: ${TEAM_NAMESPACE}-aso-mi-identity-settings
+    name: ${TEAM_NAMESPACE}-mi-credential
     key: principalId
   roleDefinitionReference:
         armId: /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/18d7d88d-d35e-4fb5-a5c3-7773c20a72d9 # User Access Administrator
@@ -23,7 +23,7 @@ spec:
     group: resources.azure.com
     kind: ResourceGroup
   principalIdFromConfig:
-    name: ${TEAM_NAMESPACE}-aso-mi-identity-settings
+    name: ${TEAM_NAMESPACE}-mi-credential
     key: principalId
   roleDefinitionReference:
     armId: /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/18d7d88d-d35e-4fb5-a5c3-7773c20a72d9 # User Access Administrator

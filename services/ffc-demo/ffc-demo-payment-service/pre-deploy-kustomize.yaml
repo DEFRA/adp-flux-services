@@ -23,6 +23,6 @@ spec:
       SERVICE_NAME: "ffc-demo-payment-service"
     substituteFrom:
       - kind: ConfigMap
-        name: platform-vars
+        name: adp-platform-vars
       - kind: ConfigMap
-        name: "sndadpinfmi1401-ffc-demo-payment-service-mi-identity-settings"                 
+        name: "ffc-demo-payment-service-mi-credential"                 

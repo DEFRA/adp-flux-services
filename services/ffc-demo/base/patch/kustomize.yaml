@@ -23,7 +23,7 @@ spec:
       SERVICE_CODE: "FCP"
     substituteFrom:
       - kind: ConfigMap
-        name: ffc-demo-aso-mi-identity-settings
+        name: ffc-demo-mi-credential
         optional: true
       - kind: ConfigMap
-        name: platform-vars
+        name: adp-platform-vars

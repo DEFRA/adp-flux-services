@@ -10,8 +10,8 @@ spec:
   operatorSpec:
     configMaps:
       principalId:
-        name: ${TEAM_NAMESPACE}-aso-mi-identity-settings
+        name: ${TEAM_NAMESPACE}-mi-credential
         key: principalId
       clientId:
-        name: ${TEAM_NAMESPACE}-aso-mi-identity-settings
+        name: ${TEAM_NAMESPACE}-mi-credential
         key: clientId

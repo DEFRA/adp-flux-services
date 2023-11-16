@@ -7,7 +7,7 @@ spec:
   owner:
     armId: /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${DATABASE_SERVER_RG}/providers/Microsoft.DBforPostgreSQL/flexibleServers/${SHARED_POSTGRES_SERVER_01}
   principalIdFromConfig:
-    name: ${TEAM_NAMESPACE}-aso-mi-identity-settings
+    name: ${TEAM_NAMESPACE}-mi-credential
     key: principalId
   roleDefinitionReference:
     armId: /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c # Contributor

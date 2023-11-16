@@ -25,6 +25,6 @@ spec:
       TEAM_NAME: ${TEAM_NAME}
     substituteFrom:
       - kind: ConfigMap
-        name: platform-vars
+        name: adp-platform-vars
       - kind: ConfigMap
-        name: "sndadpinfmi1401-ffc-demo-claim-service-mi-identity-settings"         
+        name: "ffc-demo-claim-service-mi-credential"
