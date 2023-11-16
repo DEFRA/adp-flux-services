@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-demo-calculation-service
+  namespace: flux-config
+spec:
+  values:
+    environment: production
+    name: ffc-demo-calculation-service
+    namespace: ffc-demo
+    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-calculation-service:4.3.12 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service"}
+    serviceAccount:
+      name: ffc-demo-calculation-service
+    deployment:
+      priorityClassName: default
+    container:
+      imagePullPolicy: Always
+      requestMemory: 5Mi
+      requestCpu: 5m
+      limitMemory: 60Mi
+      limitCpu: 40m
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}               

@@ -5,12 +5,5 @@ resources:
   - ../../ffc-demo-web
   - ../../ffc-demo-claim-service
   - ../../ffc-demo-calculation-service
-  - ../../ffc-demo-payment-service
+  #- ../../ffc-demo-payment-service
   - ../../ffc-demo-payment-web
-
-patches:
-  - path: ../../ffc-demo-web/snd.yaml
-  - path: ../../ffc-demo-claim-service/snd.yaml  
-  - path: ../../ffc-demo-calculation-service/snd.yaml 
-  - path: ../../ffc-demo-payment-service/snd.yaml 
-  - path: ../../ffc-demo-payment-web/snd.yaml 

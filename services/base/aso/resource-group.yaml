@@ -1,7 +1,7 @@
 apiVersion: resources.azure.com/v1api20200601
 kind: ResourceGroup
 metadata:
-  name: ${TEAM_RG}-${TEAM_NAMESPACE}
+  name: ${TEAM_RG}
   namespace: flux-config
   annotations:
     serviceoperator.azure.com/reconcile-policy: detach-on-delete
