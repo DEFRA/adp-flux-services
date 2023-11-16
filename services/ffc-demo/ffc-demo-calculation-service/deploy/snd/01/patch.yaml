@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      version: "4.32.5" # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-snd-01:tag"}
+      version: "4.3.12" # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-snd-01:tag"}
   values:
     environment: production
     name: ffc-demo-calculation-service
@@ -25,4 +25,4 @@ spec:
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
-      serviceMIClientId: ${clientId}               
+      serviceMIClientId: ${clientId}
