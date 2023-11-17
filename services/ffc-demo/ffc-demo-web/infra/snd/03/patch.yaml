@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      version: "4.32.6" # {"$imagepolicy": "flux-config:ffc-demo-web-snd-03:tag"}
+      version: "4.32.8" # {"$imagepolicy": "flux-config:ffc-demo-web-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
