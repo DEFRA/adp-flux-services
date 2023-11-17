@@ -15,8 +15,4 @@ spec:
       restartPolicy: Never
       containers:
       - name: ffc-demo-claim-service-dbmigration
-        command:
-          - sh
-          - -c
-          - "/scripts/migration/database-up"
         imagePullPolicy: Always
