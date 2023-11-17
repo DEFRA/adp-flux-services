@@ -18,6 +18,3 @@ spec:
           value: "ffc-demo-payment"
         - name: POSTGRES_PORT
           value: "5432"
-        envFrom:
-        - secretRef:
-            name: ffc-demo-payment-service-db-migration-secret
