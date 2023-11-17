@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      version: "5.1.23" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-03:tag"}
+      version: "5.1.24" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -35,4 +35,3 @@ spec:
       kubernetes_cluster: ${CLUSTER_NAME}
       kubernetes_namespace: ${TEAM_NAMESPACE}
       kubernetes_label_serviceCode: ${SERVICE_CODE}
-        
