@@ -25,7 +25,7 @@ spec:
     ingress:
       class: nginx
       endpoint: ffc-demo-web
-      server: snd1.adp.defra.gov.uk
+      server: snd3.adp.defra.gov.uk
     deployment:
       priorityClassName: default
     containerConfigMap:
