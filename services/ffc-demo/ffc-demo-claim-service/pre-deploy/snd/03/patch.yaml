@@ -8,16 +8,16 @@ spec:
     spec:
       containers:
       - name: ffc-demo-claim-service-dbmigration
-        image: sndadpinfcr3401.azurecr.io/image/ffc-demo-claim-service-dbmigration:5.1.27 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-03"}
+        image: sndadpinfcr3401.azurecr.io/image/ffc-demo-claim-service-dbmigration:5.1.24 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-03"}
         env:
-          - name: POSTGRES_HOST
-            value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
-          - name: SCHEMA_NAME
-            value: "public"
-          - name: POSTGRES_DB
-            value: "ffc-demo-claim"
-          - name: POSTGRES_PORT
-            value: "5432"
+        - name: POSTGRES_HOST
+          value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
+        - name: SCHEMA_NAME
+          value: "public"
+        - name: POSTGRES_DB
+          value: "ffc-demo-claim"
+        - name: POSTGRES_PORT
+          value: "5432"
         envFrom:
-          - secretRef:
-              name: ffc-demo-claim-service-db-migration-secret
+        - secretRef:
+            name: ffc-demo-claim-service-db-migration-secret
