@@ -13,7 +13,7 @@ spec:
     namespace: flux-config
   path: ./services/ffc-demo/ffc-demo-payment-service/pre-deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 5m
-  timeout: 5m
+  timeout: 3m
   prune: true
   wait: true
   force: true
@@ -21,6 +21,8 @@ spec:
     substitute:
       SHARED_POSTGRES_SERVER_01: "${SHARED_POSTGRES_SERVER_01}"
       SERVICE_NAME: "ffc-demo-payment-service"
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
     substituteFrom:
       - kind: ConfigMap
         name: adp-platform-vars
