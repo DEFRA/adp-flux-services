@@ -10,4 +10,4 @@ spec:
     name: ${TEAM_NAMESPACE}-mi-credential
     key: principalId
   roleDefinitionReference:
-    armId: /subscriptions/${SUBSCRIPTION_ID}/providers/Microsoft.Authorization/roleDefinitions/09192b33-5196-585c-8485-1adbb5d57484 # DEFRA ADP ASO Service Bus Owner
+    armId: /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/09192b33-5196-585c-8485-1adbb5d57484
