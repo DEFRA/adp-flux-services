@@ -10,4 +10,4 @@ spec:
     name: ${TEAM_NAMESPACE}-mi-credential
     key: principalId
   roleDefinitionReference:
-    armId: /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c # Contributor
+    armId: /subscriptions/${SUBSCRIPTION_ID}/providers/Microsoft.Authorization/roleDefinitions/3fb74f7f-426d-5aaf-8a48-f1dd2b3e8585 # DEFRA ADP ASO PostgreSql Database Owner
