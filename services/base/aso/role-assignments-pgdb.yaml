@@ -10,4 +10,4 @@ spec:
     name: ${TEAM_NAMESPACE}-mi-credential
     key: principalId
   roleDefinitionReference:
-    armId: /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/${POSTGRE_DATABASE_WRITER_ROLE_DEFINITION_ID}
+    armId: /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/bee2dd9e-e80b-5029-9730-ca7619a7b244
