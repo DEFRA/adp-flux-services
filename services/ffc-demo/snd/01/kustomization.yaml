@@ -3,7 +3,7 @@ kind: Kustomization
 resources:             
   - ../../base
   - ../../ffc-demo-web
-  #- ../../ffc-demo-claim-service
-  #- ../../ffc-demo-calculation-service
-  #- ../../ffc-demo-payment-service
-  #- ../../ffc-demo-payment-web
+  - ../../ffc-demo-claim-service
+  - ../../ffc-demo-calculation-service
+  - ../../ffc-demo-payment-service
+  - ../../ffc-demo-payment-web
