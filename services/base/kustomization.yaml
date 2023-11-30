@@ -6,7 +6,6 @@ resources:
   - aso/userassigned-identity.yaml
   - aso/federated-credential.yaml
   - aso/role-assignments.yaml
-  - aso/role-assignments-uaa.yaml
   - aso/role-assignments-sb.yaml
   - aso/role-assignments-pgdb.yaml
   - aso/team-secret.yaml

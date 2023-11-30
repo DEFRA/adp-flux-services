@@ -19,5 +19,7 @@ spec:
     substitute:
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
       APPCONFIG_NAME: ${APPCONFIG_NAME}
+
+
       
 
