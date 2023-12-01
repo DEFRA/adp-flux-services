@@ -18,7 +18,7 @@ spec:
     teamMIPrefix: ${TEAM_MI_PREFIX}
     serviceName: ${SERVICE_NAME}
     keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
-    keyVaultName: SNDADPINFVT1401
+    keyVaultName: DEVADPINFVT1401
     userAssignedIdentity:
       federatedCreds:
         - namespace: ${TEAM_NAMESPACE}
