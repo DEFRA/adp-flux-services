@@ -7,10 +7,10 @@ spec:
   chart:
     spec:
       chart: ffc-demo-payment-web
-      version: "1.19.11" # {"$imagepolicy": "flux-config:ffc-demo-payment-web-snd-01:tag"}
+      version: "1.19.12" # {"$imagepolicy": "flux-config:ffc-demo-payment-web-snd-01:tag"}
   values:
     environment: production
-    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-payment-web:1.19.11 # {"$imagepolicy": "flux-config:ffc-demo-payment-web-snd-01"}
+    image: sndadpinfcr1401.azurecr.io/image/ffc-demo-payment-web:1.19.12 # {"$imagepolicy": "flux-config:ffc-demo-payment-web-snd-01"}
     serviceAccount:
       name: ffc-demo-payment-web
     name: ffc-demo-payment-web
