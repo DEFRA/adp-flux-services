@@ -1,0 +1,28 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-demo-claim-service
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: "5.1.25" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-tst-01:tag"}
+  values:
+    environment: production
+    name: ffc-demo-claim-service
+    namespace: ffc-demo
+    image: tstadpinfcr1401.azurecr.io/image/ffc-demo-claim-service:5.1.25 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-tst-01"}
+    serviceAccount:
+      name: ffc-demo-claim-service
+    deployment:
+      priorityClassName: default
+    container:
+      imagePullPolicy: Always
+      requestMemory: 10Mi
+      requestCpu: 10m
+      limitMemory: 200Mi
+      limitCpu: 200m
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
