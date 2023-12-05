@@ -28,7 +28,7 @@ function Invoke-PSQLScript {
         Write-Debug "${functionName}:begin:Path=$Path"
         Write-Debug "${functionName}:begin:WorkingDirectory=$WorkingDirectory"
 
-        [System.IO.DirectoryInfo]$moduleDir = Join-Path -Path $WorkingDirectory -ChildPath "scripts/modules/ps-helpers"
+        [System.IO.DirectoryInfo]$moduleDir = Join-Path -Path $WorkingDirectory -ChildPath "common/scripts/modules/ps-helpers"
     Write-Debug "${functionName}:moduleDir.FullName=$($moduleDir.FullName)"
     Import-Module $moduleDir.FullName -Force
 
