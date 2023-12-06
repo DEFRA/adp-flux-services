@@ -22,7 +22,7 @@ pr:
       - main
 
 pool:
-  name: 'DEFRA-ADP-SND1-ubuntu2204'
+  vmImage: 'ubuntu-latest'
 
 resources:
   repositories:
