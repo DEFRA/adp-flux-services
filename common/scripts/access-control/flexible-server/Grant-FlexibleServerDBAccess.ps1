@@ -41,10 +41,6 @@ Write-Debug "${functionName}:PostgresHost:$PostgresHost"
 Write-Debug "${functionName}:PostgresDatabase:$PostgresDatabase"
 Write-Debug "${functionName}:ServiceMIName:$ServiceMIName"
 Write-Debug "${functionName}:TeamMIName:$TeamMIName"
-Write-Debug "${functionName}:TeamMIClientId=$TeamMIClientId"
-Write-Debug "${functionName}:TeamMIFederatedTokenFile=$TeamMIFederatedTokenFile"
-Write-Debug "${functionName}:TeamMITenantId=$TeamMITenantId"
-Write-Debug "${functionName}:TeamMISubscriptionId=$TeamMISubscriptionId"
 Write-Debug "${functionName}:SubscriptionName=$SubscriptionName"
 Write-Debug "${functionName}:WorkingDirectory=$WorkingDirectory"
 
@@ -80,12 +76,12 @@ try {
     [string]$command = Get-SQLScriptToGrantPermissions
     Write-Debug "${functionName}:command=$command"
     
-    [System.IO.FileInfo]$tempFile = [System.IO.Path]::GetTempFileName()
-    [string]$content = Set-Content -Path $tempFile.FullName -Value $command -PassThru -Force
-    Write-Debug "${functionName}:$($tempFile.FullName)=$content"
+    [System.IO.FileInfo]$assignPermissionsTempFile = [System.IO.Path]::GetTempFileName()
+    [string]$content = Set-Content -Path $assignPermissionsTempFile.FullName -Value $command -PassThru -Force
+    Write-Debug "${functionName}:$($assignPermissionsTempFile.FullName)=$content"
     
     Write-Host "Granting permissions to ${ServiceMIName}"
-    $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $PostgresDatabase -PostgresUsername $TeamMIName -Path $tempFile.FullName
+    $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $PostgresDatabase -PostgresUsername $TeamMIName -Path $assignPermissionsTempFile.FullName
     Write-Host "Granted Access to ${PostgresHost}"
 
     # Successful exit
@@ -97,7 +93,7 @@ catch {
     throw $_.Exception
 }
 finally {
-    Remove-Item -Path $tempFile.FullName -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path $assignPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
 
     [DateTime]$endTime = [DateTime]::UtcNow
     [Timespan]$duration = $endTime.Subtract($startTime)

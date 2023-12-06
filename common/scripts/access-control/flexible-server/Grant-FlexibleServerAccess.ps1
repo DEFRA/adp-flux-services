@@ -43,10 +43,6 @@ Write-Debug "${functionName}:PostgresDatabase:$PostgresDatabase"
 Write-Debug "${functionName}:ServiceMIName:$ServiceMIName"
 Write-Debug "${functionName}:TeamMIName:$TeamMIName"
 Write-Debug "${functionName}:PlatformMIName:$PlatformMIName"
-Write-Debug "${functionName}:PlatformMIClientId=$PlatformMIClientId"
-Write-Debug "${functionName}:PlatformMIFederatedTokenFile=$PlatformMIFederatedTokenFile"
-Write-Debug "${functionName}:PlatformMITenantId=$PlatformMITenantId"
-Write-Debug "${functionName}:PlatformMISubscriptionId=$PlatformMISubscriptionId"
 Write-Debug "${functionName}:SubscriptionName=$SubscriptionName"
 Write-Debug "${functionName}:WorkingDirectory=$WorkingDirectory"
 
@@ -109,23 +105,23 @@ try {
     [string]$command = Get-SQLScriptToCreatePrincipal
     Write-Debug "${functionName}:command=$command"
     
-    [System.IO.FileInfo]$tempFile = [System.IO.Path]::GetTempFileName()
-    [string]$content = Set-Content -Path $tempFile.FullName -Value $command -PassThru -Force
-    Write-Debug "${functionName}:$($tempFile.FullName)=$content"
+    [System.IO.FileInfo]$createPrincipalTempFile = [System.IO.Path]::GetTempFileName()
+    [string]$content = Set-Content -Path $createPrincipalTempFile.FullName -Value $command -PassThru -Force
+    Write-Debug "${functionName}:$($createPrincipalTempFile.FullName)=$content"
 
     Write-Host "Creating Principal in ${PostgresHost} and Granting connect permissions"
-    $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase "postgres" -PostgresUsername $PlatformMIName -Path $tempFile.FullName
+    $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase "postgres" -PostgresUsername $PlatformMIName -Path $createPrincipalTempFile.FullName
     Write-Host "Granted Access to ${PostgresHost}"
 
     [string]$command = Get-SQLScriptToGrantAllPermissions
     Write-Debug "${functionName}:command=$command"
     
-    [System.IO.FileInfo]$tempFile1 = [System.IO.Path]::GetTempFileName()
-    [string]$content = Set-Content -Path $tempFile1.FullName -Value $command -PassThru -Force
-    Write-Debug "${functionName}:$($tempFile1.FullName)=$content"
+    [System.IO.FileInfo]$assignPermissionsTempFile = [System.IO.Path]::GetTempFileName()
+    [string]$content = Set-Content -Path $assignPermissionsTempFile.FullName -Value $command -PassThru -Force
+    Write-Debug "${functionName}:$($assignPermissionsTempFile.FullName)=$content"
 
     Write-Host "Granting permissions to ${TeamMIName}"
-    $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $PostgresDatabase -PostgresUsername $PlatformMIName -Path $tempFile1.FullName
+    $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $PostgresDatabase -PostgresUsername $PlatformMIName -Path $assignPermissionsTempFile.FullName
     Write-Host "Granted Access to ${TeamMIName}"
 
     # Successful exit
@@ -137,8 +133,8 @@ catch {
     throw $_.Exception
 }
 finally {
-    Remove-Item -Path $tempFile.FullName -Force -ErrorAction SilentlyContinue
-    Remove-Item -Path $tempFile1.FullName -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path $createPrincipalTempFile.FullName -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path $assignPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
 
     [DateTime]$endTime = [DateTime]::UtcNow
     [Timespan]$duration = $endTime.Subtract($startTime)
