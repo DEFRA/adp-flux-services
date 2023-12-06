@@ -1,0 +1,44 @@
+parameters:
+  - name: publishFromFeature
+    displayName: Publish from feature branch
+    type: boolean
+    default: false
+
+trigger:
+  batch: true
+  branches:
+    include:
+      - 'main'
+  paths:
+    include:
+      - common/dockerfile
+    exclude:
+      - services
+      - common/scripts
+
+pr:
+  branches:
+    include:  
+      - main
+
+pool:
+  name: 'DEFRA-ADP-SND1-ubuntu2204'
+
+resources:
+  repositories:
+    - repository: DEFRA-ADPPipelineCommon
+      name: DEFRA/adp-pipeline-common
+      endpoint: DEFRA
+      type: github
+      ref: refs/heads/jk/pg-db-access
+
+extends:
+  template: /pipelines/common-docker-image-publish.yaml@DEFRA-ADPPipelineCommon 
+  parameters:
+    sharedAcrConfig:
+      name: 'ssvadpinfcr3401'
+      serviceConnection: 'AZD-ADP-SSV3'
+    dockerImageName: 'powershell-executor'
+    dockerImageVersion: $(Build.BuildId)
+    dockerFilePath: 'common/dockerfile/powershell-executor.Dockerfile'
+    publishFromFeature: ${{ parameters.publishFromFeature }}
