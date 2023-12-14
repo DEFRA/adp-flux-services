@@ -1,0 +1,34 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-ffd-frontent-poc
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-ffd-frontent-poc-snd-2:tag"}
+  values:
+    environment: production
+    name: ffc-ffd-frontent-poc
+    namespace: ffc-ffd
+    image: sndadpinfcr2401.azurecr.io/image/ffc-ffd-frontent-poc:0.1.0 # {"$imagepolicy": "flux-config:ffc-ffd-frontent-poc-snd-02"}
+    serviceAccount:
+      name: ffc-ffd-frontent-poc
+    labels:
+      component: web
+    container:
+      imagePullPolicy: Always
+      requestMemory: 50Mi
+      requestCpu: 50m
+      limitMemory: 200Mi
+      limitCpu: 400m
+    ingress:
+      class: nginx
+      endpoint: ffc-ffd-frontent-poc
+      server: snd1.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}

@@ -1,0 +1,11 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: ffc-ffd-frontent-poc-snd-02
+  namespace: flux-config
+spec:
+  imageRepositoryRef:
+    name: ffc-ffd-frontent-poc
+  policy:
+    semver:
+      range: '>=0.1.0'
