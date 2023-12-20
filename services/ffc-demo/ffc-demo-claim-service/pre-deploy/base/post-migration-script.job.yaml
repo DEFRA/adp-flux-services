@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: ffc-demo-claim-service-dbmigration
+  name: ffc-demo-claim-service-post-dbmigration
   namespace: ffc-demo
   labels:
     azure.workload.identity/use: "true"
@@ -11,8 +11,8 @@ spec:
       labels:
         azure.workload.identity/use: "true"
     spec:
-      serviceAccountName: ${TEAM_SERVICE_NAME}
+      serviceAccountName: ${PLATFORM_DB_ADMIN}
       restartPolicy: Never
       containers:
-      - name: ffc-demo-claim-service-dbmigration
+      - name: ffc-demo-claim-service-post-dbmigration
         imagePullPolicy: Always
