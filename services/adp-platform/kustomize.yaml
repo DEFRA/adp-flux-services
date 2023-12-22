@@ -16,6 +16,7 @@ spec:
     substitute:
       TEAM_NAME: "adp-platform-team"
       TEAM_NAMESPACE: "adp-platform"
+      TEAM_RG: "${DATABASE_SERVER_RG}"
       PLATFORM_DB_ADMIN: "adp-platform-db-aad-admin"
     substituteFrom:
       - kind: ConfigMap
