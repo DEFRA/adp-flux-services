@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: adp-platform-base
+  name: adp-platform-aso-credential
   namespace: flux-config
 spec:
   sourceRef:
@@ -11,12 +11,12 @@ spec:
   interval: 5m
   timeout: 3m
   prune: true
-  path: ./services/adp-platform
+  path: ./services/adp-platform/aso-credential
   postBuild:
     substitute:
-      TEAM_NAME: "adp-platform-team"
-      TEAM_NAMESPACE: "adp-platform"
-      PLATFORM_DB_ADMIN: "adp-platform-db-aad-admin"
+      TEAM_NAME: ${TEAM_NAME}
+      TEAM_NAMESPACE: "flux-config"
+      PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
     substituteFrom:
       - kind: ConfigMap
         name: adp-platform-mi-credential

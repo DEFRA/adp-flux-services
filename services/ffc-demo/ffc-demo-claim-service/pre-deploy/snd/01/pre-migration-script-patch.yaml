@@ -2,21 +2,25 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: ffc-demo-claim-service-pre-dbmigration
-  namespace: ffc-demo
+  namespace: flux-config
 spec:
   template:
     spec:
       containers:
       - name: ffc-demo-claim-service-pre-dbmigration
-        image: sndadpinfcr1401.azurecr.io/image/ffc-demo-claim-service-dbmigration:5.1.27 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-01"}
+        image: ssvadpinfcr3401.azurecr.io/image/powershell-executor:101 # {"$imagepolicy": "flux-config:powershell-executor"}
         env:
         - name: POSTGRES_HOST
           value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
-        - name: SCHEMA_NAME
-          value: "public"
-        - name: POSTGRES_DB
+        - name: POSTGRES_DATABASE
           value: "ffc-demo-claim"
-        - name: POSTGRES_PORT
-          value: "5432"
-        - name: SCHEMA_USERNAME
+        - name: SERVICE_MI_NAME
           value: ${TEAM_MI_PREFIX}-${SERVICE_NAME}
+        - name: TEAM_MI_NAME
+          value: ${TEAM_MI_PREFIX}-${TEAM_NAMESPACE}
+        - name: PLATFORM_MI_NAME
+          value: ${PLATFORM_MI_NAME}
+        - name: PLATFORM_MI_SUBSCRIPTION_ID
+          value: ${SUBSCRIPTION_ID}
+        - name: SUBSCRIPTION_NAME
+          value: ${SUBSCRIPTION_NAME}
