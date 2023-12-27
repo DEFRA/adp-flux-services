@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: ffc-demo-claim-service-pre-dbmigration
-        image: ssvadpinfcr3401.azurecr.io/image/powershell-executor:101 # {"$imagepolicy": "flux-config:powershell-executor"}
+        image: ssvadpinfcr3401.azurecr.io/image/powershell-executor:424529 # {"$imagepolicy": "flux-config:powershell-executor"}
         env:
         - name: POSTGRES_HOST
           value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
