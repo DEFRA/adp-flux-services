@@ -23,6 +23,7 @@ spec:
       SERVICE_NAME: "ffc-demo-claim-service"
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
+      PLATFORM_DB_ADMIN: "adp-platform-db-aad-admin"
     substituteFrom:
       - kind: ConfigMap
         name: adp-platform-vars
