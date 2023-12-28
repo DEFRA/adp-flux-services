@@ -25,7 +25,7 @@ spec:
         - name: TEAM_MI_NAME
           value: ${TEAM_MI_PREFIX}-${TEAM_NAMESPACE}
         - name: PLATFORM_MI_NAME
-          value: ${TEAM_MI_PREFIX}-${PLATFORM_DB_ADMIN}
+          value: SNDADPINFMI1401-adp-platform-db-aad-admin # ${TEAM_MI_PREFIX}-${PLATFORM_DB_ADMIN}
         - name: PLATFORM_MI_SUBSCRIPTION_ID
           value: ${SUBSCRIPTION_ID}
         - name: SUBSCRIPTION_NAME
