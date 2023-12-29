@@ -5,9 +5,7 @@ metadata:
   namespace: flux-config
 spec:
   owner:
-    name: ${DATABASE_SERVER_RG}
-    group: resources.azure.com
-    kind: ResourceGroup
+    armId: /subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${DATABASE_SERVER_RG}
   principalId: ${DB_AAD_ADMIN_PRINCIPAL_ID}
   roleDefinitionReference:
     armId: /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c # Contributor
