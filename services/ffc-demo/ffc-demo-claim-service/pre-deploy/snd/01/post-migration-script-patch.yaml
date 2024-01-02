@@ -3,6 +3,8 @@ kind: Job
 metadata:
   name: ffc-demo-claim-service-post-dbmigration
   namespace: ffc-demo
+  labels:
+    db-migration-version: "424529" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-01:tag"}
 spec:
   template:
     spec:
