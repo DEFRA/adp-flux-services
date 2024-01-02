@@ -4,7 +4,7 @@ metadata:
   name: ffc-demo-claim-service-post-dbmigration
   namespace: ffc-demo
   labels:
-    db-migration-version: "424529" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-01:tag"}
+    db-migration-version: "5.1.27" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-01:tag"}
 spec:
   template:
     spec:
