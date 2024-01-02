@@ -8,5 +8,6 @@ resources:
   - aso-credential/kustomize.yaml
   - dbadmin-federated-credential.yaml
   - dbadmin-service-account.yaml
+  - role-assignments.yaml
   - ps-exec-image-repository.yaml
   - ps-exec-image-policy.yaml
