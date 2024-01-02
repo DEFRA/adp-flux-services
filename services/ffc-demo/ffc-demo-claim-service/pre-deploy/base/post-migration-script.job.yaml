@@ -1,40 +1,18 @@
-# apiVersion: batch/v1
-# kind: Job
-# metadata:
-#   name: ffc-demo-claim-service-post-dbmigration
-#   namespace: ffc-demo
-#   labels:
-#     azure.workload.identity/use: "true"
-# spec:
-#   template:
-#     metadata:
-#       labels:
-#         azure.workload.identity/use: "true"
-#     spec:
-#       serviceAccountName: ${TEAM_NAMESPACE}
-#       restartPolicy: Never
-#       containers:
-#       - name: ffc-demo-claim-service-post-dbmigration
-#         imagePullPolicy: Always
-# ---
 apiVersion: batch/v1
-kind: CronJob
+kind: Job
 metadata:
   name: ffc-demo-claim-service-post-dbmigration
   namespace: ffc-demo
   labels:
     azure.workload.identity/use: "true"
 spec:
-  schedule: "0/2 * * * *"
-  jobTemplate:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
     spec:
-      template:
-        metadata:
-          labels:
-            azure.workload.identity/use: "true"
-        spec:
-          serviceAccountName: ${TEAM_NAMESPACE}
-          restartPolicy: OnFailure
-          containers:
-          - name: ffc-demo-claim-service-post-dbmigration
-            imagePullPolicy: Always
+      serviceAccountName: ${TEAM_NAMESPACE}
+      restartPolicy: Never
+      containers:
+      - name: ffc-demo-claim-service-post-dbmigration
+        imagePullPolicy: Always
