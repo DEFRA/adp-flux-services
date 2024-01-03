@@ -4,3 +4,5 @@ resources:
   - image-update.yaml
   - ../../../ffc-demo/base/patch
   - ../../../ffc-ffd/base/patch
+  - ../../../ffc/ffc-demo/base/patch
+  - ../../../ffc/ffc-ffd/base/patch
