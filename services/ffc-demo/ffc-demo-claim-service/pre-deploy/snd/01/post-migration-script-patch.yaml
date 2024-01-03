@@ -28,5 +28,5 @@ spec:
           value: ${SUBSCRIPTION_ID}
         - name: SUBSCRIPTION_NAME
           value: ${SUBSCRIPTION_NAME}
-        - name: VERSION
+        - name: DB_MIGRATION_VERSION
           value: "5.1.27" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-01:tag"}
