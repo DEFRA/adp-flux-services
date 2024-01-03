@@ -19,4 +19,4 @@ spec:
         - name: POSTGRES_PORT
           value: "5432"
         - name: SCHEMA_USERNAME
-          value: ${TEAM_MI_PREFIX}-${SERVICE_NAME}
+          value: ${TEAM_MI_PREFIX}-${TEAM_NAME}
