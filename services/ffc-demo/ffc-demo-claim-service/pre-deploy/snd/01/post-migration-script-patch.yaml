@@ -29,4 +29,4 @@ spec:
         - name: SUBSCRIPTION_NAME
           value: ${SUBSCRIPTION_NAME}
         - name: VERSION
-          value: "version" # {"$imagepolicy": "flux-config:powershell-executor:tag"}
+          value: "424529" # {"$imagepolicy": "flux-config:powershell-executor:tag"}
