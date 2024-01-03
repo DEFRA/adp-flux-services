@@ -20,7 +20,4 @@ spec:
       PLATFORM_DB_ADMIN: "adp-platform-db-aad-admin"
     substituteFrom:
       - kind: ConfigMap
-        name: adp-platform-mi-credential
-        optional: true
-      - kind: ConfigMap
         name: adp-platform-vars
