@@ -1,0 +1,31 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ffc-ffd-backend-poc-deploy
+  namespace: flux-config
+spec:
+  dependsOn:
+    - name: ffc-ffd-backend-poc-infra
+      namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/ffc/ffc-ffd/ffc-ffd-backend-poc/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SERVICE_NAME: "ffc-ffd-backend-poc"
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+    substituteFrom:
+      - kind: ConfigMap
+        name: adp-platform-vars
+      - kind: ConfigMap
+        name: "ffc-ffd-backend-poc-mi-credential"
