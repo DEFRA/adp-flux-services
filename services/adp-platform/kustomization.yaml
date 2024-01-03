@@ -3,9 +3,9 @@ kind: Kustomization
 metadata:
   name: adp-platform
 resources:
-  - ../base/aso/userassigned-identity.yaml
-  - ../base/aso/federated-credential.yaml
-  - aso-credential/kustomize.yaml
+  # - ../base/aso/userassigned-identity.yaml
+  # - ../base/aso/federated-credential.yaml
+  # - aso-credential/kustomize.yaml
   - dbadmin-federated-credential.yaml
   - dbadmin-service-account.yaml
   - ps-exec-image-repository.yaml
