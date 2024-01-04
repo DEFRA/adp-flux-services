@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: ffc-demo-payment-service-dbmigration
+  name: ffc-demo-payment-service-post-dbmigration
   namespace: ffc-demo
   labels:
     azure.workload.identity/use: "true"
@@ -14,5 +14,5 @@ spec:
       serviceAccountName: ${TEAM_NAMESPACE}
       restartPolicy: Never
       containers:
-      - name: ffc-demo-payment-service-dbmigration
+      - name: ffc-demo-payment-service-post-dbmigration
         imagePullPolicy: Always

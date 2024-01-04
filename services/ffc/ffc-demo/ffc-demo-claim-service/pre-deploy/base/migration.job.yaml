@@ -11,7 +11,7 @@ spec:
       labels:
         azure.workload.identity/use: "true"
     spec:
-      serviceAccountName: ${SERVICE_NAME}
+      serviceAccountName: ${TEAM_NAMESPACE}
       restartPolicy: Never
       containers:
       - name: ffc-demo-claim-service-dbmigration

@@ -1,8 +1,8 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: ffc-demo-payment-service-dbmigration
-  namespace: ffc-demo
+  name: ffc-demo-claim-service-pre-dbmigration
+  namespace: flux-config
   labels:
     azure.workload.identity/use: "true"
 spec:
@@ -11,8 +11,8 @@ spec:
       labels:
         azure.workload.identity/use: "true"
     spec:
-      serviceAccountName: ${TEAM_NAMESPACE}
+      serviceAccountName: ${PLATFORM_DB_ADMIN}
       restartPolicy: Never
       containers:
-      - name: ffc-demo-payment-service-dbmigration
+      - name: ffc-demo-claim-service-pre-dbmigration
         imagePullPolicy: Always
