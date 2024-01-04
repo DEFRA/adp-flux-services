@@ -13,13 +13,13 @@ spec:
         - name: GIT_REPO_URL
           value: "https://github.com/DEFRA/adp-flux-services.git"
         - name: GIT_BRANCH
-          value: "jk/db-migration-integration"
+          value: "jk/db-migration-fix"
         - name: SCRIPT_FILE_NAME
           value: "common/scripts/access-control/flexible-server/Grant-FlexibleServerDBAccess.ps1"
         - name: POSTGRES_HOST
           value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
         - name: POSTGRES_DATABASE
-          value: "ffc-demo-claim"
+          value: ${POSTGRES_DB}
         - name: SERVICE_MI_NAME
           value: ${TEAM_MI_PREFIX}-${SERVICE_NAME}
         - name: TEAM_MI_NAME
