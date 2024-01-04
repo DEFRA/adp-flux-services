@@ -1,7 +1,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
-  name: ffc-ffd-backend-poc-dbmigration-snd-01
+  name: ffc-ffd-backend-poc-dbmigration-snd-03
   namespace: flux-config
 spec:
   imageRepositoryRef:
