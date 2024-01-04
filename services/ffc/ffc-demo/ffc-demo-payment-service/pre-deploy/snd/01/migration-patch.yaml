@@ -17,6 +17,6 @@ spec:
         - name: POSTGRES_DB
           value: ${POSTGRES_DB}
         - name: POSTGRES_PORT
-          value: "\"${POSTGRES_PORT}\""
+          value: ${POSTGRES_PORT}
         - name: SCHEMA_USERNAME
           value: ${TEAM_MI_PREFIX}-${TEAM_NAMESPACE}
