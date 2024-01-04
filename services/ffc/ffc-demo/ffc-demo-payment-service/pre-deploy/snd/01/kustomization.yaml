@@ -7,12 +7,12 @@ patches:
   - path: pre-migration-script-patch.yaml
     target:
       kind: Job
-      name: __SERVICE_NAME__-pre-dbmigration
+      name: ffc-demo-payment-service-pre-dbmigration
   - path: migration-patch.yaml
     target:
       kind: Job
-      name: __SERVICE_NAME__-dbmigration
+      name: ffc-demo-payment-service-dbmigration
   - path: post-migration-script-patch.yaml
     target:
       kind: Job
-      name: __SERVICE_NAME__-post-dbmigration
+      name: ffc-demo-payment-service-post-dbmigration
