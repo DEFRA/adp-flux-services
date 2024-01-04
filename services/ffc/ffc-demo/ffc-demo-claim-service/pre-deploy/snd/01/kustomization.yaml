@@ -4,4 +4,15 @@ resources:
   - ../../base
   - image-policy.yaml
 patches:
-  - path: patch.yaml
+  - path: pre-migration-script-patch.yaml
+    target:
+      kind: Job
+      name: ffc-demo-claim-service-pre-dbmigration
+  - path: migration-patch.yaml
+    target:
+      kind: Job
+      name: ffc-demo-claim-service-dbmigration
+  - path: post-migration-script-patch.yaml
+    target:
+      kind: Job
+      name: ffc-demo-claim-service-post-dbmigration

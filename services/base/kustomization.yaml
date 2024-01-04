@@ -9,4 +9,6 @@ resources:
   - aso/role-assignments-sb.yaml
   - aso/role-assignments-pgdb.yaml
   - aso/team-secret.yaml
+  - aso/team-federated-credential.yaml
+  - team-service-account.yaml
   
