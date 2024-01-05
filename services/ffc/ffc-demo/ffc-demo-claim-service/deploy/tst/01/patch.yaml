@@ -6,22 +6,22 @@ metadata:
 spec:
   chart:
     spec:
-      version: "5.1.26" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-tst-01:tag"}
+      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-tst-01:tag"}
   values:
     environment: production
     name: ffc-demo-claim-service
     namespace: ffc-demo
-    image: tstadpinfcr1401.azurecr.io/image/ffc-demo-claim-service:5.1.26 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-tst-01"}
+    image: tstadpinfcr1401.azurecr.io/image/ffc-demo-claim-service:0.1.0 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-tst-01"}
     serviceAccount:
       name: ffc-demo-claim-service
     deployment:
       priorityClassName: default
     container:
       imagePullPolicy: Always
-      requestMemory: 5Mi
-      requestCpu: 5m
-      limitMemory: 60Mi
-      limitCpu: 40m
+      requestMemory: 50Mi
+      requestCpu: 50m
+      limitMemory: 200Mi
+      limitCpu: 400m
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}

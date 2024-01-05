@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - image-update.yaml
   - ../../../ffc/ffc-demo/base/patch
+  - ../../../adp-platform/kustomize.yaml

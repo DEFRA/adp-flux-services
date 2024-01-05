@@ -23,6 +23,10 @@ spec:
       SERVICE_NAME: "ffc-demo-payment-service"
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
+      PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
+      POSTGRES_DB: "ffc-demo-payment"
+      POSTGRES_PORT: "\"5432\""
+      POSTGRES_SCHEMA_NAME: "public"
     substituteFrom:
       - kind: ConfigMap
         name: adp-platform-vars

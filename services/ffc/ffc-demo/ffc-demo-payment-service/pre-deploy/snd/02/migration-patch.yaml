@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ffc-demo-payment-service-dbmigration
+  namespace: ffc-demo
+spec:
+  template:
+    spec:
+      containers:
+      - name: ffc-demo-payment-service-dbmigration
+        image: sndadpinfcr2401.azurecr.io/image/ffc-demo-payment-service-dbmigration:5.1.27 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-dbmigration-snd-02"}
+        env:
+        - name: POSTGRES_HOST
+          value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
+        - name: SCHEMA_NAME
+          value: ${POSTGRES_SCHEMA_NAME}
+        - name: POSTGRES_DB
+          value: ${POSTGRES_DB}
+        - name: POSTGRES_PORT
+          value: "${POSTGRES_PORT}"
+        - name: SCHEMA_USERNAME
+          value: ${TEAM_MI_PREFIX}-${TEAM_NAMESPACE}
