@@ -1,17 +1,17 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: ffc-demo-payment-service-pre-deploy
+  name: ffc-demo-payment-service-pre-deploy-post-migration
   namespace: flux-config
 spec:
   dependsOn:
-    - name: ffc-demo-payment-service-infra
+    - name: ffc-demo-payment-service-pre-deploy-migration
       namespace: flux-config
   sourceRef:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  path: ./services/ffc/ffc-demo/ffc-demo-payment-service/pre-deploy
+  path: ./services/ffc/ffc-demo/ffc-demo-payment-service/pre-deploy/post-migration/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 5m
   timeout: 3m
   prune: true
@@ -20,13 +20,12 @@ spec:
   postBuild:
     substitute:
       SHARED_POSTGRES_SERVER_01: "${SHARED_POSTGRES_SERVER_01}"
-      SERVICE_NAME: "ffc-demo-payment-service"
+      SERVICE_NAME: ${SERVICE_NAME}
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
       PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
-      POSTGRES_DB: "ffc-demo-payment"
-      POSTGRES_PORT: "5432"
-      POSTGRES_SCHEMA_NAME: "public"
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_SCHEMA_NAME: ${POSTGRES_SCHEMA_NAME}
     substituteFrom:
       - kind: ConfigMap
         name: adp-platform-vars
