@@ -11,7 +11,7 @@ spec:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  path: ./services/ffc/ffc-demo/ffc-demo-claim-service/pre-deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  path: ./services/ffc/ffc-demo/ffc-demo-claim-service/pre-deploy
   interval: 5m
   timeout: 3m
   prune: true
