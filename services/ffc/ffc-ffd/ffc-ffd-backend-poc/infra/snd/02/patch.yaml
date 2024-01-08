@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-demo-claim-service-infra
+  name: ffc-ffd-backend-poc-infra
   namespace: flux-config
 spec:
   chart:
     spec:
-      chart: ffc-demo-claim-service-infra
-      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-03:tag"}
+      chart: ffc-ffd-backend-poc-infra
+      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-snd-02:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -21,7 +21,7 @@ spec:
     teamMIPrefix: ${TEAM_MI_PREFIX}
     serviceName: ${SERVICE_NAME}
     keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
-    keyVaultName: sndadpinfvt3401
+    keyVaultName: sndadpinfvt2401
     userAssignedIdentity:
       federatedCreds:
         - namespace: ${TEAM_NAMESPACE}
