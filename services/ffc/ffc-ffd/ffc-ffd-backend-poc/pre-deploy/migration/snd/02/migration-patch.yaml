@@ -8,15 +8,15 @@ spec:
     spec:
       containers:
       - name: ffc-ffd-backend-poc-dbmigration
-        image: sndadpinfcr3401.azurecr.io/image/ffc-ffd-backend-poc-dbmigration:0.1.0 # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-dbmigration-snd-03"}
+        image:  sndadpinfcr2401.azurecr.io/image/ffc-ffd-backend-poc-dbmigration:0.1.0 # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-dbmigration-snd-02"}
         env:
         - name: POSTGRES_HOST
           value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
         - name: SCHEMA_NAME
-          value: "public"
+          value: ${POSTGRES_SCHEMA_NAME}
         - name: POSTGRES_DB
-          value: "${POSTGRES_DB}"
+          value: ${POSTGRES_DB}
         - name: POSTGRES_PORT
-          value: "5432"
+          value: "${POSTGRES_PORT}"
         - name: SCHEMA_USERNAME
-          value: ${TEAM_MI_PREFIX}-${SERVICE_NAME}
+          value: ${TEAM_MI_PREFIX}-${TEAM_NAMESPACE}

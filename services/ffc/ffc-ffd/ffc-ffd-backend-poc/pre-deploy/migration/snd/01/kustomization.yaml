@@ -4,4 +4,7 @@ resources:
   - ../../base
   - image-policy.yaml
 patches:
-  - path: patch.yaml
+  - path: migration-patch.yaml
+    target:
+      kind: Job
+      name: ffc-ffd-backend-poc-dbmigration

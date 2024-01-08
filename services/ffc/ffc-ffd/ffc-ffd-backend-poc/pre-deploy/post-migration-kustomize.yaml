@@ -1,17 +1,17 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: ffc-ffd-backend-poc-pre-deploy
+  name: ffc-ffd-backend-poc-pre-deploy-post-migration
   namespace: flux-config
 spec:
   dependsOn:
-    - name: ffc-ffd-backend-poc-infra
+    - name: ffc-ffd-backend-poc-pre-deploy-migration
       namespace: flux-config
   sourceRef:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  path: ./services/ffc/ffc-ffd/ffc-ffd-backend-poc/pre-deploy
+  path: ./services/ffc/ffc-ffd/ffc-ffd-backend-poc/pre-deploy/post-migration/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 5m
   timeout: 3m
   prune: true
@@ -20,13 +20,12 @@ spec:
   postBuild:
     substitute:
       SHARED_POSTGRES_SERVER_01: "${SHARED_POSTGRES_SERVER_01}"
-      SERVICE_NAME: "ffc-ffd-backend-poc"
+      SERVICE_NAME: ${SERVICE_NAME}
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
       PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
-      POSTGRES_DB: "ffc-ffd-backend"
-      POSTGRES_PORT: "5432"
-      POSTGRES_SCHEMA_NAME: "public"
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_SCHEMA_NAME: ${POSTGRES_SCHEMA_NAME}
     substituteFrom:
       - kind: ConfigMap
         name: adp-platform-vars

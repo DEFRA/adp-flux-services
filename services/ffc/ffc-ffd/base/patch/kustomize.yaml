@@ -20,6 +20,7 @@ spec:
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
       APPCONFIG_NAME: ${APPCONFIG_NAME}
       SERVICE_CODE: "FFC-FFD"
+      PLATFORM_DB_ADMIN: "adp-platform-db-aad-admin"
     substituteFrom:
       - kind: ConfigMap
         name: ffc-ffd-mi-credential
