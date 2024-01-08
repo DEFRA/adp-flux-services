@@ -1,0 +1,34 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: trade-exports-packinglistai-ui
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: "0.1.0" # {"$imagepolicy": "flux-config:trade-exports-packinglistai-ui-snd-02:tag"}
+  values:
+    environment: production
+    name: trade-exports-packinglistai-ui
+    namespace: eutd-trade-exports-ai
+    image: sndadpinfcr2401.azurecr.io/image/trade-exports-packinglistai-ui:0.1.0 # {"$imagepolicy": "flux-config:trade-exports-packinglistai-ui-snd-02"}
+    serviceAccount:
+      name: trade-exports-packinglistai-ui
+    labels:
+      component: web
+    container:
+      imagePullPolicy: Always
+      requestMemory: 50Mi
+      requestCpu: 50m
+      limitMemory: 200Mi
+      limitCpu: 400m
+    ingress:
+      class: nginx
+      endpoint: trade-exports-packinglistai-ui
+      server: snd2.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
