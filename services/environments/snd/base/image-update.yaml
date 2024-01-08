@@ -12,14 +12,14 @@ spec:
   git:
     checkout:
       ref:
-        branch: main
+        branch: aa/db-migration-order-automation3
     commit:
       author:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
-      branch: main
+      branch: aa/db-migration-order-automation3
   update:
     path: ./
     strategy: Setters
