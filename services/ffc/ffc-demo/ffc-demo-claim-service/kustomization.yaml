@@ -4,4 +4,3 @@ resources:
   - infra-kustomize.yaml
   - deploy-kustomize.yaml
   - pre-deploy-kustomize.yaml
-  - pre-deploy-kustomize.yaml
