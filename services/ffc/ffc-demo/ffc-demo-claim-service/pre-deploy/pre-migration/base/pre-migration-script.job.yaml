@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ffc-demo-claim-service-pre-dbmigration
+  namespace: flux-config
+  labels:
+    azure.workload.identity/use: "true"
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+    spec:
+      serviceAccountName: ${PLATFORM_DB_ADMIN}
+      restartPolicy: Never
+      containers:
+      - name: ffc-demo-claim-service-pre-dbmigration
+        imagePullPolicy: Always
