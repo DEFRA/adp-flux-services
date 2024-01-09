@@ -1,0 +1,9 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: trade-exports-packinglistai-ui
+  namespace: flux-config
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/trade-exports-packinglistai-ui
+  interval: 5m0s
+  provider: azure
