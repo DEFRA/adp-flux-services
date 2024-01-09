@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: trade-exports-packinglistai-ui-infra
-      version: "0.1.0" # {"$imagepolicy": "flux-config:trade-exports-packinglistai-ui-snd-01:tag"}
+      version: "0.1.3" # {"$imagepolicy": "flux-config:trade-exports-packinglistai-ui-snd-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
