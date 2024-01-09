@@ -11,7 +11,7 @@ spec:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  path: ./services/ffc/ffc-demo/ffc-demo-payment-service/pre-deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  path: ./services/ffc/ffc-demo/ffc-demo-payment-service/pre-deploy
   interval: 5m
   timeout: 3m
   prune: true
@@ -25,7 +25,7 @@ spec:
       TEAM_NAME: ${TEAM_NAME}
       PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
       POSTGRES_DB: "ffc-demo-payment"
-      POSTGRES_PORT: "\"5432\""
+      POSTGRES_PORT: "5432"
       POSTGRES_SCHEMA_NAME: "public"
     substituteFrom:
       - kind: ConfigMap

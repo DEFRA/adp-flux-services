@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ffc-ffd-backend-poc-dbmigration
+  namespace: ffc-ffd
+spec:
+  template:
+    spec:
+      containers:
+      - name: ffc-ffd-backend-poc-dbmigration
+        image:  sndadpinfcr1401.azurecr.io/image/ffc-ffd-backend-poc-dbmigration:0.1.0 # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-dbmigration-snd-01"}
+        env:
+        - name: POSTGRES_HOST
+          value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
+        - name: SCHEMA_NAME
+          value: ${POSTGRES_SCHEMA_NAME}
+        - name: POSTGRES_DB
+          value: ${POSTGRES_DB}
+        - name: POSTGRES_PORT
+          value: "${POSTGRES_PORT}"
+        - name: SCHEMA_USERNAME
+          value: ${TEAM_MI_PREFIX}-${TEAM_NAMESPACE}
