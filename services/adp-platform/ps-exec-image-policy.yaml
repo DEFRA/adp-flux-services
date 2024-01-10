@@ -1,7 +1,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
-  name: powershell-executor
+  name: powershell-executor-ssv3
   namespace: flux-config
 spec:
   imageRepositoryRef:
@@ -9,4 +9,15 @@ spec:
   policy:
     numerical:
       order: asc
-      
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: powershell-executor-ssv5
+  namespace: flux-config
+spec:
+  imageRepositoryRef:
+    name: powershell-executor
+  policy:
+    numerical:
+      order: asc
