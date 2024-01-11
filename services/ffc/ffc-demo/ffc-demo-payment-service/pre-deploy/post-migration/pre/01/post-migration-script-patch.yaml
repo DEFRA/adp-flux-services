@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: ffc-demo-payment-service-post-dbmigration
-        image: ssvadpinfcr3401.azurecr.io/image/powershell-executor:424529 # {"$imagepolicy": "flux-config:powershell-executor-ssv5"}
+        image: ssvadpinfcr3401.azurecr.io/image/powershell-executor:424529 # {"$imagepolicy": "flux-config:powershell-executor-pre-01"}
         env:
         - name: GIT_REPO_URL
           value: "https://github.com/DEFRA/adp-flux-services.git"
