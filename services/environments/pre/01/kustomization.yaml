@@ -5,4 +5,5 @@ metadata:
 resources:
   - kustomize.yaml
   - ../base
+  - ps-exec-image-policy.yaml
   

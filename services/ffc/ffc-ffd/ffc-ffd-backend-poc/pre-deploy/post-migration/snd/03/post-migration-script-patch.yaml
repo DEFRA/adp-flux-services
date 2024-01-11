@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: ffc-ffd-backend-poc-post-dbmigration
-        image: ssvadpinfcr3401.azurecr.io/image/powershell-executor:424529 # {"$imagepolicy": "flux-config:powershell-executor-ssv3"}
+        image: ssvadpinfcr3401.azurecr.io/image/powershell-executor:424529 # {"$imagepolicy": "flux-config:powershell-executor-snd-03"}
         env:
         - name: GIT_REPO_URL
           value: "https://github.com/DEFRA/adp-flux-services.git"
@@ -29,4 +29,4 @@ spec:
         - name: SUBSCRIPTION_NAME
           value: ${SUBSCRIPTION_NAME}
         - name: DB_MIGRATION_VERSION
-          value: "0.1.5" # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-dbmigration-snd-03:tag"}
+          value: "0.1.0" # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-dbmigration-snd-03:tag"}
