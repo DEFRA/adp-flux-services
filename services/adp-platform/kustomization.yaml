@@ -6,4 +6,3 @@ resources:
   - dbadmin-federated-credential.yaml
   - dbadmin-service-account.yaml
   - ps-exec-image-repository.yaml
-  - ps-exec-image-policy.yaml
