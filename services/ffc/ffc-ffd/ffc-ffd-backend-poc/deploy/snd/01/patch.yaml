@@ -6,22 +6,18 @@ metadata:
 spec:
   chart:
     spec:
-      version: "0.1.5" # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-snd-01:tag"}
+      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-snd-01:tag"}
   values:
     environment: production
     name: ffc-ffd-backend-poc
     namespace: ffc-ffd
-    image: sndadpinfcr1401.azurecr.io/image/ffc-ffd-backend-poc:0.1.5 # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-snd-01"}
+    image: sndadpinfcr1401.azurecr.io/image/ffc-ffd-backend-poc:0.1.0 # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-snd-01"}
     serviceAccount:
       name: ffc-ffd-backend-poc
     deployment:
       priorityClassName: default
     container:
       imagePullPolicy: Always
-      requestMemory: 50Mi
-      requestCpu: 50m
-      limitMemory: 200Mi
-      limitCpu: 400m
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
