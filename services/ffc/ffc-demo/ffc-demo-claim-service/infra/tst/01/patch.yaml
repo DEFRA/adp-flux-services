@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-demo-claim-service-infra
-      version: "5.1.27" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-tst-01:tag"}
+      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-tst-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -21,7 +21,7 @@ spec:
     teamMIPrefix: ${TEAM_MI_PREFIX}
     serviceName: ${SERVICE_NAME}
     keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
-    keyVaultName: tstadpinfvt1401
+    keyVaultName: ${APPLICATION_KEYVAULT}
     userAssignedIdentity:
       federatedCreds:
         - namespace: ${TEAM_NAMESPACE}

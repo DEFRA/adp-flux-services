@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-demo-web-infra
-      version: "4.32.15" # {"$imagepolicy": "flux-config:ffc-demo-web-snd-01:tag"}
+      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-demo-web-snd-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -19,7 +19,7 @@ spec:
     teamMIPrefix: ${TEAM_MI_PREFIX}
     serviceName: ${SERVICE_NAME}
     keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
-    keyVaultName: sndadpinfvt1401
+    keyVaultName: ${APPLICATION_KEYVAULT}
     userAssignedIdentity:
       federatedCreds:
         - namespace: ${TEAM_NAMESPACE}
