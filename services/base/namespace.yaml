@@ -4,3 +4,4 @@ metadata:
   name: ${TEAM_NAMESPACE}
   labels:
     toolkit.fluxcd.io/tenant: ${TEAM_NAME}
+    istio-injection: enabled
