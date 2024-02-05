@@ -7,6 +7,9 @@ spec:
   dependsOn:
     - name: ffc-demo-payment-service-infra
       namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-demo-payment-service
+    backstage.io/kubernetes-team: ffc-demo      
   sourceRef:
     kind: GitRepository
     name: services-repository

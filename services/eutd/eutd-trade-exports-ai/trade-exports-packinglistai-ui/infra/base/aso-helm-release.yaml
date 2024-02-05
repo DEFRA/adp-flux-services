@@ -3,6 +3,9 @@ kind: HelmRelease
 metadata:
   name: trade-exports-packinglistai-ui-infra
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: trade-exports-packinglistai-ui
+    backstage.io/kubernetes-team: eutd-trade-exports-ai
 spec:
   releaseName: trade-exports-packinglistai-ui-infra
   chart:

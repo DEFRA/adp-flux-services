@@ -3,6 +3,9 @@ kind: HelmRelease
 metadata:
   name: ffc-demo-calculation-service
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-demo-calculation-service
+    backstage.io/kubernetes-team: ffc-demo
 spec:
   releaseName: ffc-demo-calculation-service
   chart:

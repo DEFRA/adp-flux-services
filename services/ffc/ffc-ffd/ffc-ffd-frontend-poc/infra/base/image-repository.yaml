@@ -3,6 +3,9 @@ kind: ImageRepository
 metadata:
   name: ffc-ffd-frontend-poc
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-ffd-frontend-poc
+    backstage.io/kubernetes-team: ffc-demo  
 spec:
   image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-ffd-frontend-poc
   interval: 5m0s

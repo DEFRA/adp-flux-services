@@ -3,6 +3,9 @@ kind: ImagePolicy
 metadata:
   name: ffc-demo-claim-service-dbmigration-snd-03
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-demo-claim-service
+    backstage.io/kubernetes-team: ffc-demo
 spec:
   imageRepositoryRef:
     name: ffc-demo-claim-service-dbmigration

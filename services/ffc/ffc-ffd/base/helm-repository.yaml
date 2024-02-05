@@ -3,6 +3,8 @@ kind: HelmRepository
 metadata:
   name: ffc-ffd-helm-repo
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-team: ffc-ffd  
 spec:
   type: oci
   interval: 5m

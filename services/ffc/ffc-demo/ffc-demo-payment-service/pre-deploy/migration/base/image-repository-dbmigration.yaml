@@ -4,6 +4,9 @@ kind: ImageRepository
 metadata:
   name: ffc-demo-payment-service-dbmigration
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-demo-payment-service
+    backstage.io/kubernetes-team: ffc-demo
 spec:
   image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-demo-payment-service-dbmigration
   interval: 5m0s

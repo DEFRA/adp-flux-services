@@ -5,11 +5,15 @@ metadata:
   namespace: flux-config
   labels:
     azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: ffc-ffd-backend-poc
+    backstage.io/kubernetes-team: ffc-demo
 spec:
   template:
     metadata:
       labels:
         azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: ffc-ffd-backend-poc
+        backstage.io/kubernetes-team: ffc-demo
     spec:
       serviceAccountName: ${PLATFORM_DB_ADMIN}
       restartPolicy: Never
