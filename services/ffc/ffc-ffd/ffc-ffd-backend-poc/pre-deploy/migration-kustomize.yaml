@@ -5,7 +5,7 @@ metadata:
   namespace: flux-config
   labels:
     backstage.io/kubernetes-id: ffc-ffd-backend-poc
-    backstage.io/kubernetes-team: ffc-demo
+    backstage.io/kubernetes-team: ffc-ffd
 spec:
   dependsOn:
     - name: ffc-ffd-backend-poc-pre-deploy-pre-migration
