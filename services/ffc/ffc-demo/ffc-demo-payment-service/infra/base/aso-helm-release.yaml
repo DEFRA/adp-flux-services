@@ -3,6 +3,9 @@ kind: HelmRelease
 metadata:
   name: ffc-demo-payment-service-infra
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-demo-payment-service
+    backstage.io/kubernetes-team: ffc-demo
 spec:
   releaseName: ffc-demo-payment-service-infra
   chart:

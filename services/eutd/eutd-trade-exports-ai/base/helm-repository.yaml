@@ -3,6 +3,8 @@ kind: HelmRepository
 metadata:
   name: eutd-trade-exports-ai-helm-repo
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-team: eutd-trade-exports-ai
 spec:
   type: oci
   interval: 5m

@@ -3,6 +3,9 @@ kind: Kustomization
 metadata:
   name: ffc-demo-payment-service-pre-deploy-post-migration
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-demo-payment-service
+    backstage.io/kubernetes-team: ffc-demo  
 spec:
   dependsOn:
     - name: ffc-demo-payment-service-pre-deploy-migration

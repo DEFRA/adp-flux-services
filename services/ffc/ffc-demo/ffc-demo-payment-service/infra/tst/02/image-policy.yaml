@@ -3,6 +3,9 @@ kind: ImagePolicy
 metadata:
   name: ffc-demo-payment-service-tst-02
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-demo-payment-service
+    backstage.io/kubernetes-team: ffc-demo
 spec:
   imageRepositoryRef:
     name: ffc-demo-payment-service

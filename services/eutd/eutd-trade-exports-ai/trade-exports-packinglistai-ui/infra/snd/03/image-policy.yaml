@@ -3,6 +3,9 @@ kind: ImagePolicy
 metadata:
   name: trade-exports-packinglistai-ui-snd-03
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: trade-exports-packinglistai-ui
+    backstage.io/kubernetes-team: eutd-trade-exports-ai
 spec:
   imageRepositoryRef:
     name: trade-exports-packinglistai-ui

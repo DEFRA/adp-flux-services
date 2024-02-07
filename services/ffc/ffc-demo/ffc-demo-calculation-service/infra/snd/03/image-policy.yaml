@@ -3,6 +3,9 @@ kind: ImagePolicy
 metadata:
   name: ffc-demo-calculation-service-snd-03
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-demo-calculation-service
+    backstage.io/kubernetes-team: ffc-demo
 spec:
   imageRepositoryRef:
     name: ffc-demo-calculation-service
