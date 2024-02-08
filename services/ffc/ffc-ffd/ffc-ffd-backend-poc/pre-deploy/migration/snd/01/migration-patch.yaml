@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: ffc-ffd-backend-poc-dbmigration
-        image: sndadpinfcr2401.azurecr.io/image/ffc-ffd-backend-poc-dbmigration:0.1.6 # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-dbmigration-snd-01"}
+        image: sndadpinfcr1401.azurecr.io/image/ffc-ffd-backend-poc-dbmigration:0.2.0 # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-dbmigration-snd-01"}
         env:
         - name: POSTGRES_HOST
           value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
