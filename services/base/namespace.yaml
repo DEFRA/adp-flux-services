@@ -4,3 +4,5 @@ metadata:
   name: ${TEAM_NAMESPACE}
   labels:
     toolkit.fluxcd.io/tenant: ${TEAM_NAME}
+    name: ${TEAM_NAMESPACE}
+    type: team-namespace
