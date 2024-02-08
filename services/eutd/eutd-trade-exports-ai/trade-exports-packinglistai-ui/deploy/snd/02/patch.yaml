@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: "0.1.0" # {"$imagepolicy": "flux-config:trade-exports-packinglistai-ui-snd-02:tag"}
+      version: "0.1.4" # {"$imagepolicy": "flux-config:trade-exports-packinglistai-ui-snd-02:tag"}
   values:
     environment: production
     name: trade-exports-packinglistai-ui
     namespace: eutd-trade-exports-ai
-    image: sndadpinfcr2401.azurecr.io/image/trade-exports-packinglistai-ui:0.1.0 # {"$imagepolicy": "flux-config:trade-exports-packinglistai-ui-snd-02"}
+    image: sndadpinfcr2401.azurecr.io/image/trade-exports-packinglistai-ui:0.1.4 # {"$imagepolicy": "flux-config:trade-exports-packinglistai-ui-snd-02"}
     serviceAccount:
       name: trade-exports-packinglistai-ui
     labels:
