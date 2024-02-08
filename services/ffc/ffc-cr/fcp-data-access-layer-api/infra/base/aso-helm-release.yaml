@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-data-access-layer-api-infra
+  namespace: flux-config
+spec:
+  releaseName: ffc-data-access-layer-api-infra
+  chart:
+    spec:
+      chart: ffc-data-access-layer-api-infra
+      version: "0.1.0"
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ffc-cr-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: ffc-cr
+  values:
+    namespace: ffc-cr

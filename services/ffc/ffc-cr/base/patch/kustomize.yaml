@@ -1,0 +1,29 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ffc-cr-base
+  namespace: flux-config
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  interval: 5m
+  timeout: 3m
+  prune: true
+  path: ./services/ffc/ffc-cr/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  postBuild:
+    substitute:
+      TEAM_NAMESPACE: "ffc-cr"
+      TEAM_NAME: "ffc-cr-team"
+      TEAM_RG: "${SERVICES_INFRA_RG}-ffc-cr"
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      SERVICE_CODE: "ffc-cr"
+      PLATFORM_DB_ADMIN: "adp-platform-db-aad-admin"
+    substituteFrom:
+      - kind: ConfigMap
+        name: ffc-cr-mi-credential
+        optional: true
+      - kind: ConfigMap
+        name: adp-platform-vars
