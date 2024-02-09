@@ -10,7 +10,7 @@ spec:
   values:
     environment: production
     name: ffc-data-access-layer-api
-    namespace: ffc-cr
+    namespace: ffc-dal
     image: sndadpinfcr3401.azurecr.io/image/ffc-data-access-layer-api:0.1.6 # {"$imagepolicy": "flux-config:ffc-data-access-layer-api-snd-03"}
     serviceAccount:
       name: ffc-data-access-layer-api

@@ -4,6 +4,6 @@ resources:
   - image-update.yaml
   - ../../../ffc/ffc-demo/base/patch
   - ../../../ffc/ffc-ffd/base/patch
-  - ../../../ffc/ffc-cr/base/patch
+  - ../../../ffc/ffc-dal/base/patch
   - ../../../adp-platform/kustomize.yaml
   - ../../../eutd/eutd-trade-exports-ai/base/patch

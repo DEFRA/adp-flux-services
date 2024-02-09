@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: ffc-cr-base
+  name: ffc-dal-base
   namespace: flux-config
 spec:
   sourceRef:
@@ -11,19 +11,19 @@ spec:
   interval: 5m
   timeout: 3m
   prune: true
-  path: ./services/ffc/ffc-cr/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  path: ./services/ffc/ffc-dal/${ENVIRONMENT}/${ENVIRONMENT_ID}
   postBuild:
     substitute:
-      TEAM_NAMESPACE: "ffc-cr"
-      TEAM_NAME: "ffc-cr-team"
-      TEAM_RG: "${SERVICES_INFRA_RG}-ffc-cr"
+      TEAM_NAMESPACE: "ffc-dal"
+      TEAM_NAME: "ffc-dal-team"
+      TEAM_RG: "${SERVICES_INFRA_RG}-ffc-dal"
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
       APPCONFIG_NAME: ${APPCONFIG_NAME}
-      SERVICE_CODE: "ffc-cr"
+      SERVICE_CODE: "ffc-dal"
       PLATFORM_DB_ADMIN: "adp-platform-db-aad-admin"
     substituteFrom:
       - kind: ConfigMap
-        name: ffc-cr-mi-credential
+        name: ffc-dal-mi-credential
         optional: true
       - kind: ConfigMap
         name: adp-platform-vars

@@ -12,11 +12,11 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: ffc-cr-helm-repo
+        name: ffc-dal-helm-repo
         namespace: flux-config
   install:
     createNamespace: true
   interval: 5m0s
-  targetNamespace: ffc-cr
+  targetNamespace: ffc-dal
   values:
-    namespace: ffc-cr
+    namespace: ffc-dal
