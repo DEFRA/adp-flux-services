@@ -1,9 +1,0 @@
-apiVersion: image.toolkit.fluxcd.io/v1beta2
-kind: ImageRepository
-metadata:
-  name: ffc-data-access-layer-api
-  namespace: flux-config
-spec:
-  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-data-access-layer-api
-  interval: 5m0s
-  provider: azure

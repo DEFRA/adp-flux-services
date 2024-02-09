@@ -3,6 +3,9 @@ kind: Kustomization
 metadata:
   name: ffc-data-access-layer-api-deploy
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-data-access-layer-api
+    backstage.io/kubernetes-team: ffc-dal
 spec:
   sourceRef:
     kind: GitRepository

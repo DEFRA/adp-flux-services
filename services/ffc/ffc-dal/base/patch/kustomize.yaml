@@ -3,6 +3,8 @@ kind: Kustomization
 metadata:
   name: ffc-dal-base
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-team: ffc-dal
 spec:
   sourceRef:
     kind: GitRepository

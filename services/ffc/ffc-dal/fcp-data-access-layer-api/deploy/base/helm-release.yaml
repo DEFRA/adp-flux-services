@@ -3,6 +3,9 @@ kind: HelmRelease
 metadata:
   name: ffc-data-access-layer-api
   namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-data-access-layer-api
+    backstage.io/kubernetes-team: ffc-dal
 spec:
   releaseName: ffc-data-access-layer-api
   chart:
