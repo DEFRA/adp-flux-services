@@ -1,0 +1,31 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ffc-dal-base
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-team: ffc-dal
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  interval: 5m
+  timeout: 3m
+  prune: true
+  path: ./services/ffc/ffc-dal/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  postBuild:
+    substitute:
+      TEAM_NAMESPACE: "ffc-dal"
+      TEAM_NAME: "ffc-dal-team"
+      TEAM_RG: "${SERVICES_INFRA_RG}-ffc-dal"
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      SERVICE_CODE: "ffc-dal"
+      PLATFORM_DB_ADMIN: "adp-platform-db-aad-admin"
+    substituteFrom:
+      - kind: ConfigMap
+        name: ffc-dal-mi-credential
+        optional: true
+      - kind: ConfigMap
+        name: adp-platform-vars
