@@ -1,19 +1,19 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-data-access-layer-api
+  name: fcp-data-access-layer-api
   namespace: flux-config
 spec:
   chart:
     spec:
-      version: "0.1.6" # {"$imagepolicy": "flux-config:ffc-data-access-layer-api-snd-03:tag"}
+      version: "0.1.6" # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-03:tag"}
   values:
     environment: production
-    name: ffc-data-access-layer-api
+    name: fcp-data-access-layer-api
     namespace: ffc-dal
-    image: sndadpinfcr3401.azurecr.io/image/ffc-data-access-layer-api:0.1.6 # {"$imagepolicy": "flux-config:ffc-data-access-layer-api-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ffp-data-access-layer-api:0.1.6 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-03"}
     serviceAccount:
-      name: ffc-data-access-layer-api
+      name: fcp-data-access-layer-api
     deployment:
       priorityClassName: default
     container:

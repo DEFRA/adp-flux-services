@@ -1,16 +1,16 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-data-access-layer-api
+  name: fcp-data-access-layer-api
   namespace: flux-config
   labels:
-    backstage.io/kubernetes-id: ffc-data-access-layer-api
+    backstage.io/kubernetes-id: fcp-data-access-layer-api
     backstage.io/kubernetes-team: ffc-dal
 spec:
-  releaseName: ffc-data-access-layer-api
+  releaseName: fcp-data-access-layer-api
   chart:
     spec:
-      chart: ffc-data-access-layer-api
+      chart: fcp-data-access-layer-api
       version: "0.1.0"
       reconcileStrategy: ChartVersion
       sourceRef:
