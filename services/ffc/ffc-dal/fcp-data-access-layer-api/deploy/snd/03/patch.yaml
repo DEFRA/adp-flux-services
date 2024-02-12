@@ -11,7 +11,7 @@ spec:
     environment: production
     name: fcp-data-access-layer-api
     namespace: ffc-dal
-    image: sndadpinfcr3401.azurecr.io/image/ffp-data-access-layer-api:0.1.6 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/fcp-data-access-layer-api:0.1.6 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-03"}
     serviceAccount:
       name: fcp-data-access-layer-api
     deployment:
