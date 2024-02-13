@@ -24,7 +24,7 @@ spec:
     virtualNetworkName: ${VIRTUAL_NETWORK_NAME}
     privateEndpointSubnetName: ${PRIVATE_ENDPOINT_SUBNET}
     privateEndpointPrefix: ${PRIVATE_ENDPOINT_PREFIX}
-    createPrivateEndpointsPrivateDnsZoneGroup: false
+    createPrivateEndpointsPrivateDnsZoneGroup: ${CREATE_PRIVATEENDPOINTS_PRIVATEDNSZONEGROUP}
     userAssignedIdentity:
       federatedCreds:
         - namespace: ${TEAM_NAMESPACE}

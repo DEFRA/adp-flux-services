@@ -3,9 +3,6 @@ kind: Kustomization
 metadata:
   name: ffc-demo-web-infra
   namespace: flux-config
-  labels:
-    backstage.io/kubernetes-id: ffc-demo-web
-    backstage.io/kubernetes-team: ffc-demo  
 spec:
   sourceRef:
     kind: GitRepository
@@ -24,6 +21,7 @@ spec:
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
       SERVICE_CODE: ${SERVICE_CODE}
+      CREATE_PRIVATEENDPOINTS_PRIVATEDNSZONEGROUP: ${CREATE_PRIVATEENDPOINTS_PRIVATEDNSZONEGROUP}
     substituteFrom:
       - kind: ConfigMap
         name: adp-platform-vars

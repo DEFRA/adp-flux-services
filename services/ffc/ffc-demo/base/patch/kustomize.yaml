@@ -3,8 +3,6 @@ kind: Kustomization
 metadata:
   name: ffc-demo-base
   namespace: flux-config
-  labels:
-    backstage.io/kubernetes-team: ffc-demo  
 spec:
   sourceRef:
     kind: GitRepository
@@ -23,6 +21,7 @@ spec:
       APPCONFIG_NAME: ${APPCONFIG_NAME}
       SERVICE_CODE: "FFC-DEMO"
       PLATFORM_DB_ADMIN: "adp-platform-db-aad-admin"
+      CREATE_PRIVATEENDPOINTS_PRIVATEDNSZONEGROUP: ${CREATE_PRIVATEENDPOINTS_PRIVATEDNSZONEGROUP}
     substituteFrom:
       - kind: ConfigMap
         name: ffc-demo-mi-credential
