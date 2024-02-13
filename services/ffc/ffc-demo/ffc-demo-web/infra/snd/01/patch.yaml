@@ -24,6 +24,9 @@ spec:
     virtualNetworkName: ${VIRTUAL_NETWORK_NAME}
     privateEndpointSubnetName: ${PRIVATE_ENDPOINT_SUBNET}
     privateEndpointPrefix: ${PRIVATE_ENDPOINT_PREFIX}
+    azrMSTPrivateLinkDNSSubscriptionID: ${AZR_MST_PRIVATELINKDNS_SUBSCRIPTION_ID}
+    azrMSTPrivateLinkDNSUKSouthResourceGroupName: ${AZR_MST_PRIVATELINKDNS_UKSOUTH_RG}
+    azrMSTPrivateLinkDNSUKWestResourceGroupName: ${AZR_MST_PRIVATELINKDNS_UKWEST_RG}
     createPrivateEndpointsPrivateDnsZoneGroup: ${CREATE_PRIVATEENDPOINTS_PRIVATEDNSZONEGROUP}
     userAssignedIdentity:
       federatedCreds:
