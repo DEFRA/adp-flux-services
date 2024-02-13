@@ -1,20 +1,17 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: fcp-data-access-layer-api-deploy
+  name: fcp-data-access-layer-api-infra
   namespace: flux-config
   labels:
     backstage.io/kubernetes-id: fcp-data-access-layer-api
     backstage.io/kubernetes-team: ffc-dal
 spec:
-  dependsOn:
-    - name: fcp-data-access-layer-api-infra
-      namespace: flux-config
   sourceRef:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  path: ./services/ffc/ffc-dal/fcp-data-access-layer-api/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  path: ./services/ffc/ffc-dal/fcp-data-access-layer-api/infra/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 5m
   timeout: 3m
   prune: true
@@ -23,12 +20,10 @@ spec:
   postBuild:
     substitute:
       SERVICE_NAME: "fcp-data-access-layer-api"
+      TEAM_RG: ${TEAM_RG}
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
-      APPCONFIG_NAME: ${APPCONFIG_NAME}
-      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+      SERVICE_CODE: ${SERVICE_CODE}
     substituteFrom:
       - kind: ConfigMap
         name: adp-platform-vars
-      - kind: ConfigMap
-        name: "fcp-data-access-layer-api-mi-credential"
