@@ -4,7 +4,7 @@ metadata:
   name: ffc-demo-base
   namespace: flux-config
   labels:
-    backstage.io/kubernetes-team: ffc-demo  
+    backstage.io/kubernetes-team: ffc-demo
 spec:
   sourceRef:
     kind: GitRepository

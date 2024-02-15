@@ -6,7 +6,7 @@ metadata:
   labels:
     azure.workload.identity/use: "true"
     backstage.io/kubernetes-id: ffc-demo-claim-service
-    backstage.io/kubernetes-team: ffc-demo  
+    backstage.io/kubernetes-team: ffc-demo
 spec:
   template:
     metadata:
