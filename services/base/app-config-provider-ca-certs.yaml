@@ -1,0 +1,25 @@
+apiVersion: azconfig.io/v1
+kind: AzureAppConfigurationProvider
+metadata:
+  name: ${TEAM_NAMESPACE}-custom-ca
+  namespace: ${TEAM_NAMESPACE}
+spec:
+  endpoint: https://${APPCONFIG_NAME}.azconfig.io
+  target:
+    configMapName: custom-ca-trust
+  auth:
+    workloadIdentity:
+      managedIdentityClientId: ${APPCONFIG_MI_CLIENTID}
+  configuration:
+    selectors:
+      - keyFilter: 'defra-egress-firewall-cert*'
+        labelFilter: adp-platform
+  secret:
+    target:
+      secretName: custom-ca-trust-secret
+    auth:
+      workloadIdentity:
+        managedIdentityClientId: ${APPCONFIG_MI_CLIENTID}
+    refresh:
+      interval: 5m
+      enabled: true
