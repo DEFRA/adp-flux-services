@@ -16,8 +16,6 @@ spec:
     substituteFrom:
       - kind: ConfigMap
         name: adp-platform-vars
-      - kind: Secret
-        name: adp-platform-secrets
     substitute:
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
       APPCONFIG_NAME: ${APPCONFIG_NAME}
