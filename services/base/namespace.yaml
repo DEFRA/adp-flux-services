@@ -4,3 +4,13 @@ metadata:
   name: ${TEAM_NAMESPACE}
   labels:
     toolkit.fluxcd.io/tenant: ${TEAM_NAME}
+---
+apiVersion: v1
+kind: Secret
+metadata: 
+    name: custom-ca-trust-secret
+    namespace: ${TEAM_NAMESPACE}
+type: Opaque
+data:
+    defra-egress-firewall-cert-01.crt: |
+      ${defra-egress-firewall-cert-01}
