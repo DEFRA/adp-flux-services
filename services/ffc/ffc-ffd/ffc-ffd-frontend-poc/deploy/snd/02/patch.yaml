@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: "0.1.8" # {"$imagepolicy": "flux-config:ffc-ffd-frontend-poc-snd-02:tag"}
+      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-ffd-frontend-poc-snd-02:tag"}
   values:
     environment: production
     name: ffc-ffd-frontend-poc
     namespace: ffc-ffd
-    image: sndadpinfcr2401.azurecr.io/image/ffc-ffd-frontend-poc:0.1.8 # {"$imagepolicy": "flux-config:ffc-ffd-frontend-poc-snd-02"}
+    image: sndadpinfcr2401.azurecr.io/image/ffc-ffd-frontend-poc:0.1.0 # {"$imagepolicy": "flux-config:ffc-ffd-frontend-poc-snd-02"}
     serviceAccount:
       name: ffc-ffd-frontend-poc
     labels:

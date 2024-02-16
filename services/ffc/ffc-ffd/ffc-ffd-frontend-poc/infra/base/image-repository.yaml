@@ -5,7 +5,7 @@ metadata:
   namespace: flux-config
   labels:
     backstage.io/kubernetes-id: ffc-ffd-frontend-poc
-    backstage.io/kubernetes-team: ffc-ffd  
+    backstage.io/kubernetes-team: ffc-ffd
 spec:
   image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-ffd-frontend-poc
   interval: 5m0s

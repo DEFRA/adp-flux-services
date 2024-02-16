@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-ffd-frontend-poc-infra
-      version: "0.1.8" # {"$imagepolicy": "flux-config:ffc-ffd-frontend-poc-snd-02:tag"}
+      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-ffd-frontend-poc-snd-02:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -20,6 +20,14 @@ spec:
     serviceName: ${SERVICE_NAME}
     keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
     keyVaultName: ${APPLICATION_KEYVAULT}
+    environment: ${ENVIRONMENT}
+    virtualNetworkResourceGroupName: ${VIRTUAL_NETWORK_RG}
+    virtualNetworkName: ${VIRTUAL_NETWORK_NAME}
+    privateEndpointSubnetName: ${PRIVATE_ENDPOINT_SUBNET}
+    privateEndpointPrefix: ${PRIVATE_ENDPOINT_PREFIX}
+    azrMSTPrivateLinkDNSSubscriptionID: ${AZR_MST_PRIVATELINKDNS_SUBSCRIPTION_ID}
+    azrMSTPrivateLinkDNSUKSouthResourceGroupName: ${AZR_MST_PRIVATELINKDNS_UKSOUTH_RG}
+    azrMSTPrivateLinkDNSUKWestResourceGroupName: ${AZR_MST_PRIVATELINKDNS_UKWEST_RG}
     userAssignedIdentity:
       federatedCreds:
         - namespace: ${TEAM_NAMESPACE}
