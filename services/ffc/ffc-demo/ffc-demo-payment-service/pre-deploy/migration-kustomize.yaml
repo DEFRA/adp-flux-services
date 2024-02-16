@@ -5,12 +5,11 @@ metadata:
   namespace: flux-config
   labels:
     backstage.io/kubernetes-id: ffc-demo-payment-service
-    backstage.io/kubernetes-team: ffc-demo  
+    backstage.io/kubernetes-team: ffc-demo
 spec:
   dependsOn:
     - name: ffc-demo-payment-service-pre-deploy-pre-migration
       namespace: flux-config
-      
   sourceRef:
     kind: GitRepository
     name: services-repository

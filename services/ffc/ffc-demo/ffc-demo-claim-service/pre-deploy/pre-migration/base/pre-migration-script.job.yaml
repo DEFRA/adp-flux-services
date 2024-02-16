@@ -12,6 +12,8 @@ spec:
     metadata:
       labels:
         azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: ffc-demo-claim-service
+        backstage.io/kubernetes-team: ffc-demo
     spec:
       serviceAccountName: ${PLATFORM_DB_ADMIN}
       restartPolicy: Never
