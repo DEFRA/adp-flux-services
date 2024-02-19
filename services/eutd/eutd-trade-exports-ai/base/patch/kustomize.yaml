@@ -4,7 +4,7 @@ metadata:
   name: eutd-trade-exports-ai-base
   namespace: flux-config
   labels:
-    backstage.io/kubernetes-team: eutd-trade-exports-ai  
+    backstage.io/kubernetes-team: eutd-trade-exports-ai
 spec:
   sourceRef:
     kind: GitRepository

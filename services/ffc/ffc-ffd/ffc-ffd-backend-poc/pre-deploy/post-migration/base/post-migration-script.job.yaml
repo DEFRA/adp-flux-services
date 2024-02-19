@@ -6,14 +6,14 @@ metadata:
   labels:
     azure.workload.identity/use: "true"
     backstage.io/kubernetes-id: ffc-ffd-backend-poc
-    backstage.io/kubernetes-team: ffc-ffd    
+    backstage.io/kubernetes-team: ffc-ffd
 spec:
   template:
     metadata:
       labels:
         azure.workload.identity/use: "true"
         backstage.io/kubernetes-id: ffc-ffd-backend-poc
-        backstage.io/kubernetes-team: ffc-ffd    
+        backstage.io/kubernetes-team: ffc-ffd
     spec:
       serviceAccountName: ${TEAM_NAMESPACE}
       restartPolicy: Never
