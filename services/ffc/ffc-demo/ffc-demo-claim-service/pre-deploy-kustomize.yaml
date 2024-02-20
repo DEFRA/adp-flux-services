@@ -5,7 +5,7 @@ metadata:
   namespace: flux-config
   labels:
     backstage.io/kubernetes-id: ffc-demo-claim-service
-    backstage.io/kubernetes-team: ffc-demo  
+    backstage.io/kubernetes-team: ffc-demo
 spec:
   dependsOn:
     - name: ffc-demo-claim-service-infra
