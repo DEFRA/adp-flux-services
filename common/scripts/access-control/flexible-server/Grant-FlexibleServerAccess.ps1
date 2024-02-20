@@ -96,9 +96,6 @@ function Get-SQLScriptToGrantAllPermissions {
     [void]$builder.Append("GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
     [void]$builder.Append("GRANT ALL ON ALL FUNCTIONS IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
     [void]$builder.Append("GRANT ALL ON ALL PROCEDURES IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
-    # [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO `"$PostgresWriterAdGroup`";")
-    # [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO `"$PostgresWriterAdGroup`";")
-    # [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON FUNCTIONS TO `"$PostgresWriterAdGroup`";")
     return $builder.ToString()
 }
 
@@ -119,7 +116,7 @@ function Get-SQLScriptToGrantServicePermissions {
     [System.Text.StringBuilder]$builder = [System.Text.StringBuilder]::new()
     [void]$builder.Append("GRANT CREATE, USAGE ON SCHEMA public TO `"$ServiceMIName`";")
     [void]$builder.Append("GRANT SELECT, UPDATE, INSERT, REFERENCES, TRIGGER ON ALL TABLES IN SCHEMA public TO `"$ServiceMIName`";")
-    [void]$builder.Append("GRANT SELECT, USAGE ON ALL SEQUENCES IN SCHEMA public TO `"$ServiceMIName`";")
+    [void]$builder.Append("GRANT SELECT, UPDATE, USAGE ON ALL SEQUENCES IN SCHEMA public TO `"$ServiceMIName`";")
     [void]$builder.Append("GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA public TO `"$ServiceMIName`";")
     [void]$builder.Append("GRANT EXECUTE ON ALL PROCEDURES IN SCHEMA public TO `"$ServiceMIName`";")
     [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, UPDATE, INSERT, REFERENCES, TRIGGER ON TABLES TO `"$ServiceMIName`";")
