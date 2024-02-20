@@ -6,7 +6,7 @@ metadata:
   namespace: flux-config
   labels:
     backstage.io/kubernetes-id: ffc-ffd-backend-poc
-    backstage.io/kubernetes-team: ffc-ffd  
+    backstage.io/kubernetes-team: ffc-ffd
 spec:
   image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-ffd-backend-poc-dbmigration
   interval: 5m0s
