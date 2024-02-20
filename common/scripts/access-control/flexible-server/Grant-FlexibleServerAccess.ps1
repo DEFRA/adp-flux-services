@@ -99,7 +99,6 @@ function Get-SQLScriptToGrantAllPermissions {
     # [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO `"$PostgresWriterAdGroup`";")
     # [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO `"$PostgresWriterAdGroup`";")
     # [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON FUNCTIONS TO `"$PostgresWriterAdGroup`";")
-    # [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON PROCEDURES TO `"$PostgresWriterAdGroup`";")
     return $builder.ToString()
 }
 
@@ -113,7 +112,6 @@ function Get-SQLScriptToGrantReadPermissions {
     [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO `"$PostgresReaderAdGroup`";")
     [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON SEQUENCES TO `"$PostgresReaderAdGroup`";")
     [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public REVOKE EXECUTE ON FUNCTIONS FROM `"$PostgresReaderAdGroup`";")
-    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public REVOKE EXECUTE ON PROCEDURES FROM `"$PostgresReaderAdGroup`";")
     return $builder.ToString()
 }
 
@@ -127,7 +125,6 @@ function Get-SQLScriptToGrantServicePermissions {
     [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, UPDATE, INSERT, REFERENCES, TRIGGER ON TABLES TO `"$ServiceMIName`";")
     [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, USAGE ON SEQUENCES TO `"$ServiceMIName`";")
     [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT EXECUTE ON FUNCTIONS TO `"$ServiceMIName`";")
-    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT EXECUTE ON PROCEDURES TO `"$ServiceMIName`";")
     return $builder.ToString()
 }
 
