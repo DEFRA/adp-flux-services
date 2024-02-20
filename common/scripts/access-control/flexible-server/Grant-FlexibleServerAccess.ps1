@@ -14,7 +14,6 @@ Set-StrictMode -Version 3.0
 [string]$PostgresHost = $env:POSTGRES_HOST 
 [string]$PostgresDatabase = $env:POSTGRES_DATABASE
 [string]$ServiceMIName = $env:SERVICE_MI_NAME 
-[string]$TeamMIName = $env:TEAM_MI_NAME 
 [string]$PlatformMIName = $env:PLATFORM_MI_NAME 
 [string]$PlatformMIClientId = $env:AZURE_CLIENT_ID
 [string]$PlatformMITenantId = $env:AZURE_TENANT_ID
@@ -43,7 +42,6 @@ Write-Host "${functionName} started at $($startTime.ToString('u'))"
 Write-Debug "${functionName}:PostgresHost:$PostgresHost"
 Write-Debug "${functionName}:PostgresDatabase:$PostgresDatabase"
 Write-Debug "${functionName}:ServiceMIName:$ServiceMIName"
-Write-Debug "${functionName}:TeamMIName:$TeamMIName"
 Write-Debug "${functionName}:PlatformMIName:$PlatformMIName"
 Write-Debug "${functionName}:SubscriptionName=$SubscriptionName"
 Write-Debug "${functionName}:WorkingDirectory=$WorkingDirectory"
