@@ -8,9 +8,9 @@ spec:
     - action: Allow
       protocol: TCP
       source:
-        namespaceSelector: kubernetes.io/metadata.name == 'ffc-demo'
+        namespaceSelector: kubernetes.io/metadata.name == '${TEAM_NAMESPACE}'
   egress:
     - action: Allow
       protocol: TCP
       destination:
-        namespaceSelector: kubernetes.io/metadata.name == 'ffc-demo'
+        namespaceSelector: kubernetes.io/metadata.name == '${TEAM_NAMESPACE}'
