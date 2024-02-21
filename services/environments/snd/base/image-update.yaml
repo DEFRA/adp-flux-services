@@ -19,7 +19,7 @@ spec:
         name: fluxcdbot
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
-      branch: main
+      branch: aa/calicoNetworkPolicies
   update:
     path: ./
     strategy: Setters
