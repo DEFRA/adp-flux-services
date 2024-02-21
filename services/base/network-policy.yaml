@@ -7,6 +7,10 @@ spec:
   ingress:
     - action: Allow
       protocol: TCP
+      source:
+        namespaceSelector: kubernetes.io/metadata.name == 'ffc-demo'
   egress:
     - action: Allow
       protocol: TCP
+      destination:
+        namespaceSelector: kubernetes.io/metadata.name == 'ffc-demo'
