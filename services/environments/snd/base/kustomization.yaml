@@ -7,3 +7,4 @@ resources:
   - ../../../ffc/ffc-dal/base/patch
   - ../../../adp-platform/kustomize.yaml
   - ../../../eutd/eutd-trade-exports-ai/base/patch
+  - ../../../ffc/ffc-find/base/patch

@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: fcp-find-ai-frontend
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: fcp-find-ai-frontend
+    backstage.io/kubernetes-team: ffc-find
+spec:
+  releaseName: fcp-find-ai-frontend
+  chart:
+    spec:
+      chart: fcp-find-ai-frontend
+      version: "0.1.0"
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ffc-find-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: ffc-find
+  values:
+    aadWorkloadIdentity: true
+    serviceAccount:
+      name: ffc-find
