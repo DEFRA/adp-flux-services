@@ -1,27 +1,27 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: trade-exports-packinglistai-ui
+  name: fcp-find-ai-frontend
   namespace: flux-config
 spec:
   chart:
     spec:
-      version: "0.1.5" # {"$imagepolicy": "flux-config:trade-exports-packinglistai-ui-snd-03:tag"}
+      version: "0.1.0" # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-dev-01:tag"}
   values:
     environment: production
-    name: trade-exports-packinglistai-ui
-    namespace: eutd-trade-exports-ai
-    image: sndadpinfcr3401.azurecr.io/image/trade-exports-packinglistai-ui:0.1.5 # {"$imagepolicy": "flux-config:trade-exports-packinglistai-ui-snd-03"}
+    name: fcp-find-ai-frontend
+    namespace: ffc-find
+    image: devadpinfcr1401.azurecr.io/image/fcp-find-ai-frontend:0.1.0 # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-dev-01"}
     serviceAccount:
-      name: trade-exports-packinglistai-ui
+      name: fcp-find-ai-frontend
     labels:
       component: web
     container:
       imagePullPolicy: Always
     ingress:
       class: nginx
-      endpoint: trade-exports-packinglistai-ui
-      server: snd3.adp.defra.gov.uk
+      endpoint: fcp-find-ai-frontend
+      server: dev1.adp.defra.gov.uk
     deployment:
       priorityClassName: default
     containerConfigMap:

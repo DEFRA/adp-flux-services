@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: trade-exports-packinglistai-ui-infra
+  name: fcp-find-ai-frontend-infra
   namespace: flux-config
 spec:
   chart:
     spec:
-      chart: trade-exports-packinglistai-ui-infra
-      version: "0.1.5" # {"$imagepolicy": "flux-config:trade-exports-packinglistai-ui-snd-03:tag"}
+      chart: fcp-find-ai-frontend-infra
+      version: "0.1.0" # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-dev-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
