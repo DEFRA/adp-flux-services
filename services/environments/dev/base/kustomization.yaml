@@ -4,3 +4,4 @@ resources:
   - image-update.yaml
   - ../../../ffc/ffc-demo/base/patch
   - ../../../adp-platform/kustomize.yaml
+  - ../../../ffc/ffc-find/base/patch
