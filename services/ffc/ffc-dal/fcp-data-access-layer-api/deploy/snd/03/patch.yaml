@@ -14,10 +14,16 @@ spec:
     image: sndadpinfcr3401.azurecr.io/image/fcp-data-access-layer-api:1.0.34 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-03"}
     serviceAccount:
       name: fcp-data-access-layer-api
-    deployment:
-      priorityClassName: default
+    labels:
+      component: api
     container:
       imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: fcp-data-access-layer-api
+      server: snd3.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
