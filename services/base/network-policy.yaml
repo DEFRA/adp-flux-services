@@ -7,3 +7,6 @@ spec:
   ingress:
     - action: Allow
       protocol: TCP
+  egress:
+    - action: Allow
+      protocol: TCP
