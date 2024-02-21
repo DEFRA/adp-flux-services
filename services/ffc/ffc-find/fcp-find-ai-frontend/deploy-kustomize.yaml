@@ -1,0 +1,34 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: fcp-find-ai-frontend-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: fcp-find-ai-frontend
+    backstage.io/kubernetes-team: ffc-find
+spec:
+  dependsOn:
+    - name: fcp-find-ai-frontend-infra
+      namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/ffc/ffc-find/fcp-find-ai-frontend/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SERVICE_NAME: "fcp-find-ai-frontend"
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+    substituteFrom:
+      - kind: ConfigMap
+        name: adp-platform-vars
+      - kind: ConfigMap
+        name: "fcp-find-ai-frontend-mi-credential"
