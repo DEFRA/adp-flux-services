@@ -12,5 +12,4 @@ resources:
   - aso/team-secret.yaml
   - aso/team-federated-credential.yaml
   - team-service-account.yaml
-  - network-policy.yaml
   
