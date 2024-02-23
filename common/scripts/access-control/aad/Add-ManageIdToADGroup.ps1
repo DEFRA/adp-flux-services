@@ -63,7 +63,6 @@ try {
 
     Write-Host "Connecting to Azure with Service Principal..."
     $null = Connect-AzAccount -ServicePrincipal -TenantId $TenantId -Credential $Credential
-    $null = Set-AzContext -Subscription $SubscriptionName
     Write-Host "Connected to Azure with Service Principal"
 
     if (-not (Get-Module -ListAvailable -Name 'Microsoft.Graph')) {
