@@ -64,6 +64,7 @@ try {
 
     if (-not (Get-Module -ListAvailable -Name 'Microsoft.Graph')) {
         Write-Host "Microsoft.Graph doesn't exist. Installing module..."
+        Get-PSRepository 
         Install-Module Microsoft.Graph -Force -ErrorAction Stop
         Write-Host "Microsoft.Graph module installed"
     }
