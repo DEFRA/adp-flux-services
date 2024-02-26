@@ -74,7 +74,7 @@ try {
     $adGroup = Get-MgGroup -Filter "DisplayName eq '$ADGroupName'"
     if ($adGroup) {
         Write-Host "Identified AD group '$($adGroup.DisplayName)'"
-        $managedId = Get-MgUser -Filter "DiplayName eq '$ManagedIdentityName'" -Property "Id, DisplayName" -ErrorAction Stop
+        $managedId = Get-MgUser -Filter "DiplayName eq '$ManagedIdentityName'" -Property "Id, Name" -ErrorAction Stop
         Write-Host "Checking if managed identity already added to AD group..."
         $member = Get-MgGroupMember -GroupId $adGroup.Id -Filter "Id eq '$($managedId.Id)'"
         if ($managedId -and -not($member)) {
