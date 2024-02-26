@@ -71,12 +71,12 @@ try {
     $null = Connect-MgGraph -AccessToken ($accessToken | ConvertTo-SecureString -AsPlainText -Force)
     Write-Host "Connected to Microsoft Graph"
 
-    $adGroup = Get-MgGroup -Filter "DisplayName -eq '$ADGroupName'"
+    $adGroup = Get-MgGroup -Filter "DisplayName eq '$ADGroupName'"
     if ($adGroup) {
         Write-Host "Identified AD group '$($adGroup.DisplayName)'"
-        $managedId = Get-MgUser -Filter "DiplayName -eq '$ManagedIdentityName'" -Property "Id, DisplayName" -ErrorAction Stop
+        $managedId = Get-MgUser -Filter "DiplayName eq '$ManagedIdentityName'" -Property "Id, DisplayName" -ErrorAction Stop
         Write-Host "Checking if managed identity already added to AD group..."
-        $member = Get-MgGroupMember -GroupId $adGroup.Id -Filter "Id -eq '$($managedId.Id)'"
+        $member = Get-MgGroupMember -GroupId $adGroup.Id -Filter "Id eq '$($managedId.Id)'"
         if ($managedId -and -not($member)) {
             Write-Host "Adding managed Id to AD group..."
             Write-Host "Identified Managed Id '$($managedId.DisplayName)'"
