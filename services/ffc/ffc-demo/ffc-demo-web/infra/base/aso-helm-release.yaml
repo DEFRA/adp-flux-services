@@ -19,6 +19,8 @@ spec:
         namespace: flux-config
   install:
     createNamespace: true
+  upgrade:
+    force: true  
   interval: 5m0s
   targetNamespace: ffc-demo
   values:
