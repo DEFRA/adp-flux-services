@@ -68,7 +68,7 @@ try {
         Write-Host "Microsoft.Graph module installed"
     }
     $accessToken = (Get-AzAccessToken -Resource https://graph.microsoft.com).Token
-    $null = Connect-MgGraph -AccessToken $AccessToken
+    $null = Connect-MgGraph -AccessToken ($accessToken | ConvertTo-SecureString -AsPlainText -Force)
     Write-Host "Connected to Microsoft Graph"
 
     $adGroup = Get-MgGroup -Filter "DisplayName -eq '$ADGroupName'"
