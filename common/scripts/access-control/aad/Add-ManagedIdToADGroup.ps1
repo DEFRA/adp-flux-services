@@ -47,6 +47,7 @@ try {
 
     Write-Host "Connecting to Azure with Platform MI"
     $null = Connect-AzAccount -ServicePrincipal -ApplicationId $PlatformMIClientId -FederatedToken $(Get-Content $PlatformMIFederatedTokenFile -raw) -Tenant $TenantId -Subscription $SubscriptionName
+
     Write-Host "Connected to Azure and set context to '$SubscriptionName'"
 
     $SPClientId = Get-KeyVaultSecret -KeyVaultName $KeyVaultName -SecretName $ServicePrincipalClientId
@@ -74,25 +75,24 @@ try {
     $adGroup = Get-MgGroup -Filter "DisplayName eq '$ADGroupName'"
     if ($adGroup) {
         Write-Host "Identified AD group '$($adGroup.DisplayName)'"
-        $managedId = Get-MgUser -Filter "DiplayName eq '$ManagedIdentityName'" -Property "Id, Name" -ErrorAction Stop
-        Write-Host "Checking if managed identity already added to AD group..."
-        $member = Get-MgGroupMember -GroupId $adGroup.Id -Filter "Id eq '$($managedId.Id)'"
-        if ($managedId -and -not($member)) {
-            Write-Host "Adding managed Id to AD group..."
-            Write-Host "Identified Managed Id '$($managedId.DisplayName)'"
-            $null = New-MgGroupMember -GroupId $adGroup.Id -DirectoryObjectId $managedId.Id -ErrorAction Stop
-            Write-Host "Added Managed Identity '${ManagedIdentityName}' to AD group '${ADGroupName}'"
-        }
-        if($member){
-            Write-Host "Managed Id already exists in AD group"
-        }
+        $managedId = Get-MgServicePrincipal -Filter "displayName eq '$ManagedIdentityName'" -ErrorAction Stop
+        Write-Host "Identified Managed Id '$($managedId.DisplayName)'"
+        $null = New-MgGroupMember -GroupId $adGroup.Id -DirectoryObjectId $managedId.Id -ErrorAction Stop
+        Write-Host "Added Managed Identity '${ManagedIdentityName}' to AD group '${ADGroupName}'"
     }
+    
     $exitCode = 0
 }
 catch {
-    $exitCode = -2
-    Write-Error $_.Exception.ToString()
-    throw $_.Exception
+    if ($_.Exception.Message.Contains("One or more added object references already exist")) {
+        Write-Host "Managed Identity already exists in AD group"
+        $exitCode = 0
+    }
+    else {
+        $exitCode = -2
+        Write-Error "Failed to add managed identity to AD group with exception: $($_.Exception.ToString())"
+        throw $_.Exception
+    }
 }
 finally {
     Disconnect-MgGraph
