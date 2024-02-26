@@ -64,9 +64,6 @@ try {
 
     if (-not (Get-Module -ListAvailable -Name 'Microsoft.Graph')) {
         Write-Host "Microsoft.Graph doesn't exist. Installing module..."
-        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-        Install-Module PowerShellGet -Force
-        
         Install-Module Microsoft.Graph -Force -ErrorAction Stop
         Write-Host "Microsoft.Graph module installed"
     }
