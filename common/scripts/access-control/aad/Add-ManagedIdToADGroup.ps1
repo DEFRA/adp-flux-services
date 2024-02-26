@@ -73,12 +73,18 @@ try {
 
     $adGroup = Get-MgGroup -Filter "DisplayName -eq '$ADGroupName'"
     if ($adGroup) {
-        Write-Host "Identified AD Group '$($adGroup.DisplayName)'"
+        Write-Host "Identified AD group '$($adGroup.DisplayName)'"
         $managedId = Get-MgUser -Filter "DiplayName -eq '$ManagedIdentityName'" -Property "Id, DisplayName" -ErrorAction Stop
-        if ($managedId) {
+        Write-Host "Checking if managed identity already added to AD group..."
+        $member = Get-MgGroupMember -GroupId $adGroup.Id -Filter "Id -eq '$($managedId.Id)'"
+        if ($managedId -and -not($member)) {
+            Write-Host "Adding managed Id to AD group..."
             Write-Host "Identified Managed Id '$($managedId.DisplayName)'"
             $null = New-MgGroupMember -GroupId $adGroup.Id -DirectoryObjectId $managedId.Id -ErrorAction Stop
-            Write-Host "Added Managed Identity '${ManagedIdentityName}' to AD Group '${ADGroupName}'"
+            Write-Host "Added Managed Identity '${ManagedIdentityName}' to AD group '${ADGroupName}'"
+        }
+        if($member){
+            Write-Host "Managed Id already exists in AD group"
         }
     }
     $exitCode = 0
