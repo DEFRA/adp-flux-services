@@ -53,7 +53,7 @@ try {
     $SPClientId = Get-KeyVaultSecret -KeyVaultName $KeyVaultName -SecretName $ServicePrincipalClientId
     $SPClientSecret = Get-KeyVaultSecret -KeyVaultName $KeyVaultName -SecretName $ServicePrincipalClientSecret
 
-    Disconnect-AzAccount
+    Disconnect-AzAccount | Out-Null
     Write-Host "Disconnected from Azure with Platform MI"
 
     $SecureClientSecret = ConvertTo-SecureString -String $SPClientSecret -AsPlainText -Force
@@ -95,7 +95,7 @@ catch {
     }
 }
 finally {
-    Disconnect-MgGraph
+    Disconnect-MgGraph | Out-Null
     [DateTime]$endTime = [DateTime]::UtcNow
     Write-Host "${functionName} finished at $($endTime.ToString('u')) with exit code $exitCode"
     if ($setHostExitCode) {
