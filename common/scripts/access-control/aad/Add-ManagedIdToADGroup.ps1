@@ -8,7 +8,7 @@ Set-StrictMode -Version 3.0
 [string]$TenantId = $env:AZURE_TENANT_ID
 [string]$PlatformMIClientId = $env:AZURE_CLIENT_ID
 [string]$PlatformMIFederatedTokenFile = $env:AZURE_FEDERATED_TOKEN_FILE
-[string]$SubscriptionName = $env:SSV_SHARED_SUBSCRIPTION_NAME
+[string]$SubscriptionId = $env:SSV_SHARED_SUBSCRIPTION_ID
 [string]$WorkingDirectory = $PWD
 
 [string]$functionName = $MyInvocation.MyCommand
@@ -34,7 +34,7 @@ Write-Debug "${functionName}:KeyVaultName=$KeyVaultName"
 Write-Debug "${functionName}:TenantId=$TenantId"
 Write-Debug "${functionName}:PlatformMIClientId=$PlatformMIClientId"
 Write-Debug "${functionName}:PlatformMIFederatedTokenFile=$PlatformMIFederatedTokenFile"
-Write-Debug "${functionName}:SubscriptionName=$SubscriptionName"
+Write-Debug "${functionName}:SubscriptionId=$SubscriptionId"
 Write-Debug "${functionName}:WorkingDirectory=$WorkingDirectory"
 
 try {
@@ -46,9 +46,9 @@ try {
     Import-Module $moduleDir.FullName -Force
 
     Write-Host "Connecting to Azure with Platform MI"
-    $null = Connect-AzAccount -ServicePrincipal -ApplicationId $PlatformMIClientId -FederatedToken $(Get-Content $PlatformMIFederatedTokenFile -raw) -Tenant $TenantId -Subscription $SubscriptionName
+    $null = Connect-AzAccount -ServicePrincipal -ApplicationId $PlatformMIClientId -FederatedToken $(Get-Content $PlatformMIFederatedTokenFile -raw) -Tenant $TenantId -Subscription $SubscriptionId
 
-    Write-Host "Connected to Azure and set context to '$SubscriptionName'"
+    Write-Host "Connected to Azure and set context to '$SubscriptionId'"
 
     $SPClientId = Get-KeyVaultSecret -KeyVaultName $KeyVaultName -SecretName $ServicePrincipalClientId
     $SPClientSecret = Get-KeyVaultSecret -KeyVaultName $KeyVaultName -SecretName $ServicePrincipalClientSecret
