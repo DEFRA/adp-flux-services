@@ -5,3 +5,10 @@ resources:
   - image-policy.yaml
 patches:
   - path: patch.yaml
+    target:
+      kind: HelmRelease
+      name: ffc-demo-web-infra     
+  - path: patch-post-deploy.yaml
+    target:
+      kind: HelmRelease
+      name: ffc-demo-web-infra-post-deploy
