@@ -20,8 +20,8 @@ Set-StrictMode -Version 3.0
 [string]$TeamMIFederatedTokenFile = $env:AZURE_FEDERATED_TOKEN_FILE
 [string]$SubscriptionName = $env:SUBSCRIPTION_NAME
 [string]$WorkingDirectory = $PWD
-[string]$PostgresReaderAdGroup = $env:PG_AD_READER_GROUP
-[string]$PostgresWriterAdGroup = $env:PG_AD_WRITER_GROUP
+[string]$PostgresReaderAdGroup = $env:PG_READER_AD_GROUP
+[string]$PostgresWriterAdGroup = $env:PG_WRITER_AD_GROUP
 
 [string]$functionName = $MyInvocation.MyCommand
 [DateTime]$startTime = [DateTime]::UtcNow
@@ -45,7 +45,6 @@ Write-Debug "${functionName}:SubscriptionName=$SubscriptionName"
 Write-Debug "${functionName}:WorkingDirectory=$WorkingDirectory"
 Write-Debug "${functionName}:PostgresReaderAdGroup=$PostgresReaderAdGroup"
 Write-Debug "${functionName}:PostgresWriterAdGroup=$PostgresWriterAdGroup"
-
 
 [System.IO.DirectoryInfo]$scriptDir = $PSCommandPath | Split-Path -Parent
 Write-Debug "${functionName}:scriptDir.FullName:$($scriptDir.FullName)"
