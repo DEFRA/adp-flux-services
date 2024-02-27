@@ -42,3 +42,5 @@ spec:
           value: ${SSV_SPN_CLIENT_SECRET_KV_NAME}
         - name: KEY_VAULT_NAME
           value: ${SSV_PLATFORM_KEYVAULT}
+        - name: SYSTEM_DEBUG
+          value: "true"

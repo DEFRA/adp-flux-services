@@ -43,7 +43,7 @@ try {
 
     [System.IO.DirectoryInfo]$moduleDir = Join-Path -Path $WorkingDirectory -ChildPath "common/scripts/modules/keyvault"
     Write-Debug "${functionName}:moduleDir.FullName=$($moduleDir.FullName)"
-    Import-Module $moduleDir.FullName -Force -Verbose:$false
+    Import-Module $moduleDir.FullName -Force
 
     Write-Host "Connecting to Azure with Platform MI"
     $null = Connect-AzAccount -ServicePrincipal -ApplicationId $PlatformMIClientId -FederatedToken $(Get-Content $PlatformMIFederatedTokenFile -raw) -Tenant $TenantId -Subscription $SubscriptionId
