@@ -30,3 +30,15 @@ spec:
           value: ${SUBSCRIPTION_ID}
         - name: SUBSCRIPTION_NAME
           value: ${SUBSCRIPTION_NAME}
+        - name: SSV_SHARED_SUBSCRIPTION_NAME
+          value: ${SSV_SHARED_SUBSCRIPTION_NAME}
+        - name: TEAM_MI_NAME
+          value: ${TEAM_MI_PREFIX}-${TEAM_NAMESPACE}
+        - name: PG_WRITER_AD_GROUP
+          value: "AAG-Azure-ADP-SND1-PostgresDB_Writer"
+        - name: SP_CLIENT_ID_KV
+          value: "ADO-DefraGovUK-AAD-ADP-SSV3-ClientId"
+        - name: SP_CLIENT_SECRET_KV
+          value: "ADO-DefraGovUK-AAD-ADP-SSV3"
+        - name: KEY_VAULT_NAME
+          value: ${SSV_PLATFORM_KEYVAULT}

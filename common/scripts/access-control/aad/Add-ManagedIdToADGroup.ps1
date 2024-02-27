@@ -8,7 +8,7 @@ Set-StrictMode -Version 3.0
 [string]$TenantId = $env:AZURE_TENANT_ID
 [string]$PlatformMIClientId = $env:AZURE_CLIENT_ID
 [string]$PlatformMIFederatedTokenFile = $env:AZURE_FEDERATED_TOKEN_FILE
-[string]$SubscriptionName = $env:SUBSCRIPTION_NAME
+[string]$SubscriptionName = $env:SSV_SHARED_SUBSCRIPTION_NAME
 [string]$WorkingDirectory = $PWD
 
 [string]$functionName = $MyInvocation.MyCommand
