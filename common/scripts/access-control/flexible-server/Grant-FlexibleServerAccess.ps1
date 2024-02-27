@@ -176,6 +176,10 @@ try {
     $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $PostgresDatabase -PostgresUsername $PlatformMIName -Path $assignServiceMiPermissionsTempFile.FullName
     Write-Host "Granted Access to ${ServiceMIName}"
 
+    # Add Team MI to PG Writer AD Group
+    [System.IO.DirectoryInfo]$adScriptPath = Join-Path -Path $WorkingDirectory -ChildPath "common/scripts/access-control/aad/Add-ManagedIdToADGroup.ps1"
+    & $adScriptPath
+
     # Successful exit
     $exitCode = 0
 } 
