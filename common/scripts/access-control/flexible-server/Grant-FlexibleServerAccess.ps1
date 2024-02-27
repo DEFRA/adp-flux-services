@@ -177,6 +177,7 @@ try {
     Write-Host "Granted Access to ${ServiceMIName}"
 
     # Add Team MI to PG Writer AD Group
+    Write-Host "Adding Team Managed Identity to Postgres Writer AD Group"
     [System.IO.DirectoryInfo]$adScriptPath = Join-Path -Path $WorkingDirectory -ChildPath "common/scripts/access-control/aad/Add-ManagedIdToADGroup.ps1"
     & $adScriptPath
 
