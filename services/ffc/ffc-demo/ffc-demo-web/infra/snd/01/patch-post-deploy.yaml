@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-demo-web-infra
+  name: ffc-demo-web-infra-post-deploy
   namespace: flux-config
 spec:
   chart:
     spec:
-      chart: ffc-demo-web-infra
+      chart: ffc-demo-web-infra-post-deploy
       version: "4.32.30" # {"$imagepolicy": "flux-config:ffc-demo-web-snd-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
