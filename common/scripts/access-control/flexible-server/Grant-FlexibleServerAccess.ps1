@@ -21,8 +21,8 @@ Set-StrictMode -Version 3.0
 [string]$PlatformMIFederatedTokenFile = $env:AZURE_FEDERATED_TOKEN_FILE
 [string]$SubscriptionName = $env:SUBSCRIPTION_NAME
 [string]$WorkingDirectory = $PWD
-[string]$PostgresReaderAdGroup = $env:PG_AD_READER_GROUP
-[string]$PostgresWriterAdGroup = $env:PG_AD_WRITER_GROUP
+[string]$PostgresReaderAdGroup = $env:PG_READER_AD_GROUP
+[string]$PostgresWriterAdGroup = $env:PG_WRITER_AD_GROUP
 
 [string]$functionName = $MyInvocation.MyCommand
 [DateTime]$startTime = [DateTime]::UtcNow

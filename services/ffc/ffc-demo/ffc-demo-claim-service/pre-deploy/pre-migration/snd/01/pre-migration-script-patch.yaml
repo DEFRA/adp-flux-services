@@ -32,10 +32,10 @@ spec:
           value: ${SUBSCRIPTION_NAME}
         - name: SSV_SHARED_SUBSCRIPTION_ID
           value: ${SSV_SHARED_SUBSCRIPTION_ID}
-        - name: TEAM_MI_NAME
-          value: ${TEAM_MI_PREFIX}-${TEAM_NAMESPACE}
         - name: PG_WRITER_AD_GROUP
           value: "AAG-Azure-ADP-SND1-PostgresDB_Writer"
+        - name: PG_READER_AD_GROUP
+          value: "AAG-Azure-ADP-SND1-PostgresDB_Reader"
         - name: SP_CLIENT_ID_KV
           value: ${SSV_SPN_CLIENT_ID_KV_NAME}
         - name: SP_CLIENT_SECRET_KV
