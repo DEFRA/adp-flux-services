@@ -6,6 +6,11 @@ metadata:
 spec:
   template:
     spec:
+      volumes:
+      - name: custom-root-ca
+        secret:
+          secretName: custom-ca-trust-secret
+          optional: true
       containers:
       - name: ffc-demo-claim-service-pre-dbmigration
         image: ssvadpinfcr3401.azurecr.io/image/powershell-executor:486309 # {"$imagepolicy": "flux-config:powershell-executor-snd-01"}
@@ -42,3 +47,8 @@ spec:
           value: ${SSV_SPN_CLIENT_SECRET_KV_NAME}
         - name: KEY_VAULT_NAME
           value: ${SSV_PLATFORM_KEYVAULT}
+        volumeMounts:
+          - name: custom-root-ca
+            readOnly: true
+            mountPath: /etc/ssl/certs/defra-egress-firewall-cert-01.crt
+            subPath: defra-egress-firewall-cert-01.crt
