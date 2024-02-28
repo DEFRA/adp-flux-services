@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: core-ai-techradar
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: core-ai-techradar
+    backstage.io/kubernetes-team: coreai-mcu
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/core-ai-techradar
+  interval: 5m0s
+  provider: azure

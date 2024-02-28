@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: mcu-techspike-ai-web-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: mcu-techspike-ai-web
+    backstage.io/kubernetes-team: coreai-mcu
+spec:
+  imageRepositoryRef:
+    name: mcu-techspike-ai-web
+  policy:
+    semver:
+      range: '>=0.1.0'
