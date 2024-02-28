@@ -13,7 +13,7 @@ spec:
         - name: GIT_REPO_URL
           value: "https://github.com/DEFRA/adp-flux-services.git"
         - name: GIT_BRANCH
-          value: "jk/pg-db-access-ad-groups"
+          value: "main"
         - name: SCRIPT_FILE_NAME
           value: "common/scripts/access-control/flexible-server/Grant-FlexibleServerDBAccess.ps1"
         - name: POSTGRES_HOST
