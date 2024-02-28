@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mcu-techspike-ai-web
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: mcu-techspike-ai-web
+    backstage.io/kubernetes-team: coreai-mcu
+spec:
+  releaseName: mcu-techspike-ai-web
+  chart:
+    spec:
+      chart: mcu-techspike-ai-web
+      version: "0.1.0"
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: coreai-mcu-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: coreai-mcu
+  values:
+    aadWorkloadIdentity: true
+    serviceAccount:
+      name: coreai-mcu

@@ -8,3 +8,4 @@ resources:
   - ../../../adp-platform/kustomize.yaml
   - ../../../eutd/eutd-trade-exports-ai/base/patch
   - ../../../ffc/ffc-find/base/patch
+  - ../../../coreai/coreai-mcu/base/patch
