@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-ffd-backend-poc-infra
-      version: "0.2.2" # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-snd-03:tag"}
+      version: "0.2.3" # {"$imagepolicy": "flux-config:ffc-ffd-backend-poc-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
