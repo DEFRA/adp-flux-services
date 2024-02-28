@@ -30,6 +30,9 @@ spec:
       POSTGRES_DB: "ffc-demo-claim"
       POSTGRES_PORT: "5432"
       POSTGRES_SCHEMA_NAME: "public"
+      #These variables will need to be populated after onboarding automation when flux manifests are generated
+      PG_WRITER_AD_GROUP: "AAG-Azure-ADP-SND1-PostgresDB_Writer"
+      PG_READER_AD_GROUP: "AAG-Azure-ADP-SND1-PostgresDB_Reader"
     substituteFrom:
       - kind: ConfigMap
         name: adp-platform-vars
