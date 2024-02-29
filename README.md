@@ -14,5 +14,8 @@ Every time a deployment happens, the automated FluxCD Bot will update the versio
       OLD: version: "1.0.37" # {"$imagepolicy": "flux-config:service-xx-snd-03:tag"}
       NEW: version: "1.0.38" # {"$imagepolicy": "flux-config:service-xx-snd-03:tag"}
 
-This means that the nexr version to be deployed will be v1.0.38 and flux will reconcile within 5~ minutes.
+This means that the next version to be deployed will be v1.0.38 and Flux will reconcile within 5~ minutes.
+
+**How does the Flux bot get triggered?** <br >
+Every repository and every application follows the *sematic versioining* (semVer) strategy. This means that within the [package.json](https://github.com/DEFRA/ffc-demo-web/blob/d4e92b4c201b5770abfd7677e70e108a0530ad24/package.json#) file the version number gets updated on every new application release (merge into main). Once the merge into main is done, or a release into Sandbox environment from a Feature branch, the Flux CD Image Policy will trigger and update this repository. The deployment will then trigger.
 
