@@ -1,0 +1,12 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: ffc-sfd-helm-repo
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-team: ffc-sfd
+spec:
+  type: oci
+  interval: 5m
+  url: oci://${APPLICATION_ACR_NAME}.azurecr.io/helm
+  provider: azure

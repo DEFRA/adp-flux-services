@@ -9,3 +9,4 @@ resources:
   - ../../../eutd/eutd-trade-exports-ai/base/patch
   - ../../../ffc/ffc-find/base/patch
   - ../../../coreai/coreai-mcu/base/patch
+  - ../../../ffc/ffc-sfd/base/patch
