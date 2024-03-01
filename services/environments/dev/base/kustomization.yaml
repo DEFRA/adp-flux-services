@@ -7,3 +7,4 @@ resources:
   - ../../../ffc/ffc-dal/base/patch
   - ../../../ffc/ffc-find/base/patch
   - ../../../coreai/coreai-mcu/base/patch
+  - ../../../ffc/ffc-sfd/base/patch
