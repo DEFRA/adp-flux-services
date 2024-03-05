@@ -30,4 +30,3 @@ spec:
             readOnly: true
             mountPath: /etc/ssl/certs/defra-egress-firewall-cert-01.crt
             subPath: defra-egress-firewall-cert-01.crt
-            
