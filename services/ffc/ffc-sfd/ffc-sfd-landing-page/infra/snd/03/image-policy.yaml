@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: ffc-sfd-landing-page-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-sfd-landing-page
+    backstage.io/kubernetes-team: ffc-sfd
+spec:
+  imageRepositoryRef:
+    name: ffc-sfd-landing-page
+  policy:
+    semver:
+      range: '>=0.1.0'

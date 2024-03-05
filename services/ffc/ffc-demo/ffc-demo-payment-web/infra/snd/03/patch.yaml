@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-demo-payment-web-infra
-      version: "1.19.24" # {"$imagepolicy": "flux-config:ffc-demo-payment-web-snd-03:tag"}
+      version: "1.19.25" # {"$imagepolicy": "flux-config:ffc-demo-payment-web-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -28,6 +28,7 @@ spec:
     azrMSTPrivateLinkDNSSubscriptionID: ${AZR_MST_PRIVATELINKDNS_SUBSCRIPTION_ID}
     azrMSTPrivateLinkDNSUKSouthResourceGroupName: ${AZR_MST_PRIVATELINKDNS_UKSOUTH_RG}
     azrMSTPrivateLinkDNSUKWestResourceGroupName: ${AZR_MST_PRIVATELINKDNS_UKWEST_RG}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
     userAssignedIdentity:
       federatedCreds:
         - namespace: ${TEAM_NAMESPACE}

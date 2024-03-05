@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: ${TEAM_NAME}-quotas
+  namespace: ${TEAM_NAMESPACE}
+  labels:
+    backstage.io/kubernetes-team: ${TEAM_NAME}
+spec:
+  hard:
+    cpu: ${SERVICE_CPU_QUOTA:=5000}
+    memory: ${SERVICE_MEMORY_QUOTA:=5000Mi}
+    pods: ${SERVICE_PODS_QUOTA:=50}
+
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: ${TEAM_NAME}-quotas
+  namespace: ${TEAM_NAMESPACE}
+  labels:
+    backstage.io/kubernetes-team: ${TEAM_NAME}
+spec:
+  limits:
+    - default:
+        cpu: 50m
+      defaultRequest:
+        cpu: 50m
+      max:
+        cpu: 500m
+        memory: 1000Mi
+      min:
+        cpu: 10m
+        memory: 10Mi
+      type: Container

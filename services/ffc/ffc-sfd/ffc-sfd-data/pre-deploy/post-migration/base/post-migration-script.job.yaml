@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ffc-sfd-data-post-dbmigration
+  namespace: ffc-sfd
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: ffc-sfd-data
+    backstage.io/kubernetes-team: ffc-sfd
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: ffc-sfd-data
+        backstage.io/kubernetes-team: ffc-sfd
+    spec:
+      serviceAccountName: ${TEAM_NAMESPACE}
+      restartPolicy: Never
+      volumes:
+      - name: custom-root-ca
+        secret:
+          secretName: custom-ca-trust-secret
+          optional: true
+      containers:
+      - name: ffc-sfd-data-post-dbmigration
+        imagePullPolicy: Always
+        volumeMounts:
+          - name: custom-root-ca
+            readOnly: true
+            mountPath: /etc/ssl/certs/defra-egress-firewall-cert-01.crt
+            subPath: defra-egress-firewall-cert-01.crt

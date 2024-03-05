@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: fcp-data-access-layer-api-infra
-      version: "1.0.38" # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-03:tag"}
+      version: "1.0.41" # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -28,6 +28,7 @@ spec:
     azrMSTPrivateLinkDNSSubscriptionID: ${AZR_MST_PRIVATELINKDNS_SUBSCRIPTION_ID}
     azrMSTPrivateLinkDNSUKSouthResourceGroupName: ${AZR_MST_PRIVATELINKDNS_UKSOUTH_RG}
     azrMSTPrivateLinkDNSUKWestResourceGroupName: ${AZR_MST_PRIVATELINKDNS_UKWEST_RG}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
     userAssignedIdentity:
       federatedCreds:
         - namespace: ${TEAM_NAMESPACE}
