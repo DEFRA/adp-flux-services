@@ -14,10 +14,16 @@ spec:
     image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-permissions:0.2.0 # {"$imagepolicy": "flux-config:ffc-sfd-permissions-snd-03"}
     serviceAccount:
       name: ffc-sfd-permissions
-    deployment:
-      priorityClassName: default
+    labels:
+      component: web
     container:
       imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: ffc-sfd-permissions
+      server: snd3.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
