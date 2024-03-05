@@ -26,8 +26,8 @@ spec:
       PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_SCHEMA_NAME: ${POSTGRES_SCHEMA_NAME}
-      PG_WRITER_AD_GROUP: "AAG-Azure-ADP-FFC-DEMO-${ENVIRONMENT}${ENVIRONMENT_ID}-PostgresDB_Writer"
-      PG_READER_AD_GROUP: "AAG-Azure-ADP-FFC-DEMO-${ENVIRONMENT}${ENVIRONMENT_ID}-PostgresDB_Reader"
+      PG_WRITER_AD_GROUP: AAG-Azure-ADP-FFC-DEMO-${ENVIRONMENT}!!int${ENVIRONMENT_ID}-PostgresDB_Writer
+      PG_READER_AD_GROUP: AAG-Azure-ADP-FFC-DEMO-${ENVIRONMENT}!!int${ENVIRONMENT_ID}-PostgresDB_Reader
     substituteFrom:
       - kind: ConfigMap
         name: adp-platform-vars
