@@ -23,9 +23,9 @@ spec:
       APPCONFIG_NAME: ${APPCONFIG_NAME}
       SERVICE_CODE: "FFC-DEMO"
       PLATFORM_DB_ADMIN: "adp-platform-db-aad-admin"
-      SERVICE_CPU_QUOTA: "3000"
-      SERVICE_MEMORY_QUOTA: 2000Mi
-      SERVICE_PODS_QUOTA: "20"
+      # SERVICE_CPU_QUOTA: "3000"
+      # SERVICE_MEMORY_QUOTA: 2000Mi
+      # SERVICE_PODS_QUOTA: "20"
     substituteFrom:
       - kind: ConfigMap
         name: ffc-demo-mi-credential
