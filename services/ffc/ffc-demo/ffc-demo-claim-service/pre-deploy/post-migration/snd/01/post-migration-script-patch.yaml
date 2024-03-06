@@ -27,8 +27,8 @@ spec:
         - name: SUBSCRIPTION_NAME
           value: ${SUBSCRIPTION_NAME}
         - name: PG_WRITER_AD_GROUP
-          value: ${PG_WRITER_AD_GROUP}
+          value: "AAG-Azure-ADP-FFC-DEMO-snd1-PostgresDB_Writer"
         - name: PG_READER_AD_GROUP
-          value: ${PG_READER_AD_GROUP}
+          value: "AAG-Azure-ADP-FFC-DEMO-snd1-PostgresDB_Reader"
         - name: DB_MIGRATION_VERSION
           value: "5.1.35" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-01:tag"}
