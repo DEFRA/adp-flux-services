@@ -5,7 +5,8 @@ resources:
   - ../../ffc-sfd-permissions
   - ../../ffc-sfd-ahwp-stub
   - ../../ffc-sfd-auth
-  - ../../ffc-sfd-messages-processor
   - ../../ffc-sfd-messages
+  - ../../ffc-sfd-messages-processor
   - ../../ffc-sfd-landing-page
   - ../../ffc-sfd-data
+  - ../../ffc-sfd-permissions-api
