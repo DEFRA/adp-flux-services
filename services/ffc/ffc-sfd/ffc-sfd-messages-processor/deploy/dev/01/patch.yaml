@@ -14,16 +14,10 @@ spec:
     image: devadpinfcr1401.azurecr.io/image/ffc-sfd-messages-processor:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-dev-01"}
     serviceAccount:
       name: ffc-sfd-messages-processor
-    labels:
-      component: web
-    container:
-      imagePullPolicy: Always
-    ingress:
-      class: nginx
-      endpoint: ffc-sfd-messages-processor
-      server: dev1.adp.defra.gov.uk
     deployment:
       priorityClassName: default
+    container:
+      imagePullPolicy: Always
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}

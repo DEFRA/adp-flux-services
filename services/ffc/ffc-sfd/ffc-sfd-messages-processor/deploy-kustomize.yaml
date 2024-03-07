@@ -8,7 +8,7 @@ metadata:
     backstage.io/kubernetes-team: ffc-sfd
 spec:
   dependsOn:
-    - name: ffc-sfd-messages-processor-infra
+    - name: ffc-sfd-messages-processor-pre-deploy
       namespace: flux-config
   sourceRef:
     kind: GitRepository
