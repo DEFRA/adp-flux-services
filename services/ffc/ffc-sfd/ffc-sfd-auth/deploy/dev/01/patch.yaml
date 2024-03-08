@@ -14,10 +14,16 @@ spec:
     image: devadpinfcr1401.azurecr.io/image/ffc-sfd-auth:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-auth-dev-01"}
     serviceAccount:
       name: ffc-sfd-auth
-    deployment:
-      priorityClassName: default
+    labels:
+      component: web
     container:
       imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: ffc-sfd-auth
+      server: dev1.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
     containerConfigMap:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
