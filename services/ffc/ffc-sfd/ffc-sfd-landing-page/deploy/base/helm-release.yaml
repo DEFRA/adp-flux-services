@@ -21,7 +21,3 @@ spec:
     createNamespace: true
   interval: 5m0s
   targetNamespace: ffc-sfd
-  values:
-    aadWorkloadIdentity: true
-    serviceAccount:
-      name: ffc-sfd

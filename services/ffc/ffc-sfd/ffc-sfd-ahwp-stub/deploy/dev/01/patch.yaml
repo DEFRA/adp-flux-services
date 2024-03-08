@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-sfd-ahwp-stub
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-sfd-ahwp-stub-dev-01:tag"}
+  values:
+    environment: production
+    name: ffc-sfd-ahwp-stub
+    namespace: ffc-sfd
+    image: devadpinfcr1401.azurecr.io/image/ffc-sfd-ahwp-stub:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-ahwp-stub-dev-01"}
+    serviceAccount:
+      name: ffc-sfd-ahwp-stub
+    labels:
+      component: web
+    container:
+      imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: ffc-sfd-ahwp-stub
+      server: dev1.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}

@@ -1,0 +1,37 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ffc-sfd-permissions-api-pre-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-sfd-permissions-api
+    backstage.io/kubernetes-team: ffc-sfd
+spec:
+  dependsOn:
+    - name: ffc-sfd-permissions-api-infra
+      namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/ffc/ffc-sfd/ffc-sfd-permissions-api/pre-deploy
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SHARED_POSTGRES_SERVER_01: "${SHARED_POSTGRES_SERVER_01}"
+      SERVICE_NAME: "ffc-sfd-permissions-api"
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
+      POSTGRES_DB: "ffc-sfd-permissions-api"
+      POSTGRES_PORT: "5432"
+      POSTGRES_SCHEMA_NAME: "public"
+    substituteFrom:
+      - kind: ConfigMap
+        name: adp-platform-vars
+      - kind: ConfigMap
+        name: "ffc-sfd-permissions-api-mi-credential"

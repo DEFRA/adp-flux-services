@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: ffc-sfd-permissions-api
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-sfd-permissions-api
+    backstage.io/kubernetes-team: ffc-sfd
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-sfd-permissions-api
+  interval: 5m0s
+  provider: azure
