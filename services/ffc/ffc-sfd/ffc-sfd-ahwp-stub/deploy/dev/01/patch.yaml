@@ -20,7 +20,7 @@ spec:
       imagePullPolicy: Always
     ingress:
       class: nginx
-      endpoint: ffc-sfd-landing-page
+      endpoint: ffc-sfd-ahwp-stub
       server: dev1.adp.defra.gov.uk
     deployment:
       priorityClassName: default
