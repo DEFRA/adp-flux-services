@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: "0.2.7" # {"$imagepolicy": "flux-config:ffc-sfd-landing-page-snd-03:tag"}
+      version: "0.2.8" # {"$imagepolicy": "flux-config:ffc-sfd-landing-page-snd-03:tag"}
   values:
     environment: production
     name: ffc-sfd-landing-page
     namespace: ffc-sfd
-    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-landing-page:0.2.7 # {"$imagepolicy": "flux-config:ffc-sfd-landing-page-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-landing-page:0.2.8 # {"$imagepolicy": "flux-config:ffc-sfd-landing-page-snd-03"}
     serviceAccount:
       name: ffc-sfd-landing-page
     labels:
