@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: ffc-sfd-messages-processor-pre-dbmigration
-        image: ssvadpinfcr3401.azurecr.io/image/powershell-executor:123456 # {"$imagepolicy": "flux-config:powershell-executor-snd-03"}
+        image: ssvadpinfcr3401.azurecr.io/image/powershell-executor:491667 # {"$imagepolicy": "flux-config:powershell-executor-snd-03"}
         env:
         - name: GIT_REPO_URL
           value: "https://github.com/DEFRA/adp-flux-services.git"
