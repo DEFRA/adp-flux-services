@@ -21,7 +21,3 @@ spec:
     createNamespace: true
   interval: 5m0s
   targetNamespace: eutd-trade-exports-ai
-  values:
-    aadWorkloadIdentity: true
-    serviceAccount:
-      name: eutd-trade-exports-ai
