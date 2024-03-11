@@ -8,7 +8,7 @@ metadata:
     backstage.io/kubernetes-team: ffc-sfd
 spec:
   dependsOn:
-    - name: ffc-sfd-data-pre-deploy
+    - name: ffc-sfd-data-infra
       namespace: flux-config
   sourceRef:
     kind: GitRepository
