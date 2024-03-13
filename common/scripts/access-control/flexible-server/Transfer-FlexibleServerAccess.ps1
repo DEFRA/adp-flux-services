@@ -22,7 +22,8 @@ Set-StrictMode -Version 3.0
 [string]$SubscriptionName = $env:SUBSCRIPTION_NAME
 [string]$Mode = $env:MODE
 [string]$WorkingDirectory = $PWD
-[string]$PostgresWriterAdGroup = $env:PG_WRITER_AD_GROUP
+[string]$ExistingRole = $env:EXISTING_ROLE
+[string]$NewRole = $env:NEW_ROLE
 
 [string]$functionName = $MyInvocation.MyCommand
 [DateTime]$startTime = [DateTime]::UtcNow
@@ -48,7 +49,8 @@ Write-Debug "${functionName}:MITenantid=$MITenantid"
 Write-Debug "${functionName}:SubscriptionName=$SubscriptionName"
 Write-Debug "${functionName}:Mode=$Mode"
 Write-Debug "${functionName}:WorkingDirectory=$WorkingDirectory"
-Write-Debug "${functionName}:PostgresWriterAdGroup=$PostgresWriterAdGroup"
+Write-Debug "${functionName}:NewRole=$NewRole"
+Write-Debug "${functionName}:ExistingRole=$ExistingRole"
 
 [System.IO.DirectoryInfo]$scriptDir = $PSCommandPath | Split-Path -Parent
 Write-Debug "${functionName}:scriptDir.FullName:$($scriptDir.FullName)"
@@ -65,14 +67,14 @@ function Get-SQLScriptToCreatePrincipal {
     [System.Text.StringBuilder]$builder = [System.Text.StringBuilder]::new()
     [void]$builder.Append(' DO $$ ')
     [void]$builder.Append(' BEGIN ')
-    [void]$builder.Append("     IF NOT EXISTS (SELECT 1 FROM pgaadauth_list_principals(false) WHERE rolname='$PostgresWriterAdGroup') THEN ")
-    [void]$builder.Append("         RAISE NOTICE 'CREATING PRINCIPAL FOR MANAGED IDENTITY:$PostgresWriterAdGroup';")
-    [void]$builder.Append("         PERFORM pgaadauth_create_principal('$PostgresWriterAdGroup', false, false); ");
-    [void]$builder.Append("         RAISE NOTICE 'PRINCIPAL FOR MANAGED IDENTITY CREATED:$PostgresWriterAdGroup';")
+    [void]$builder.Append("     IF NOT EXISTS (SELECT 1 FROM pgaadauth_list_principals(false) WHERE rolname='$NewRole') THEN ")
+    [void]$builder.Append("         RAISE NOTICE 'CREATING PRINCIPAL FOR MANAGED IDENTITY:$NewRole';")
+    [void]$builder.Append("         PERFORM pgaadauth_create_principal('$NewRole', false, false); ");
+    [void]$builder.Append("         RAISE NOTICE 'PRINCIPAL FOR MANAGED IDENTITY CREATED:$NewRole';")
     [void]$builder.Append('     ELSE ')
-    [void]$builder.Append("         RAISE NOTICE 'PRINCIPAL FOR MANAGED IDENTITY ALREADY EXISTS:$PostgresWriterAdGroup';")
+    [void]$builder.Append("         RAISE NOTICE 'PRINCIPAL FOR MANAGED IDENTITY ALREADY EXISTS:$NewRole';")
     [void]$builder.Append('     END IF; ')
-    [void]$builder.Append("     EXECUTE ( 'GRANT CONNECT ON DATABASE `"$PgDb`" TO `"$PostgresWriterAdGroup`"' );")
+    [void]$builder.Append("     EXECUTE ( 'GRANT CONNECT ON DATABASE `"$PgDb`" TO `"$NewRole`"' );")
     [void]$builder.Append("     RAISE NOTICE 'GRANTED CONNECT TO DATABASE';")
     [void]$builder.Append(" EXCEPTION ")
     [void]$builder.Append("     WHEN OTHERS THEN  ")
@@ -83,11 +85,11 @@ function Get-SQLScriptToCreatePrincipal {
 
 function Get-SQLScriptToGrantAllPermissions {
     [System.Text.StringBuilder]$builder = [System.Text.StringBuilder]::new()
-    [void]$builder.Append("GRANT ALL ON SCHEMA public TO `"$PostgresWriterAdGroup`";")
-    [void]$builder.Append("GRANT ALL ON ALL TABLES IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
-    [void]$builder.Append("GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
-    [void]$builder.Append("GRANT ALL ON ALL FUNCTIONS IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
-    [void]$builder.Append("GRANT ALL ON ALL PROCEDURES IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
+    [void]$builder.Append("GRANT ALL ON SCHEMA public TO `"$NewRole`";")
+    [void]$builder.Append("GRANT ALL ON ALL TABLES IN SCHEMA public TO `"$NewRole`";")
+    [void]$builder.Append("GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO `"$NewRole`";")
+    [void]$builder.Append("GRANT ALL ON ALL FUNCTIONS IN SCHEMA public TO `"$NewRole`";")
+    [void]$builder.Append("GRANT ALL ON ALL PROCEDURES IN SCHEMA public TO `"$NewRole`";")
     return $builder.ToString()
 }
 
@@ -101,22 +103,22 @@ function Get-SQLScriptToRevokeAllPermissions {
     Write-Debug "${functionName}:PgDb=$PgDb"
 
     [System.Text.StringBuilder]$builder = [System.Text.StringBuilder]::new()
-    [void]$builder.Append("REVOKE ALL PRIVILEGES ON DATABASE `"$PgDb`" FROM `"$MIName`";")
-    [void]$builder.Append("REVOKE ALL ON ALL TABLES IN SCHEMA PUBLIC FROM `"$MIName`";")
-    [void]$builder.Append("REVOKE ALL PRIVILEGES ON SCHEMA PUBLIC FROM `"$MIName`";")
-    [void]$builder.Append("REVOKE ALL ON SCHEMA public FROM `"$MIName`";")
+    [void]$builder.Append("REVOKE ALL PRIVILEGES ON DATABASE `"$PgDb`" FROM `"$ExistingRole`";")
+    [void]$builder.Append("REVOKE ALL ON ALL TABLES IN SCHEMA PUBLIC FROM `"$ExistingRole`";")
+    [void]$builder.Append("REVOKE ALL PRIVILEGES ON SCHEMA PUBLIC FROM `"$ExistingRole`";")
+    [void]$builder.Append("REVOKE ALL ON SCHEMA public FROM `"$ExistingRole`";")
     return $builder.ToString()
 }
 
 function Get-SQLScriptToGrantRoleAdmin {
     [System.Text.StringBuilder]$builder = [System.Text.StringBuilder]::new()
-    [void]$builder.Append("GRANT `"$PostgresWriterAdGroup`" TO `"$MIName`" WITH ADMIN OPTION;")
+    [void]$builder.Append("GRANT `"$NewRole`" TO `"$ExistingRole`" WITH ADMIN OPTION;")
     return $builder.ToString()
 }
 
 function Get-SQLScriptToReAssignOwner {
     [System.Text.StringBuilder]$builder = [System.Text.StringBuilder]::new()
-    [void]$builder.Append("REASSIGN OWNED BY `"$MIName`" TO `"$PostgresWriterAdGroup`";")
+    [void]$builder.Append("REASSIGN OWNED BY `"$ExistingRole`" TO `"$NewRole`";")
     return $builder.ToString()
 }
 
@@ -171,9 +173,9 @@ try {
             [string]$content = Set-Content -Path $revokePermissionsTempFile.FullName -Value $command -PassThru -Force
             Write-Debug "${functionName}:$($revokePermissionsTempFile.FullName)=$content"
 
-            Write-Host "Revoking permissions from ${MIName}"
-            $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $_ -PostgresUsername $MIName -Path $revokePermissionsTempFile.FullName
-            Write-Host "Revoked perms from ${MIName}"
+            Write-Host "Revoking permissions from ${ExistingRole}"
+            $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $_ -PostgresUsername $ExistingRole -Path $revokePermissionsTempFile.FullName
+            Write-Host "Revoked perms from ${ExistingRole}"
         }
 
         # Run with postgres writer AD group
@@ -185,9 +187,9 @@ try {
             [string]$content = Set-Content -Path $reassignOwnerTempFile.FullName -Value $command -PassThru -Force
             Write-Debug "${functionName}:$($reassignOwnerTempFile.FullName)=$content"
 
-            Write-Host "Reassigning owner to ${PostgresWriterAdGroup}"
-            $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $_ -PostgresUsername $MIName -Path $reassignOwnerTempFile.FullName
-            Write-Host "Reassigned owner to ${PostgresWriterAdGroup}"
+            Write-Host "Reassigning owner to ${NewRole}"
+            $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $_ -PostgresUsername $ExistingRole -Path $reassignOwnerTempFile.FullName
+            Write-Host "Reassigned owner to ${NewRole}"
 
             [string]$command = Get-SQLScriptToGrantAllPermissions
             Write-Debug "${functionName}:command=$command"
@@ -196,9 +198,9 @@ try {
             [string]$content = Set-Content -Path $assignAllPermissionsTempFile.FullName -Value $command -PassThru -Force
             Write-Debug "${functionName}:$($assignAllPermissionsTempFile.FullName)=$content"
 
-            Write-Host "Granting permissions to ${PostgresWriterAdGroup}"
-            $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $_ -PostgresUsername $MIName -Path $assignAllPermissionsTempFile.FullName
-            Write-Host "Granted Access to ${PostgresWriterAdGroup}"
+            Write-Host "Granting permissions to ${NewRole}"
+            $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $_ -PostgresUsername $ExistingRole -Path $assignAllPermissionsTempFile.FullName
+            Write-Host "Granted Access to ${NewRole}"
         }
     }
     # Successful exit
