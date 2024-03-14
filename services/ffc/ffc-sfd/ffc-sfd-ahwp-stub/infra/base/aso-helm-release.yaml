@@ -6,6 +6,7 @@ metadata:
   labels:
     backstage.io/kubernetes-id: ffc-sfd-ahwp-stub
     backstage.io/kubernetes-team: ffc-sfd
+    flux-deployment-notification: "true"
 spec:
   releaseName: ffc-sfd-ahwp-stub-infra
   chart:

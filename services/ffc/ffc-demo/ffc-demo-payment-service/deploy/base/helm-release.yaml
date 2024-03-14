@@ -6,6 +6,7 @@ metadata:
   labels:
     backstage.io/kubernetes-id: ffc-demo-payment-service
     backstage.io/kubernetes-team: ffc-demo
+    flux-deployment-notification: "true"
 spec:
   releaseName: ffc-demo-payment-service
   chart:

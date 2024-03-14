@@ -6,6 +6,7 @@ metadata:
   labels:
     backstage.io/kubernetes-id: fcp-data-access-layer-api
     backstage.io/kubernetes-team: ffc-dal
+    flux-deployment-notification: "true"
 spec:
   releaseName: fcp-data-access-layer-api-infra
   chart:

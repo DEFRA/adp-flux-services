@@ -6,6 +6,7 @@ metadata:
   labels:
     backstage.io/kubernetes-id: fcp-find-ai-frontend
     backstage.io/kubernetes-team: ffc-find
+    flux-deployment-notification: "true"
 spec:
   releaseName: fcp-find-ai-frontend
   chart:

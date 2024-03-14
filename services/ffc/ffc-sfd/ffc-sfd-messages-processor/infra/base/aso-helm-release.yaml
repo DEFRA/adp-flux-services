@@ -6,6 +6,7 @@ metadata:
   labels:
     backstage.io/kubernetes-id: ffc-sfd-messages-processor
     backstage.io/kubernetes-team: ffc-sfd
+    flux-deployment-notification: "true"
 spec:
   releaseName: ffc-sfd-messages-processor-infra
   chart:
