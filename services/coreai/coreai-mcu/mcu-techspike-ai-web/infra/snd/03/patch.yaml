@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: mcu-techspike-ai-web-infra
-      version: "0.2.8" # {"$imagepolicy": "flux-config:mcu-techspike-ai-web-snd-03:tag"}
+      version: "0.2.9" # {"$imagepolicy": "flux-config:mcu-techspike-ai-web-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
