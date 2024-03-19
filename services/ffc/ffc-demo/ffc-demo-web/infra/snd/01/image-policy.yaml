@@ -10,7 +10,7 @@ spec:
   imageRepositoryRef:
     name: ffc-demo-web
   filterTags:
-    pattern: '.*-alpha.*'    
+    pattern: '*-alpha.*'    
   policy:
     semver:
       range: '>=0.1.0'
