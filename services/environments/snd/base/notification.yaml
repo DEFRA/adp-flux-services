@@ -25,5 +25,5 @@ spec:
     - kind: HelmRelease
       name: '*'
       namespace: flux-config
-  # inclusionList:
-  #   - ".*succeeded|failed.*"
+  inclusionList:
+    - ".*succeeded|failed.*"
