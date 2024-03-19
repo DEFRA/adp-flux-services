@@ -9,6 +9,8 @@ metadata:
 spec:
   imageRepositoryRef:
     name: ffc-demo-web
+  filterTags:
+    pattern: '.*-alpha.*'    
   policy:
     semver:
-      range: '>=0.1.0-'
+      range: '>=0.1.0'
