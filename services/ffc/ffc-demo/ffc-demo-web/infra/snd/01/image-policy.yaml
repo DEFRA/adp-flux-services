@@ -8,7 +8,9 @@ metadata:
     backstage.io/kubernetes-team: ffc-demo
 spec:
   imageRepositoryRef:
-    name: ffc-demo-web 
+    name: ffc-demo-web
+  filterTags:
+    pattern: '.*-alpha.*'  
   policy:
     semver:
-      range: '4.32.33.506484'
+      range: '>=1.0.0-0'
