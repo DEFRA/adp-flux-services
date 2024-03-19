@@ -11,4 +11,4 @@ spec:
     name: ffc-demo-web 
   policy:
     semver:
-      range: '4.32.33-alpha.506484'
+      range: '4.32.33.506484'
