@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-demo-payment-web-infra
-      version: "1.19.27-alpha.507675" # {"$imagepolicy": "flux-config:ffc-demo-payment-web-snd-01:tag"}
+      version: "1.19.27-alpha.507688" # {"$imagepolicy": "flux-config:ffc-demo-payment-web-snd-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
