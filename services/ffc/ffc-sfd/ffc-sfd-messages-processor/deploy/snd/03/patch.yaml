@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: "0.1.26-alpha.511085" # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-snd-03:tag"}
+      version: "0.1.26-alpha.511632" # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-snd-03:tag"}
   values:
     environment: production
     name: ffc-sfd-messages-processor
     namespace: ffc-sfd
-    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-messages-processor:0.1.26-alpha.511085 # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-messages-processor:0.1.26-alpha.511632 # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-snd-03"}
     serviceAccount:
       name: ffc-sfd-messages-processor
     deployment:
