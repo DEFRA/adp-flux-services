@@ -7,9 +7,9 @@ metadata:
     backstage.io/kubernetes-team: ${TEAM_NAME}
 spec:
   hard:
-    cpu: ${SERVICE_CPU_QUOTA:=5000}
-    memory: ${SERVICE_MEMORY_QUOTA:=5000Mi}
-    pods: ${SERVICE_PODS_QUOTA:=50}
+    cpu: ${TEAM_CPU_QUOTA:=5000}
+    memory: ${TEAM_MEMORY_QUOTA:=5000Mi}
+    pods: ${TEAM_PODS_QUOTA:=50}
 
 ---
 apiVersion: v1
