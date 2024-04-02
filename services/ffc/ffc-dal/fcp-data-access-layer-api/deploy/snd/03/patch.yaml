@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: "1.0.49-alpha.516799" # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-03:tag"}
+      version: "1.0.49-alpha.516830" # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-03:tag"}
   values:
     environment: production
     name: fcp-data-access-layer-api
     namespace: ffc-dal
-    image: sndadpinfcr3401.azurecr.io/image/fcp-data-access-layer-api:1.0.49-alpha.516799 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/fcp-data-access-layer-api:1.0.49-alpha.516830 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-03"}
     serviceAccount:
       name: fcp-data-access-layer-api
     labels:
