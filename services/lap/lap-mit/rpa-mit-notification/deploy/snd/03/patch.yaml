@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: "1.10.4-alpha.517958" # {"$imagepolicy": "flux-config:rpa-mit-notification-snd-03:tag"}
+      version: "1.10.4-alpha.518150" # {"$imagepolicy": "flux-config:rpa-mit-notification-snd-03:tag"}
   values:
     environment: production
     name: rpa-mit-notification
     namespace: lap-mit
-    image: sndadpinfcr3401.azurecr.io/image/rpa-mit-notification:1.10.4-alpha.517958 # {"$imagepolicy": "flux-config:rpa-mit-notification-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/rpa-mit-notification:1.10.4-alpha.518150 # {"$imagepolicy": "flux-config:rpa-mit-notification-snd-03"}
     serviceAccount:
       name: rpa-mit-notification
     deployment:
