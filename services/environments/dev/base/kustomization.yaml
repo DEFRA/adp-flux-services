@@ -9,3 +9,4 @@ resources:
   - ../../../ffc/ffc-find/base/patch
   - ../../../coreai/coreai-mcu/base/patch
   - ../../../ffc/ffc-sfd/base/patch
+  - ../../../lap/lap-mit/base/patch
