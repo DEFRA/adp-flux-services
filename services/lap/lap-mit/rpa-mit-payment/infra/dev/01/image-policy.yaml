@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: rpa-mit-payment-dev-01
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: rpa-mit-payment
+    backstage.io/kubernetes-team: lap-mit
+spec:
+  imageRepositoryRef:
+    name: rpa-mit-payment
+  policy:
+    semver:
+      range: '>=0.1.0'
