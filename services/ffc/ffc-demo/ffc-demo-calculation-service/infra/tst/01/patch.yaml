@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-demo-calculation-service-infra
-      version: "4.3.22" # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-tst-01:tag"}
+      version: "4.3.24" # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-tst-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
