@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-ahwp-stub-infra
-      version: "0.3.13-alpha.520399" # {"$imagepolicy": "flux-config:ffc-sfd-ahwp-stub-snd-03:tag"}
+      version: "0.3.15-alpha.520433" # {"$imagepolicy": "flux-config:ffc-sfd-ahwp-stub-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
