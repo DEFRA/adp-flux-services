@@ -1,19 +1,19 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-demo-claim-service
+  name: rpa-mit-payment
   namespace: flux-config
 spec:
   chart:
     spec:
-      version: "5.1.37" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dev-01:tag"}
+      version: "0.1.0" # {"$imagepolicy": "flux-config:rpa-mit-payment-dev-01:tag"}
   values:
     environment: production
-    name: ffc-demo-claim-service
-    namespace: ffc-demo
-    image: devadpinfcr1401.azurecr.io/image/ffc-demo-claim-service:5.1.37 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dev-01"}
+    name: rpa-mit-payment
+    namespace: lap-mit
+    image: devadpinfcr1401.azurecr.io/image/rpa-mit-payment:0.1.0 # {"$imagepolicy": "flux-config:rpa-mit-payment-dev-01"}
     serviceAccount:
-      name: ffc-demo-claim-service
+      name: rpa-mit-payment
     deployment:
       priorityClassName: default
     container:

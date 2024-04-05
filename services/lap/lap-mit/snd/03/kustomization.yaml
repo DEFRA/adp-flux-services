@@ -4,3 +4,4 @@ resources:
   - ../../base
   - ../../rpa-mit-web
   - ../../rpa-mit-notification
+  - ../../rpa-mit-payment
