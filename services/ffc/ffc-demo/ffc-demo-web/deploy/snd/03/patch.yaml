@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: "4.32.33" # {"$imagepolicy": "flux-config:ffc-demo-web-snd-03:tag"}
+      version: "4.32.34-alpha.523533" # {"$imagepolicy": "flux-config:ffc-demo-web-snd-03:tag"}
   values:
     environment: production
     name: ffc-demo-web
     namespace: ffc-demo
-    image: sndadpinfcr3401.azurecr.io/image/ffc-demo-web:4.32.33 # {"$imagepolicy": "flux-config:ffc-demo-web-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ffc-demo-web:4.32.34-alpha.523533 # {"$imagepolicy": "flux-config:ffc-demo-web-snd-03"}
     serviceAccount:
       name: ffc-demo-web
     labels:
