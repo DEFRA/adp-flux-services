@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: mcu-techspike-ai-web-infra
-      version: "0.2.9" # {"$imagepolicy": "flux-config:mcu-techspike-ai-web-snd-03:tag"}
+      version: 0.1.0
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -31,15 +31,15 @@ spec:
     storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
     userAssignedIdentity:
       federatedCreds:
-        - namespace: ${TEAM_NAMESPACE}
-          serviceAccountName: ${SERVICE_NAME}
-        - namespace: 'app-config-service'
-          serviceAccountName: 'az-appconfig-k8s-provider'
+      - namespace: ${TEAM_NAMESPACE}
+        serviceAccountName: ${SERVICE_NAME}
+      - namespace: app-config-service
+        serviceAccountName: az-appconfig-k8s-provider
     commonTags:
       environment: ${ENVIRONMENT}
       serviceCode: ${SERVICE_CODE}
       serviceName: ${SERVICE_NAME}
-      serviceType: "Dedicated"
+      serviceType: Dedicated
       kubernetes_cluster: ${CLUSTER_NAME}
       kubernetes_namespace: ${TEAM_NAMESPACE}
       kubernetes_label_serviceCode: ${SERVICE_CODE}
