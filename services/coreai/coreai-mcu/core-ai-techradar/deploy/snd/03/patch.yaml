@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.0
+      version: 0.1.0 # {"$imagepolicy": "flux-config:core-ai-techradar-snd-03:tag"}
   values:
     environment: production
     name: core-ai-techradar
     namespace: coreai-mcu
-    image: sndadpinfcr3401.azurecr.io/image/core-ai-techradar:0.1.0
+    image: sndadpinfcr3401.azurecr.io/image/core-ai-techradar:0.1.0 # {"$imagepolicy": "flux-config:core-ai-techradar-snd-03"}
     serviceAccount:
       name: core-ai-techradar
     labels:
