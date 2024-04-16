@@ -23,9 +23,9 @@ spec:
       APPCONFIG_NAME: ${APPCONFIG_NAME}
       SERVICE_CODE: coreai-mcu
       PLATFORM_DB_ADMIN: adp-platform-db-aad-admin
-      TEAM_CPU_QUOTA: 3000
+      TEAM_CPU_QUOTA: 5000
       TEAM_MEMORY_QUOTA: 5000
-      TEAM_PODS_QUOTA: __TEAM_PODS_QUOTA__
+      TEAM_PODS_QUOTA: 50
     substituteFrom:
     - kind: ConfigMap
       name: coreai-mcu-mi-credential
