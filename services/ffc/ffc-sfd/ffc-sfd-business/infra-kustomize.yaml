@@ -5,7 +5,7 @@ metadata:
   namespace: flux-config
   labels:
     backstage.io/kubernetes-id: ffc-sfd-business
-    backstage.io/kubernetes-team: fcp-sfd
+    backstage.io/kubernetes-team: ffc-sfd
 spec:
   sourceRef:
     kind: GitRepository

@@ -5,7 +5,7 @@ metadata:
   namespace: flux-config
   labels:
     backstage.io/kubernetes-id: ffc-sfd-business
-    backstage.io/kubernetes-team: fcp-sfd
+    backstage.io/kubernetes-team: ffc-sfd
 spec:
   releaseName: ffc-sfd-business
   chart:
@@ -15,9 +15,9 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: fcp-sfd-helm-repo
+        name: ffc-sfd-helm-repo
         namespace: flux-config
   install:
     createNamespace: true
   interval: 5m0s
-  targetNamespace: fcp-sfd
+  targetNamespace: ffc-sfd
