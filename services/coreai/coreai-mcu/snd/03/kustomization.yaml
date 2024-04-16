@@ -1,6 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-resources:             
-  - ../../base
-  - ../../core-ai-techradar
-  - ../../mcu-techspike-ai-web
+resources:
+- ../../base
+- ../../core-ai-techradar
+- ../../mcu-techspike-ai-web
+- ../../coreai-mcu-frontend
+- ../../coreai-mcu-documents
+- ../../coreai-mcu-generation-oai
+- ../../coreai-mcu-knowledge-pgv
+- ../../coreai-mcu-responses
+- ../../coreai-mcu-event
+- ../../coreai-mcu-email-processor

@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: coreai-mcu-responses-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: coreai-mcu-responses
+    backstage.io/kubernetes-team: coreai-mcu
+spec:
+  releaseName: coreai-mcu-responses-infra
+  chart:
+    spec:
+      chart: coreai-mcu-responses-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: coreai-mcu-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: coreai-mcu
+  values:
+    namespace: coreai-mcu

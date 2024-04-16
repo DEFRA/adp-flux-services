@@ -11,7 +11,7 @@ spec:
   chart:
     spec:
       chart: mcu-techspike-ai-web
-      version: "0.1.0"
+      version: 0.1.0
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
@@ -21,7 +21,3 @@ spec:
     createNamespace: true
   interval: 5m0s
   targetNamespace: coreai-mcu
-  values:
-    aadWorkloadIdentity: true
-    serviceAccount:
-      name: coreai-mcu
