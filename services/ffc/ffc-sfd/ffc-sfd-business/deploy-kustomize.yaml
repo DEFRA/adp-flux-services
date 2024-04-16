@@ -14,7 +14,7 @@ spec:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  path: ./services/fcp/fcp-sfd/ffc-sfd-business/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  path: ./services/ffc/ffc-sfd/ffc-sfd-business/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 5m
   timeout: 3m
   prune: true
