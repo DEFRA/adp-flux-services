@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: "4.3.24" # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-pre-01:tag"}
+      version: "4.3.25" # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-pre-01:tag"}
   values:
     environment: production
     name: ffc-demo-calculation-service
     namespace: ffc-demo
-    image: preadpinfcr1401.azurecr.io/image/ffc-demo-calculation-service:4.3.24 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-pre-01"}
+    image: preadpinfcr1401.azurecr.io/image/ffc-demo-calculation-service:4.3.25 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-pre-01"}
     serviceAccount:
       name: ffc-demo-calculation-service
     deployment:
