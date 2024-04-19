@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-demo-payment-service-prd-01:tag"}
+      version: "4.2.28" # {"$imagepolicy": "flux-config:ffc-demo-payment-service-prd-01:tag"}
   values:
     environment: production
     name: ffc-demo-payment-service
     namespace: ffc-demo
-    image: prdadpinfcr1401.azurecr.io/image/ffc-demo-payment-service:0.1.0 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-prd-01"}
+    image: prdadpinfcr1401.azurecr.io/image/ffc-demo-payment-service:4.2.28 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-prd-01"}
     serviceAccount:
       name: ffc-demo-payment-service
     deployment:
