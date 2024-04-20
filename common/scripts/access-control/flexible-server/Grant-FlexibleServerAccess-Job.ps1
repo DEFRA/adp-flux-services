@@ -110,8 +110,8 @@ try {
     Import-Module $moduleDir.FullName -Force
 
     Write-Host "Connecting to Azure..."
-    $null = Connect-AzAccount -ServicePrincipal -ApplicationId $PlatformMIClientId -FederatedToken $(Get-Content $PlatformMIFederatedTokenFile -raw) -Tenant $PlatformMITenantId -Subscription $PlatformMISubscriptionId
-    $null = Set-AzContext -Subscription $SubscriptionName
+    $azureContext = (Connect-AzAccount -Identity -AccountId $PlatformMIClientId -Tenant $PlatformMITenantId -Subscription $PlatformMISubscriptionId).context
+    $null = Set-AzContext -Subscription $SubscriptionName -DefaultProfile $azureContext
     Write-Host "Connected to Azure and set context to '$SubscriptionName'"
 
     Write-Host "Acquiring Access Token..."
