@@ -123,6 +123,7 @@ try {
     Write-Debug "${functionName}:command=$command"
     
     [System.IO.FileInfo]$createPrincipalTempFile = [System.IO.Path]::GetTempFileName()
+    Write-Debug "createPrincipalTempFile: $($createPrincipalTempFile | ConvertTo-Json)"
     [string]$content = Set-Content -Path $createPrincipalTempFile.FullName -Value $command -PassThru -Force
     Write-Debug "${functionName}:$($createPrincipalTempFile.FullName)=$content"
 
