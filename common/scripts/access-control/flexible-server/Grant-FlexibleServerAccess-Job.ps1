@@ -122,7 +122,7 @@ try {
     [string]$command = Get-SQLScriptToCreatePrincipal
     Write-Debug "${functionName}:command=$command"
     
-    [System.IO.FileInfo]$createPrincipalTempFile = [System.IO.Path]::GetTempFileName()
+    [System.IO.FileInfo]$createPrincipalTempFile = [System.IO.Path]::GetTempPath() + $(New-Guid).ToString() + ".sql";
     Write-Debug "createPrincipalTempFile: $($createPrincipalTempFile | ConvertTo-Json)"
     [string]$content = Set-Content -Path $createPrincipalTempFile.FullName -Value $command -PassThru -Force
     Write-Debug "${functionName}:$($createPrincipalTempFile.FullName)=$content"
@@ -134,7 +134,7 @@ try {
     [string]$command = Get-SQLScriptToGrantAllPermissions
     Write-Debug "${functionName}:command=$command"
     
-    [System.IO.FileInfo]$assignAllPermissionsTempFile = [System.IO.Path]::GetTempFileName()
+    [System.IO.FileInfo]$assignAllPermissionsTempFile = [System.IO.Path]::GetTempPath() + $(New-Guid).ToString() + ".sql";
     [string]$content = Set-Content -Path $assignAllPermissionsTempFile.FullName -Value $command -PassThru -Force
     Write-Debug "${functionName}:$($assignAllPermissionsTempFile.FullName)=$content"
 
@@ -145,7 +145,7 @@ try {
     [string]$command = Get-SQLScriptToGrantReadPermissions
     Write-Debug "${functionName}:command=$command"
     
-    [System.IO.FileInfo]$assignReadPermissionsTempFile = [System.IO.Path]::GetTempFileName()
+    [System.IO.FileInfo]$assignReadPermissionsTempFile = [System.IO.Path]::GetTempPath() + $(New-Guid).ToString() + ".sql";
     [string]$content = Set-Content -Path $assignReadPermissionsTempFile.FullName -Value $command -PassThru -Force
     Write-Debug "${functionName}:$($assignReadPermissionsTempFile.FullName)=$content"
 
