@@ -13,12 +13,10 @@ Set-StrictMode -Version 3.0
 
 [string]$PostgresHost = $env:POSTGRES_HOST 
 [string]$PostgresDatabase = $env:POSTGRES_DATABASE
-[string]$ServiceMIName = $env:SERVICE_MI_NAME 
 [string]$PlatformMIName = $env:PLATFORM_MI_NAME 
 [string]$PlatformMIClientId = $env:AZURE_CLIENT_ID
 [string]$PlatformMITenantId = $env:AZURE_TENANT_ID
 [string]$PlatformMISubscriptionId = $env:PLATFORM_MI_SUBSCRIPTION_ID 
-[string]$PlatformMIFederatedTokenFile = $env:AZURE_FEDERATED_TOKEN_FILE
 [string]$SubscriptionName = $env:SUBSCRIPTION_NAME
 [string]$WorkingDirectory = $PWD
 [string]$PostgresReaderAdGroup = $env:PG_READER_AD_GROUP
@@ -41,7 +39,6 @@ if ($enableDebug) {
 Write-Host "${functionName} started at $($startTime.ToString('u'))"
 Write-Debug "${functionName}:PostgresHost:$PostgresHost"
 Write-Debug "${functionName}:PostgresDatabase:$PostgresDatabase"
-Write-Debug "${functionName}:ServiceMIName:$ServiceMIName"
 Write-Debug "${functionName}:PlatformMIName:$PlatformMIName"
 Write-Debug "${functionName}:SubscriptionName=$SubscriptionName"
 Write-Debug "${functionName}:WorkingDirectory=$WorkingDirectory"
@@ -88,7 +85,6 @@ function Get-SQLScriptToGrantAllPermissions {
     [void]$builder.Append("GRANT ALL ON ALL PROCEDURES IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
     [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO `"$PostgresReaderAdGroup`";")
     [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO `"$PostgresReaderAdGroup`";")
-    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON FUNCTIONS TO `"$ServiceMIName`";")
     return $builder.ToString()
 }
 
@@ -103,6 +99,11 @@ function Get-SQLScriptToGrantReadPermissions {
     [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON SEQUENCES TO `"$PostgresReaderAdGroup`";")
     return $builder.ToString()
 }
+
+[string]$tempFolder=[System.IO.Path]::GetTempPath()
+[System.IO.FileInfo]$createPrincipalTempFile = $tempFolder + $(New-Guid).ToString() + ".sql";
+[System.IO.FileInfo]$assignAllPermissionsTempFile = $tempFolder + $(New-Guid).ToString() + ".sql";
+[System.IO.FileInfo]$assignReadPermissionsTempFile = $tempFolder + $(New-Guid).ToString() + ".sql";
 
 try {
     [System.IO.DirectoryInfo]$moduleDir = Join-Path -Path $WorkingDirectory -ChildPath "common/scripts/modules/psql"
@@ -122,8 +123,6 @@ try {
     [string]$command = Get-SQLScriptToCreatePrincipal
     Write-Debug "${functionName}:command=$command"
     
-    [System.IO.FileInfo]$createPrincipalTempFile = [System.IO.Path]::GetTempPath() + $(New-Guid).ToString() + ".sql";
-    Write-Debug "createPrincipalTempFile: $($createPrincipalTempFile | ConvertTo-Json)"
     [string]$content = Set-Content -Path $createPrincipalTempFile.FullName -Value $command -PassThru -Force
     Write-Debug "${functionName}:$($createPrincipalTempFile.FullName)=$content"
 
@@ -134,7 +133,6 @@ try {
     [string]$command = Get-SQLScriptToGrantAllPermissions
     Write-Debug "${functionName}:command=$command"
     
-    [System.IO.FileInfo]$assignAllPermissionsTempFile = [System.IO.Path]::GetTempPath() + $(New-Guid).ToString() + ".sql";
     [string]$content = Set-Content -Path $assignAllPermissionsTempFile.FullName -Value $command -PassThru -Force
     Write-Debug "${functionName}:$($assignAllPermissionsTempFile.FullName)=$content"
 
@@ -145,7 +143,6 @@ try {
     [string]$command = Get-SQLScriptToGrantReadPermissions
     Write-Debug "${functionName}:command=$command"
     
-    [System.IO.FileInfo]$assignReadPermissionsTempFile = [System.IO.Path]::GetTempPath() + $(New-Guid).ToString() + ".sql";
     [string]$content = Set-Content -Path $assignReadPermissionsTempFile.FullName -Value $command -PassThru -Force
     Write-Debug "${functionName}:$($assignReadPermissionsTempFile.FullName)=$content"
 
@@ -162,9 +159,9 @@ catch {
     throw $_.Exception
 }
 finally {
-    # Remove-Item -Path $createPrincipalTempFile.FullName -Force -ErrorAction SilentlyContinue
-    # Remove-Item -Path $assignAllPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
-    # Remove-Item -Path $assignReadPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path $createPrincipalTempFile.FullName -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path $assignAllPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path $assignReadPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
 
     [DateTime]$endTime = [DateTime]::UtcNow
     [Timespan]$duration = $endTime.Subtract($startTime)
