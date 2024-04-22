@@ -162,9 +162,9 @@ catch {
     throw $_.Exception
 }
 finally {
-    Remove-Item -Path $createPrincipalTempFile.FullName -Force -ErrorAction SilentlyContinue
-    Remove-Item -Path $assignAllPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
-    Remove-Item -Path $assignReadPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
+    # Remove-Item -Path $createPrincipalTempFile.FullName -Force -ErrorAction SilentlyContinue
+    # Remove-Item -Path $assignAllPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
+    # Remove-Item -Path $assignReadPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
 
     [DateTime]$endTime = [DateTime]::UtcNow
     [Timespan]$duration = $endTime.Subtract($startTime)
