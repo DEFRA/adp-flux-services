@@ -11,7 +11,7 @@ spec:
         image: sndadpinfcr1401.azurecr.io/image/ffc-demo-claim-service-dbmigration:5.1.35 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-01"}
         env:
         - name: POSTGRES_HOST
-          value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
+          value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com1111"
         - name: SCHEMA_NAME
           value: ${POSTGRES_SCHEMA_NAME}
         - name: POSTGRES_DB
