@@ -15,7 +15,7 @@ spec:
         - name: SCHEMA_NAME
           value: ${POSTGRES_SCHEMA_NAME}
         - name: POSTGRES_DB
-          value: "${POSTGRES_DB}.test"
+          value: "${POSTGRES_DB}.test2"
         - name: POSTGRES_PORT
           value: "${POSTGRES_PORT}"
         - name: SCHEMA_USERNAME
