@@ -20,4 +20,4 @@ spec:
       containers:
       - name: ffc-demo-payment-service-dbmigration
         imagePullPolicy: Always
-  backoffLimit: 3
+  backoffLimit: 2
