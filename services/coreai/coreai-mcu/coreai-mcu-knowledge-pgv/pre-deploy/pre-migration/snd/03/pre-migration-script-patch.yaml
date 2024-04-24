@@ -11,13 +11,13 @@ spec:
         image: ssvadpinfcr3401.azurecr.io/image/powershell-executor:491667 # {"$imagepolicy": "flux-config:powershell-executor-snd-03"}
         env:
         - name: GIT_REPO_URL
-          value: https://github.com/DEFRA/adp-flux-services.git
+          value: "https://github.com/DEFRA/adp-flux-services.git"
         - name: GIT_BRANCH
-          value: main
+          value: "main"
         - name: SCRIPT_FILE_NAME
-          value: common/scripts/access-control/flexible-server/Grant-FlexibleServerAccess.ps1
+          value: "common/scripts/access-control/flexible-server/Grant-FlexibleServerAccess.ps1"
         - name: POSTGRES_HOST
-          value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
+          value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
         - name: POSTGRES_DATABASE
           value: ${POSTGRES_DB}
         - name: SERVICE_MI_NAME
