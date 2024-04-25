@@ -4,14 +4,14 @@ metadata:
   name: coreai-mcu-knowledge-pgv-pre-dbmigration
   namespace: flux-config
   labels:
-    azure.workload.identity/use: true
+    azure.workload.identity/use: "true"
     backstage.io/kubernetes-id: coreai-mcu-knowledge-pgv
     backstage.io/kubernetes-team: coreai-mcu
 spec:
   template:
     metadata:
       labels:
-        azure.workload.identity/use: true
+        azure.workload.identity/use: "true"
         backstage.io/kubernetes-id: coreai-mcu-knowledge-pgv
         backstage.io/kubernetes-team: coreai-mcu
     spec:
