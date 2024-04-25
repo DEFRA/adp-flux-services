@@ -24,7 +24,7 @@ spec:
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
       PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
-      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_DB: "ffc-demo-claim"
       POSTGRES_SCHEMA_NAME: ${POSTGRES_SCHEMA_NAME}
     substituteFrom:
       - kind: ConfigMap
