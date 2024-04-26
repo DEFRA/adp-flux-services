@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: coreai-mcu-knowledge-pgv
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.7-alpha.537979 # {"$imagepolicy": "flux-config:coreai-mcu-knowledge-pgv-snd-03:tag"}
+  values:
+    environment: production
+    name: coreai-mcu-knowledge-pgv
+    namespace: coreai-mcu
+    image: sndadpinfcr3401.azurecr.io/image/coreai-mcu-knowledge-pgv:0.1.7-alpha.537979 # {"$imagepolicy": "flux-config:coreai-mcu-knowledge-pgv-snd-03"}
+    serviceAccount:
+      name: coreai-mcu-knowledge-pgv
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}

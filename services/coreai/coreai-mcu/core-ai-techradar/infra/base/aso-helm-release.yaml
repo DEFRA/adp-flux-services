@@ -11,7 +11,7 @@ spec:
   chart:
     spec:
       chart: core-ai-techradar-infra
-      version: "0.1.0"
+      version: 0.1.0
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository

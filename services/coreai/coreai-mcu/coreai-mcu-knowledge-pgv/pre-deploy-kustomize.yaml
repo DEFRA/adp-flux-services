@@ -1,0 +1,37 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: coreai-mcu-knowledge-pgv-pre-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: coreai-mcu-knowledge-pgv
+    backstage.io/kubernetes-team: coreai-mcu
+spec:
+  dependsOn:
+  - name: coreai-mcu-knowledge-pgv-infra
+    namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/coreai/coreai-mcu/coreai-mcu-knowledge-pgv/pre-deploy
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SHARED_POSTGRES_SERVER_01: ${SHARED_POSTGRES_SERVER_01}
+      SERVICE_NAME: coreai-mcu-knowledge-pgv
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
+      POSTGRES_DB: coreai-mcu-knowledge
+      POSTGRES_PORT: "5432"
+      POSTGRES_SCHEMA_NAME: public
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: coreai-mcu-knowledge-pgv-mi-credential

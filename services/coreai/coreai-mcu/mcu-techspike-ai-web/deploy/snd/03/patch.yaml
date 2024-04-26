@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      version: "0.2.9" # {"$imagepolicy": "flux-config:mcu-techspike-ai-web-snd-03:tag"}
+      version: 0.2.9 # {"$imagepolicy": "flux-config:mcu-techspike-ai-web-snd-03:tag"}
   values:
     environment: production
     name: mcu-techspike-ai-web

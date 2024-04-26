@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: coreai-mcu-frontend-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: coreai-mcu-frontend
+    backstage.io/kubernetes-team: coreai-mcu
+spec:
+  imageRepositoryRef:
+    name: coreai-mcu-frontend
+  policy:
+    semver:
+      range: '>=0.1.0-0'
