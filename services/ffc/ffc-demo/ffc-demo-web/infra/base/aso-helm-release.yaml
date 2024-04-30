@@ -23,4 +23,3 @@ spec:
   targetNamespace: ffc-demo
   values:
     namespace: ffc-demo
-    enablePrivateEndpoint: "true"
