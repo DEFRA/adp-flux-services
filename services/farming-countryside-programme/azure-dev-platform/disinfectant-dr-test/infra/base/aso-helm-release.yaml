@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: disinfectant-dr-test-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: disinfectant-dr-test
+    backstage.io/kubernetes-team: azure-dev-platform
+spec:
+  releaseName: disinfectant-dr-test-infra
+  chart:
+    spec:
+      chart: disinfectant-dr-test-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: azure-dev-platform-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: "true"
+  interval: 5m0s
+  targetNamespace: azure-dev-platform
+  values:
+    namespace: azure-dev-platform

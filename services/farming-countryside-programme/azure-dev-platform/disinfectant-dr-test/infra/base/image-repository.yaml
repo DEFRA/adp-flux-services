@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: disinfectant-dr-test
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: disinfectant-dr-test
+    backstage.io/kubernetes-team: azure-dev-platform
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/disinfectant-dr-test
+  interval: 5m0s
+  provider: azure
