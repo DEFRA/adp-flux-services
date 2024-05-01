@@ -12,14 +12,14 @@ spec:
   git:
     checkout:
       ref:
-        branch: sm/337709/RemovePrivateEndpoints
+        branch: main
     commit:
       author:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
-      branch: sm/337709/RemovePrivateEndpoints
+      branch: main
   update:
     path: ./
     strategy: Setters
