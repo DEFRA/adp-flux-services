@@ -16,7 +16,7 @@ metadata:
   namespace: flux-config
 spec:
   eventMetadata:
-    env: "${ENVIRONMENT}${ENVIRONMENT_ID}"
+    env: "${ENVIRONMENT}"
     cluster: "${CLUSTER_NAME}"
   providerRef:
     name: azureeventhub
