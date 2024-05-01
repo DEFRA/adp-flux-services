@@ -26,6 +26,7 @@ spec:
       SERVICE_CPU_QUOTA: "3000"
       SERVICE_MEMORY_QUOTA: 2000Mi
       SERVICE_PODS_QUOTA: "20"
+      ENABLE_PRIVATE_ENDPOINT: ${ENABLE_PRIVATE_ENDPOINT}
     substituteFrom:
       - kind: ConfigMap
         name: ffc-demo-mi-credential
