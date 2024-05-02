@@ -1,0 +1,29 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: pets-demo-11-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: pets-demo-11
+    backstage.io/kubernetes-team: azure-dev-platform
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/farming-countryside-programme/azure-dev-platform/pets-demo-11/infra/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: "true"
+  wait: "true"
+  force: "true"
+  postBuild:
+    substitute:
+      SERVICE_NAME: pets-demo-11
+      TEAM_RG: ${TEAM_RG}
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      SERVICE_CODE: ${SERVICE_CODE}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
