@@ -16,16 +16,19 @@ spec:
   path: ./services/ffc/ffc-sfd/${ENVIRONMENT}/${ENVIRONMENT_ID}
   postBuild:
     substitute:
-      TEAM_NAMESPACE: "ffc-sfd"
-      TEAM_NAME: "ffc-sfd-team"
-      TEAM_RG: "${SERVICES_INFRA_RG}-ffc-sfd"
+      TEAM_NAMESPACE: ffc-sfd
+      TEAM_NAME: ffc-sfd-team
+      TEAM_RG: ${SERVICES_INFRA_RG}-ffc-sfd
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
       APPCONFIG_NAME: ${APPCONFIG_NAME}
-      SERVICE_CODE: "ffc-sfd"
-      PLATFORM_DB_ADMIN: "adp-platform-db-aad-admin"
+      SERVICE_CODE: fcp-sfd
+      PLATFORM_DB_ADMIN: adp-platform-db-aad-admin
+      TEAM_CPU_QUOTA: "5000"
+      TEAM_MEMORY_QUOTA: "5000"
+      TEAM_PODS_QUOTA: "50"
     substituteFrom:
-      - kind: ConfigMap
-        name: ffc-sfd-mi-credential
-        optional: true
-      - kind: ConfigMap
-        name: adp-platform-vars
+    - kind: ConfigMap
+      name: ffc-sfd-mi-credential
+      optional: true
+    - kind: ConfigMap
+      name: adp-platform-vars
