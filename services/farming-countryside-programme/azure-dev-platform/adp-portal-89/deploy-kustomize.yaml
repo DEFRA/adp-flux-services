@@ -1,0 +1,34 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: adp-portal-89-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-portal-89
+    backstage.io/kubernetes-team: azure-dev-platform
+spec:
+  dependsOn:
+  - name: adp-portal-89-infra
+    namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/farming-countryside-programme/azure-dev-platform/adp-portal-89/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: "true"
+  wait: "true"
+  force: "true"
+  postBuild:
+    substitute:
+      SERVICE_NAME: adp-portal-89
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: adp-portal-89-mi-credential

@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: adp-portal-89
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-portal-89
+    backstage.io/kubernetes-team: azure-dev-platform
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/adp-portal-89
+  interval: 5m0s
+  provider: azure
