@@ -1,0 +1,29 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ADP-DEMO-DR-CAPS-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ADP-DEMO-DR-CAPS
+    backstage.io/kubernetes-team: azure-dev-platform
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/farming-countryside-programme/azure-dev-platform/ADP-DEMO-DR-CAPS/infra/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: "true"
+  wait: "true"
+  force: "true"
+  postBuild:
+    substitute:
+      SERVICE_NAME: ADP-DEMO-DR-CAPS
+      TEAM_RG: ${TEAM_RG}
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      SERVICE_CODE: ${SERVICE_CODE}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars

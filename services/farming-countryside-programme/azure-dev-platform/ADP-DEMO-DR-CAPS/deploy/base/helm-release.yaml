@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ADP-DEMO-DR-CAPS
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ADP-DEMO-DR-CAPS
+    backstage.io/kubernetes-team: azure-dev-platform
+spec:
+  releaseName: ADP-DEMO-DR-CAPS
+  chart:
+    spec:
+      chart: ADP-DEMO-DR-CAPS
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: azure-dev-platform-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: "true"
+  interval: 5m0s
+  targetNamespace: azure-dev-platform
