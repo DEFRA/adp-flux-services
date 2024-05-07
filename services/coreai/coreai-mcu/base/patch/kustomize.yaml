@@ -23,9 +23,9 @@ spec:
       APPCONFIG_NAME: ${APPCONFIG_NAME}
       SERVICE_CODE: coreai-mcu
       PLATFORM_DB_ADMIN: adp-platform-db-aad-admin
-      SERVICE_CPU_QUOTA: "5000"
-      SERVICE_MEMORY_QUOTA: 5000Mi
-      SERVICE_PODS_QUOTA: "20"
+      TEAM_CPU_QUOTA: "5000"
+      TEAM_MEMORY_QUOTA: 5000Mi
+      TEAM_PODS_QUOTA: "20"
       ENABLE_PRIVATE_ENDPOINT: ${ENABLE_PRIVATE_ENDPOINT}
     substituteFrom:
     - kind: ConfigMap
