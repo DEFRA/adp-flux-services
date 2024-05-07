@@ -43,3 +43,4 @@ spec:
       kubernetes_cluster: ${CLUSTER_NAME}
       kubernetes_namespace: ${TEAM_NAMESPACE}
       kubernetes_label_serviceCode: ${SERVICE_CODE}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
