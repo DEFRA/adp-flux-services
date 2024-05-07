@@ -29,7 +29,7 @@ spec:
     azrMSTPrivateLinkDNSUKSouthResourceGroupName: ${AZR_MST_PRIVATELINKDNS_UKSOUTH_RG}
     azrMSTPrivateLinkDNSUKWestResourceGroupName: ${AZR_MST_PRIVATELINKDNS_UKWEST_RG}
     storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
-    enablePrivateEndpoint: "enable"
+    enablePrivateEndpoint: "disable"
     userAssignedIdentity:
       federatedCreds:
         - namespace: ${TEAM_NAMESPACE}
