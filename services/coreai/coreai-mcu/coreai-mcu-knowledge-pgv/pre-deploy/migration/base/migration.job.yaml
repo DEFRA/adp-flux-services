@@ -4,14 +4,14 @@ metadata:
   name: coreai-mcu-knowledge-pgv-dbmigration
   namespace: coreai-mcu
   labels:
-    azure.workload.identity/use: true
+    azure.workload.identity/use: "true"
     backstage.io/kubernetes-id: coreai-mcu-knowledge-pgv
     backstage.io/kubernetes-team: coreai-mcu
 spec:
   template:
     metadata:
       labels:
-        azure.workload.identity/use: true
+        azure.workload.identity/use: "true"
         backstage.io/kubernetes-id: coreai-mcu-knowledge-pgv
         backstage.io/kubernetes-team: coreai-mcu
     spec:
@@ -20,3 +20,4 @@ spec:
       containers:
       - name: coreai-mcu-knowledge-pgv-dbmigration
         imagePullPolicy: Always
+  backoffLimit: 2
