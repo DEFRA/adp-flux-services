@@ -21,4 +21,3 @@ spec:
       APPCONFIG_NAME: ${APPCONFIG_NAME}  
       ENABLE_PRIVATE_ENDPOINT: "disable"
 
- 
