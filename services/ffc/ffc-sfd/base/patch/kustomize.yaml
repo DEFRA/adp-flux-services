@@ -1,35 +1,34 @@
-content:
-  apiVersion: kustomize.toolkit.fluxcd.io/v1
-  kind: Kustomization
-  metadata:
-    name: ffc-demo-base
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ffc-sfd-base
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-team: ffc-sfd
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
     namespace: flux-config
-    labels:
-      backstage.io/kubernetes-team: ffc-demo
-  spec:
-    sourceRef:
-      kind: GitRepository
-      name: services-repository
-      namespace: flux-config
-    interval: 5m
-    timeout: 3m
-    prune: true
-    path: ./services/ffc/ffc-demo/${ENVIRONMENT}/${ENVIRONMENT_ID}
-    postBuild:
-      substitute:
-        TEAM_NAMESPACE: ffc-demo
-        TEAM_NAME: ffc-demo-team
-        TEAM_RG: ${SERVICES_INFRA_RG}-ffc-demo
-        APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
-        APPCONFIG_NAME: ${APPCONFIG_NAME}
-        SERVICE_CODE: ffc-demo
-        PLATFORM_DB_ADMIN: adp-platform-db-aad-admin
-        TEAM_CPU_QUOTA: "2000"
-        TEAM_MEMORY_QUOTA: 3000Mi
-        TEAM_PODS_QUOTA: "20"
-      substituteFrom:
-      - kind: ConfigMap
-        name: ffc-demo-mi-credential
-        optional: true
-      - kind: ConfigMap
-        name: adp-platform-vars
+  interval: 5m
+  timeout: 3m
+  prune: true
+  path: ./services/ffc/ffc-sfd/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  postBuild:
+    substitute:
+      TEAM_NAMESPACE: ffc-sfd
+      TEAM_NAME: ffc-sfd-team
+      TEAM_RG: ${SERVICES_INFRA_RG}-ffc-sfd
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      SERVICE_CODE: fcp-sfd
+      PLATFORM_DB_ADMIN: adp-platform-db-aad-admin
+      TEAM_CPU_QUOTA: "5000"
+      TEAM_MEMORY_QUOTA: 5000Mi
+      TEAM_PODS_QUOTA: "50"
+    substituteFrom:
+    - kind: ConfigMap
+      name: ffc-sfd-mi-credential
+      optional: true
+    - kind: ConfigMap
+      name: adp-platform-vars

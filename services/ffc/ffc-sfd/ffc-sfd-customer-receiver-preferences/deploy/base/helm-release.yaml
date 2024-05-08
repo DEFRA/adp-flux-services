@@ -1,24 +1,23 @@
-content:
-  apiVersion: helm.toolkit.fluxcd.io/v2beta1
-  kind: HelmRelease
-  metadata:
-    name: ffc-sfd-customer-receiver-preferences
-    namespace: flux-config
-    labels:
-      backstage.io/kubernetes-id: ffc-sfd-customer-receiver-preferences
-      backstage.io/kubernetes-team: ffc-sfd
-  spec:
-    releaseName: ffc-sfd-customer-receiver-preferences
-    chart:
-      spec:
-        chart: ffc-sfd-customer-receiver-preferences
-        version: 0.1.0
-        reconcileStrategy: ChartVersion
-        sourceRef:
-          kind: HelmRepository
-          name: ffc-sfd-helm-repo
-          namespace: flux-config
-    install:
-      createNamespace: "true"
-    interval: 5m0s
-    targetNamespace: ffc-sfd
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-sfd-customer-receiver-preferences
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-sfd-customer-receiver-preferences
+    backstage.io/kubernetes-team: ffc-sfd
+spec:
+  releaseName: ffc-sfd-customer-receiver-preferences
+  chart:
+    spec:
+      chart: ffc-sfd-customer-receiver-preferences
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ffc-sfd-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: "true"
+  interval: 5m0s
+  targetNamespace: ffc-sfd
