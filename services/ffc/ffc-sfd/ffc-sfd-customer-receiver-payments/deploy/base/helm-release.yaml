@@ -18,6 +18,6 @@ spec:
         name: ffc-sfd-helm-repo
         namespace: flux-config
   install:
-    createNamespace: "true"
+    createNamespace: true
   interval: 5m0s
   targetNamespace: ffc-sfd
