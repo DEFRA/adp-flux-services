@@ -1,0 +1,15 @@
+content:
+  apiVersion: image.toolkit.fluxcd.io/v1beta2
+  kind: ImagePolicy
+  metadata:
+    name: fcp-find-ai-data-ingester-snd-03
+    namespace: flux-config
+    labels:
+      backstage.io/kubernetes-id: fcp-find-ai-data-ingester
+      backstage.io/kubernetes-team: 123-find
+  spec:
+    imageRepositoryRef:
+      name: fcp-find-ai-data-ingester
+    policy:
+      semver:
+        range: '>=0.1.0-0'

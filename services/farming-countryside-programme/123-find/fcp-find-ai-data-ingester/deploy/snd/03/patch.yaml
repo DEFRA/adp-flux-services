@@ -1,0 +1,31 @@
+content:
+  apiVersion: helm.toolkit.fluxcd.io/v2beta1
+  kind: HelmRelease
+  metadata:
+    name: fcp-find-ai-data-ingester
+    namespace: flux-config
+  spec:
+    chart:
+      spec:
+        version: 0.1.0 # {"$imagepolicy": "flux-config:fcp-find-ai-data-ingester-snd-03:tag"}
+    values:
+      environment: production
+      name: fcp-find-ai-data-ingester
+      namespace: 123-find
+      image: sndadpinfcr3401.azurecr.io/image/fcp-find-ai-data-ingester:0.1.0 # {"$imagepolicy": "flux-config:fcp-find-ai-data-ingester-snd-03"}
+      serviceAccount:
+        name: fcp-find-ai-data-ingester
+      labels:
+        component: web
+      container:
+        imagePullPolicy: Always
+      ingress:
+        class: nginx
+        endpoint: __INGRESS_ENDPOINT__
+        server: snd3.adp.defra.gov.uk
+      deployment:
+        priorityClassName: default
+      containerConfigMap:
+        configServiceName: ${APPCONFIG_NAME}
+        configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+        serviceMIClientId: ${clientId}
