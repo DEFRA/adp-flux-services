@@ -1,0 +1,13 @@
+content:
+  apiVersion: image.toolkit.fluxcd.io/v1beta2
+  kind: ImageRepository
+  metadata:
+    name: ffc-sfd-customer-receiver-preferences
+    namespace: flux-config
+    labels:
+      backstage.io/kubernetes-id: ffc-sfd-customer-receiver-preferences
+      backstage.io/kubernetes-team: ffc-sfd
+  spec:
+    image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-sfd-customer-receiver-preferences
+    interval: 5m0s
+    provider: azure
