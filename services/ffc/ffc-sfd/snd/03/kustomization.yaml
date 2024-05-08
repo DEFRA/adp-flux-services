@@ -12,3 +12,4 @@ resources:
 - ../../ffc-sfd-permissions-api
 - ../../ffc-sfd-business
 - ../../ffc-sfd-customer-receiver-preferences
+- ../../ffc-sfd-customer-receiver-payments
