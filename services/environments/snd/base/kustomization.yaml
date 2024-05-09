@@ -12,3 +12,4 @@ resources:
   - ../../../coreai/coreai-mcu/base/patch
   - ../../../ffc/ffc-sfd/base/patch
   - ../../../lap/lap-mit/base/patch
+  - ../../../ffc/fcp-find/base/patch
