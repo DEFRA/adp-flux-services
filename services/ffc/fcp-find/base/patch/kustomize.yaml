@@ -1,10 +1,10 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: ffc-demo-base
+  name: fcp-find-base
   namespace: flux-config
   labels:
-    backstage.io/kubernetes-team: ffc-demo
+    backstage.io/kubernetes-team: fcp-find
 spec:
   sourceRef:
     kind: GitRepository
@@ -13,15 +13,15 @@ spec:
   interval: 5m
   timeout: 3m
   prune: true
-  path: ./services/ffc/ffc-demo/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  path: ./services/ffc/fcp-find/${ENVIRONMENT}/${ENVIRONMENT_ID}
   postBuild:
     substitute:
-      TEAM_NAMESPACE: ffc-demo
-      TEAM_NAME: ffc-demo-team
-      TEAM_RG: ${SERVICES_INFRA_RG}-ffc-demo
+      TEAM_NAMESPACE: fcp-find
+      TEAM_NAME: fcp-find-team
+      TEAM_RG: ${SERVICES_INFRA_RG}-fcp-find
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
       APPCONFIG_NAME: ${APPCONFIG_NAME}
-      SERVICE_CODE: ffc-demo
+      SERVICE_CODE: fcp-find
       PLATFORM_DB_ADMIN: adp-platform-db-aad-admin
       TEAM_CPU_QUOTA: "2000"
       TEAM_MEMORY_QUOTA: 3000Mi
@@ -29,7 +29,7 @@ spec:
       ENABLE_PRIVATE_ENDPOINT: ${ENABLE_PRIVATE_ENDPOINT}
     substituteFrom:
     - kind: ConfigMap
-      name: ffc-demo-mi-credential
+      name: fcp-find-mi-credential
       optional: true
     - kind: ConfigMap
       name: adp-platform-vars

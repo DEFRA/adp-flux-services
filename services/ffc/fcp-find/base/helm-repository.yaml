@@ -1,10 +1,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: ffc-demo-helm-repo
+  name: fcp-find-helm-repo
   namespace: flux-config
   labels:
-    backstage.io/kubernetes-team: ffc-demo
+    backstage.io/kubernetes-team: fcp-find
 spec:
   type: oci
   interval: 5m
