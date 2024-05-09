@@ -26,7 +26,6 @@ spec:
       TEAM_CPU_QUOTA: "3000"
       TEAM_MEMORY_QUOTA: 2000Mi
       TEAM_PODS_QUOTA: "20"
-      ENABLE_PRIVATE_ENDPOINT: "disable"
     substituteFrom:
       - kind: ConfigMap
         name: ffc-demo-mi-credential
