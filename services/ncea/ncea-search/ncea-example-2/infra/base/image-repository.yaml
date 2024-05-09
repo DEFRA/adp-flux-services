@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: ncea-example-2
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ncea-example-2
+    backstage.io/kubernetes-team: ncea-search
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ncea-example-2
+  interval: 5m0s
+  provider: azure

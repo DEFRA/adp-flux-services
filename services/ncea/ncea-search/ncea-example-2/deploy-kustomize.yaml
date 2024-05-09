@@ -1,0 +1,34 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ncea-example-2-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ncea-example-2
+    backstage.io/kubernetes-team: ncea-search
+spec:
+  dependsOn:
+  - name: ncea-example-2-infra
+    namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/ncea/ncea-search/ncea-example-2/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: "true"
+  wait: "true"
+  force: "true"
+  postBuild:
+    substitute:
+      SERVICE_NAME: ncea-example-2
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: ncea-example-2-mi-credential
