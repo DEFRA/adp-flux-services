@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: ncea-examplar-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ncea-examplar
+    backstage.io/kubernetes-team: ncea-search
+spec:
+  imageRepositoryRef:
+    name: ncea-examplar
+  policy:
+    semver:
+      range: '>=0.1.0-0'
