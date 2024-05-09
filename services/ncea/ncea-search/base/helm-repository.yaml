@@ -1,0 +1,12 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: ncea-search-helm-repo
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-team: ncea-search
+spec:
+  type: oci
+  interval: 5m
+  url: oci://${APPLICATION_ACR_NAME}.azurecr.io/helm
+  provider: azure
