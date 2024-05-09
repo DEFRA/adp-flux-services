@@ -83,8 +83,8 @@ function Get-SQLScriptToGrantAllPermissions {
     [void]$builder.Append("GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
     [void]$builder.Append("GRANT ALL ON ALL FUNCTIONS IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
     [void]$builder.Append("GRANT ALL ON ALL PROCEDURES IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
-    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO `"$PostgresReaderAdGroup`";")
-    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO `"$PostgresReaderAdGroup`";")
+    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO `"$PostgresWriterAdGroup`";")
+    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO `"$PostgresWriterAdGroup`";")
     return $builder.ToString()
 }
 
