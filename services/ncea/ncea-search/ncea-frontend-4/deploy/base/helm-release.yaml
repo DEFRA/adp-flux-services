@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ncea-frontend-4
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ncea-frontend-4
+    backstage.io/kubernetes-team: ncea-search
+spec:
+  releaseName: ncea-frontend-4
+  chart:
+    spec:
+      chart: ncea-frontend-4
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ncea-search-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: "true"
+  interval: 5m0s
+  targetNamespace: ncea-search

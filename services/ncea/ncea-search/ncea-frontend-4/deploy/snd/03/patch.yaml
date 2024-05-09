@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ncea-frontend-4
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ncea-frontend-4-snd-03:tag"}
+  values:
+    environment: production
+    name: ncea-frontend-4
+    namespace: ncea-search
+    image: sndadpinfcr3401.azurecr.io/image/ncea-frontend-4:0.1.0 # {"$imagepolicy": "flux-config:ncea-frontend-4-snd-03"}
+    serviceAccount:
+      name: ncea-frontend-4
+    labels:
+      component: web
+    container:
+      imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: __INGRESS_ENDPOINT__
+      server: snd3.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
