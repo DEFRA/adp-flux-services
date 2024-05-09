@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: coreai-mcu-knowledge-pgv-infra
-      version: 0.1.9-alpha.550775 # {"$imagepolicy": "flux-config:coreai-mcu-knowledge-pgv-snd-03:tag"}
+      version: 0.1.10-alpha.551288 # {"$imagepolicy": "flux-config:coreai-mcu-knowledge-pgv-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
