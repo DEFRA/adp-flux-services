@@ -13,7 +13,6 @@ Set-StrictMode -Version 3.0
 
 [string]$PostgresHost = $env:POSTGRES_HOST 
 [string]$PostgresDatabase = $env:POSTGRES_DATABASE
-[string]$PlatformMIName = $env:PLATFORM_MI_NAME 
 [string]$PlatformMIClientId = $env:AZURE_CLIENT_ID
 [string]$PlatformMITenantId = $env:AZURE_TENANT_ID
 [string]$PlatformMISubscriptionId = $env:PLATFORM_MI_SUBSCRIPTION_ID 
@@ -39,7 +38,6 @@ if ($enableDebug) {
 Write-Host "${functionName} started at $($startTime.ToString('u'))"
 Write-Debug "${functionName}:PostgresHost:$PostgresHost"
 Write-Debug "${functionName}:PostgresDatabase:$PostgresDatabase"
-Write-Debug "${functionName}:PlatformMIName:$PlatformMIName"
 Write-Debug "${functionName}:SubscriptionName=$SubscriptionName"
 Write-Debug "${functionName}:WorkingDirectory=$WorkingDirectory"
 Write-Debug "${functionName}:PostgresReaderAdGroup=$PostgresReaderAdGroup"
@@ -84,7 +82,7 @@ try {
     Write-Debug "${functionName}:$($assignReadPermissionsTempFile.FullName)=$content"
 
     Write-Host "Granting permissions to ${PostgresReaderAdGroup}"
-    $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $PostgresDatabase -PostgresUsername $PlatformMIName -Path $assignReadPermissionsTempFile.FullName
+    $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $PostgresDatabase -PostgresUsername $PostgresWriterAdGroup -Path $assignReadPermissionsTempFile.FullName
     Write-Host "Granted Access to ${PostgresReaderAdGroup}"
 
     # Successful exit
