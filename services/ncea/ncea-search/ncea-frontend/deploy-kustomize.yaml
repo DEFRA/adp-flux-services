@@ -17,9 +17,9 @@ spec:
   path: ./services/ncea/ncea-search/ncea-frontend/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 5m
   timeout: 3m
-  prune: "true"
-  wait: "true"
-  force: "true"
+  prune: true
+  wait: true
+  force: true
   postBuild:
     substitute:
       SERVICE_NAME: ncea-frontend
