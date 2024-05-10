@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.15-alpha.552831 # {"$imagepolicy": "flux-config:coreai-mcu-responses-snd-03:tag"}
+      version: 0.1.15-alpha.552889 # {"$imagepolicy": "flux-config:coreai-mcu-responses-snd-03:tag"}
   values:
     environment: production
     name: coreai-mcu-responses
     namespace: coreai-mcu
-    image: sndadpinfcr3401.azurecr.io/image/coreai-mcu-responses:0.1.15-alpha.552831 # {"$imagepolicy": "flux-config:coreai-mcu-responses-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/coreai-mcu-responses:0.1.15-alpha.552889 # {"$imagepolicy": "flux-config:coreai-mcu-responses-snd-03"}
     serviceAccount:
       name: coreai-mcu-responses
     container:
