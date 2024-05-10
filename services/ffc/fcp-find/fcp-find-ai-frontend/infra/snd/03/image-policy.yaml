@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: fcp-find-ai-frontend-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: fcp-find-ai-frontend
+    backstage.io/kubernetes-team: fcp-find
+spec:
+  imageRepositoryRef:
+    name: fcp-find-ai-frontend
+  policy:
+    semver:
+      range: '>=0.1.0-0'
