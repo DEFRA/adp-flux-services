@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: adp-fmp-dr2-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-fmp-dr2
+    backstage.io/kubernetes-team: eutd-find-my-pet
+spec:
+  imageRepositoryRef:
+    name: adp-fmp-dr2
+  policy:
+    semver:
+      range: '>=0.1.0-0'
