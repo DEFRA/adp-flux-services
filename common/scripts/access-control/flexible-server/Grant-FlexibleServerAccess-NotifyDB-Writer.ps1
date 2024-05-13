@@ -79,31 +79,19 @@ function Get-SQLScriptToCreatePrincipal {
 function Get-SQLScriptToGrantAllPermissions {
     [System.Text.StringBuilder]$builder = [System.Text.StringBuilder]::new()
     [void]$builder.Append("GRANT ALL ON SCHEMA public TO `"$PostgresWriterAdGroup`";")
+    [void]$builder.Append("GRANT USAGE ON SCHEMA public TO `"$PostgresReaderAdGroup`";")
     [void]$builder.Append("GRANT ALL ON ALL TABLES IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
     [void]$builder.Append("GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
     [void]$builder.Append("GRANT ALL ON ALL FUNCTIONS IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
     [void]$builder.Append("GRANT ALL ON ALL PROCEDURES IN SCHEMA public TO `"$PostgresWriterAdGroup`";")
-    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO `"$PostgresReaderAdGroup`";")
-    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO `"$PostgresReaderAdGroup`";")
-    return $builder.ToString()
-}
-
-function Get-SQLScriptToGrantReadPermissions {
-    [System.Text.StringBuilder]$builder = [System.Text.StringBuilder]::new()
-    [void]$builder.Append("GRANT USAGE ON SCHEMA public TO `"$PostgresReaderAdGroup`";")
-    [void]$builder.Append("GRANT SELECT ON ALL TABLES IN SCHEMA public TO `"$PostgresReaderAdGroup`";")
-    [void]$builder.Append("GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO `"$PostgresReaderAdGroup`";")
-    [void]$builder.Append("REVOKE EXECUTE ON ALL FUNCTIONS IN SCHEMA public FROM `"$PostgresReaderAdGroup`";")
-    [void]$builder.Append("REVOKE EXECUTE ON ALL PROCEDURES IN SCHEMA public FROM `"$PostgresReaderAdGroup`";")
-    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO `"$PostgresReaderAdGroup`";")
-    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON SEQUENCES TO `"$PostgresReaderAdGroup`";")
+    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO `"$PostgresWriterAdGroup`";")
+    [void]$builder.Append("ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO `"$PostgresWriterAdGroup`";")
     return $builder.ToString()
 }
 
 [string]$tempFolder=[System.IO.Path]::GetTempPath()
 [System.IO.FileInfo]$createPrincipalTempFile = $tempFolder + $(New-Guid).ToString() + ".sql";
 [System.IO.FileInfo]$assignAllPermissionsTempFile = $tempFolder + $(New-Guid).ToString() + ".sql";
-[System.IO.FileInfo]$assignReadPermissionsTempFile = $tempFolder + $(New-Guid).ToString() + ".sql";
 
 try {
     [System.IO.DirectoryInfo]$moduleDir = Join-Path -Path $WorkingDirectory -ChildPath "common/scripts/modules/psql"
@@ -140,16 +128,6 @@ try {
     $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $PostgresDatabase -PostgresUsername $PlatformMIName -Path $assignAllPermissionsTempFile.FullName
     Write-Host "Granted Access to ${PostgresWriterAdGroup}"
 
-    [string]$command = Get-SQLScriptToGrantReadPermissions
-    Write-Debug "${functionName}:command=$command"
-    
-    [string]$content = Set-Content -Path $assignReadPermissionsTempFile.FullName -Value $command -PassThru -Force
-    Write-Debug "${functionName}:$($assignReadPermissionsTempFile.FullName)=$content"
-
-    Write-Host "Granting permissions to ${PostgresReaderAdGroup}"
-    $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $PostgresDatabase -PostgresUsername $PlatformMIName -Path $assignReadPermissionsTempFile.FullName
-    Write-Host "Granted Access to ${PostgresReaderAdGroup}"
-
     # Successful exit
     $exitCode = 0
 } 
@@ -161,7 +139,6 @@ catch {
 finally {
     Remove-Item -Path $createPrincipalTempFile.FullName -Force -ErrorAction SilentlyContinue
     Remove-Item -Path $assignAllPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
-    Remove-Item -Path $assignReadPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
 
     [DateTime]$endTime = [DateTime]::UtcNow
     [Timespan]$duration = $endTime.Subtract($startTime)
