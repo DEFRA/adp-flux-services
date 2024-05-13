@@ -13,7 +13,7 @@ Set-StrictMode -Version 3.0
 
 [string]$PostgresHost = $env:POSTGRES_HOST 
 [string]$PostgresDatabase = $env:POSTGRES_DATABASE
-[string]$PlatformMIClientId = $env:AZURE_CLIENT_ID
+[string]$NotificationApiMIClientId = $env:AZURE_CLIENT_ID
 [string]$PlatformMITenantId = $env:AZURE_TENANT_ID
 [string]$PlatformMISubscriptionId = $env:PLATFORM_MI_SUBSCRIPTION_ID 
 [string]$SubscriptionName = $env:SUBSCRIPTION_NAME
@@ -66,7 +66,7 @@ try {
     Import-Module $moduleDir.FullName -Force
 
     Write-Host "Connecting to Azure..."
-    $azureContext = (Connect-AzAccount -Identity -AccountId $PlatformMIClientId -Tenant $PlatformMITenantId -Subscription $PlatformMISubscriptionId).context
+    $azureContext = (Connect-AzAccount -Identity -AccountId $NotificationApiMIClientId -Tenant $PlatformMITenantId -Subscription $PlatformMISubscriptionId).context
     $null = Set-AzContext -Subscription $SubscriptionName -DefaultProfile $azureContext
     Write-Host "Connected to Azure and set context to '$SubscriptionName'"
 
