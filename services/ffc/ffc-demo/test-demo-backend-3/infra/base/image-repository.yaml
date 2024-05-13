@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: test-demo-backend-3
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: test-demo-backend-3
+    backstage.io/kubernetes-team: ffc-demo
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/test-demo-backend-3
+  interval: 5m0s
+  provider: azure
