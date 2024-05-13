@@ -10,3 +10,4 @@ resources:
 - ../../../ffc/ffc-sfd/base/patch
 - ../../../lap/lap-mit/base/patch
 - ../../../eutd/eutd-find-my-pet/base/patch
+- ../../../eutd/eutd-find-my-cat/base/patch
