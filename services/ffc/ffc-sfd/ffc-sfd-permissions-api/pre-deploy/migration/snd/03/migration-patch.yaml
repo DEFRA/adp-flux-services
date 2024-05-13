@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: ffc-sfd-permissions-api-dbmigration
-        image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-permissions-api-dbmigration:0.2.0 # {"$imagepolicy": "flux-config:ffc-sfd-permissions-api-dbmigration-snd-03"}
+        image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-permissions-api-dbmigration:0.2.1 # {"$imagepolicy": "flux-config:ffc-sfd-permissions-api-dbmigration-snd-03"}
         env:
         - name: POSTGRES_HOST
           value: "${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com"
