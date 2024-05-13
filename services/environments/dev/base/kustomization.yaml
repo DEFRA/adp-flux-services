@@ -1,12 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - image-update.yaml
-  # - notification.yaml
-  - ../../../ffc/ffc-demo/base/patch
-  - ../../../adp-platform/kustomize.yaml
-  - ../../../ffc/ffc-dal/base/patch
-  - ../../../ffc/ffc-find/base/patch
-  - ../../../coreai/coreai-mcu/base/patch
-  - ../../../ffc/ffc-sfd/base/patch
-  - ../../../lap/lap-mit/base/patch
+- image-update.yaml
+- ../../../ffc/ffc-demo/base/patch
+- ../../../adp-platform/kustomize.yaml
+- ../../../ffc/ffc-dal/base/patch
+- ../../../ffc/ffc-find/base/patch
+- ../../../coreai/coreai-mcu/base/patch
+- ../../../ffc/ffc-sfd/base/patch
+- ../../../lap/lap-mit/base/patch
+- ../../../eutd/eutd-find-my-pet/base/patch

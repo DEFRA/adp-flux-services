@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: adp-fmp-frontend
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:adp-fmp-frontend-snd-03:tag"}
+  values:
+    environment: production
+    name: adp-fmp-frontend
+    namespace: eutd-find-my-pet
+    image: sndadpinfcr3401.azurecr.io/image/adp-fmp-frontend:0.1.0 # {"$imagepolicy": "flux-config:adp-fmp-frontend-snd-03"}
+    serviceAccount:
+      name: adp-fmp-frontend
+    labels:
+      component: web
+    container:
+      imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: adp-fmp-frontend
+      server: snd3.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}

@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: adp-fmp-frontend
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-fmp-frontend
+    backstage.io/kubernetes-team: eutd-find-my-pet
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/adp-fmp-frontend
+  interval: 5m0s
+  provider: azure
