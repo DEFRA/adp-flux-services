@@ -20,7 +20,7 @@ spec:
       imagePullPolicy: Always
     ingress:
       class: nginx
-      endpoint: __INGRESS_ENDPOINT__
+      endpoint: adp-pp-demo
       server: snd3.adp.defra.gov.uk
     deployment:
       priorityClassName: default
