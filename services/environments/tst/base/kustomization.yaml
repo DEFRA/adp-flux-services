@@ -5,3 +5,4 @@ resources:
 - ../../../ffc/ffc-demo/base/patch
 - ../../../adp-platform/kustomize.yaml
 - ../../../eutd/eutd-find-my-pet/base/patch
+- ../../../eutd/eutd-find-my-cat/base/patch
