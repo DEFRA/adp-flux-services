@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: adp-test-dr111-pre-01
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-test-dr111
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  imageRepositoryRef:
+    name: adp-test-dr111
+  policy:
+    semver:
+      range: '>=0.1.0'
