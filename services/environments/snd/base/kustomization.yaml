@@ -16,3 +16,4 @@ resources:
 - ../../../ncea/ncea-search/base/patch
 - ../../../eutd/eutd-find-my-pet/base/patch
 - ../../../eutd/eutd-find-my-cat/base/patch
+- ../../../ccts/ccts-adp/base/patch
