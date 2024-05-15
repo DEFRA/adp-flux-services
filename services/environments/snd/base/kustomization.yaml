@@ -18,4 +18,5 @@ resources:
 - ../../../eutd/eutd-find-my-cat/base/patch
 - ../../../ccts/ccts-adp/base/patch
 - ../../../crai/crai-mcu/base/patch
+- ../../../ffc/fcp-dal/base/patch
 - ../../../fcp/fcp-ea-walleys-quarry/base/patch
