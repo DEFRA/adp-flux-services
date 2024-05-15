@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: ea-wq-incident-web-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ea-wq-incident-web
+    backstage.io/kubernetes-team: fcp-ea-walleys-quarry
+spec:
+  imageRepositoryRef:
+    name: ea-wq-incident-web
+  policy:
+    semver:
+      range: '>=0.1.0-0'
