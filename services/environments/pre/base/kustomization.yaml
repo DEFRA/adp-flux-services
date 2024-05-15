@@ -7,3 +7,4 @@ resources:
 - ../../../eutd/eutd-find-my-pet/base/patch
 - ../../../eutd/eutd-find-my-cat/base/patch
 - ../../../ccts/ccts-adp/base/patch
+- ../../../crai/crai-mcu/base/patch
