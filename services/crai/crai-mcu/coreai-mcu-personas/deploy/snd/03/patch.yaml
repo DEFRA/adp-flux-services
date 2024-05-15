@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: coreai-mcu-personas
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:coreai-mcu-personas-snd-03:tag"}
+  values:
+    environment: production
+    name: coreai-mcu-personas
+    namespace: crai-mcu
+    image: sndadpinfcr3401.azurecr.io/image/coreai-mcu-personas:0.1.0 # {"$imagepolicy": "flux-config:coreai-mcu-personas-snd-03"}
+    serviceAccount:
+      name: coreai-mcu-personas
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
