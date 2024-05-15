@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: coreai-mcu-prompts-infra
-      version: 0.1.0 # {"$imagepolicy": "flux-config:coreai-mcu-prompts-snd-03:tag"}
+      version: 0.1.6-alpha.556285 # {"$imagepolicy": "flux-config:coreai-mcu-prompts-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
