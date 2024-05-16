@@ -1,0 +1,30 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: coreai-mcu-responses-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: coreai-mcu-responses
+    backstage.io/kubernetes-team: crai-mcu
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/crai/crai-mcu/coreai-mcu-responses/infra/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SERVICE_NAME: coreai-mcu-responses
+      TEAM_RG: ${TEAM_RG}
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      SERVICE_CODE: ${SERVICE_CODE}
+      ENABLE_PRIVATE_ENDPOINT: ${ENABLE_PRIVATE_ENDPOINT}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
