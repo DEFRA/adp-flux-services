@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: coreai-mcu-email-processor-infra
-      version: 0.1.0 # {"$imagepolicy": "flux-config:coreai-mcu-email-processor-snd-03:tag"}
+      version: 0.1.1-alpha.561117 # {"$imagepolicy": "flux-config:coreai-mcu-email-processor-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
