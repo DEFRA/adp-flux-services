@@ -6,7 +6,6 @@ resources:
 - ../../../adp-platform/kustomize.yaml
 - ../../../ffc/ffc-dal/base/patch
 - ../../../ffc/ffc-find/base/patch
-- ../../../coreai/coreai-mcu/base/patch
 - ../../../ffc/ffc-sfd/base/patch
 - ../../../lap/lap-mit/base/patch
 - ../../../eutd/eutd-find-my-pet/base/patch
