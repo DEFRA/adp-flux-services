@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: core-ai-techradar-infra
-      version: 0.4.7 # {"$imagepolicy": "flux-config:core-ai-techradar-snd-03:tag"}
+      version: 0.4.8-alpha.560797 # {"$imagepolicy": "flux-config:core-ai-techradar-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
