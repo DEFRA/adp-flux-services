@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.24-alpha.560930 # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-snd-03:tag"}
+      version: 0.1.24-alpha.560980 # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-snd-03:tag"}
   values:
     environment: production
     name: fcp-find-ai-frontend
     namespace: fcp-find
-    image: sndadpinfcr3401.azurecr.io/image/fcp-find-ai-frontend:0.1.24-alpha.560930 # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/fcp-find-ai-frontend:0.1.24-alpha.560980 # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-snd-03"}
     serviceAccount:
       name: fcp-find-ai-frontend
     labels:
