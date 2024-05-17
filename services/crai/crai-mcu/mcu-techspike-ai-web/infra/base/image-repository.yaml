@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: mcu-techspike-ai-web
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: mcu-techspike-ai-web
+    backstage.io/kubernetes-team: crai-mcu
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/mcu-techspike-ai-web
+  interval: 5m0s
+  provider: azure

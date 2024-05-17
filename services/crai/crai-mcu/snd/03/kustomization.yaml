@@ -3,3 +3,12 @@ kind: Kustomization
 resources:
 - ../../base
 - ../../coreai-mcu-personas
+- ../../coreai-mcu-prompts
+- ../../core-ai-techradar
+- ../../mcu-techspike-ai-web
+- ../../coreai-mcu-frontend
+- ../../coreai-mcu-documents
+- ../../coreai-mcu-generation-oai
+- ../../coreai-mcu-knowledge-pgv
+- ../../coreai-mcu-responses
+- ../../coreai-mcu-email-processor

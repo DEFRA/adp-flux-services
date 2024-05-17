@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: coreai-mcu-generation-oai
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.17 # {"$imagepolicy": "flux-config:coreai-mcu-generation-oai-snd-03:tag"}
+  values:
+    environment: production
+    name: coreai-mcu-generation-oai
+    namespace: crai-mcu
+    image: sndadpinfcr3401.azurecr.io/image/coreai-mcu-generation-oai:0.1.17 # {"$imagepolicy": "flux-config:coreai-mcu-generation-oai-snd-03"}
+    serviceAccount:
+      name: coreai-mcu-generation-oai
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}

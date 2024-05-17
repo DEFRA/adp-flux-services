@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: coreai-mcu-knowledge-pgv-post-dbmigration
+  namespace: crai-mcu
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: coreai-mcu-knowledge-pgv
+    backstage.io/kubernetes-team: crai-mcu
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: coreai-mcu-knowledge-pgv
+        backstage.io/kubernetes-team: crai-mcu
+    spec:
+      serviceAccountName: ${TEAM_NAMESPACE}
+      restartPolicy: Never
+      volumes:
+      - name: custom-root-ca
+        secret:
+          secretName: custom-ca-trust-secret
+          optional: true
+      containers:
+      - name: coreai-mcu-knowledge-pgv-post-dbmigration
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: custom-root-ca
+          readOnly: true
+          mountPath: /etc/ssl/certs/defra-egress-firewall-cert-01.crt
+          subPath: defra-egress-firewall-cert-01.crt
+  backoffLimit: 2
