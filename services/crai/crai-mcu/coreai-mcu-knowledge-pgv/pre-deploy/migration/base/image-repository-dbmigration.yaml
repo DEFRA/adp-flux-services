@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: coreai-mcu-knowledge-pgv-dbmigration
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: coreai-mcu-knowledge-pgv
+    backstage.io/kubernetes-team: crai-mcu
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/coreai-mcu-knowledge-pgv-dbmigration
+  interval: 5m0s
+  provider: azure

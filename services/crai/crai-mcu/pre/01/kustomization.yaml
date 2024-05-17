@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - ../../base
 - ../../coreai-mcu-personas
+- ../../coreai-mcu-prompts

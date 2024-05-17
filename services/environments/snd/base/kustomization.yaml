@@ -9,7 +9,6 @@ resources:
 - ../../../adp-platform/kustomize.yaml
 - ../../../eutd/eutd-trade-exports-ai/base/patch
 - ../../../ffc/ffc-find/base/patch
-- ../../../coreai/coreai-mcu/base/patch
 - ../../../ffc/ffc-sfd/base/patch
 - ../../../lap/lap-mit/base/patch
 - ../../../ffc/fcp-find/base/patch
@@ -18,3 +17,4 @@ resources:
 - ../../../eutd/eutd-find-my-cat/base/patch
 - ../../../ccts/ccts-adp/base/patch
 - ../../../crai/crai-mcu/base/patch
+- ../../../ffc/fcp-dal/base/patch

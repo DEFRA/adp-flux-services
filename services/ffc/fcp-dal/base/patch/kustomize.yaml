@@ -1,0 +1,35 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: fcp-dal-base
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-team: fcp-dal
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  interval: 5m
+  timeout: 3m
+  prune: true
+  path: ./services/ffc/fcp-dal/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  postBuild:
+    substitute:
+      TEAM_NAMESPACE: fcp-dal
+      TEAM_NAME: fcp-dal-team
+      TEAM_RG: ${SERVICES_INFRA_RG}-fcp-dal
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      SERVICE_CODE: fcp-dal
+      PLATFORM_DB_ADMIN: adp-platform-db-aad-admin
+      TEAM_CPU_QUOTA: "2000"
+      TEAM_MEMORY_QUOTA: 3000Mi
+      TEAM_PODS_QUOTA: "20"
+      ENABLE_PRIVATE_ENDPOINT: ${ENABLE_PRIVATE_ENDPOINT}
+    substituteFrom:
+    - kind: ConfigMap
+      name: fcp-dal-mi-credential
+      optional: true
+    - kind: ConfigMap
+      name: adp-platform-vars

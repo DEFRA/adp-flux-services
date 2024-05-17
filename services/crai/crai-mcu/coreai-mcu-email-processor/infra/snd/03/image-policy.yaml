@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: coreai-mcu-email-processor-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: coreai-mcu-email-processor
+    backstage.io/kubernetes-team: crai-mcu
+spec:
+  imageRepositoryRef:
+    name: coreai-mcu-email-processor
+  policy:
+    semver:
+      range: '>=0.1.0-0'

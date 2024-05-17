@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: ncea-harvester
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ncea-harvester
+    backstage.io/kubernetes-team: ncea-search
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ncea-harvester
+  interval: 5m0s
+  provider: azure
