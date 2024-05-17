@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: adp-demo-12344
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-demo-12344
+    backstage.io/kubernetes-team: tpr-demo
+spec:
+  releaseName: adp-demo-12344
+  chart:
+    spec:
+      chart: adp-demo-12344
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: tpr-demo-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: tpr-demo
