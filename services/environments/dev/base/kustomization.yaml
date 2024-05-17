@@ -13,3 +13,4 @@ resources:
 - ../../../ccts/ccts-adp/base/patch
 - ../../../ffc/fcp-dal/base/patch
 - ../../../crai/crai-mcu/base/patch
+- ../../../test-programme/tpr-demo/base/patch

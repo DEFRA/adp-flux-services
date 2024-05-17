@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: adp-demo-12344-dev-01
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-demo-12344
+    backstage.io/kubernetes-team: tpr-demo
+spec:
+  imageRepositoryRef:
+    name: adp-demo-12344
+  policy:
+    semver:
+      range: '>=0.1.0'

@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: adp-demo-12344
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:adp-demo-12344-dev-01:tag"}
+  values:
+    environment: production
+    name: adp-demo-12344
+    namespace: tpr-demo
+    image: devadpinfcr1401.azurecr.io/image/adp-demo-12344:0.1.0 # {"$imagepolicy": "flux-config:adp-demo-12344-dev-01"}
+    serviceAccount:
+      name: adp-demo-12344
+    labels:
+      component: web
+    container:
+      imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: adp-demo-12344
+      server: dev1.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
