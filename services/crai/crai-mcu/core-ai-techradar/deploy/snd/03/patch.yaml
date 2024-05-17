@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.4.8-alpha.560797 # {"$imagepolicy": "flux-config:core-ai-techradar-snd-03:tag"}
+      version: 0.4.8-alpha.560834 # {"$imagepolicy": "flux-config:core-ai-techradar-snd-03:tag"}
   values:
     environment: production
     name: core-ai-techradar
     namespace: crai-mcu
-    image: sndadpinfcr3401.azurecr.io/image/core-ai-techradar:0.4.8-alpha.560797 # {"$imagepolicy": "flux-config:core-ai-techradar-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/core-ai-techradar:0.4.8-alpha.560834 # {"$imagepolicy": "flux-config:core-ai-techradar-snd-03"}
     serviceAccount:
       name: core-ai-techradar
     labels:
