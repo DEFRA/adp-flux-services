@@ -19,3 +19,4 @@ resources:
 - ../../../crai/crai-mcu/base/patch
 - ../../../ffc/fcp-dal/base/patch
 - ../../../fcp/fcp-ea-walleys-quarry/base/patch
+- ../../../fcp/fcp-demo/base/patch
