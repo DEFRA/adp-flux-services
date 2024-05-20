@@ -8,8 +8,8 @@ metadata:
     backstage.io/kubernetes-team: ffc-demo
 spec:
   dependsOn:
-    - name: ffc-demo-payment-service-pre-deploy-migration
-      namespace: flux-config
+  - name: ffc-demo-payment-service-pre-deploy-migration
+    namespace: flux-config
   sourceRef:
     kind: GitRepository
     name: services-repository
@@ -22,7 +22,7 @@ spec:
   force: true
   postBuild:
     substitute:
-      SHARED_POSTGRES_SERVER_01: "${SHARED_POSTGRES_SERVER_01}"
+      SHARED_POSTGRES_SERVER_01: ${SHARED_POSTGRES_SERVER_01}
       SERVICE_NAME: ${SERVICE_NAME}
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
@@ -30,7 +30,7 @@ spec:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_SCHEMA_NAME: ${POSTGRES_SCHEMA_NAME}
     substituteFrom:
-      - kind: ConfigMap
-        name: adp-platform-vars
-      - kind: ConfigMap
-        name: "ffc-demo-payment-service-mi-credential"
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: ffc-demo-payment-service-mi-credential
