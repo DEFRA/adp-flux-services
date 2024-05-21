@@ -14,3 +14,4 @@ resources:
 - ../../../ccts/ccts-adp/base/patch
 - ../../../ffc/fcp-dal/base/patch
 - ../../../crai/crai-mcu/base/patch
+- ../../../eutd/eutd-trade-exports-core/base/patch
