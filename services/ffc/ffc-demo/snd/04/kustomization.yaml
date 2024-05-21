@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - ../../base
 - ../../ffc-demo-payment-service
+- ../../ffc-demo-payment-web
