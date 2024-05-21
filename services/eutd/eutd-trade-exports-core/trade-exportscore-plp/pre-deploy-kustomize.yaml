@@ -1,0 +1,37 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: trade-exportscore-plp-pre-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: trade-exportscore-plp
+    backstage.io/kubernetes-team: eutd-trade-exports-core
+spec:
+  dependsOn:
+  - name: trade-exportscore-plp-infra
+    namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/eutd/eutd-trade-exports-core/trade-exportscore-plp/pre-deploy
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SHARED_POSTGRES_SERVER_01: ${SHARED_POSTGRES_SERVER_01}
+      SERVICE_NAME: trade-exportscore-plp
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
+      POSTGRES_DB: trade-exportscore-plp
+      POSTGRES_PORT: "5432"
+      POSTGRES_SCHEMA_NAME: public
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: trade-exportscore-plp-mi-credential
