@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: trade-exportscore-plp
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: trade-exportscore-plp
+    backstage.io/kubernetes-team: eutd-trade-exports-core
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/trade-exportscore-plp
+  interval: 5m0s
+  provider: azure
