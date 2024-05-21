@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: adp-demo-test-36-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-demo-test-36
+    backstage.io/kubernetes-team: eutd-trade-exports-core
+spec:
+  releaseName: adp-demo-test-36-infra
+  chart:
+    spec:
+      chart: adp-demo-test-36-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: eutd-trade-exports-core-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: eutd-trade-exports-core
+  values:
+    namespace: eutd-trade-exports-core
