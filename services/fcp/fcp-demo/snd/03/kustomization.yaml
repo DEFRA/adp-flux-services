@@ -4,3 +4,4 @@ resources:
 - ../../base
 - ../../test-backend-dotnet-queue
 - ../../test-backend-dotnet-topic
+- ../../test-dotnet-topic
