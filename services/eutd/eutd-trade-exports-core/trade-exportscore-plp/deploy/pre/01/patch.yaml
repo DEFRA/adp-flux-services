@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: trade-exportscore-plp
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:trade-exportscore-plp-pre-01:tag"}
+  values:
+    environment: production
+    name: trade-exportscore-plp
+    namespace: eutd-trade-exports-core
+    image: preadpinfcr1401.azurecr.io/image/trade-exportscore-plp:0.1.0 # {"$imagepolicy": "flux-config:trade-exportscore-plp-pre-01"}
+    serviceAccount:
+      name: trade-exportscore-plp
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
