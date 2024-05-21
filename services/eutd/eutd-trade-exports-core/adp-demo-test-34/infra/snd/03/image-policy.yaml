@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: adp-demo-test-34-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-demo-test-34
+    backstage.io/kubernetes-team: eutd-trade-exports-core
+spec:
+  imageRepositoryRef:
+    name: adp-demo-test-34
+  policy:
+    semver:
+      range: '>=0.1.0-0'
