@@ -20,3 +20,4 @@ resources:
 - ../../../ffc/fcp-dal/base/patch
 - ../../../fcp/fcp-ea-walleys-quarry/base/patch
 - ../../../fcp/fcp-demo/base/patch
+- ../../../eutd/eutd-trade-exports-core/base/patch
