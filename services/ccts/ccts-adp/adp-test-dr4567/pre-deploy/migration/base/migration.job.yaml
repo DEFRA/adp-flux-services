@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: adp-test-dr4567-dbmigration
+  namespace: ccts-adp
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: adp-test-dr4567
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: adp-test-dr4567
+        backstage.io/kubernetes-team: ccts-adp
+    spec:
+      serviceAccountName: ${TEAM_NAMESPACE}
+      restartPolicy: Never
+      containers:
+      - name: adp-test-dr4567-dbmigration
+        imagePullPolicy: Always
+  backoffLimit: 2
