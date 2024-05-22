@@ -2,5 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../../base
-- ../../adp-test-dr111
-- ../../ADP-GIO-1234
+- image-policy.yaml
+patches:
+- path: patch.yaml

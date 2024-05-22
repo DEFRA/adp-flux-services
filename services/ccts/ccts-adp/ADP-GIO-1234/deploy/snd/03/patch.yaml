@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ADP-GIO-1234
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ADP-GIO-1234-snd-03:tag"}
+  values:
+    environment: production
+    name: ADP-GIO-1234
+    namespace: ccts-adp
+    image: sndadpinfcr3401.azurecr.io/image/ADP-GIO-1234:0.1.0 # {"$imagepolicy": "flux-config:ADP-GIO-1234-snd-03"}
+    serviceAccount:
+      name: ADP-GIO-1234
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
