@@ -8,8 +8,8 @@ metadata:
     backstage.io/kubernetes-team: ffc-demo
 spec:
   dependsOn:
-    - name: ffc-demo-claim-service-pre-deploy
-      namespace: flux-config
+  - name: ffc-demo-claim-service-pre-deploy
+    namespace: flux-config
   sourceRef:
     kind: GitRepository
     name: services-repository
@@ -22,13 +22,13 @@ spec:
   force: true
   postBuild:
     substitute:
-      SERVICE_NAME: "ffc-demo-claim-service"
+      SERVICE_NAME: ffc-demo-claim-service
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
       APPCONFIG_NAME: ${APPCONFIG_NAME}
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
     substituteFrom:
-      - kind: ConfigMap
-        name: adp-platform-vars
-      - kind: ConfigMap
-        name: "ffc-demo-claim-service-mi-credential"
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: ffc-demo-claim-service-mi-credential
