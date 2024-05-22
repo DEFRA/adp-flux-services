@@ -1,0 +1,30 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: adp-test-dr56463-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-test-dr56463
+    backstage.io/kubernetes-team: tpr-demo
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/test-programme/tpr-demo/adp-test-dr56463/infra/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SERVICE_NAME: adp-test-dr56463
+      TEAM_RG: ${TEAM_RG}
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      SERVICE_CODE: ${SERVICE_CODE}
+      ENABLE_PRIVATE_ENDPOINT: ${ENABLE_PRIVATE_ENDPOINT}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars

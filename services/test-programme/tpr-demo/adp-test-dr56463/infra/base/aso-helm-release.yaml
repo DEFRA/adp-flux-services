@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: adp-test-dr56463-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-test-dr56463
+    backstage.io/kubernetes-team: tpr-demo
+spec:
+  releaseName: adp-test-dr56463-infra
+  chart:
+    spec:
+      chart: adp-test-dr56463-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: tpr-demo-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: tpr-demo
+  values:
+    namespace: tpr-demo
