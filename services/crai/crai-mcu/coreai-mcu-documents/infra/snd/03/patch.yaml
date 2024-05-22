@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: coreai-mcu-documents-infra
-      version: 0.2.9-alpha.564333 # {"$imagepolicy": "flux-config:coreai-mcu-documents-snd-03:tag"}
+      version: 0.2.9-alpha.564426 # {"$imagepolicy": "flux-config:coreai-mcu-documents-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
