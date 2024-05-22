@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-demo-web-infra
-      version: 4.32.40-alpha.558105 # {"$imagepolicy": "flux-config:ffc-demo-web-snd-03:tag"}
+      version: 4.32.40-alpha.565151 # {"$imagepolicy": "flux-config:ffc-demo-web-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
