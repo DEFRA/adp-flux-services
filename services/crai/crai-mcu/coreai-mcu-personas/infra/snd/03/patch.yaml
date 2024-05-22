@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: coreai-mcu-personas-infra
-      version: 0.1.4-alpha.565232 # {"$imagepolicy": "flux-config:coreai-mcu-personas-snd-03:tag"}
+      version: 0.1.4-alpha.565493 # {"$imagepolicy": "flux-config:coreai-mcu-personas-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
