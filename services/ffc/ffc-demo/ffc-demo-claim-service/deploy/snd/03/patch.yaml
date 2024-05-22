@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: "5.1.40-alpha.553052" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-03:tag"}
+      version: "5.2.0-alpha.565539" # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-03:tag"}
   values:
     environment: production
     name: ffc-demo-claim-service
     namespace: ffc-demo
-    image: sndadpinfcr3401.azurecr.io/image/ffc-demo-claim-service:5.1.40-alpha.553052 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ffc-demo-claim-service:5.2.0-alpha.565539 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-03"}
     serviceAccount:
       name: ffc-demo-claim-service
     deployment:
