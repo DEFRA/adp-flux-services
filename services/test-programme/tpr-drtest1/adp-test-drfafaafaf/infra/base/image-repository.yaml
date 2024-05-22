@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: adp-test-drfafaafaf
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-test-drfafaafaf
+    backstage.io/kubernetes-team: tpr-drtest1
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/adp-test-drfafaafaf
+  interval: 5m0s
+  provider: azure
