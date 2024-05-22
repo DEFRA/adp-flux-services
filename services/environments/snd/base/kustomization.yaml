@@ -21,3 +21,4 @@ resources:
 - ../../../fcp/fcp-ea-walleys-quarry/base/patch
 - ../../../fcp/fcp-demo/base/patch
 - ../../../eutd/eutd-trade-exports-core/base/patch
+- ../../../test-programme/tpr-demo/base/patch
