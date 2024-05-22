@@ -8,8 +8,8 @@ metadata:
     backstage.io/kubernetes-team: ffc-demo
 spec:
   dependsOn:
-    - name: ffc-demo-claim-service-pre-deploy-pre-migration
-      namespace: flux-config
+  - name: ffc-demo-claim-service-pre-deploy-pre-migration
+    namespace: flux-config
   sourceRef:
     kind: GitRepository
     name: services-repository
@@ -22,16 +22,16 @@ spec:
   force: true
   postBuild:
     substitute:
-      SHARED_POSTGRES_SERVER_01: "${SHARED_POSTGRES_SERVER_01}"
+      SHARED_POSTGRES_SERVER_01: ${SHARED_POSTGRES_SERVER_01}
       SERVICE_NAME: ${SERVICE_NAME}
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
       PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
       POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_PORT: "\"${POSTGRES_PORT}\""
+      POSTGRES_PORT: '"${POSTGRES_PORT}"'
       POSTGRES_SCHEMA_NAME: ${POSTGRES_SCHEMA_NAME}
     substituteFrom:
-      - kind: ConfigMap
-        name: adp-platform-vars
-      - kind: ConfigMap
-        name: "ffc-demo-claim-service-mi-credential"
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: ffc-demo-claim-service-mi-credential

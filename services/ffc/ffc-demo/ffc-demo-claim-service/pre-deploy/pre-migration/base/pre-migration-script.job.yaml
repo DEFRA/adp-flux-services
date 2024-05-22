@@ -26,8 +26,8 @@ spec:
       - name: ffc-demo-claim-service-pre-dbmigration
         imagePullPolicy: Always
         volumeMounts:
-          - name: custom-root-ca
-            readOnly: true
-            mountPath: /etc/ssl/certs/defra-egress-firewall-cert-01.crt
-            subPath: defra-egress-firewall-cert-01.crt
+        - name: custom-root-ca
+          readOnly: true
+          mountPath: /etc/ssl/certs/defra-egress-firewall-cert-01.crt
+          subPath: defra-egress-firewall-cert-01.crt
   backoffLimit: 2
