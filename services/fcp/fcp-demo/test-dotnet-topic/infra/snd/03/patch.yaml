@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: test-dotnet-topic-infra
-      version: 0.1.0 # {"$imagepolicy": "flux-config:test-dotnet-topic-snd-03:tag"}
+      version: 0.1.1 # {"$imagepolicy": "flux-config:test-dotnet-topic-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
