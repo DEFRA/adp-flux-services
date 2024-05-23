@@ -4,6 +4,6 @@ metadata:
   name: cluster-base
 resources:
   - kustomize.yaml
-  - ../base
+  - ../base-sandpit
   - ps-exec-image-policy.yaml
   
