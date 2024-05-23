@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: adp-test-drcsggwg-dbmigration
+  namespace: ccts-adp
+spec:
+  template:
+    spec:
+      containers:
+      - name: adp-test-drcsggwg-dbmigration
+        image: ssvadpinfcr3401.azurecr.io/image/adp-test-drcsggwg-dbmigration:0.1.0 # {"$imagepolicy": "flux-config:adp-test-drcsggwg-dbmigration-snd-03"}
+        env:
+        - name: POSTGRES_HOST
+          value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
+        - name: SCHEMA_NAME
+          value: ${POSTGRES_SCHEMA_NAME}
+        - name: POSTGRES_DB
+          value: ${POSTGRES_DB}
+        - name: POSTGRES_PORT
+          value: ${POSTGRES_PORT}
+        - name: SCHEMA_USERNAME
+          value: AAG-Azure-ADP-ccts-adp-snd3-PostgresDB_Writer

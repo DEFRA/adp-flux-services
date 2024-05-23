@@ -1,0 +1,37 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: adp-test-drcsggwg-pre-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-test-drcsggwg
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  dependsOn:
+  - name: adp-test-drcsggwg-infra
+    namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/ccts/ccts-adp/adp-test-drcsggwg/pre-deploy
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SHARED_POSTGRES_SERVER_01: ${SHARED_POSTGRES_SERVER_01}
+      SERVICE_NAME: adp-test-drcsggwg
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
+      POSTGRES_DB: ccts-adp-affaffaf
+      POSTGRES_PORT: "5432"
+      POSTGRES_SCHEMA_NAME: public
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: adp-test-drcsggwg-mi-credential

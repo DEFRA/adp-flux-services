@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: adp-test-drcsggwg-post-dbmigration
+  namespace: ccts-adp
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: adp-test-drcsggwg
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: adp-test-drcsggwg
+        backstage.io/kubernetes-team: ccts-adp
+    spec:
+      serviceAccountName: ${TEAM_NAMESPACE}
+      restartPolicy: Never
+      volumes:
+      - name: custom-root-ca
+        secret:
+          secretName: custom-ca-trust-secret
+          optional: true
+      containers:
+      - name: adp-test-drcsggwg-post-dbmigration
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: custom-root-ca
+          readOnly: true
+          mountPath: /etc/ssl/certs/defra-egress-firewall-cert-01.crt
+          subPath: defra-egress-firewall-cert-01.crt
+  backoffLimit: 2
