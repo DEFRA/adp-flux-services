@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ncea-mapper-infra
-      version: 0.1.1-alpha.566238 # {"$imagepolicy": "flux-config:ncea-mapper-snd-03:tag"}
+      version: 0.1.1-alpha.566271 # {"$imagepolicy": "flux-config:ncea-mapper-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
