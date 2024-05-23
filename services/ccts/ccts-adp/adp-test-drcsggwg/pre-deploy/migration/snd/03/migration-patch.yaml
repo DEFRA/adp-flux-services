@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: adp-test-drcsggwg-dbmigration
-        image: ssvadpinfcr3401.azurecr.io/image/adp-test-drcsggwg-dbmigration:0.1.0 # {"$imagepolicy": "flux-config:adp-test-drcsggwg-dbmigration-snd-03"}
+        image: sndadpinfcr3401.azurecr.io/image/adp-test-drcsggwg-dbmigration:0.1.0 # {"$imagepolicy": "flux-config:adp-test-drcsggwg-dbmigration-snd-03"}
         env:
         - name: POSTGRES_HOST
           value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
