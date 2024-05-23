@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: adp-test-drcsggwg-dbmigration-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-test-drcsggwg
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  imageRepositoryRef:
+    name: adp-test-drcsggwg-dbmigration
+  policy:
+    semver:
+      range: '>=0.1.0'

@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: adp-test-drcsggwg
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-test-drcsggwg
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  releaseName: adp-test-drcsggwg
+  chart:
+    spec:
+      chart: adp-test-drcsggwg
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ccts-adp-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: ccts-adp
