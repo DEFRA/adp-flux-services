@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ncea-mapper
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ncea-mapper-snd-03:tag"}
+  values:
+    environment: production
+    name: ncea-mapper
+    namespace: ncea-search
+    image: sndadpinfcr3401.azurecr.io/image/ncea-mapper:0.1.0 # {"$imagepolicy": "flux-config:ncea-mapper-snd-03"}
+    serviceAccount:
+      name: ncea-mapper
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
