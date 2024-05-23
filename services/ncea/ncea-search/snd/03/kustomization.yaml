@@ -4,3 +4,4 @@ resources:
 - ../../base
 - ../../ncea-frontend
 - ../../ncea-harvester
+- ../../ncea-mapper

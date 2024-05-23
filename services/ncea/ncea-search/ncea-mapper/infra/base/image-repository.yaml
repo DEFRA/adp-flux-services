@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: ncea-mapper
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ncea-mapper
+    backstage.io/kubernetes-team: ncea-search
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ncea-mapper
+  interval: 5m0s
+  provider: azure
