@@ -27,7 +27,7 @@ spec:
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
       PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
-      POSTGRES_DB: payment
+      POSTGRES_DB: ffc-demo-payment
       POSTGRES_PORT: "5432"
       POSTGRES_SCHEMA_NAME: public
     substituteFrom:
