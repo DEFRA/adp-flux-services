@@ -4,6 +4,6 @@ metadata:
   name: cluster-base
 resources:
   - kustomize.yaml
-  - ../base
+  - ../../../../fcp/fcp-demo/base/patch
   - ps-exec-image-policy.yaml
   
