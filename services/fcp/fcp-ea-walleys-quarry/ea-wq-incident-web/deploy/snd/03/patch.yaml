@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.2.6-alpha.567704 # {"$imagepolicy": "flux-config:ea-wq-incident-web-snd-03:tag"}
+      version: 0.2.6-alpha.567737 # {"$imagepolicy": "flux-config:ea-wq-incident-web-snd-03:tag"}
   values:
     environment: production
     name: ea-wq-incident-web
     namespace: fcp-ea-walleys-quarry
-    image: sndadpinfcr3401.azurecr.io/image/ea-wq-incident-web:0.2.6-alpha.567704 # {"$imagepolicy": "flux-config:ea-wq-incident-web-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ea-wq-incident-web:0.2.6-alpha.567737 # {"$imagepolicy": "flux-config:ea-wq-incident-web-snd-03"}
     serviceAccount:
       name: ea-wq-incident-web
     labels:
