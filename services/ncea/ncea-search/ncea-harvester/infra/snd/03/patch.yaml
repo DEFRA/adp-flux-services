@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ncea-harvester-infra
-      version: 0.1.1-alpha.564707 # {"$imagepolicy": "flux-config:ncea-harvester-snd-03:tag"}
+      version: 0.1.1-alpha.567351 # {"$imagepolicy": "flux-config:ncea-harvester-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
