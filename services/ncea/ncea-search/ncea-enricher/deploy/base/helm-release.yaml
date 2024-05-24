@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ncea-enricher
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ncea-enricher
+    backstage.io/kubernetes-team: ncea-search
+spec:
+  releaseName: ncea-enricher
+  chart:
+    spec:
+      chart: ncea-enricher
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ncea-search-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: ncea-search
