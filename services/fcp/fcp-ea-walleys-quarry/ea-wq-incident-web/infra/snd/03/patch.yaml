@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ea-wq-incident-web-infra
-      version: 0.2.6-alpha.567566 # {"$imagepolicy": "flux-config:ea-wq-incident-web-snd-03:tag"}
+      version: 0.2.6-alpha.567704 # {"$imagepolicy": "flux-config:ea-wq-incident-web-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
