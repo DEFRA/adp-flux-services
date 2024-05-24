@@ -1,21 +1,19 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ncea-harvester-infra
+  name: ffc-sfd-queries-infra
   namespace: flux-config
 spec:
   chart:
     spec:
-      chart: ncea-harvester-infra
-      version: 0.1.1-alpha.567351 # {"$imagepolicy": "flux-config:ncea-harvester-snd-03:tag"}
+      chart: ffc-sfd-queries-infra
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-queries-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
     subscriptionId: ${SUBSCRIPTION_ID}
     serviceBusResourceGroupName: ${SERVICES_INFRA_RG}
     serviceBusNamespaceName: ${SHARED_SERVICEBUS_NAME}
-    postgresResourceGroupName: ${DATABASE_SERVER_RG}
-    postgresServerName: ${SHARED_POSTGRES_SERVER_01}
     clusterOIDCIssuerUrl: ${CLUSTER_OIDC_ISSUER_URL}
     teamResourceGroupName: ${TEAM_RG}
     teamMIPrefix: ${TEAM_MI_PREFIX}
