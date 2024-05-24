@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: ffc-demo-claim-service-snd-01
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-demo-claim-service
+    backstage.io/kubernetes-team: fcp-demo
+spec:
+  imageRepositoryRef:
+    name: ffc-demo-claim-service
+  policy:
+    semver:
+      range: '>=0.1.0-0'
