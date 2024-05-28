@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: test-dotnet-backend-jkr
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:test-dotnet-backend-jkr-snd-03:tag"}
+  values:
+    environment: production
+    name: test-dotnet-backend-jkr
+    namespace: eutd-find-my-cat
+    image: sndadpinfcr3401.azurecr.io/image/test-dotnet-backend-jkr:0.1.0 # {"$imagepolicy": "flux-config:test-dotnet-backend-jkr-snd-03"}
+    serviceAccount:
+      name: test-dotnet-backend-jkr
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
