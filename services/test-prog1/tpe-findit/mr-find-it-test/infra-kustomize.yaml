@@ -1,0 +1,30 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: mr-find-it-test-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: mr-find-it-test
+    backstage.io/kubernetes-team: tpe-findit
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/test-prog1/tpe-findit/mr-find-it-test/infra/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SERVICE_NAME: mr-find-it-test
+      TEAM_RG: ${TEAM_RG}
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      SERVICE_CODE: ${SERVICE_CODE}
+      ENABLE_PRIVATE_ENDPOINT: ${ENABLE_PRIVATE_ENDPOINT}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars

@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mr-find-it-test-dbmigration
+  namespace: tpe-findit
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: mr-find-it-test
+    backstage.io/kubernetes-team: tpe-findit
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: mr-find-it-test
+        backstage.io/kubernetes-team: tpe-findit
+    spec:
+      serviceAccountName: ${TEAM_NAMESPACE}
+      restartPolicy: Never
+      containers:
+      - name: mr-find-it-test-dbmigration
+        imagePullPolicy: Always
+  backoffLimit: 2
