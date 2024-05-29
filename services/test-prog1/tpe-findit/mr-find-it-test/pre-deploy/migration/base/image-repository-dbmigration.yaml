@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: mr-find-it-test-dbmigration
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: mr-find-it-test
+    backstage.io/kubernetes-team: tpe-findit
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/mr-find-it-test-dbmigration
+  interval: 5m0s
+  provider: azure

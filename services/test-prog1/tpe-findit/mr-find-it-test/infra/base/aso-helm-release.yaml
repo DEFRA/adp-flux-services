@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mr-find-it-test-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: mr-find-it-test
+    backstage.io/kubernetes-team: tpe-findit
+spec:
+  releaseName: mr-find-it-test-infra
+  chart:
+    spec:
+      chart: mr-find-it-test-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: tpe-findit-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: tpe-findit
+  values:
+    namespace: tpe-findit
