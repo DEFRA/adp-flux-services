@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: adp-findmydog-test-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-findmydog-test
+    backstage.io/kubernetes-team: tpe-findmydog
+spec:
+  releaseName: adp-findmydog-test-infra
+  chart:
+    spec:
+      chart: adp-findmydog-test-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: tpe-findmydog-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: tpe-findmydog
+  values:
+    namespace: tpe-findmydog

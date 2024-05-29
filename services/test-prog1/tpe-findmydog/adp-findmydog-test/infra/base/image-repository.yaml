@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: adp-findmydog-test
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-findmydog-test
+    backstage.io/kubernetes-team: tpe-findmydog
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/adp-findmydog-test
+  interval: 5m0s
+  provider: azure

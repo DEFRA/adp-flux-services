@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: adp-findmydog-test
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:adp-findmydog-test-snd-03:tag"}
+  values:
+    environment: production
+    name: adp-findmydog-test
+    namespace: tpe-findmydog
+    image: sndadpinfcr3401.azurecr.io/image/adp-findmydog-test:0.1.0 # {"$imagepolicy": "flux-config:adp-findmydog-test-snd-03"}
+    serviceAccount:
+      name: adp-findmydog-test
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
