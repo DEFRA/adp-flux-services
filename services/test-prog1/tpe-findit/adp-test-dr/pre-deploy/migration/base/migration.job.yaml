@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: adp-test-dr-dbmigration
+  namespace: tpe-findit
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: adp-test-dr
+    backstage.io/kubernetes-team: tpe-findit
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: adp-test-dr
+        backstage.io/kubernetes-team: tpe-findit
+    spec:
+      serviceAccountName: ${TEAM_NAMESPACE}
+      restartPolicy: Never
+      containers:
+      - name: adp-test-dr-dbmigration
+        imagePullPolicy: Always
+  backoffLimit: 2
