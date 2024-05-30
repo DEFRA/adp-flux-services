@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: rpa-mit-manual-templates-api
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:rpa-mit-manual-templates-api-tst-01:tag"}
+  values:
+    environment: production
+    name: rpa-mit-manual-templates-api
+    namespace: lap-mit
+    image: tstadpinfcr1401.azurecr.io/image/rpa-mit-manual-templates-api:0.1.0 # {"$imagepolicy": "flux-config:rpa-mit-manual-templates-api-tst-01"}
+    serviceAccount:
+      name: rpa-mit-manual-templates-api
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
