@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: fcp-data-access-layer-api
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-tst-01:tag"}
+  values:
+    environment: production
+    name: fcp-data-access-layer-api
+    namespace: fcp-dal
+    image: tstadpinfcr1401.azurecr.io/image/fcp-data-access-layer-api:0.1.0 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-tst-01"}
+    serviceAccount:
+      name: fcp-data-access-layer-api
+    labels:
+      component: web
+    container:
+      imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: fcp-data-access-layer-api
+      server: tst1.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
