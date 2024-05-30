@@ -1,27 +1,21 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-demo-web
+  name: ffc-demo-payment-service
   namespace: flux-config
 spec:
   chart:
     spec:
-      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-demo-web-snd-04:tag"}
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-snd-04:tag"}
   values:
     environment: production
-    name: ffc-demo-web
+    name: ffc-demo-payment-service
     namespace: fcp-demo
-    image: sndadpinfcr4401.azurecr.io/image/ffc-demo-web:0.1.0 # {"$imagepolicy": "flux-config:ffc-demo-web-snd-04"}
+    image: sndadpinfcr4401.azurecr.io/image/ffc-demo-payment-service:0.1.0 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-snd-04"}
     serviceAccount:
-      name: ffc-demo-web
-    labels:
-      component: web
+      name: ffc-demo-payment-service
     container:
       imagePullPolicy: Always
-    ingress:
-      class: nginx
-      endpoint: ffc-demo-web
-      server: snd4.adp.defra.gov.uk
     deployment:
       priorityClassName: default
     containerConfigMap:
