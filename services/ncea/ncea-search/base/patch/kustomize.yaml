@@ -24,9 +24,10 @@ spec:
       SERVICE_CODE: ncea-search
       PLATFORM_DB_ADMIN: adp-platform-db-aad-admin
       TEAM_CPU_QUOTA: "5000"
-      TEAM_MEMORY_QUOTA: 5000Mi
+      TEAM_MEMORY_QUOTA: 15000Mi
       TEAM_PODS_QUOTA: "20"
-      ENABLE_PRIVATE_ENDPOINT: ${ENABLE_PRIVATE_ENDPOINT}
+      CONTAINER_MAX_CPU: 2000m
+      CONTAINER_MAX_MEMORY: 10000Mi
     substituteFrom:
     - kind: ConfigMap
       name: ncea-search-mi-credential
