@@ -1,0 +1,29 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: rpa-mit-manual-templates-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: rpa-mit-manual-templates
+    backstage.io/kubernetes-team: lap-mit
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/lap/lap-mit/rpa-mit-manual-templates/infra/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SERVICE_NAME: rpa-mit-manual-templates
+      TEAM_RG: ${TEAM_RG}
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      SERVICE_CODE: ${SERVICE_CODE}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
