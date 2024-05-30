@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: coreai-mcu-frontend-infra
+  name: ffc-demo-web-infra
   namespace: flux-config
 spec:
   chart:
     spec:
-      chart: coreai-mcu-frontend-infra
-      version: 0.1.25-alpha.571983 # {"$imagepolicy": "flux-config:coreai-mcu-frontend-snd-03:tag"}
+      chart: ffc-demo-web-infra
+      version: 4.33.2-alpha.572006 # {"$imagepolicy": "flux-config:ffc-demo-web-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -20,6 +20,7 @@ spec:
     serviceName: ${SERVICE_NAME}
     keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
     keyVaultName: ${APPLICATION_KEYVAULT}
+    tenant: defradev
     environment: ${ENVIRONMENT}
     virtualNetworkResourceGroupName: ${VIRTUAL_NETWORK_RG}
     virtualNetworkName: ${VIRTUAL_NETWORK_NAME}
@@ -44,3 +45,4 @@ spec:
       kubernetes_namespace: ${TEAM_NAMESPACE}
       kubernetes_label_serviceCode: ${SERVICE_CODE}
     enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
+    storageAccountSku: ${STORAGEACCOUNT_SKU}

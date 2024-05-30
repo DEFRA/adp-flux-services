@@ -1,26 +1,26 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: coreai-mcu-frontend
+  name: ffc-demo-web
   namespace: flux-config
 spec:
   chart:
     spec:
-      version: 0.1.25-alpha.571983 # {"$imagepolicy": "flux-config:coreai-mcu-frontend-snd-03:tag"}
+      version: 4.33.2-alpha.572006 # {"$imagepolicy": "flux-config:ffc-demo-web-snd-03:tag"}
   values:
     environment: production
-    name: coreai-mcu-frontend
-    namespace: crai-mcu
-    image: sndadpinfcr3401.azurecr.io/image/coreai-mcu-frontend:0.1.25-alpha.571983 # {"$imagepolicy": "flux-config:coreai-mcu-frontend-snd-03"}
+    name: ffc-demo-web
+    namespace: fcp-demo
+    image: sndadpinfcr3401.azurecr.io/image/ffc-demo-web:4.33.2-alpha.572006 # {"$imagepolicy": "flux-config:ffc-demo-web-snd-03"}
     serviceAccount:
-      name: coreai-mcu-frontend
+      name: ffc-demo-web
     labels:
       component: web
     container:
       imagePullPolicy: Always
     ingress:
       class: nginx
-      endpoint: coreai-mcu-frontend
+      endpoint: ffc-demo-web
       server: snd3.adp.defra.gov.uk
     deployment:
       priorityClassName: default
