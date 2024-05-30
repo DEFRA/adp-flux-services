@@ -26,8 +26,8 @@ spec:
       defaultRequest:
         cpu: 50m
       max:
-        cpu: 500m
-        memory: 1000Mi
+        cpu: ${CONTAINER_MAX_CPU:=500m} 
+        memory: ${CONTAINER_MAX_MEMORY:=1000Mi}
       min:
         cpu: 10m
         memory: 10Mi
