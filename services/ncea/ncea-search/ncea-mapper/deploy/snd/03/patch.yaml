@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.0 # {"$imagepolicy": "flux-config:ncea-mapper-snd-03:tag"}
+      version: 0.1.1-alpha.567508 # {"$imagepolicy": "flux-config:ncea-mapper-snd-03:tag"}
   values:
     environment: production
     name: ncea-mapper
     namespace: ncea-search
-    image: sndadpinfcr3401.azurecr.io/image/ncea-mapper:0.1.0 # {"$imagepolicy": "flux-config:ncea-mapper-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ncea-mapper:0.1.1-alpha.567508 # {"$imagepolicy": "flux-config:ncea-mapper-snd-03"}
     serviceAccount:
       name: ncea-mapper
     container:
