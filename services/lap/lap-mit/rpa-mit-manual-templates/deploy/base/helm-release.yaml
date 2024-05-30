@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: rpa-mit-manual-templates
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: rpa-mit-manual-templates
+    backstage.io/kubernetes-team: lap-mit
+spec:
+  releaseName: rpa-mit-manual-templates
+  chart:
+    spec:
+      chart: rpa-mit-manual-templates
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: lap-mit-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: lap-mit

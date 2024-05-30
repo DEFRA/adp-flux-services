@@ -5,3 +5,4 @@ resources:
 - ../../test-backend-dotnet-queue
 - ../../test-backend-dotnet-topic
 - ../../test-dotnet-topic
+- ../../ffc-demo-web
