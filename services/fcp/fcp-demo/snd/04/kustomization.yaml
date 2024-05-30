@@ -5,3 +5,4 @@ resources:
 - ../../ffc-demo-web
 - ../../ffc-demo-payment-web
 - ../../ffc-demo-claim-service
+- ../../ffc-demo-calculation-service
