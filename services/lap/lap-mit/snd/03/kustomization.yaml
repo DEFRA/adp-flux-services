@@ -6,3 +6,4 @@ resources:
 - ../../rpa-mit-notification
 - ../../rpa-mit-payment
 - ../../rpa-mit-manual-templates
+- ../../rpa-mit-manual-templates-api
