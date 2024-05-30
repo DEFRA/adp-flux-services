@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 1.0.1-alpha.556446 # {"$imagepolicy": "flux-config:ncea-frontend-snd-03:tag"}
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ncea-frontend-snd-03:tag"}
   values:
     environment: production
     name: ncea-frontend
     namespace: ncea-search
-    image: sndadpinfcr3401.azurecr.io/image/ncea-frontend:1.0.1-alpha.556446 # {"$imagepolicy": "flux-config:ncea-frontend-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ncea-frontend:0.1.0 # {"$imagepolicy": "flux-config:ncea-frontend-snd-03"}
     serviceAccount:
       name: ncea-frontend
     labels:
