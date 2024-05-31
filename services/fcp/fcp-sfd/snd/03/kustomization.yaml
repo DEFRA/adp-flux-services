@@ -4,3 +4,4 @@ resources:
 - ../../base
 - ../../ffc-sfd-customer-receiver-queries
 - ../../ffc-sfd-queries
+- ../../ffc-sfd-customer-receiver-messages
