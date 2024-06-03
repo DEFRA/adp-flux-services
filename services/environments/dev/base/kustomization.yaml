@@ -15,3 +15,4 @@ resources:
 - ../../../ffc/fcp-dal/base/patch
 - ../../../crai/crai-mcu/base/patch
 - ../../../fcp/fcp-ea-walleys-quarry/base/patch
+- ../../../ffc/fcp-find/base/patch
