@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.0 # {"$imagepolicy": "flux-config:coreai-mcu-personas-pre-01:tag"}
+      version: 0.1.4 # {"$imagepolicy": "flux-config:coreai-mcu-personas-pre-01:tag"}
   values:
     environment: production
     name: coreai-mcu-personas
     namespace: crai-mcu
-    image: preadpinfcr1401.azurecr.io/image/coreai-mcu-personas:0.1.0 # {"$imagepolicy": "flux-config:coreai-mcu-personas-pre-01"}
+    image: preadpinfcr1401.azurecr.io/image/coreai-mcu-personas:0.1.4 # {"$imagepolicy": "flux-config:coreai-mcu-personas-pre-01"}
     serviceAccount:
       name: coreai-mcu-personas
     container:
