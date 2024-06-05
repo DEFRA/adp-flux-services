@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: coreai-mcu-frontend
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:coreai-mcu-frontend-pre-01:tag"}
+  values:
+    environment: production
+    name: coreai-mcu-frontend
+    namespace: crai-mcu
+    image: preadpinfcr1401.azurecr.io/image/coreai-mcu-frontend:0.1.0 # {"$imagepolicy": "flux-config:coreai-mcu-frontend-pre-01"}
+    serviceAccount:
+      name: coreai-mcu-frontend
+    labels:
+      component: web
+    container:
+      imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: coreai-mcu-frontend
+      server: pre1.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
