@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.1-alpha.574622 # {"$imagepolicy": "flux-config:coreai-mcu-email-processor-snd-03:tag"}
+      version: 0.1.1-alpha.577142 # {"$imagepolicy": "flux-config:coreai-mcu-email-processor-snd-03:tag"}
   values:
     environment: production
     name: coreai-mcu-email-processor
     namespace: crai-mcu
-    image: sndadpinfcr3401.azurecr.io/image/coreai-mcu-email-processor:0.1.1-alpha.574622 # {"$imagepolicy": "flux-config:coreai-mcu-email-processor-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/coreai-mcu-email-processor:0.1.1-alpha.577142 # {"$imagepolicy": "flux-config:coreai-mcu-email-processor-snd-03"}
     serviceAccount:
       name: coreai-mcu-email-processor
     container:
