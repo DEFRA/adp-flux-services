@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-sfd-queries-infra
+  name: ffc-sfd-ahwp-stub-infra
   namespace: flux-config
 spec:
   chart:
     spec:
-      chart: ffc-sfd-queries-infra
-      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-queries-snd-04:tag"}
+      chart: ffc-sfd-ahwp-stub-infra
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-ahwp-stub-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}

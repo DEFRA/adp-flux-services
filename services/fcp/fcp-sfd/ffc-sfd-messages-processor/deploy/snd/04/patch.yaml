@@ -1,20 +1,20 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-sfd-customer-receiver-messages
+  name: ffc-sfd-messages-processor
   namespace: flux-config
 spec:
   chart:
     spec:
-      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-messages-snd-04:tag"}
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-snd-04:tag"}
   values:
     environment: production
-    name: ffc-sfd-customer-receiver-messages
+    name: ffc-sfd-messages-processor
     namespace: fcp-sfd
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr4401.azurecr.io/image/ffc-sfd-customer-receiver-messages:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-messages-snd-04"}
+    image: sndadpinfcr4401.azurecr.io/image/ffc-sfd-messages-processor:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-snd-04"}
     serviceAccount:
-      name: ffc-sfd-customer-receiver-messages
+      name: ffc-sfd-messages-processor
     container:
       imagePullPolicy: Always
     deployment:
