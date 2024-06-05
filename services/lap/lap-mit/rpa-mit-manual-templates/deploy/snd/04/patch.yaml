@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.0 # {"$imagepolicy": "flux-config:rpa-mit-manual-templates-snd-04:tag"}
+      version: 0.1.1-alpha.575054 # {"$imagepolicy": "flux-config:rpa-mit-manual-templates-snd-04:tag"}
   values:
     environment: production
     name: rpa-mit-manual-templates
     namespace: lap-mit
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr4401.azurecr.io/image/rpa-mit-manual-templates:0.1.0 # {"$imagepolicy": "flux-config:rpa-mit-manual-templates-snd-04"}
+    image: sndadpinfcr4401.azurecr.io/image/rpa-mit-manual-templates:0.1.1-alpha.575054 # {"$imagepolicy": "flux-config:rpa-mit-manual-templates-snd-04"}
     serviceAccount:
       name: rpa-mit-manual-templates
     labels:
