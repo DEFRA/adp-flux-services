@@ -27,7 +27,7 @@ spec:
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
       PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
-      POSTGRES_DB: permissions-api
+      POSTGRES_DB: fcp-sfd-permissions-api
       POSTGRES_PORT: "5432"
       POSTGRES_SCHEMA_NAME: public
     substituteFrom:
