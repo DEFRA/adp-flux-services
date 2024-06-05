@@ -23,9 +23,9 @@ spec:
       APPCONFIG_NAME: ${APPCONFIG_NAME}
       SERVICE_CODE: fcp-sfd
       PLATFORM_DB_ADMIN: adp-platform-db-aad-admin
-      TEAM_CPU_QUOTA: "2000"
-      TEAM_MEMORY_QUOTA: 3000Mi
-      TEAM_PODS_QUOTA: "20"
+      TEAM_CPU_QUOTA: "5000"
+      TEAM_MEMORY_QUOTA: 5000Mi
+      TEAM_PODS_QUOTA: "50"
       CONTAINER_MAX_CPU: 500m
       CONTAINER_MAX_MEMORY: 1000Mi
     substituteFrom:
