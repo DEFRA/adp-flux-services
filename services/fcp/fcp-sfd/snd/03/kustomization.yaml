@@ -5,3 +5,4 @@ resources:
 - ../../ffc-sfd-customer-receiver-queries
 - ../../ffc-sfd-queries
 - ../../ffc-sfd-customer-receiver-messages
+- ../../ffc-sfd-customer-receiver-preferences
