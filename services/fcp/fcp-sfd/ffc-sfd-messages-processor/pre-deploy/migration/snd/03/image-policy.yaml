@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: ffc-sfd-messages-processor-dbmigration-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-sfd-messages-processor
+    backstage.io/kubernetes-team: fcp-sfd
+spec:
+  imageRepositoryRef:
+    name: ffc-sfd-messages-processor-dbmigration
+  policy:
+    semver:
+      range: '>=0.1.0'
