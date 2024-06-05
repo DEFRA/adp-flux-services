@@ -1,22 +1,28 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-sfd-customer-receiver-messages
+  name: ffc-sfd-ahwp-stub
   namespace: flux-config
 spec:
   chart:
     spec:
-      version: 0.1.16-alpha.576919 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-messages-snd-03:tag"}
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-ahwp-stub-snd-03:tag"}
   values:
     environment: production
-    name: ffc-sfd-customer-receiver-messages
+    name: ffc-sfd-ahwp-stub
     namespace: fcp-sfd
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-customer-receiver-messages:0.1.16-alpha.576919 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-messages-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-ahwp-stub:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-ahwp-stub-snd-03"}
     serviceAccount:
-      name: ffc-sfd-customer-receiver-messages
+      name: ffc-sfd-ahwp-stub
+    labels:
+      component: web
     container:
       imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: ffc-sfd-ahwp-stub
+      server: snd3.adp.defra.gov.uk
     deployment:
       priorityClassName: default
     containerConfigMap:

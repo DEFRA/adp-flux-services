@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-sfd-customer-receiver-queries-infra
+  name: ffc-sfd-messages-processor-infra
   namespace: flux-config
 spec:
   chart:
     spec:
-      chart: ffc-sfd-customer-receiver-queries-infra
-      version: 0.1.2-alpha.576791 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-queries-snd-03:tag"}
+      chart: ffc-sfd-messages-processor-infra
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
