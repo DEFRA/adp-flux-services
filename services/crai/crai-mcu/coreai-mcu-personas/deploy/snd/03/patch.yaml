@@ -6,12 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.5-alpha.574667 # {"$imagepolicy": "flux-config:coreai-mcu-personas-snd-03:tag"}
+      version: 0.1.0 # {"$imagepolicy": "flux-config:coreai-mcu-personas-snd-03:tag"}
   values:
     environment: production
     name: coreai-mcu-personas
     namespace: crai-mcu
-    image: sndadpinfcr3401.azurecr.io/image/coreai-mcu-personas:0.1.5-alpha.574667 # {"$imagepolicy": "flux-config:coreai-mcu-personas-snd-03"}
+    teamResourceGroupName: ${TEAM_RG}
+    image: sndadpinfcr3401.azurecr.io/image/coreai-mcu-personas:0.1.0 # {"$imagepolicy": "flux-config:coreai-mcu-personas-snd-03"}
     serviceAccount:
       name: coreai-mcu-personas
     container:
