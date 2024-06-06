@@ -27,11 +27,11 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            cpu: 50m
-            memory: 128Mi
+            cpu: 150m
+            memory: 1000Mi
           limits:
             cpu: 250m
-            memory: 256Mi
+            memory: 1500Mi
         volumeMounts:
         - name: custom-root-ca
           readOnly: true
