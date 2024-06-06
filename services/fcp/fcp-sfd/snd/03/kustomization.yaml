@@ -3,5 +3,16 @@ kind: Kustomization
 resources:
 - ../../base
 - ../../ffc-sfd-customer-receiver-queries
-- ../../ffc-sfd-queries
 - ../../ffc-sfd-customer-receiver-messages
+- ../../ffc-sfd-customer-receiver-preferences
+- ../../ffc-sfd-queries
+- ../../ffc-sfd-ingress
+- ../../ffc-sfd-business
+- ../../ffc-sfd-permissions
+- ../../ffc-sfd-landing-page
+- ../../ffc-sfd-messages
+- ../../ffc-sfd-ahwp-stub
+- ../../ffc-sfd-data
+- ../../ffc-sfd-auth
+- ../../ffc-sfd-permissions-api
+- ../../ffc-sfd-messages-processor
