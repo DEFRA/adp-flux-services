@@ -5,3 +5,14 @@ resources:
 - ../../ffc-sfd-customer-receiver-queries
 - ../../ffc-sfd-queries
 - ../../ffc-sfd-customer-receiver-messages
+- ../../ffc-sfd-ingress
+- ../../ffc-sfd-customer-receiver-preferences
+- ../../ffc-sfd-business
+- ../../ffc-sfd-permissions
+- ../../ffc-sfd-landing-page
+- ../../ffc-sfd-messages
+- ../../ffc-sfd-ahwp-stub
+- ../../ffc-sfd-data
+- ../../ffc-sfd-auth
+- ../../ffc-sfd-permissions-api
+- ../../ffc-sfd-messages-processor
