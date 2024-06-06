@@ -6,12 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.2.10-alpha.565377 # {"$imagepolicy": "flux-config:mcu-techspike-ai-web-snd-03:tag"}
+      version: 0.2.10-alpha.577106 # {"$imagepolicy": "flux-config:mcu-techspike-ai-web-snd-03:tag"}
   values:
     environment: production
     name: mcu-techspike-ai-web
     namespace: crai-mcu
-    image: sndadpinfcr3401.azurecr.io/image/mcu-techspike-ai-web:0.2.10-alpha.565377 # {"$imagepolicy": "flux-config:mcu-techspike-ai-web-snd-03"}
+    teamResourceGroupName: ${TEAM_RG}
+    image: sndadpinfcr3401.azurecr.io/image/mcu-techspike-ai-web:0.2.10-alpha.577106 # {"$imagepolicy": "flux-config:mcu-techspike-ai-web-snd-03"}
     serviceAccount:
       name: mcu-techspike-ai-web
     labels:

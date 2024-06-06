@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: core-ai-techradar-infra
-      version: 0.4.8 # {"$imagepolicy": "flux-config:core-ai-techradar-snd-03:tag"}
+      version: 0.4.9-alpha.577115 # {"$imagepolicy": "flux-config:core-ai-techradar-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -20,6 +20,7 @@ spec:
     serviceName: ${SERVICE_NAME}
     keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
     keyVaultName: ${APPLICATION_KEYVAULT}
+    tenant: defradev
     environment: ${ENVIRONMENT}
     virtualNetworkResourceGroupName: ${VIRTUAL_NETWORK_RG}
     virtualNetworkName: ${VIRTUAL_NETWORK_NAME}
@@ -44,3 +45,4 @@ spec:
       kubernetes_namespace: ${TEAM_NAMESPACE}
       kubernetes_label_serviceCode: ${SERVICE_CODE}
     enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
+    storageAccountSku: ${STORAGEACCOUNT_SKU}
