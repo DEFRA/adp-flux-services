@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-customer-receiver-messages-infra
-      version: 0.1.16-alpha.575031 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-messages-snd-04:tag"}
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-messages-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -22,7 +22,6 @@ spec:
     serviceName: ${SERVICE_NAME}
     keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
     keyVaultName: ${APPLICATION_KEYVAULT}
-    tenant: defra
     environment: ${ENVIRONMENT}
     virtualNetworkResourceGroupName: ${VIRTUAL_NETWORK_RG}
     virtualNetworkName: ${VIRTUAL_NETWORK_NAME}
@@ -47,4 +46,3 @@ spec:
       kubernetes_namespace: ${TEAM_NAMESPACE}
       kubernetes_label_serviceCode: ${SERVICE_CODE}
     enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
-    storageAccountSku: ${STORAGEACCOUNT_SKU}
