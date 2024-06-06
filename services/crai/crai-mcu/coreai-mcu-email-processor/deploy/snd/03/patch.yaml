@@ -11,6 +11,7 @@ spec:
     environment: production
     name: coreai-mcu-email-processor
     namespace: crai-mcu
+    teamResourceGroupName: ${TEAM_RG}
     image: sndadpinfcr3401.azurecr.io/image/coreai-mcu-email-processor:0.1.1-alpha.577142 # {"$imagepolicy": "flux-config:coreai-mcu-email-processor-snd-03"}
     serviceAccount:
       name: coreai-mcu-email-processor
