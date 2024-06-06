@@ -11,6 +11,7 @@ spec:
     environment: production
     name: coreai-mcu-frontend
     namespace: crai-mcu
+    teamResourceGroupName: ${TEAM_RG}
     image: sndadpinfcr3401.azurecr.io/image/coreai-mcu-frontend:0.1.25 # {"$imagepolicy": "flux-config:coreai-mcu-frontend-snd-03"}
     serviceAccount:
       name: coreai-mcu-frontend
