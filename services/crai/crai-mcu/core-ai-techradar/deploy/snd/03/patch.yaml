@@ -11,6 +11,7 @@ spec:
     environment: production
     name: core-ai-techradar
     namespace: crai-mcu
+    teamResourceGroupName: ${TEAM_RG}
     image: sndadpinfcr3401.azurecr.io/image/core-ai-techradar:0.4.9-alpha.577115 # {"$imagepolicy": "flux-config:core-ai-techradar-snd-03"}
     serviceAccount:
       name: core-ai-techradar
