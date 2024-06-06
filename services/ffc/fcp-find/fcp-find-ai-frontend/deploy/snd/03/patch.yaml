@@ -11,6 +11,7 @@ spec:
     environment: production
     name: fcp-find-ai-frontend
     namespace: fcp-find
+    teamResourceGroupName: ${TEAM_RG}
     image: sndadpinfcr3401.azurecr.io/image/fcp-find-ai-frontend:0.1.28 # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-snd-03"}
     serviceAccount:
       name: fcp-find-ai-frontend
