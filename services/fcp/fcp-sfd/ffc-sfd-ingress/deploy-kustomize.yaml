@@ -27,5 +27,3 @@ spec:
     substituteFrom:
     - kind: ConfigMap
       name: adp-platform-vars
-    - kind: ConfigMap
-      name: ffc-sfd-ingress-mi-credential
