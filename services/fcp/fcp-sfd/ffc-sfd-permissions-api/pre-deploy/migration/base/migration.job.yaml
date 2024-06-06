@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ffc-sfd-permissions-api-dbmigration
+  namespace: fcp-sfd
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: ffc-sfd-permissions-api
+    backstage.io/kubernetes-team: fcp-sfd
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: ffc-sfd-permissions-api
+        backstage.io/kubernetes-team: fcp-sfd
+    spec:
+      serviceAccountName: ${TEAM_NAMESPACE}
+      restartPolicy: Never
+      containers:
+      - name: ffc-sfd-permissions-api-dbmigration
+        imagePullPolicy: Always
+  backoffLimit: 2

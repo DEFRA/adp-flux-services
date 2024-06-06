@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: fcp-find-ai-frontend-infra
-      version: 0.1.28-alpha.574964 # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-snd-03:tag"}
+      version: 0.1.28 # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -20,6 +20,7 @@ spec:
     serviceName: ${SERVICE_NAME}
     keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
     keyVaultName: ${APPLICATION_KEYVAULT}
+    tenant: defradev
     environment: ${ENVIRONMENT}
     virtualNetworkResourceGroupName: ${VIRTUAL_NETWORK_RG}
     virtualNetworkName: ${VIRTUAL_NETWORK_NAME}
@@ -44,3 +45,4 @@ spec:
       kubernetes_namespace: ${TEAM_NAMESPACE}
       kubernetes_label_serviceCode: ${SERVICE_CODE}
     enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
+    storageAccountSku: ${STORAGEACCOUNT_SKU}
