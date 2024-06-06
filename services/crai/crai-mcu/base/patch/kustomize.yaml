@@ -26,7 +26,8 @@ spec:
       TEAM_CPU_QUOTA: "2000"
       TEAM_MEMORY_QUOTA: 3000Mi
       TEAM_PODS_QUOTA: "20"
-      ENABLE_PRIVATE_ENDPOINT: ${ENABLE_PRIVATE_ENDPOINT}
+      CONTAINER_MAX_CPU: 500m
+      CONTAINER_MAX_MEMORY: 1000Mi
     substituteFrom:
     - kind: ConfigMap
       name: crai-mcu-mi-credential
