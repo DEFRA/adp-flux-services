@@ -25,6 +25,13 @@ spec:
       containers:
       - name: ffc-sfd-messages-processor-pre-dbmigration
         imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 50m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
         volumeMounts:
         - name: custom-root-ca
           readOnly: true
