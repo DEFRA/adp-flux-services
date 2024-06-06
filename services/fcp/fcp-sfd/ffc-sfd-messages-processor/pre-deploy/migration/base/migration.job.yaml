@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ffc-sfd-messages-processor-dbmigration
+  namespace: fcp-sfd
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: ffc-sfd-messages-processor
+    backstage.io/kubernetes-team: fcp-sfd
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: ffc-sfd-messages-processor
+        backstage.io/kubernetes-team: fcp-sfd
+    spec:
+      serviceAccountName: ${TEAM_NAMESPACE}
+      restartPolicy: Never
+      containers:
+      - name: ffc-sfd-messages-processor-dbmigration
+        imagePullPolicy: Always
+  backoffLimit: 2

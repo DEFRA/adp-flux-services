@@ -11,6 +11,7 @@ spec:
     environment: production
     name: ffc-demo-calculation-service
     namespace: fcp-demo
+    teamResourceGroupName: ${TEAM_RG}
     image: sndadpinfcr3401.azurecr.io/image/ffc-demo-calculation-service:4.3.29-alpha.552316 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-snd-03"}
     serviceAccount:
       name: ffc-demo-calculation-service

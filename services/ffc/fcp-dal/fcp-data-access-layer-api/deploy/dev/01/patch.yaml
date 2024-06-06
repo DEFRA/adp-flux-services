@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 1.0.74 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-dev-01:tag"}
+      version: 1.0.75 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-dev-01:tag"}
   values:
     environment: production
     name: fcp-data-access-layer-api
     namespace: fcp-dal
-    image: devadpinfcr1401.azurecr.io/image/fcp-data-access-layer-api:1.0.74 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-dev-01"}
+    image: devadpinfcr1401.azurecr.io/image/fcp-data-access-layer-api:1.0.75 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-dev-01"}
     serviceAccount:
       name: fcp-data-access-layer-api
     labels:
