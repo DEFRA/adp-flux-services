@@ -1,0 +1,31 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-sfd-business
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-business-snd-04:tag"}
+  values:
+    environment: production
+    name: ffc-sfd-business
+    namespace: fcp-sfd
+    teamResourceGroupName: ${TEAM_RG}
+    image: sndadpinfcr4401.azurecr.io/image/ffc-sfd-business:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-business-snd-04"}
+    serviceAccount:
+      name: ffc-sfd-business
+    labels:
+      component: web
+    container:
+      imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: ffc-sfd-business
+      server: snd4.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
