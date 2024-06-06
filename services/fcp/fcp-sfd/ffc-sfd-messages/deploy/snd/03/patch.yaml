@@ -1,0 +1,31 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-sfd-messages
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.32-alpha.560408 # {"$imagepolicy": "flux-config:ffc-sfd-messages-snd-03:tag"}
+  values:
+    environment: production
+    name: ffc-sfd-messages
+    namespace: fcp-sfd
+    teamResourceGroupName: ${TEAM_RG}
+    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-messages:0.1.32-alpha.560408 # {"$imagepolicy": "flux-config:ffc-sfd-messages-snd-03"}
+    serviceAccount:
+      name: ffc-sfd-messages
+    labels:
+      component: web
+    container:
+      imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: ffc-sfd-messages
+      server: snd3.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
