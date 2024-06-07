@@ -11,7 +11,6 @@ spec:
     environment: production
     name: ffc-sfd-customer-receiver-preferences
     namespace: fcp-sfd
-    teamResourceGroupName: ${TEAM_RG}
     image: sndadpinfcr4401.azurecr.io/image/ffc-sfd-customer-receiver-preferences:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-preferences-snd-04"}
     serviceAccount:
       name: ffc-sfd-customer-receiver-preferences
