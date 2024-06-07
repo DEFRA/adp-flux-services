@@ -25,6 +25,13 @@ spec:
       containers:
       - name: ffc-demo-claim-service-post-dbmigration
         imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 250Mi
+          limits:
+            cpu: 600m
+            memory: 600Mi
         volumeMounts:
         - name: custom-root-ca
           readOnly: true
