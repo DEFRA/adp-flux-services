@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 4.3.29-alpha.552316 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-snd-03:tag"}
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-snd-03:tag"}
   values:
     environment: production
     name: ffc-demo-calculation-service
     namespace: fcp-demo
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr3401.azurecr.io/image/ffc-demo-calculation-service:4.3.29-alpha.552316 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ffc-demo-calculation-service:0.1.0 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-snd-03"}
     serviceAccount:
       name: ffc-demo-calculation-service
     container:
@@ -23,3 +23,5 @@ spec:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
       serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
