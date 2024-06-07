@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: fmc-test1
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:fmc-test1-snd-03:tag"}
+  values:
+    environment: production
+    name: fmc-test1
+    namespace: eutd-find-my-cat
+    teamResourceGroupName: ${TEAM_RG}
+    image: sndadpinfcr3401.azurecr.io/image/fmc-test1:0.1.0 # {"$imagepolicy": "flux-config:fmc-test1-snd-03"}
+    serviceAccount:
+      name: fmc-test1
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}

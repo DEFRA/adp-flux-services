@@ -2,5 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../../base
-- ../../adp-fmc-backend1
-- ../../fmc-test1
+- image-policy.yaml
+patches:
+- path: patch.yaml
