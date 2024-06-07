@@ -19,4 +19,4 @@ spec:
         - name: POSTGRES_PORT
           value: ${POSTGRES_PORT}
         - name: SCHEMA_USERNAME
-          value: AAG-Azure-ADP-fcp-demo-snd4-PostgresDB_Writer
+          value: AAG-Azure-ADP-ffc-snd4-PostgresDB_Writer
