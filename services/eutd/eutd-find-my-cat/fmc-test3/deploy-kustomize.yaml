@@ -1,0 +1,34 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: fmc-test3-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: fmc-test3
+    backstage.io/kubernetes-team: eutd-find-my-cat
+spec:
+  dependsOn:
+  - name: fmc-test3-infra
+    namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/eutd/eutd-find-my-cat/fmc-test3/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SERVICE_NAME: fmc-test3
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: fmc-test3-mi-credential
