@@ -5,6 +5,7 @@ resources:
 - ../../ffc-sfd-customer-receiver-queries
 - ../../ffc-sfd-customer-receiver-messages
 - ../../ffc-sfd-customer-receiver-preferences
+- ../../ffc-sfd-customer-receiver-payments
 - ../../ffc-sfd-queries
 - ../../ffc-sfd-ingress
 - ../../ffc-sfd-business
