@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.20-alpha.577221 # {"$imagepolicy": "flux-config:coreai-mcu-knowledge-pgv-snd-04:tag"}
+      version: 0.1.20 # {"$imagepolicy": "flux-config:coreai-mcu-knowledge-pgv-snd-04:tag"}
   values:
     environment: production
     name: coreai-mcu-knowledge-pgv
     namespace: crai-mcu
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr4401.azurecr.io/image/coreai-mcu-knowledge-pgv:0.1.20-alpha.577221 # {"$imagepolicy": "flux-config:coreai-mcu-knowledge-pgv-snd-04"}
+    image: sndadpinfcr4401.azurecr.io/image/coreai-mcu-knowledge-pgv:0.1.20 # {"$imagepolicy": "flux-config:coreai-mcu-knowledge-pgv-snd-04"}
     serviceAccount:
       name: coreai-mcu-knowledge-pgv
     container:
