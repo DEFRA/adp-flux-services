@@ -21,7 +21,7 @@ spec:
       TEAM_RG: ${SERVICES_INFRA_RG}-fcp-sfd
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
       APPCONFIG_NAME: ${APPCONFIG_NAME}
-      SERVICE_CODE: fcp-sfd
+      SERVICE_CODE: sfd
       PLATFORM_DB_ADMIN: adp-platform-db-aad-admin
       TEAM_CPU_QUOTA: "5000"
       TEAM_MEMORY_QUOTA: 5000Mi
