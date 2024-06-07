@@ -1,0 +1,29 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta2
+kind: Provider
+metadata:
+  name: azuresecondeventhub
+  namespace: flux-config
+spec:
+  type: azureeventhub
+  secretRef:
+    name: adp-platform-second-eventhub-secret
+
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta2
+kind: Alert
+metadata:
+  name: azuresecondeventhub-alert
+  namespace: flux-config
+spec:
+  eventMetadata:
+    env: "${ENVIRONMENT}${ENVIRONMENT_ID}"
+    cluster: "${CLUSTER_NAME}"
+  providerRef:
+    name: azuresecondeventhub
+  eventSeverity: info
+  eventSources:
+    - kind: HelmRelease
+      name: '*'
+      namespace: flux-config
+  inclusionList:
+    - ".*succeeded|failed.*"
