@@ -21,7 +21,7 @@ spec:
       TEAM_RG: ${SERVICES_INFRA_RG}-crai-mcu
       APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
       APPCONFIG_NAME: ${APPCONFIG_NAME}
-      SERVICE_CODE: crai-mcu
+      SERVICE_CODE: mcu
       PLATFORM_DB_ADMIN: adp-platform-db-aad-admin
       TEAM_CPU_QUOTA: "2000"
       TEAM_MEMORY_QUOTA: 3000Mi
