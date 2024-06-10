@@ -18,3 +18,4 @@ resources:
 - ../../../fcp/fcp-demo/base/patch
 - ../../../fcp/fcp-sfd/base/patch
 - ../../../ffc/fcp-find/base/patch
+- ../../../ncea/ncea-search/base/patch
