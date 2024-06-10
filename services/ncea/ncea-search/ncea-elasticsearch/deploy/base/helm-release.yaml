@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ncea-elasticsearch
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ncea-elasticsearch
+    backstage.io/kubernetes-team: ncea-search
+spec:
+  releaseName: ncea-elasticsearch
+  chart:
+    spec:
+      chart: ncea-elasticsearch
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ncea-search-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: ncea-search
