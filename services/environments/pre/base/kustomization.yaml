@@ -11,3 +11,4 @@ resources:
 - ../../../crai/crai-mcu/base/patch
 - ../../../ffc/fcp-dal/base/patch
 - ../../../ncea/ncea-search/base/patch
+- ../../../eutd/eutd-trade-exports-core/base/patch
