@@ -7,3 +7,4 @@ resources:
 - ../../ncea-mapper
 - ../../ncea-enricher
 - ../../ncea-elasticsearch
+- ../../ncea-kibana
