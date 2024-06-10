@@ -12,7 +12,7 @@ spec:
   git:
     checkout:
       ref:
-        branch: aa/sendFluxNotificationsTo2EventHubs
+        branch: main
     commit:
       author:
         email: fluxcdbot@users.noreply.github.com
