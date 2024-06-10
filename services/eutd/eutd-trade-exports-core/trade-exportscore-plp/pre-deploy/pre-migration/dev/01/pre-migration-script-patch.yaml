@@ -1,0 +1,44 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: trade-exportscore-plp-pre-dbmigration
+  namespace: flux-config
+spec:
+  template:
+    spec:
+      containers:
+      - name: trade-exportscore-plp-pre-dbmigration
+        image: ssvadpinfcr5401.azurecr.io/image/powershell-executor:1 # {"$imagepolicy": "flux-config:powershell-executor-dev-01"}
+        env:
+        - name: GIT_REPO_URL
+          value: https://github.com/DEFRA/adp-flux-services.git
+        - name: GIT_BRANCH
+          value: main
+        - name: SCRIPT_FILE_NAME
+          value: common/scripts/access-control/flexible-server/Grant-FlexibleServerAccess.ps1
+        - name: POSTGRES_HOST
+          value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
+        - name: POSTGRES_DATABASE
+          value: ${POSTGRES_DB}
+        - name: SERVICE_MI_NAME
+          value: ${TEAM_MI_PREFIX}-${SERVICE_NAME}
+        - name: TEAM_MI_NAME
+          value: ${TEAM_MI_PREFIX}-${TEAM_NAMESPACE}
+        - name: PLATFORM_MI_NAME
+          value: ${TEAM_MI_PREFIX}-${PLATFORM_DB_ADMIN}
+        - name: PLATFORM_MI_SUBSCRIPTION_ID
+          value: ${SUBSCRIPTION_ID}
+        - name: SUBSCRIPTION_NAME
+          value: ${SUBSCRIPTION_NAME}
+        - name: SSV_SHARED_SUBSCRIPTION_ID
+          value: ${SSV_SHARED_SUBSCRIPTION_ID}
+        - name: PG_WRITER_AD_GROUP
+          value: AAG-Azure-ADP-eutd-trade-exports-core-dev1-PostgresDB_Writer
+        - name: PG_READER_AD_GROUP
+          value: AAG-Azure-ADP-eutd-trade-exports-core-dev1-PostgresDB_Reader
+        - name: SP_CLIENT_ID_KV
+          value: ${SSV_SPN_CLIENT_ID_KV_NAME}
+        - name: SP_CLIENT_SECRET_KV
+          value: ${SSV_SPN_CLIENT_SECRET_KV_NAME}
+        - name: KEY_VAULT_NAME
+          value: ${SSV_PLATFORM_KEYVAULT}

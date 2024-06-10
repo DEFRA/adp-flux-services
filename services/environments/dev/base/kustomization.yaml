@@ -19,3 +19,4 @@ resources:
 - ../../../fcp/fcp-sfd/base/patch
 - ../../../ffc/fcp-find/base/patch
 - ../../../ncea/ncea-search/base/patch
+- ../../../eutd/eutd-trade-exports-core/base/patch
