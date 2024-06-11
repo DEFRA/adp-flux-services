@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.0 # {"$imagepolicy": "flux-config:fmc-test8-snd-03:tag"}
+      version: 0.1.1 # {"$imagepolicy": "flux-config:fmc-test8-snd-03:tag"}
   values:
     environment: production
     name: fmc-test8
     namespace: eutd-find-my-cat
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr3401.azurecr.io/image/fmc-test8:0.1.0 # {"$imagepolicy": "flux-config:fmc-test8-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/fmc-test8:0.1.1 # {"$imagepolicy": "flux-config:fmc-test8-snd-03"}
     serviceAccount:
       name: fmc-test8
     container:
