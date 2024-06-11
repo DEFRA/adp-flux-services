@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.3-alpha.582858 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-payments-snd-04:tag"}
+      version: 0.1.3-alpha.583312 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-payments-snd-04:tag"}
   values:
     environment: production
     name: ffc-sfd-customer-receiver-payments
     namespace: ffc-sfd
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr4401.azurecr.io/image/ffc-sfd-customer-receiver-payments:0.1.3-alpha.582858 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-payments-snd-04"}
+    image: sndadpinfcr4401.azurecr.io/image/ffc-sfd-customer-receiver-payments:0.1.3-alpha.583312 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-payments-snd-04"}
     serviceAccount:
       name: ffc-sfd-customer-receiver-payments
     container:
