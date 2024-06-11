@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: fmc-test-final-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: fmc-test-final
+    backstage.io/kubernetes-team: eutd-find-my-cat
+spec:
+  releaseName: fmc-test-final-infra
+  chart:
+    spec:
+      chart: fmc-test-final-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: eutd-find-my-cat-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: eutd-find-my-cat
+  values:
+    namespace: eutd-find-my-cat

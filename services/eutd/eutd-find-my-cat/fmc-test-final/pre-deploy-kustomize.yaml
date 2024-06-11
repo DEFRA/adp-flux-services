@@ -1,0 +1,37 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: fmc-test-final-pre-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: fmc-test-final
+    backstage.io/kubernetes-team: eutd-find-my-cat
+spec:
+  dependsOn:
+  - name: fmc-test-final-infra
+    namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/eutd/eutd-find-my-cat/fmc-test-final/pre-deploy
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SHARED_POSTGRES_SERVER_01: ${SHARED_POSTGRES_SERVER_01}
+      SERVICE_NAME: fmc-test-final
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
+      POSTGRES_DB: eutd-find-my-cat-danstewst
+      POSTGRES_PORT: "5432"
+      POSTGRES_SCHEMA_NAME: public
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: fmc-test-final-mi-credential

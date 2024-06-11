@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: fmc-test-final-dbmigration
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: fmc-test-final
+    backstage.io/kubernetes-team: eutd-find-my-cat
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/fmc-test-final-dbmigration
+  interval: 5m0s
+  provider: azure

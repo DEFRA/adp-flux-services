@@ -1,0 +1,40 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fmc-test-final-pre-dbmigration
+  namespace: flux-config
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: fmc-test-final
+    backstage.io/kubernetes-team: eutd-find-my-cat
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: fmc-test-final
+        backstage.io/kubernetes-team: eutd-find-my-cat
+    spec:
+      serviceAccountName: ${PLATFORM_DB_ADMIN}
+      restartPolicy: Never
+      volumes:
+      - name: custom-root-ca
+        secret:
+          secretName: custom-ca-trust-secret
+          optional: true
+      containers:
+      - name: fmc-test-final-pre-dbmigration
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 250Mi
+          limits:
+            cpu: 600m
+            memory: 600Mi
+        volumeMounts:
+        - name: custom-root-ca
+          readOnly: true
+          mountPath: /etc/ssl/certs/defra-egress-firewall-cert-01.crt
+          subPath: defra-egress-firewall-cert-01.crt
+  backoffLimit: 2

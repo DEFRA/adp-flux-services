@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fmc-test-final-dbmigration
+  namespace: eutd-find-my-cat
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: fmc-test-final
+    backstage.io/kubernetes-team: eutd-find-my-cat
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: fmc-test-final
+        backstage.io/kubernetes-team: eutd-find-my-cat
+    spec:
+      serviceAccountName: ${TEAM_NAMESPACE}
+      restartPolicy: Never
+      containers:
+      - name: fmc-test-final-dbmigration
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 250Mi
+          limits:
+            cpu: 600m
+            memory: 600Mi
+  backoffLimit: 2
