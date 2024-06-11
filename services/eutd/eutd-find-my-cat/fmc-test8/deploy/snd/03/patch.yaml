@@ -1,28 +1,22 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: fcp-find-ai-frontend
+  name: fmc-test8
   namespace: flux-config
 spec:
   chart:
     spec:
-      version: 0.1.30-alpha.582364 # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-snd-04:tag"}
+      version: 0.1.0 # {"$imagepolicy": "flux-config:fmc-test8-snd-03:tag"}
   values:
     environment: production
-    name: fcp-find-ai-frontend
-    namespace: fcp-find
+    name: fmc-test8
+    namespace: eutd-find-my-cat
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr4401.azurecr.io/image/fcp-find-ai-frontend:0.1.30-alpha.582364 # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-snd-04"}
+    image: sndadpinfcr3401.azurecr.io/image/fmc-test8:0.1.0 # {"$imagepolicy": "flux-config:fmc-test8-snd-03"}
     serviceAccount:
-      name: fcp-find-ai-frontend
-    labels:
-      component: web
+      name: fmc-test8
     container:
       imagePullPolicy: Always
-    ingress:
-      class: nginx
-      endpoint: fcp-find-ai-frontend
-      server: snd4.adp.defra.gov.uk
     deployment:
       priorityClassName: default
     containerConfigMap:

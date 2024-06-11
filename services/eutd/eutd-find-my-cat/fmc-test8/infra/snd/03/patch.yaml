@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ffc-sfd-customer-receiver-preferences-infra
+  name: fmc-test8-infra
   namespace: flux-config
 spec:
   chart:
     spec:
-      chart: ffc-sfd-customer-receiver-preferences-infra
-      version: 0.1.5-alpha.582292 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-preferences-snd-03:tag"}
+      chart: fmc-test8-infra
+      version: 0.1.0 # {"$imagepolicy": "flux-config:fmc-test8-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
@@ -22,6 +22,7 @@ spec:
     serviceName: ${SERVICE_NAME}
     keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
     keyVaultName: ${APPLICATION_KEYVAULT}
+    tenant: defradev
     environment: ${ENVIRONMENT}
     virtualNetworkResourceGroupName: ${VIRTUAL_NETWORK_RG}
     virtualNetworkName: ${VIRTUAL_NETWORK_NAME}
@@ -45,3 +46,5 @@ spec:
       kubernetes_cluster: ${CLUSTER_NAME}
       kubernetes_namespace: ${TEAM_NAMESPACE}
       kubernetes_label_serviceCode: ${SERVICE_CODE}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
+    storageAccountSku: ${STORAGEACCOUNT_SKU}
