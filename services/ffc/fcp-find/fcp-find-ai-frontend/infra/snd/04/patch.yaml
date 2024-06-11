@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: fcp-find-ai-frontend-infra
-      version: 0.1.31-alpha.582599 # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-snd-04:tag"}
+      version: 0.1.31-alpha.583097 # {"$imagepolicy": "flux-config:fcp-find-ai-frontend-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
