@@ -6,12 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.3-alpha.574977 # {"$imagepolicy": "flux-config:fcp-find-ai-data-ingester-snd-03:tag"}
+      version: 0.1.3 # {"$imagepolicy": "flux-config:fcp-find-ai-data-ingester-snd-03:tag"}
   values:
     environment: production
     name: fcp-find-ai-data-ingester
     namespace: fcp-find
-    image: sndadpinfcr3401.azurecr.io/image/fcp-find-ai-data-ingester:0.1.3-alpha.574977 # {"$imagepolicy": "flux-config:fcp-find-ai-data-ingester-snd-03"}
+    teamResourceGroupName: ${TEAM_RG}
+    image: sndadpinfcr3401.azurecr.io/image/fcp-find-ai-data-ingester:0.1.3 # {"$imagepolicy": "flux-config:fcp-find-ai-data-ingester-snd-03"}
     serviceAccount:
       name: fcp-find-ai-data-ingester
     container:
@@ -22,3 +23,5 @@ spec:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
       serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}

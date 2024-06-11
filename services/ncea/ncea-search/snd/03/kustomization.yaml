@@ -6,3 +6,5 @@ resources:
 - ../../ncea-harvester
 - ../../ncea-mapper
 - ../../ncea-enricher
+- ../../ncea-elasticsearch
+- ../../ncea-kibana

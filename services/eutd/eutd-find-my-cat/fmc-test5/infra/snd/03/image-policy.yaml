@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: fmc-test5-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: fmc-test5
+    backstage.io/kubernetes-team: eutd-find-my-cat
+spec:
+  imageRepositoryRef:
+    name: fmc-test5
+  policy:
+    semver:
+      range: '>=0.1.0-0'

@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: ffc-demo-claim-service-dbmigration
-        image: sndadpinfcr3401.azurecr.io/image/ffc-demo-claim-service-dbmigration:5.2.1 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-03"}
+        image: sndadpinfcr3401.azurecr.io/image/ffc-demo-claim-service-dbmigration:5.2.2 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-03"}
         env:
         - name: POSTGRES_HOST
           value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
@@ -19,4 +19,4 @@ spec:
         - name: POSTGRES_PORT
           value: ${POSTGRES_PORT}
         - name: SCHEMA_USERNAME
-          value: AAG-Azure-ADP-fcp-demo-snd3-PostgresDB_Writer
+          value: AAG-Azure-ADP-ffc-snd3-PostgresDB_Writer

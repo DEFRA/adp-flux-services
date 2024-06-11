@@ -1,0 +1,50 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-demo-claim-service-infra
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      chart: ffc-demo-claim-service-infra
+      version: 5.2.2 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dev-01:tag"}
+  values:
+    namespace: ${TEAM_NAMESPACE}
+    fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
+    subscriptionId: ${SUBSCRIPTION_ID}
+    serviceBusResourceGroupName: ${SERVICES_INFRA_RG}
+    serviceBusNamespaceName: ${SHARED_SERVICEBUS_NAME}
+    postgresResourceGroupName: ${DATABASE_SERVER_RG}
+    postgresServerName: ${SHARED_POSTGRES_SERVER_01}
+    clusterOIDCIssuerUrl: ${CLUSTER_OIDC_ISSUER_URL}
+    teamResourceGroupName: ${TEAM_RG}
+    teamMIPrefix: ${TEAM_MI_PREFIX}
+    serviceName: ${SERVICE_NAME}
+    keyVaultResourceGroupName: ${SERVICES_INFRA_RG}
+    keyVaultName: ${APPLICATION_KEYVAULT}
+    tenant: defra
+    environment: ${ENVIRONMENT}
+    virtualNetworkResourceGroupName: ${VIRTUAL_NETWORK_RG}
+    virtualNetworkName: ${VIRTUAL_NETWORK_NAME}
+    privateEndpointSubnetName: ${PRIVATE_ENDPOINT_SUBNET}
+    privateEndpointPrefix: ${PRIVATE_ENDPOINT_PREFIX}
+    azrMSTPrivateLinkDNSSubscriptionID: ${AZR_MST_PRIVATELINKDNS_SUBSCRIPTION_ID}
+    azrMSTPrivateLinkDNSUKSouthResourceGroupName: ${AZR_MST_PRIVATELINKDNS_UKSOUTH_RG}
+    azrMSTPrivateLinkDNSUKWestResourceGroupName: ${AZR_MST_PRIVATELINKDNS_UKWEST_RG}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    userAssignedIdentity:
+      federatedCreds:
+      - namespace: ${TEAM_NAMESPACE}
+        serviceAccountName: ${SERVICE_NAME}
+      - namespace: app-config-service
+        serviceAccountName: az-appconfig-k8s-provider
+    commonTags:
+      environment: ${ENVIRONMENT}
+      serviceCode: ${SERVICE_CODE}
+      serviceName: ${SERVICE_NAME}
+      serviceType: Dedicated
+      kubernetes_cluster: ${CLUSTER_NAME}
+      kubernetes_namespace: ${TEAM_NAMESPACE}
+      kubernetes_label_serviceCode: ${SERVICE_CODE}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
+    storageAccountSku: ${STORAGEACCOUNT_SKU}

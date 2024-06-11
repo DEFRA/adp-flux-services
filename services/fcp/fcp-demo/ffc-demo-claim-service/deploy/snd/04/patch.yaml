@@ -6,12 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 5.2.2-alpha.573412 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-04:tag"}
+      version: 5.2.3-alpha.580335 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-04:tag"}
   values:
     environment: production
     name: ffc-demo-claim-service
     namespace: fcp-demo
-    image: sndadpinfcr4401.azurecr.io/image/ffc-demo-claim-service:5.2.2-alpha.573412 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-04"}
+    teamResourceGroupName: ${TEAM_RG}
+    image: sndadpinfcr4401.azurecr.io/image/ffc-demo-claim-service:5.2.3-alpha.580335 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-04"}
     serviceAccount:
       name: ffc-demo-claim-service
     container:
@@ -22,3 +23,5 @@ spec:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
       serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}

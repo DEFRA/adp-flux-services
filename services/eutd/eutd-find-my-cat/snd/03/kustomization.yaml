@@ -3,3 +3,6 @@ kind: Kustomization
 resources:
 - ../../base
 - ../../adp-fmc-backend1
+- ../../fmc-test4
+- ../../fmc-test5
+- ../../fmc-test6
