@@ -11,6 +11,7 @@ spec:
     environment: production
     name: ncea-harvester
     namespace: ncea-search
+    teamResourceGroupName: ${TEAM_RG}
     image: sndadpinfcr3401.azurecr.io/image/ncea-harvester:0.1.1-alpha.568846 # {"$imagepolicy": "flux-config:ncea-harvester-snd-03"}
     serviceAccount:
       name: ncea-harvester
@@ -22,3 +23,5 @@ spec:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
       serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
