@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.1-alpha.567510 # {"$imagepolicy": "flux-config:ncea-enricher-snd-03:tag"}
+      version: 0.1.1-alpha.587504 # {"$imagepolicy": "flux-config:ncea-enricher-snd-03:tag"}
   values:
     environment: production
     name: ncea-enricher
     namespace: ncea-search
-    image: sndadpinfcr3401.azurecr.io/image/ncea-enricher:0.1.1-alpha.567510 # {"$imagepolicy": "flux-config:ncea-enricher-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ncea-enricher:0.1.1-alpha.587504 # {"$imagepolicy": "flux-config:ncea-enricher-snd-03"}
     serviceAccount:
       name: ncea-enricher
     container:
