@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.33-alpha.587926 # {"$imagepolicy": "flux-config:ffc-sfd-messages-snd-03:tag"}
+      version: 0.1.33-alpha.588008 # {"$imagepolicy": "flux-config:ffc-sfd-messages-snd-03:tag"}
   values:
     environment: production
     name: ffc-sfd-messages
     namespace: fcp-sfd
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-messages:0.1.33-alpha.587926 # {"$imagepolicy": "flux-config:ffc-sfd-messages-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-messages:0.1.33-alpha.588008 # {"$imagepolicy": "flux-config:ffc-sfd-messages-snd-03"}
     serviceAccount:
       name: ffc-sfd-messages
     labels:
