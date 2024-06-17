@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ncea-enricher-infra
-      version: 0.1.1-alpha.587504 # {"$imagepolicy": "flux-config:ncea-enricher-snd-03:tag"}
+      version: 0.1.1-alpha.587972 # {"$imagepolicy": "flux-config:ncea-enricher-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
