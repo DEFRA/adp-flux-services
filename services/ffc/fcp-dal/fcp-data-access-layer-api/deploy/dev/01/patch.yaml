@@ -11,6 +11,7 @@ spec:
     environment: production
     name: fcp-data-access-layer-api
     namespace: fcp-dal
+    teamResourceGroupName: ${TEAM_RG}
     image: devadpinfcr1401.azurecr.io/image/fcp-data-access-layer-api:1.0.75 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-dev-01"}
     serviceAccount:
       name: fcp-data-access-layer-api
@@ -28,3 +29,5 @@ spec:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
       serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
