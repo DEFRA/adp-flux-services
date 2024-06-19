@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: adp-demo-11
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-demo-11
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/adp-demo-11
+  interval: 5m0s
+  provider: azure
