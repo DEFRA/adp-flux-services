@@ -13,3 +13,4 @@ resources:
 - ../../../ffc/fcp-dal/base/patch
 - ../../../ncea/ncea-search/base/patch
 - ../../../eutd/eutd-trade-exports-core/base/patch
+- ../../../fcp/fcp-sfd/base/patch
