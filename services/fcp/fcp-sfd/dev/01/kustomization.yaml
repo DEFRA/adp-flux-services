@@ -4,3 +4,4 @@ resources:
 - ../../base
 - ../../ffc-sfd-customer-receiver-preferences
 - ../../ffc-sfd-customer-receiver-payments
+- ../../ffc-sfd-ingress
