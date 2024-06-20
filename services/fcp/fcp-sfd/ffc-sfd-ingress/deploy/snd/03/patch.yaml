@@ -12,7 +12,6 @@ spec:
     name: ffc-sfd-ingress
     namespace: fcp-sfd
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-ingress:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-ingress-snd-03"}
     serviceAccount:
       name: ffc-sfd-ingress
     labels:
@@ -29,3 +28,5 @@ spec:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
       serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
