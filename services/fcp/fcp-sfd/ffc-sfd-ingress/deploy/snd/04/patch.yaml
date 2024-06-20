@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-ingress-snd-04:tag"}
+      version: 0.1.2 # {"$imagepolicy": "flux-config:ffc-sfd-ingress-snd-04:tag"}
   values:
     environment: production
     name: ffc-sfd-ingress
