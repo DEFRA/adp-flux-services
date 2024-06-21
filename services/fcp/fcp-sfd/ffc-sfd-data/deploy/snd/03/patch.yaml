@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.6.7-alpha.592768 # {"$imagepolicy": "flux-config:ffc-sfd-data-snd-03:tag"}
+      version: 0.6.7-alpha.592946 # {"$imagepolicy": "flux-config:ffc-sfd-data-snd-03:tag"}
   values:
     environment: production
     name: ffc-sfd-data
     namespace: fcp-sfd
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-data:0.6.7-alpha.592768 # {"$imagepolicy": "flux-config:ffc-sfd-data-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-data:0.6.7-alpha.592946 # {"$imagepolicy": "flux-config:ffc-sfd-data-snd-03"}
     serviceAccount:
       name: ffc-sfd-data
     container:
