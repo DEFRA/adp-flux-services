@@ -31,4 +31,4 @@ spec:
         - name: PG_READER_AD_GROUP
           value: AAG-Azure-ADP-fcp-demo-snd4-PostgresDB_Reader
         - name: DB_MIGRATION_VERSION
-          value: 5.2.2 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-04:tag"}
+          value: 5.2.3 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-dbmigration-snd-04:tag"}
