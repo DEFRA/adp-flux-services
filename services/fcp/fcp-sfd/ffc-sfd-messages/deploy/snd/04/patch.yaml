@@ -21,7 +21,7 @@ spec:
       imagePullPolicy: Always
     ingress:
       class: nginx
-      endpoint: ffc-sfd-messages
+      endpoint: ffc-sfd
       server: snd4.adp.defra.gov.uk
     deployment:
       priorityClassName: default
