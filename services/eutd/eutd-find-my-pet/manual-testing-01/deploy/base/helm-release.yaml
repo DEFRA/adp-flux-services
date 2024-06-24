@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: manual-testing-01
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: manual-testing-01
+    backstage.io/kubernetes-team: eutd-find-my-pet
+spec:
+  releaseName: manual-testing-01
+  chart:
+    spec:
+      chart: manual-testing-01
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: eutd-find-my-pet-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: eutd-find-my-pet

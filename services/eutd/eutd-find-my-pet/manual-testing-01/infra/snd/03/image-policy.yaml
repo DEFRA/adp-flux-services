@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: manual-testing-01-snd-03
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: manual-testing-01
+    backstage.io/kubernetes-team: eutd-find-my-pet
+spec:
+  imageRepositoryRef:
+    name: manual-testing-01
+  policy:
+    semver:
+      range: '>=0.1.0-0'
