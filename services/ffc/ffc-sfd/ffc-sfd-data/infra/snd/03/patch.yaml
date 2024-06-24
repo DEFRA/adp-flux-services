@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-data-infra
-      version: "0.6.7-alpha.595364" # {"$imagepolicy": "flux-config:ffc-sfd-data-snd-03:tag"}
+      version: "0.6.7-alpha.595377" # {"$imagepolicy": "flux-config:ffc-sfd-data-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
