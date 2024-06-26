@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.3-alpha.596893 # {"$imagepolicy": "flux-config:ffc-sfd-business-snd-03:tag"}
+      version: 0.1.3-alpha.597127 # {"$imagepolicy": "flux-config:ffc-sfd-business-snd-03:tag"}
   values:
     environment: production
     name: ffc-sfd-business
     namespace: ffc-sfd
-    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-business:0.1.3-alpha.596893 # {"$imagepolicy": "flux-config:ffc-sfd-business-snd-03"}
+    image: sndadpinfcr3401.azurecr.io/image/ffc-sfd-business:0.1.3-alpha.597127 # {"$imagepolicy": "flux-config:ffc-sfd-business-snd-03"}
     serviceAccount:
       name: ffc-sfd-business
     labels:
