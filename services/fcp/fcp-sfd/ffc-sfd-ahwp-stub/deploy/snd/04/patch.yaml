@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-ahwp-stub-snd-04:tag"}
+      version: 0.4.2-alpha.599021 # {"$imagepolicy": "flux-config:ffc-sfd-ahwp-stub-snd-04:tag"}
   values:
     environment: production
     name: ffc-sfd-ahwp-stub
     namespace: fcp-sfd
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr4401.azurecr.io/image/ffc-sfd-ahwp-stub:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-ahwp-stub-snd-04"}
+    image: sndadpinfcr4401.azurecr.io/image/ffc-sfd-ahwp-stub:0.4.2-alpha.599021 # {"$imagepolicy": "flux-config:ffc-sfd-ahwp-stub-snd-04"}
     serviceAccount:
       name: ffc-sfd-ahwp-stub
     labels:
