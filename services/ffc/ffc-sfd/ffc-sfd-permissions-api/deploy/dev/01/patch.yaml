@@ -6,12 +6,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-sfd-permissions-api-dev-01:tag"}
+      version: "0.2.2" # {"$imagepolicy": "flux-config:ffc-sfd-permissions-api-dev-01:tag"}
   values:
     environment: production
     name: ffc-sfd-permissions-api
     namespace: ffc-sfd
-    image: devadpinfcr1401.azurecr.io/image/ffc-sfd-permissions-api:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-permissions-api-dev-01"}
+    image: devadpinfcr1401.azurecr.io/image/ffc-sfd-permissions-api:0.2.2 # {"$imagepolicy": "flux-config:ffc-sfd-permissions-api-dev-01"}
     serviceAccount:
       name: ffc-sfd-permissions-api
     deployment:
