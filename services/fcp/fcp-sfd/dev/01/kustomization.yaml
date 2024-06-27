@@ -8,3 +8,4 @@ resources:
 - ../../ffc-sfd-crm
 - ../../ffc-sfd-messages-processor
 - ../../ffc-sfd-data
+- ../../ffc-sfd-permissions-api
