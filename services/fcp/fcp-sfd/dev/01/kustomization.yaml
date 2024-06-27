@@ -7,3 +7,4 @@ resources:
 - ../../ffc-sfd-ingress
 - ../../ffc-sfd-crm
 - ../../ffc-sfd-messages-processor
+- ../../ffc-sfd-data
