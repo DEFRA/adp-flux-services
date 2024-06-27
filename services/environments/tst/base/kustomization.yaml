@@ -14,3 +14,4 @@ resources:
 - ../../../ncea/ncea-search/base/patch
 - ../../../eutd/eutd-trade-exports-core/base/patch
 - ../../../fcp/fcp-sfd/base/patch
+- ../../../fcp/fcp-demo/base/patch
