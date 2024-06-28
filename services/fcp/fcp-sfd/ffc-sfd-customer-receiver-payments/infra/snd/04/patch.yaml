@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-customer-receiver-payments-infra
-      version: 0.1.5-alpha.598816 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-payments-snd-04:tag"}
+      version: 0.1.5-alpha.599678 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-payments-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
