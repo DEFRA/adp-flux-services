@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: Test-Scaffold
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: Test-Scaffold
+    backstage.io/kubernetes-team: eutd-adp-test
+spec:
+  releaseName: Test-Scaffold
+  chart:
+    spec:
+      chart: Test-Scaffold
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: eutd-adp-test-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: eutd-adp-test

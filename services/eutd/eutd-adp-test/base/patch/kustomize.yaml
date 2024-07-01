@@ -1,0 +1,36 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: eutd-adp-test-base
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-team: eutd-adp-test
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  interval: 5m
+  timeout: 3m
+  prune: true
+  path: ./services/eutd/eutd-adp-test/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  postBuild:
+    substitute:
+      TEAM_NAMESPACE: eutd-adp-test
+      TEAM_NAME: eutd-adp-test-team
+      TEAM_RG: ${SERVICES_INFRA_RG}-eutd-adp-test
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      SERVICE_CODE: ADP
+      PLATFORM_DB_ADMIN: adp-platform-db-aad-admin
+      TEAM_CPU_QUOTA: "2000"
+      TEAM_MEMORY_QUOTA: 3000Mi
+      TEAM_PODS_QUOTA: "20"
+      CONTAINER_MAX_CPU: 500m
+      CONTAINER_MAX_MEMORY: 1000Mi
+    substituteFrom:
+    - kind: ConfigMap
+      name: eutd-adp-test-mi-credential
+      optional: true
+    - kind: ConfigMap
+      name: adp-platform-vars
