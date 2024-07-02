@@ -9,3 +9,4 @@ resources:
 - ../../../eutd/eutd-find-my-cat/base/patch
 - ../../../fcp/fcp-sfd/base/patch
 - ../../../crai/crai-mcu/base/patch
+- ../../../eutd/eutd-test/base/patch

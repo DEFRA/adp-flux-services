@@ -23,3 +23,4 @@ resources:
 - ../../../eutd/eutd-trade-exports-core/base/patch
 - ../../../fcp/fcp-sfd/base/patch
 - ../../../eutd/eutd-adp-test/base/patch
+- ../../../eutd/eutd-test/base/patch
