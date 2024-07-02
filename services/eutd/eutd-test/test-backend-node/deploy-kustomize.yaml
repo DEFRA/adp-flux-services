@@ -1,0 +1,35 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: test-backend-node-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: test-backend-node
+    backstage.io/kubernetes-team: eutd-test
+spec:
+  dependsOn:
+  - name: test-backend-node-pre-deploy
+    namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/eutd/eutd-test/test-backend-node/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SERVICE_NAME: test-backend-node
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      TEAM_RG: ${TEAM_RG}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: test-backend-node-mi-credential

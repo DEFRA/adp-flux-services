@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-backend-node-dbmigration
+  namespace: eutd-test
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: test-backend-node
+    backstage.io/kubernetes-team: eutd-test
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: test-backend-node
+        backstage.io/kubernetes-team: eutd-test
+    spec:
+      serviceAccountName: ${TEAM_NAMESPACE}
+      restartPolicy: Never
+      containers:
+      - name: test-backend-node-dbmigration
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 250Mi
+          limits:
+            cpu: 500m
+            memory: 600Mi
+  backoffLimit: 2

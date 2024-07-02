@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: test-backend-node-dbmigration
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: test-backend-node
+    backstage.io/kubernetes-team: eutd-test
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/test-backend-node-dbmigration
+  interval: 5m0s
+  provider: azure
