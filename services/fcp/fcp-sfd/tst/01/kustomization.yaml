@@ -5,3 +5,4 @@ resources:
 - ../../ffc-sfd-ingress
 - ../../ffc-sfd-crm
 - ../../ffc-sfd-permissions-api
+- ../../ffc-sfd-customer-receiver-messages
