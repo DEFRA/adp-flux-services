@@ -12,3 +12,4 @@ resources:
 - ../../coreai-mcu-knowledge-pgv
 - ../../coreai-mcu-responses
 - ../../coreai-mcu-email-processor
+- ../../crai-jaf-frontend
