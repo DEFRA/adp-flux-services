@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: ffc-sfd-messages-processor-dbmigration
-        image: sndadpinfcr4401.azurecr.io/image/ffc-sfd-messages-processor-dbmigration:0.1.51-alpha.603143 # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-dbmigration-snd-04"}
+        image: sndadpinfcr4401.azurecr.io/image/ffc-sfd-messages-processor-dbmigration:0.1.51-alpha.603234 # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-dbmigration-snd-04"}
         env:
         - name: POSTGRES_HOST
           value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
