@@ -4,3 +4,4 @@ resources:
 - ../../base
 - ../../test
 - ../../test-backend-node
+- ../../eutd-test-frontend
