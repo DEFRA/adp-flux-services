@@ -5,3 +5,4 @@ resources:
 - ../../coreai-mcu-personas
 - ../../coreai-mcu-prompts
 - ../../crai-jaf-frontend
+- ../../crai-jaf-backend

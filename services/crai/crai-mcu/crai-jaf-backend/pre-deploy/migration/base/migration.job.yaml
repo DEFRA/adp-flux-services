@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: crai-jaf-backend-dbmigration
+  namespace: crai-mcu
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: crai-jaf-backend
+    backstage.io/kubernetes-team: crai-mcu
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: crai-jaf-backend
+        backstage.io/kubernetes-team: crai-mcu
+    spec:
+      serviceAccountName: ${TEAM_NAMESPACE}
+      restartPolicy: Never
+      containers:
+      - name: crai-jaf-backend-dbmigration
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 250Mi
+          limits:
+            cpu: 500m
+            memory: 600Mi
+  backoffLimit: 2

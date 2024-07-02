@@ -1,0 +1,37 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: crai-jaf-backend-pre-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: crai-jaf-backend
+    backstage.io/kubernetes-team: crai-mcu
+spec:
+  dependsOn:
+  - name: crai-jaf-backend-infra
+    namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/crai/crai-mcu/crai-jaf-backend/pre-deploy
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SHARED_POSTGRES_SERVER_01: ${SHARED_POSTGRES_SERVER_01}
+      SERVICE_NAME: crai-jaf-backend
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
+      POSTGRES_DB: crai-mcu-crai-jaf
+      POSTGRES_PORT: "5432"
+      POSTGRES_SCHEMA_NAME: public
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: crai-jaf-backend-mi-credential

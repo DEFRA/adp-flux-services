@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: crai-jaf-backend-dbmigration-prd-01
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: crai-jaf-backend
+    backstage.io/kubernetes-team: crai-mcu
+spec:
+  imageRepositoryRef:
+    name: crai-jaf-backend-dbmigration
+  policy:
+    semver:
+      range: '>=0.1.0-0'

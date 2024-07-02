@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: crai-jaf-backend-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: crai-jaf-backend
+    backstage.io/kubernetes-team: crai-mcu
+spec:
+  releaseName: crai-jaf-backend-infra
+  chart:
+    spec:
+      chart: crai-jaf-backend-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: crai-mcu-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: crai-mcu
+  values:
+    namespace: crai-mcu

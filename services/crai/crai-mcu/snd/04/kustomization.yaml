@@ -13,3 +13,4 @@ resources:
 - ../../coreai-mcu-responses
 - ../../coreai-mcu-email-processor
 - ../../crai-jaf-frontend
+- ../../crai-jaf-backend
