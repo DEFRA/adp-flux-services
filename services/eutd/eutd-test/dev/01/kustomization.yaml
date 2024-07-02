@@ -5,3 +5,4 @@ resources:
 - ../../test
 - ../../test-backend-node
 - ../../eutd-test-frontend
+- ../../eutd-test-backend-dotnet

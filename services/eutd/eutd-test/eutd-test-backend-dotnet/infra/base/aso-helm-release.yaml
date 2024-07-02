@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: eutd-test-backend-dotnet-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: eutd-test-backend-dotnet
+    backstage.io/kubernetes-team: eutd-test
+spec:
+  releaseName: eutd-test-backend-dotnet-infra
+  chart:
+    spec:
+      chart: eutd-test-backend-dotnet-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: eutd-test-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: eutd-test
+  values:
+    namespace: eutd-test

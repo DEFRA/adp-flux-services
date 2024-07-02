@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: eutd-test-backend-dotnet
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:eutd-test-backend-dotnet-dev-01:tag"}
+  values:
+    environment: production
+    name: eutd-test-backend-dotnet
+    namespace: eutd-test
+    teamResourceGroupName: ${TEAM_RG}
+    image: devadpinfcr1401.azurecr.io/image/eutd-test-backend-dotnet:0.1.0 # {"$imagepolicy": "flux-config:eutd-test-backend-dotnet-dev-01"}
+    serviceAccount:
+      name: eutd-test-backend-dotnet
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}

@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: eutd-test-backend-dotnet-tst-01
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: eutd-test-backend-dotnet
+    backstage.io/kubernetes-team: eutd-test
+spec:
+  imageRepositoryRef:
+    name: eutd-test-backend-dotnet
+  policy:
+    semver:
+      range: '>=0.1.0-0'
