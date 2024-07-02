@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ffc-sfd-customer-receiver-messages
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-messages-dev-01:tag"}
+  values:
+    environment: production
+    name: ffc-sfd-customer-receiver-messages
+    namespace: fcp-sfd
+    teamResourceGroupName: ${TEAM_RG}
+    image: devadpinfcr1401.azurecr.io/image/ffc-sfd-customer-receiver-messages:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-messages-dev-01"}
+    serviceAccount:
+      name: ffc-sfd-customer-receiver-messages
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}

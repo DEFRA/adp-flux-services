@@ -9,3 +9,4 @@ resources:
 - ../../ffc-sfd-messages-processor
 - ../../ffc-sfd-data
 - ../../ffc-sfd-permissions-api
+- ../../ffc-sfd-customer-receiver-messages
