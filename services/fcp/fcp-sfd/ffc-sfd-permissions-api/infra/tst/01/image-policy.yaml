@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: ffc-sfd-permissions-api-tst-01
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-sfd-permissions-api
+    backstage.io/kubernetes-team: fcp-sfd
+spec:
+  imageRepositoryRef:
+    name: ffc-sfd-permissions-api
+  policy:
+    semver:
+      range: '>=0.1.0-0'
