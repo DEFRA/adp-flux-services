@@ -8,3 +8,4 @@ resources:
 - ../../../eutd/eutd-find-my-pet/base/patch
 - ../../../eutd/eutd-find-my-cat/base/patch
 - ../../../fcp/fcp-sfd/base/patch
+- ../../../crai/crai-mcu/base/patch
