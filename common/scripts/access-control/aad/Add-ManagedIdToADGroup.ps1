@@ -1,7 +1,7 @@
 Set-StrictMode -Version 3.0
 
-[string]$ManagedIdentityName = $env:TEAM_MI_NAME
-[string]$ADGroupName = $env:PG_WRITER_AD_GROUP
+[string]$ManagedIdentityName = $env:MI_NAME
+[string]$ADGroupName = $env:AD_GROUP
 [string]$ServicePrincipalClientId = $env:SP_CLIENT_ID_KV
 [string]$ServicePrincipalClientSecret = $env:SP_CLIENT_SECRET_KV
 [string]$KeyVaultName = $env:KEY_VAULT_NAME
