@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: ccts-adp-test-frontend2-dev-01
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ccts-adp-test-frontend2
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  imageRepositoryRef:
+    name: ccts-adp-test-frontend2
+  policy:
+    semver:
+      range: '>=0.1.0-0'

@@ -4,3 +4,4 @@ resources:
 - ../../base
 - ../../adp-test-dr111
 - ../../ccts-adp-test-frontend1
+- ../../ccts-adp-test-frontend2
