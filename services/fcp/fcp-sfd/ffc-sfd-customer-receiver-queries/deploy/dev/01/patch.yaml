@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-queries-dev-01:tag"}
+      version: 0.1.5 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-queries-dev-01:tag"}
   values:
     environment: production
     name: ffc-sfd-customer-receiver-queries
     namespace: fcp-sfd
     teamResourceGroupName: ${TEAM_RG}
-    image: devadpinfcr1401.azurecr.io/image/ffc-sfd-customer-receiver-queries:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-queries-dev-01"}
+    image: devadpinfcr1401.azurecr.io/image/ffc-sfd-customer-receiver-queries:0.1.5 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-queries-dev-01"}
     serviceAccount:
       name: ffc-sfd-customer-receiver-queries
     container:
