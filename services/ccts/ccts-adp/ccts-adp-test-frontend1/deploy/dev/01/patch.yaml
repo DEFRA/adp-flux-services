@@ -1,0 +1,33 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ccts-adp-test-frontend1
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ccts-adp-test-frontend1-dev-01:tag"}
+  values:
+    environment: production
+    name: ccts-adp-test-frontend1
+    namespace: ccts-adp
+    teamResourceGroupName: ${TEAM_RG}
+    image: devadpinfcr1401.azurecr.io/image/ccts-adp-test-frontend1:0.1.0 # {"$imagepolicy": "flux-config:ccts-adp-test-frontend1-dev-01"}
+    serviceAccount:
+      name: ccts-adp-test-frontend1
+    labels:
+      component: web
+    container:
+      imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: ccts-adp-test-frontend1
+      server: dev1.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}

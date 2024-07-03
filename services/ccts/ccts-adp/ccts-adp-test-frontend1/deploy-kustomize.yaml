@@ -1,0 +1,35 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ccts-adp-test-frontend1-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ccts-adp-test-frontend1
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  dependsOn:
+  - name: ccts-adp-test-frontend1-infra
+    namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/ccts/ccts-adp/ccts-adp-test-frontend1/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 5m
+  timeout: 3m
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SERVICE_NAME: ccts-adp-test-frontend1
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      TEAM_RG: ${TEAM_RG}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: ccts-adp-test-frontend1-mi-credential

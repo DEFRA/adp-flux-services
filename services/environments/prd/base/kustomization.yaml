@@ -10,3 +10,4 @@ resources:
 - ../../../fcp/fcp-sfd/base/patch
 - ../../../crai/crai-mcu/base/patch
 - ../../../eutd/eutd-test/base/patch
+- ../../../ccts/ccts-adp/base/patch
