@@ -11,3 +11,4 @@ resources:
 - ../../ffc-sfd-permissions-api
 - ../../ffc-sfd-customer-receiver-messages
 - ../../ffc-sfd-customer-receiver-queries
+- ../../ffc-sfd-queries
