@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ncea-test-app-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ncea-test-app
+    backstage.io/kubernetes-team: ncea-search
+spec:
+  releaseName: ncea-test-app-infra
+  chart:
+    spec:
+      chart: ncea-test-app-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ncea-search-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: ncea-search
+  values:
+    namespace: ncea-search
