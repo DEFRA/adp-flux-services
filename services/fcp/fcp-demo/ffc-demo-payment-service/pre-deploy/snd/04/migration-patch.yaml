@@ -1,0 +1,44 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ffc-demo-payment-service-dbmigration
+  namespace: flux-config
+spec:
+  template:
+    spec:
+      containers:
+      - name: ffc-demo-payment-service-dbmigration
+        image: sndadpinfcr4401.azurecr.io/image/ffc-demo-payment-service-dbmigration:0.1.0 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-dbmigration-snd-04"}
+        env:
+        - name: POSTGRES_HOST
+          value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
+        - name: POSTGRES_PORT
+          value: ${POSTGRES_PORT}
+        - name: SCHEMA_NAME
+          value: ${POSTGRES_SCHEMA_NAME}
+        - name: POSTGRES_DB_NAME
+          value: ${POSTGRES_DB_NAME}
+        - name: POSTGRES_DB_USERNAME
+          value: AAG-Azure-ADP-fcp-demo-snd4-PostgresDB_Writer
+        - name: SERVICE_MI_NAME
+          value: ${TEAM_MI_PREFIX}-${SERVICE_NAME}
+        - name: TEAM_MI_NAME
+          value: ${TEAM_MI_PREFIX}-${TEAM_NAMESPACE}
+        - name: PLATFORM_MI_NAME
+          value: ${TEAM_MI_PREFIX}-${PLATFORM_DB_ADMIN}
+        - name: DB_AAD_ADMIN_CLIENT_ID
+          value: ${DB_AAD_ADMIN_CLIENT_ID}
+        - name: TEAM_MI_CLIENT_ID
+          value: ${clientId}
+        - name: SSV_SHARED_SUBSCRIPTION_ID
+          value: ${SSV_SHARED_SUBSCRIPTION_ID}
+        - name: KEY_VAULT_NAME
+          value: ${SSV_PLATFORM_KEYVAULT}
+        - name: SP_CLIENT_ID_KV
+          value: ${SSV_SPN_CLIENT_ID_KV_NAME}
+        - name: SP_CLIENT_SECRET_KV
+          value: ${SSV_SPN_CLIENT_SECRET_KV_NAME}
+        - name: PG_WRITER_AD_GROUP
+          value: AAG-Azure-ADP-fcp-demo-snd4-PostgresDB_Writer
+        - name: PG_READER_AD_GROUP
+          value: AAG-Azure-ADP-fcp-demo-snd4-PostgresDB_Reader

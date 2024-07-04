@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ffc-demo-claim-service-dbmigration
+  namespace: flux-config
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: ffc-demo-claim-service
+    backstage.io/kubernetes-team: fcp-demo
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: ffc-demo-claim-service
+        backstage.io/kubernetes-team: fcp-demo
+    spec:
+      serviceAccountName: ${PLATFORM_DB_ADMIN}
+      restartPolicy: Never
+      containers:
+      - name: ffc-demo-claim-service-dbmigration
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 250Mi
+          limits:
+            cpu: 500m
+            memory: 600Mi
+  backoffLimit: 2

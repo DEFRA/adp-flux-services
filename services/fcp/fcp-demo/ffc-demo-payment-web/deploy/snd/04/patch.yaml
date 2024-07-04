@@ -11,6 +11,7 @@ spec:
     environment: production
     name: ffc-demo-payment-web
     namespace: fcp-demo
+    teamResourceGroupName: ${TEAM_RG}
     image: sndadpinfcr4401.azurecr.io/image/ffc-demo-payment-web:1.20.6 # {"$imagepolicy": "flux-config:ffc-demo-payment-web-snd-04"}
     serviceAccount:
       name: ffc-demo-payment-web
@@ -28,3 +29,5 @@ spec:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
       serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
