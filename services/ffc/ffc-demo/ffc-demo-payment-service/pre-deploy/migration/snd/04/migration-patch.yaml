@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: ffc-demo-payment-service-dbmigration
-        image: sndadpinfcr4401.azurecr.io/image/ffc-demo-payment-service-dbmigration:4.2.30-alpha.562747 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-dbmigration-snd-04"}
+        image: sndadpinfcr4401.azurecr.io/image/ffc-demo-payment-service-dbmigration:4.3.5 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-dbmigration-snd-04"}
         env:
         - name: POSTGRES_HOST
           value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
