@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: ccts-adp-permissions-test-1-snd-04
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ccts-adp-permissions-test-1
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  imageRepositoryRef:
+    name: ccts-adp-permissions-test-1
+  policy:
+    semver:
+      range: '>=0.1.0-0'

@@ -4,3 +4,4 @@ resources:
 - ../../base
 - ../../ccts-adp-test-frontend1
 - ../../ccts-adp-test-frontend2
+- ../../ccts-adp-permissions-test-1
