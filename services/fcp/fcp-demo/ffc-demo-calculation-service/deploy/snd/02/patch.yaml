@@ -11,6 +11,7 @@ spec:
     environment: production
     name: ffc-demo-calculation-service
     namespace: fcp-demo
+    teamResourceGroupName: ${TEAM_RG}
     image: sndadpinfcr2401.azurecr.io/image/ffc-demo-calculation-service:4.3.18 # {"$imagepolicy": "flux-config:ffc-demo-calculation-service-snd-02"}
     serviceAccount:
       name: ffc-demo-calculation-service
@@ -22,3 +23,5 @@ spec:
       configServiceName: ${APPCONFIG_NAME}
       configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
       serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
