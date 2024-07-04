@@ -6,3 +6,4 @@ resources:
 - ../../ffc-sfd-crm
 - ../../ffc-sfd-permissions-api
 - ../../ffc-sfd-customer-receiver-messages
+- ../../ffc-sfd-messages-processor

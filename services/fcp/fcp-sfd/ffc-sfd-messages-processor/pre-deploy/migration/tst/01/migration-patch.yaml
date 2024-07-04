@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ffc-sfd-messages-processor-dbmigration
+  namespace: fcp-sfd
+spec:
+  template:
+    spec:
+      containers:
+      - name: ffc-sfd-messages-processor-dbmigration
+        image: tstadpinfcr1401.azurecr.io/image/ffc-sfd-messages-processor-dbmigration:0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-dbmigration-tst-01"}
+        env:
+        - name: POSTGRES_HOST
+          value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
+        - name: SCHEMA_NAME
+          value: ${POSTGRES_SCHEMA_NAME}
+        - name: POSTGRES_DB
+          value: ${POSTGRES_DB}
+        - name: POSTGRES_PORT
+          value: ${POSTGRES_PORT}
+        - name: SCHEMA_USERNAME
+          value: AAG-Azure-ADP-fcp-sfd-tst1-PostgresDB_Writer
