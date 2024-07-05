@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-auth-infra
-      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-sfd-auth-dev-01:tag"}
+      version: 0.6.1 # {"$imagepolicy": "flux-config:ffc-sfd-auth-dev-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
