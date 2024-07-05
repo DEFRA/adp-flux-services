@@ -13,3 +13,4 @@ resources:
 - ../../ffc-sfd-customer-receiver-queries
 - ../../ffc-sfd-queries
 - ../../ffc-sfd-ahwp-stub
+- ../../ffc-sfd-business
