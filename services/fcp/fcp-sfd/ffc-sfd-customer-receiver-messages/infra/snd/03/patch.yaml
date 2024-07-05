@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-customer-receiver-messages-infra
-      version: 0.1.20-alpha.606060 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-messages-snd-03:tag"}
+      version: 0.1.20-alpha.606825 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-messages-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
