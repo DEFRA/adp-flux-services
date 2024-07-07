@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-demo-claim-service-infra
-      version: 5.2.6-alpha.608167 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-04:tag"}
+      version: 5.2.6-alpha.608179 # {"$imagepolicy": "flux-config:ffc-demo-claim-service-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
