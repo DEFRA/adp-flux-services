@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-messages-infra
-      version: "0.1.0" # {"$imagepolicy": "flux-config:ffc-sfd-messages-dev-01:tag"}
+      version: "0.1.33" # {"$imagepolicy": "flux-config:ffc-sfd-messages-dev-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
