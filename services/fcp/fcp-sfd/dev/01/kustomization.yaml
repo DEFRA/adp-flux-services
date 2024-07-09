@@ -17,3 +17,4 @@ resources:
 - ../../ffc-sfd-landing-page
 - ../../ffc-sfd-permissions
 - ../../ffc-sfd-auth
+- ../../ffc-sfd-messages
