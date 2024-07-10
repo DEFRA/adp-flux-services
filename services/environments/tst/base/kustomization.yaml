@@ -11,7 +11,7 @@ resources:
 - ../../../crai/crai-mcu/base/patch
 - ../../../fcp/fcp-ea-walleys-quarry/base/patch
 - ../../../ffc/fcp-dal/base/patch
-- ../../../ncea/ncea-search/base/patch
+# - ../../../ncea/ncea-search/base/patch
 - ../../../eutd/eutd-trade-exports-core/base/patch
 - ../../../fcp/fcp-sfd/base/patch
 - ../../../fcp/fcp-demo/base/patch
