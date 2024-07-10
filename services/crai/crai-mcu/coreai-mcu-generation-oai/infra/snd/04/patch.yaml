@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: coreai-mcu-generation-oai-infra
-      version: 0.1.20-alpha.611485 # {"$imagepolicy": "flux-config:coreai-mcu-generation-oai-snd-04:tag"}
+      version: 0.1.20-alpha.611663 # {"$imagepolicy": "flux-config:coreai-mcu-generation-oai-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
