@@ -3,7 +3,7 @@ kind: Kustomization
 metadata:
   name: cluster-base
 resources:
-  - kustomize.yaml
+  # - kustomize.yaml
   - ../base-sandpit
   - ps-exec-image-policy.yaml
   
