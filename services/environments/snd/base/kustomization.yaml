@@ -12,7 +12,7 @@ resources:
 - ../../../ffc/ffc-sfd/base/patch
 - ../../../lap/lap-mit/base/patch
 - ../../../ffc/fcp-find/base/patch
-# - ../../../ncea/ncea-search/base/patch
+- ../../../ncea/ncea-search/base/patch
 - ../../../eutd/eutd-find-my-pet/base/patch
 - ../../../eutd/eutd-find-my-cat/base/patch
 - ../../../ccts/ccts-adp/base/patch

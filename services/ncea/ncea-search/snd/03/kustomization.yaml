@@ -2,9 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../../base
-- ../../ncea-frontend
-- ../../ncea-harvester
-- ../../ncea-mapper
-- ../../ncea-enricher
-- ../../ncea-elasticsearch
-- ../../ncea-kibana
+# - ../../ncea-frontend
+# - ../../ncea-harvester
+# - ../../ncea-mapper
+# - ../../ncea-enricher
+# - ../../ncea-elasticsearch
+# - ../../ncea-kibana
+- ../../ncea-test-app

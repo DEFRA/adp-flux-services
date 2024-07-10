@@ -11,4 +11,4 @@ resources:
 - ../../../crai/crai-mcu/base/patch
 - ../../../eutd/eutd-test/base/patch
 - ../../../ccts/ccts-adp/base/patch
-# - ../../../ncea/ncea-search/base/patch
+- ../../../ncea/ncea-search/base/patch
