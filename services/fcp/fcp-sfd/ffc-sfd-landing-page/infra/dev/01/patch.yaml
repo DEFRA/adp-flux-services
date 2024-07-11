@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-landing-page-infra
-      version: 0.4.4 # {"$imagepolicy": "flux-config:ffc-sfd-landing-page-dev-01:tag"}
+      version: 0.4.5 # {"$imagepolicy": "flux-config:ffc-sfd-landing-page-dev-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
