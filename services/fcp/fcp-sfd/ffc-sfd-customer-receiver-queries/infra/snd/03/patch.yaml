@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-customer-receiver-queries-infra
-      version: 0.1.8-alpha.614153 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-queries-snd-03:tag"}
+      version: 0.1.8-alpha.614297 # {"$imagepolicy": "flux-config:ffc-sfd-customer-receiver-queries-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
