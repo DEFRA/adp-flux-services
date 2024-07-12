@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 4.3.6-alpha.614327 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-snd-04:tag"}
+      version: 4.3.6-alpha.614645 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-snd-04:tag"}
   values:
     environment: production
     name: ffc-demo-payment-service
     namespace: fcp-demo
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr4401.azurecr.io/image/ffc-demo-payment-service:4.3.6-alpha.614327 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-snd-04"}
+    image: sndadpinfcr4401.azurecr.io/image/ffc-demo-payment-service:4.3.6-alpha.614645 # {"$imagepolicy": "flux-config:ffc-demo-payment-service-snd-04"}
     serviceAccount:
       name: ffc-demo-payment-service
     container:
