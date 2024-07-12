@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-permissions-infra
-      version: 0.2.17 # {"$imagepolicy": "flux-config:ffc-sfd-permissions-dev-01:tag"}
+      version: 0.2.18 # {"$imagepolicy": "flux-config:ffc-sfd-permissions-dev-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
