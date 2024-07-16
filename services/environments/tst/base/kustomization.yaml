@@ -16,3 +16,4 @@ resources:
 - ../../../fcp/fcp-sfd/base/patch
 - ../../../fcp/fcp-demo/base/patch
 - ../../../eutd/eutd-test/base/patch
+- ../../../ccts/ccts-adp-test/base/patch

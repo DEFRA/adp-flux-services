@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: SmokeTest01-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: SmokeTest01
+    backstage.io/kubernetes-team: ccts-adp-test
+spec:
+  releaseName: SmokeTest01-infra
+  chart:
+    spec:
+      chart: SmokeTest01-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ccts-adp-test-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 5m0s
+  targetNamespace: ccts-adp-test
+  values:
+    namespace: ccts-adp-test

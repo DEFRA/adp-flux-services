@@ -12,3 +12,4 @@ resources:
 - ../../../eutd/eutd-test/base/patch
 - ../../../ccts/ccts-adp/base/patch
 - ../../../ncea/ncea-search/base/patch
+- ../../../ccts/ccts-adp-test/base/patch
