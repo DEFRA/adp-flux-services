@@ -7,6 +7,6 @@ metadata:
     backstage.io/kubernetes-team: fcp-demo
 spec:
   type: oci
-  interval: 5m
+  interval: 3m0s
   url: oci://${APPLICATION_ACR_NAME}.azurecr.io/helm
   provider: azure
