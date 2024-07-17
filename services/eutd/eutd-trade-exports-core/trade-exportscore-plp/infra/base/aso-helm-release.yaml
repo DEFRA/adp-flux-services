@@ -19,7 +19,7 @@ spec:
         namespace: flux-config
   install:
     createNamespace: true
-  interval: 5m0s
+  interval: 60m0s
   targetNamespace: eutd-trade-exports-core
   values:
     namespace: eutd-trade-exports-core

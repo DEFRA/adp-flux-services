@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: trade-exportscore-plp-dbmigration
+  namespace: flux-config
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: trade-exportscore-plp
+    backstage.io/kubernetes-team: eutd-trade-exports-core
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: trade-exportscore-plp
+        backstage.io/kubernetes-team: eutd-trade-exports-core
+    spec:
+      serviceAccountName: ${PLATFORM_DB_ADMIN}
+      restartPolicy: Never
+      containers:
+      - name: trade-exportscore-plp-dbmigration
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 250Mi
+          limits:
+            cpu: 500m
+            memory: 600Mi
+  backoffLimit: 2

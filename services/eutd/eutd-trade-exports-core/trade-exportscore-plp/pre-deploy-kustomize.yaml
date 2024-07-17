@@ -14,9 +14,10 @@ spec:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  path: ./services/eutd/eutd-trade-exports-core/trade-exportscore-plp/pre-deploy
-  interval: 5m
-  timeout: 3m
+  path: ./services/eutd/eutd-trade-exports-core/trade-exportscore-plp/pre-deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 60m0s
+  timeout: 3m0s
+  retryInterval: 2m0s
   prune: true
   wait: true
   force: true
@@ -27,11 +28,11 @@ spec:
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
       PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
-      POSTGRES_DB: eutd-trade-exports-core-trade-exportscore-plp
-      POSTGRES_PORT: "5432"
+      POSTGRES_DB_NAME: eutd-trade-exports-core-trade-exportscore-plp
+      POSTGRES_PORT: '"5432"'
       POSTGRES_SCHEMA_NAME: public
     substituteFrom:
     - kind: ConfigMap
       name: adp-platform-vars
     - kind: ConfigMap
-      name: trade-exportscore-plp-mi-credential
+      name: eutd-trade-exports-core-mi-credential
