@@ -8,5 +8,5 @@ metadata:
     backstage.io/kubernetes-team: crai-mcu
 spec:
   image: ${APPLICATION_ACR_NAME}.azurecr.io/image/coreai-mcu-frontend
-  interval: 5m0s
+  interval: 3m0s
   provider: azure
