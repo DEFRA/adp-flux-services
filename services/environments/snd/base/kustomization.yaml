@@ -13,8 +13,6 @@ resources:
 - ../../../lap/lap-mit/base/patch
 - ../../../ffc/fcp-find/base/patch
 - ../../../ncea/ncea-search/base/patch
-- ../../../eutd/eutd-find-my-pet/base/patch
-- ../../../eutd/eutd-find-my-cat/base/patch
 - ../../../ccts/ccts-adp/base/patch
 - ../../../crai/crai-mcu/base/patch
 - ../../../ffc/fcp-dal/base/patch
@@ -22,6 +20,4 @@ resources:
 - ../../../fcp/fcp-demo/base/patch
 - ../../../eutd/eutd-trade-exports-core/base/patch
 - ../../../fcp/fcp-sfd/base/patch
-- ../../../eutd/eutd-adp-test/base/patch
-- ../../../eutd/eutd-test/base/patch
 - ../../../ccts/ccts-adp-test/base/patch

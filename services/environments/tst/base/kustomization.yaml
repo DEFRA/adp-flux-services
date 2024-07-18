@@ -5,8 +5,6 @@ resources:
 - notification.yaml
 - ../../../ffc/ffc-demo/base/patch
 - ../../../adp-platform/kustomize.yaml
-- ../../../eutd/eutd-find-my-pet/base/patch
-- ../../../eutd/eutd-find-my-cat/base/patch
 - ../../../ccts/ccts-adp/base/patch
 - ../../../crai/crai-mcu/base/patch
 - ../../../fcp/fcp-ea-walleys-quarry/base/patch
@@ -15,5 +13,4 @@ resources:
 - ../../../eutd/eutd-trade-exports-core/base/patch
 - ../../../fcp/fcp-sfd/base/patch
 - ../../../fcp/fcp-demo/base/patch
-- ../../../eutd/eutd-test/base/patch
 - ../../../ccts/ccts-adp-test/base/patch
