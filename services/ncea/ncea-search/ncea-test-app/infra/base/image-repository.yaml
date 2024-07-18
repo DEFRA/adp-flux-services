@@ -8,5 +8,5 @@ metadata:
     backstage.io/kubernetes-team: ncea-search
 spec:
   image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ncea-test-app
-  interval: 5m0s
+  interval: 3m0s
   provider: azure
