@@ -10,8 +10,8 @@ spec:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  interval: 5m
-  timeout: 3m
+  interval: 3m
+  timeout: 2m
   prune: true
   path: ./services/ccts/ccts-adp/${ENVIRONMENT}/${ENVIRONMENT_ID}
   postBuild:
@@ -26,7 +26,7 @@ spec:
       TEAM_CPU_QUOTA: "2000"
       TEAM_MEMORY_QUOTA: 3000Mi
       TEAM_PODS_QUOTA: "20"
-      CONTAINER_MAX_CPU: 500m
+      CONTAINER_MAX_CPU: 600m
       CONTAINER_MAX_MEMORY: 1000Mi
     substituteFrom:
     - kind: ConfigMap
