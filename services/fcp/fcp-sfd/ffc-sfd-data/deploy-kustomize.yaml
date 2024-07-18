@@ -15,8 +15,9 @@ spec:
     name: services-repository
     namespace: flux-config
   path: ./services/fcp/fcp-sfd/ffc-sfd-data/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
-  interval: 5m
-  timeout: 3m
+  interval: 60m0s
+  timeout: 3m0s
+  retryInterval: 2m0s
   prune: true
   wait: true
   force: true
