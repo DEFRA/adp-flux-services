@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-messages-processor-infra
-      version: "0.1.55-alpha.618656" # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-snd-03:tag"}
+      version: "0.1.56-alpha.622901" # {"$imagepolicy": "flux-config:ffc-sfd-messages-processor-snd-03:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
