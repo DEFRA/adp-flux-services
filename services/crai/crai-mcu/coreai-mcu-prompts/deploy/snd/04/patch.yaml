@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.0 # {"$imagepolicy": "flux-config:coreai-mcu-prompts-snd-04:tag"}
+      version: 0.1.8 # {"$imagepolicy": "flux-config:coreai-mcu-prompts-snd-04:tag"}
   values:
     environment: production
     name: coreai-mcu-prompts
     namespace: crai-mcu
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr4401.azurecr.io/image/coreai-mcu-prompts:0.1.0 # {"$imagepolicy": "flux-config:coreai-mcu-prompts-snd-04"}
+    image: sndadpinfcr4401.azurecr.io/image/coreai-mcu-prompts:0.1.8 # {"$imagepolicy": "flux-config:coreai-mcu-prompts-snd-04"}
     serviceAccount:
       name: coreai-mcu-prompts
     container:
