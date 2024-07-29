@@ -1,0 +1,30 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ffc-sfd-document-upload-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-sfd-document-upload
+    backstage.io/kubernetes-team: fcp-sfd
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/fcp/fcp-sfd/ffc-sfd-document-upload/infra/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 60m0s
+  timeout: 3m0s
+  retryInterval: 2m0s
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SERVICE_NAME: ffc-sfd-document-upload
+      TEAM_RG: ${TEAM_RG}
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      SERVICE_CODE: ${SERVICE_CODE}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars

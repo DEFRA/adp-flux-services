@@ -18,3 +18,4 @@ resources:
 - ../../ffc-sfd-permissions-api
 - ../../ffc-sfd-messages-processor
 - ../../ffc-sfd-crm
+- ../../ffc-sfd-document-upload
