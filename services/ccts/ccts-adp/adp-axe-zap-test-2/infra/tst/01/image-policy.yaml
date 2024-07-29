@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: adp-axe-zap-test-2-tst-01
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-axe-zap-test-2
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  imageRepositoryRef:
+    name: adp-axe-zap-test-2
+  policy:
+    semver:
+      range: '>=0.1.0-0'
