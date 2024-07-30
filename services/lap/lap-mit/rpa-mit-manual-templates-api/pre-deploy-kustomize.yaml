@@ -1,20 +1,20 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: rpa-mit-manual-templates-api-deploy
+  name: rpa-mit-manual-templates-api-pre-deploy
   namespace: flux-config
   labels:
     backstage.io/kubernetes-id: rpa-mit-manual-templates-api
     backstage.io/kubernetes-team: lap-mit
 spec:
   dependsOn:
-  - name: rpa-mit-manual-templates-api-pre-deploy
+  - name: rpa-mit-manual-templates-api-infra
     namespace: flux-config
   sourceRef:
     kind: GitRepository
     name: services-repository
     namespace: flux-config
-  path: ./services/lap/lap-mit/rpa-mit-manual-templates-api/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  path: ./services/lap/lap-mit/rpa-mit-manual-templates-api/pre-deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 60m0s
   timeout: 3m0s
   retryInterval: 2m0s
@@ -23,14 +23,16 @@ spec:
   force: true
   postBuild:
     substitute:
+      SHARED_POSTGRES_SERVER_01: ${SHARED_POSTGRES_SERVER_01}
       SERVICE_NAME: rpa-mit-manual-templates-api
       TEAM_NAMESPACE: ${TEAM_NAMESPACE}
       TEAM_NAME: ${TEAM_NAME}
-      TEAM_RG: ${TEAM_RG}
-      APPCONFIG_NAME: ${APPCONFIG_NAME}
-      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+      PLATFORM_DB_ADMIN: ${PLATFORM_DB_ADMIN}
+      POSTGRES_DB_NAME: lap-mit-invoices
+      POSTGRES_PORT: '"5432"'
+      POSTGRES_SCHEMA_NAME: public
     substituteFrom:
     - kind: ConfigMap
       name: adp-platform-vars
     - kind: ConfigMap
-      name: rpa-mit-manual-templates-api-mi-credential
+      name: lap-mit-mi-credential

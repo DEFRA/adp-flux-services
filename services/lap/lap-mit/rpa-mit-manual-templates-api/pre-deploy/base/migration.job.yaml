@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rpa-mit-manual-templates-api-dbmigration
+  namespace: flux-config
+  labels:
+    azure.workload.identity/use: "true"
+    backstage.io/kubernetes-id: rpa-mit-manual-templates-api
+    backstage.io/kubernetes-team: lap-mit
+spec:
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        backstage.io/kubernetes-id: rpa-mit-manual-templates-api
+        backstage.io/kubernetes-team: lap-mit
+    spec:
+      serviceAccountName: ${PLATFORM_DB_ADMIN}
+      restartPolicy: Never
+      containers:
+      - name: rpa-mit-manual-templates-api-dbmigration
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 250Mi
+          limits:
+            cpu: 500m
+            memory: 600Mi
+  backoffLimit: 2
