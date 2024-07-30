@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: adp-axe-zap-test-3-infra
-      version: 0.1.1-alpha.630770 # {"$imagepolicy": "flux-config:adp-axe-zap-test-3-snd-04:tag"}
+      version: 0.1.1-alpha.630850 # {"$imagepolicy": "flux-config:adp-axe-zap-test-3-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}

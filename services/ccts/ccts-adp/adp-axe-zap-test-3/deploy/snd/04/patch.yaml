@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.1-alpha.630770 # {"$imagepolicy": "flux-config:adp-axe-zap-test-3-snd-04:tag"}
+      version: 0.1.1-alpha.630850 # {"$imagepolicy": "flux-config:adp-axe-zap-test-3-snd-04:tag"}
   values:
     environment: production
     name: adp-axe-zap-test-3
     namespace: ccts-adp
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr4401.azurecr.io/image/adp-axe-zap-test-3:0.1.1-alpha.630770 # {"$imagepolicy": "flux-config:adp-axe-zap-test-3-snd-04"}
+    image: sndadpinfcr4401.azurecr.io/image/adp-axe-zap-test-3:0.1.1-alpha.630850 # {"$imagepolicy": "flux-config:adp-axe-zap-test-3-snd-04"}
     serviceAccount:
       name: adp-axe-zap-test-3
     labels:
