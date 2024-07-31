@@ -18,3 +18,4 @@ resources:
 - ../../ffc-sfd-permissions
 - ../../ffc-sfd-auth
 - ../../ffc-sfd-messages
+- ../../ffc-sfd-file-processor
