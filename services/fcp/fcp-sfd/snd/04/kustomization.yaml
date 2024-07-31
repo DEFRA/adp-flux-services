@@ -19,3 +19,4 @@ resources:
 - ../../ffc-sfd-messages-processor
 - ../../ffc-sfd-crm
 - ../../ffc-sfd-document-upload
+- ../../ffc-sfd-file-processor
