@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: Lorenzo-Pre-Smoke-Test-0108-snd-04
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: Lorenzo-Pre-Smoke-Test-0108
+    backstage.io/kubernetes-team: fcp-jeevan-test
+spec:
+  imageRepositoryRef:
+    name: Lorenzo-Pre-Smoke-Test-0108
+  policy:
+    semver:
+      range: '>=0.1.0-0'

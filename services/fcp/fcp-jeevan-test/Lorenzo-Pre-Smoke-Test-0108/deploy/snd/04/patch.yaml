@@ -1,0 +1,33 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: Lorenzo-Pre-Smoke-Test-0108
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:Lorenzo-Pre-Smoke-Test-0108-snd-04:tag"}
+  values:
+    environment: production
+    name: Lorenzo-Pre-Smoke-Test-0108
+    namespace: fcp-jeevan-test
+    teamResourceGroupName: ${TEAM_RG}
+    image: sndadpinfcr4401.azurecr.io/image/Lorenzo-Pre-Smoke-Test-0108:0.1.0 # {"$imagepolicy": "flux-config:Lorenzo-Pre-Smoke-Test-0108-snd-04"}
+    serviceAccount:
+      name: Lorenzo-Pre-Smoke-Test-0108
+    labels:
+      component: web
+    container:
+      imagePullPolicy: Always
+    ingress:
+      class: nginx
+      endpoint: Lorenzo-Pre-Smoke-Test-0108
+      server: snd4.adp.defra.gov.uk
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}
