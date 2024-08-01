@@ -14,3 +14,4 @@ resources:
 - ../../../eutd/eutd-test/base/patch
 - ../../../ccts/ccts-adp-test/base/patch
 - ../../../lap/lap-mit/base/patch
+- ../../../fcp/fcp-demo/base/patch
