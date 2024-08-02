@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: adp-kam-watk
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-kam-watk
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  releaseName: adp-kam-watk
+  chart:
+    spec:
+      chart: adp-kam-watk
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ccts-adp-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 60m0s
+  targetNamespace: ccts-adp

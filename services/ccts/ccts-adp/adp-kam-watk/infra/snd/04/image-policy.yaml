@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: adp-kam-watk-snd-04
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-kam-watk
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  imageRepositoryRef:
+    name: adp-kam-watk
+  policy:
+    semver:
+      range: '>=0.1.0-0'
