@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: crai-jaf-backend-dbmigration
-        image: sndadpinfcr4401.azurecr.io/image/crai-jaf-backend-dbmigration:0.1.8-alpha.637035 # {"$imagepolicy": "flux-config:crai-jaf-backend-dbmigration-snd-04"}
+        image: sndadpinfcr4401.azurecr.io/image/crai-jaf-backend-dbmigration:0.1.8-alpha.637138 # {"$imagepolicy": "flux-config:crai-jaf-backend-dbmigration-snd-04"}
         env:
         - name: POSTGRES_HOST
           value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
