@@ -8,3 +8,4 @@ resources:
 - ../../crai-jaf-backend
 - ../../mcu-techspike-ai-web
 - ../../coreai-mcu-generation-oai
+- ../../coreai-mcu-knowledge-pgv
