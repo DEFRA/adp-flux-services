@@ -19,3 +19,4 @@ resources:
 - ../../ffc-sfd-auth
 - ../../ffc-sfd-messages
 - ../../ffc-sfd-file-processor
+- ../../ffc-sfd-file-receiver
