@@ -4,3 +4,4 @@ resources:
 - ../../base
 - ../../ffc-demo-claim-service
 - ../../ffc-demo-payment-web
+- ../../ffc-demo-payment-service
