@@ -31,4 +31,4 @@ spec:
         - name: PG_READER_AD_GROUP
           value: AAG-Azure-ADP-crai-mcu-snd4-PostgresDB_Reader
         - name: DB_MIGRATION_VERSION
-          value: 0.1.25-alpha.641281 # {"$imagepolicy": "flux-config:coreai-mcu-knowledge-pgv-dbmigration-snd-04:tag"}
+          value: 0.1.25-alpha.641480 # {"$imagepolicy": "flux-config:coreai-mcu-knowledge-pgv-dbmigration-snd-04:tag"}

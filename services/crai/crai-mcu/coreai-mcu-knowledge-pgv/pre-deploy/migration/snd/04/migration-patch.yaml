@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: coreai-mcu-knowledge-pgv-dbmigration
-        image: sndadpinfcr4401.azurecr.io/image/coreai-mcu-knowledge-pgv-dbmigration:0.1.25-alpha.641281 # {"$imagepolicy": "flux-config:coreai-mcu-knowledge-pgv-dbmigration-snd-04"}
+        image: sndadpinfcr4401.azurecr.io/image/coreai-mcu-knowledge-pgv-dbmigration:0.1.25-alpha.641480 # {"$imagepolicy": "flux-config:coreai-mcu-knowledge-pgv-dbmigration-snd-04"}
         env:
         - name: POSTGRES_HOST
           value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
