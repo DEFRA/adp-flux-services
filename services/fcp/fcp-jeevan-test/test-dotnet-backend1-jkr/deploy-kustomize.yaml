@@ -1,0 +1,36 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: test-dotnet-backend1-jkr-deploy
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: test-dotnet-backend1-jkr
+    backstage.io/kubernetes-team: fcp-jeevan-test
+spec:
+  dependsOn:
+  - name: test-dotnet-backend1-jkr-infra
+    namespace: flux-config
+  sourceRef:
+    kind: GitRepository
+    name: services-repository
+    namespace: flux-config
+  path: ./services/fcp/fcp-jeevan-test/test-dotnet-backend1-jkr/deploy/${ENVIRONMENT}/${ENVIRONMENT_ID}
+  interval: 60m0s
+  timeout: 3m0s
+  retryInterval: 2m0s
+  prune: true
+  wait: true
+  force: true
+  postBuild:
+    substitute:
+      SERVICE_NAME: test-dotnet-backend1-jkr
+      TEAM_NAMESPACE: ${TEAM_NAMESPACE}
+      TEAM_NAME: ${TEAM_NAME}
+      TEAM_RG: ${TEAM_RG}
+      APPCONFIG_NAME: ${APPCONFIG_NAME}
+      APPCONFIG_MI_CLIENTID: ${APPCONFIG_MI_CLIENTID}
+    substituteFrom:
+    - kind: ConfigMap
+      name: adp-platform-vars
+    - kind: ConfigMap
+      name: test-dotnet-backend1-jkr-mi-credential
