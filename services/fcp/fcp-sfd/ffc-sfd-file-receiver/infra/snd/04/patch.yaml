@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-file-receiver-infra
-      version: 0.1.2-alpha.642325 # {"$imagepolicy": "flux-config:ffc-sfd-file-receiver-snd-04:tag"}
+      version: 0.1.2-alpha.642327 # {"$imagepolicy": "flux-config:ffc-sfd-file-receiver-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
