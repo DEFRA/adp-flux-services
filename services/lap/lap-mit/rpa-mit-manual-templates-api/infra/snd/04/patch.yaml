@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: rpa-mit-manual-templates-api-infra
-      version: 0.1.2-alpha.642983 # {"$imagepolicy": "flux-config:rpa-mit-manual-templates-api-snd-04:tag"}
+      version: 0.1.2-alpha.643338 # {"$imagepolicy": "flux-config:rpa-mit-manual-templates-api-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
