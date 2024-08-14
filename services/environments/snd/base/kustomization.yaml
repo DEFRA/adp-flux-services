@@ -19,5 +19,3 @@ resources:
 - ../../../fcp/fcp-demo/base/patch
 - ../../../eutd/eutd-trade-exports-core/base/patch
 - ../../../fcp/fcp-sfd/base/patch
-- ../../../ccts/ccts-adp-test/base/patch
-- ../../../fcp/fcp-jeevan-test/base/patch

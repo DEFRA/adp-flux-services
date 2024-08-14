@@ -17,4 +17,3 @@ resources:
 - ../../../ffc/fcp-find/base/patch
 - ../../../ncea/ncea-search/base/patch
 - ../../../eutd/eutd-trade-exports-core/base/patch
-- ../../../ccts/ccts-adp-test/base/patch
