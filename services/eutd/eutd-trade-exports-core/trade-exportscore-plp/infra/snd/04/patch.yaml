@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: trade-exportscore-plp-infra
-      version: 1.0.14 # {"$imagepolicy": "flux-config:trade-exportscore-plp-snd-04:tag"}
+      version: 1.0.19-alpha.647751 # {"$imagepolicy": "flux-config:trade-exportscore-plp-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
