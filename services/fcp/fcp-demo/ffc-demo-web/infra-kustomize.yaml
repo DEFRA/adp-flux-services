@@ -14,7 +14,7 @@ spec:
   path: ./services/fcp/fcp-demo/ffc-demo-web/infra/${ENVIRONMENT}/${ENVIRONMENT_ID}
   interval: 60m0s
   timeout: 3m0s
-  retryInterval: 2m0s
+  retryInterval: 2m1s
   prune: true
   wait: true
   force: true
