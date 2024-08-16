@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: fcp-data-access-layer-api-infra
-      version: 1.1.0-alpha.649625 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-04:tag"}
+      version: 1.1.0-alpha.649722 # {"$imagepolicy": "flux-config:fcp-data-access-layer-api-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
