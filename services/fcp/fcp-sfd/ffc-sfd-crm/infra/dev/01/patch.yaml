@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-crm-infra
-      version: 0.1.2 # {"$imagepolicy": "flux-config:ffc-sfd-crm-dev-01:tag"}
+      version: 0.1.5 # {"$imagepolicy": "flux-config:ffc-sfd-crm-dev-01:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
