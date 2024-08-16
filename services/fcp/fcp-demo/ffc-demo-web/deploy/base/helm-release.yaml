@@ -19,5 +19,5 @@ spec:
         namespace: flux-config
   install:
     createNamespace: true
-  interval: 60m0s
+  interval: 50m0s
   targetNamespace: fcp-demo
