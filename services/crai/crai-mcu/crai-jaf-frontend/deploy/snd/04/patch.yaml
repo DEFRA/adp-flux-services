@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.1-alpha.636743 # {"$imagepolicy": "flux-config:crai-jaf-frontend-snd-04:tag"}
+      version: 0.1.1 # {"$imagepolicy": "flux-config:crai-jaf-frontend-snd-04:tag"}
   values:
     environment: production
     name: crai-jaf-frontend
     namespace: crai-mcu
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr4401.azurecr.io/image/crai-jaf-frontend:0.1.1-alpha.636743 # {"$imagepolicy": "flux-config:crai-jaf-frontend-snd-04"}
+    image: sndadpinfcr4401.azurecr.io/image/crai-jaf-frontend:0.1.1 # {"$imagepolicy": "flux-config:crai-jaf-frontend-snd-04"}
     serviceAccount:
       name: crai-jaf-frontend
     labels:
