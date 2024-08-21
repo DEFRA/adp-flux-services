@@ -1,0 +1,12 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: ttt-adp-test-helm-repo
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-team: ttt-adp-test
+spec:
+  type: oci
+  interval: 3m0s
+  url: oci://${APPLICATION_ACR_NAME}.azurecr.io/helm
+  provider: azure

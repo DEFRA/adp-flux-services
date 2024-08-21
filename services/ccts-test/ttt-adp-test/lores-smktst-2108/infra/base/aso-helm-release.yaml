@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: lores-smktst-2108-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: lores-smktst-2108
+    backstage.io/kubernetes-team: ttt-adp-test
+spec:
+  releaseName: lores-smktst-2108-infra
+  chart:
+    spec:
+      chart: lores-smktst-2108-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ttt-adp-test-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 60m0s
+  targetNamespace: ttt-adp-test
+  values:
+    namespace: ttt-adp-test

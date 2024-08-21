@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: lores-smktst-2108-snd-04
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: lores-smktst-2108
+    backstage.io/kubernetes-team: ttt-adp-test
+spec:
+  imageRepositoryRef:
+    name: lores-smktst-2108
+  policy:
+    semver:
+      range: '>=0.1.0-0'
