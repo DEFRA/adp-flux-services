@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 2.0.4-alpha.655261 # {"$imagepolicy": "flux-config:trade-exportscore-plp-snd-04:tag"}
+      version: 2.0.4-alpha.655330 # {"$imagepolicy": "flux-config:trade-exportscore-plp-snd-04:tag"}
   values:
     environment: production
     name: trade-exportscore-plp
     namespace: eutd-trade-exports-core
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr4401.azurecr.io/image/trade-exportscore-plp:2.0.4-alpha.655261 # {"$imagepolicy": "flux-config:trade-exportscore-plp-snd-04"}
+    image: sndadpinfcr4401.azurecr.io/image/trade-exportscore-plp:2.0.4-alpha.655330 # {"$imagepolicy": "flux-config:trade-exportscore-plp-snd-04"}
     serviceAccount:
       name: trade-exportscore-plp
     container:
