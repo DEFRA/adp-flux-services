@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: adp-test-dan-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: adp-test-dan
+    backstage.io/kubernetes-team: ttt-adp-test
+spec:
+  releaseName: adp-test-dan-infra
+  chart:
+    spec:
+      chart: adp-test-dan-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ttt-adp-test-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 60m0s
+  targetNamespace: ttt-adp-test
+  values:
+    namespace: ttt-adp-test
