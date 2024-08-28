@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: crai-jaf-frontend-infra
-      version: 0.1.1 # {"$imagepolicy": "flux-config:crai-jaf-frontend-snd-04:tag"}
+      version: 0.1.2 # {"$imagepolicy": "flux-config:crai-jaf-frontend-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
