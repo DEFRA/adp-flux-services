@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-sfd-file-processor-infra
-      version: 0.1.4-alpha.672931 # {"$imagepolicy": "flux-config:ffc-sfd-file-processor-snd-04:tag"}
+      version: 0.1.4-alpha.672970 # {"$imagepolicy": "flux-config:ffc-sfd-file-processor-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
