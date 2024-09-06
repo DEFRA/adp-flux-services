@@ -5,7 +5,7 @@ if ($enableDebug) {
     Set-Variable -Name InformationPreference -Value Continue -Scope global
 }
  
-[string]$TeamMIClientId = $env:AZURE_CLIENT_ID
+[string]$TeamMIClientId = $env:TEAM_MI_CLIENT_ID
 [string]$TeamMITenantId = $env:AZURE_TENANT_ID
 [string]$TeamMISubscriptionId = $env:TEAM_MI_SUBSCRIPTION_ID
 [string]$TeamMIFederatedTokenFile = $env:AZURE_FEDERATED_TOKEN_FILE
@@ -46,7 +46,7 @@ try {
     
     Write-Host "Selecting data from the table ${ServiceMIName}"
     $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $PostgresDatabase -PostgresUsername $PostgresWriterAdGroup -Path $assignPermissionsTempFile.FullName
-    Write-Host "Select data from ${PostgresHost} successfully"
+    Write-Host "Selected data from ${PostgresHost} successfully"
 
     # Successful exit
     $exitCode = 0
