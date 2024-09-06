@@ -8,6 +8,7 @@ if ($enableDebug) {
 [string]$TeamMIClientId = $env:TEAM_MI_CLIENT_ID
 [string]$TeamMITenantId = $env:AZURE_TENANT_ID
 [string]$TeamMISubscriptionId = $env:TEAM_MI_SUBSCRIPTION_ID
+[string]$TeamMIName = $env:TEAM_MI_NAME
 [string]$TeamMIFederatedTokenFile = $env:AZURE_FEDERATED_TOKEN_FILE
 [string]$SubscriptionName = $env:SUBSCRIPTION_NAME
 [string]$ServiceMIName = $env:SERVICE_MI_NAME
@@ -40,12 +41,12 @@ try {
     [string]$command = Get-SQLCommands
     Write-Debug "${functionName}:command=$command"
     
-    [System.IO.FileInfo]$assignPermissionsTempFile = [System.IO.Path]::GetTempFileName()
-    [string]$content = Set-Content -Path $assignPermissionsTempFile.FullName -Value $command -PassThru -Force
-    Write-Debug "${functionName}:$($assignPermissionsTempFile.FullName)=$content"
+    [System.IO.FileInfo]$selectDataQueriesTempFile = [System.IO.Path]::GetTempFileName()
+    [string]$content = Set-Content -Path $selectDataQueriesTempFile.FullName -Value $command -PassThru -Force
+    Write-Debug "${functionName}:$($selectDataQueriesTempFile.FullName)=$content"
     
     Write-Host "Selecting data from the table ${ServiceMIName}"
-    $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $PostgresDatabase -PostgresUsername $PostgresWriterAdGroup -Path $assignPermissionsTempFile.FullName
+    $null = Invoke-PSQLScript -PostgresHost $PostgresHost -PostgresDatabase $PostgresDatabase -PostgresUsername $TeamMIName -Path $selectDataQueriesTempFile.FullName
     Write-Host "Selected data from ${PostgresHost} successfully"
 
     # Successful exit
@@ -57,8 +58,7 @@ catch {
     throw $_.Exception
 }
 finally {
-    Remove-Item -Path $assignPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
-    Remove-Item -Path $assignReadPermissionsTempFile.FullName -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path $selectDataQueriesTempFile.FullName -Force -ErrorAction SilentlyContinue
 
     [DateTime]$endTime = [DateTime]::UtcNow
     [Timespan]$duration = $endTime.Subtract($startTime)
