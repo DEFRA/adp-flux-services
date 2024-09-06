@@ -11,6 +11,8 @@ if ($enableDebug) {
 [string]$TeamMIFederatedTokenFile = $env:AZURE_FEDERATED_TOKEN_FILE
 [string]$SubscriptionName = $env:SUBSCRIPTION_NAME
 [string]$ServiceMIName = $env:SERVICE_MI_NAME
+[string]$PostgresHost = $env:AZURE_CLIENT_ID
+[string]$PostgresDatabase = $env:AZURE_CLIENT_ID
 
 Write-Host "Running the powershell script with parameters $Params"
 
