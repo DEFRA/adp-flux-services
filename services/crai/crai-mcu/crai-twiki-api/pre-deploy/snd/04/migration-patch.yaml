@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: crai-twiki-api-dbmigration
-        image: sndadpinfcr4401.azurecr.io/image/crai-twiki-api-dbmigration:0.1.1 # {"$imagepolicy": "flux-config:crai-twiki-api-dbmigration-snd-04"}
+        image: sndadpinfcr4401.azurecr.io/image/crai-twiki-api-dbmigration:0.1.7 # {"$imagepolicy": "flux-config:crai-twiki-api-dbmigration-snd-04"}
         env:
         - name: POSTGRES_HOST
           value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
