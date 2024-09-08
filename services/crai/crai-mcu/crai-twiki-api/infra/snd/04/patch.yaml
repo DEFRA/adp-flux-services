@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: crai-twiki-api-infra
-      version: 0.1.1 # {"$imagepolicy": "flux-config:crai-twiki-api-snd-04:tag"}
+      version: 0.1.7 # {"$imagepolicy": "flux-config:crai-twiki-api-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
