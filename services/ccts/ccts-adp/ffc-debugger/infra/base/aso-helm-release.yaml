@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ffc-debugger-infra
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-debugger
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  releaseName: ffc-debugger-infra
+  chart:
+    spec:
+      chart: ffc-debugger-infra
+      version: 0.1.0
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ccts-adp-helm-repo
+        namespace: flux-config
+  install:
+    createNamespace: true
+  interval: 60m0s
+  targetNamespace: ccts-adp
+  values:
+    namespace: ccts-adp

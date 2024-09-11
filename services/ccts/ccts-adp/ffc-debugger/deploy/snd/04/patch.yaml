@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ffc-debugger
+  namespace: flux-config
+spec:
+  chart:
+    spec:
+      version: 0.1.0 # {"$imagepolicy": "flux-config:ffc-debugger-snd-04:tag"}
+  values:
+    environment: production
+    name: ffc-debugger
+    namespace: ccts-adp
+    teamResourceGroupName: ${TEAM_RG}
+    image: sndadpinfcr4401.azurecr.io/image/ffc-debugger:0.1.0 # {"$imagepolicy": "flux-config:ffc-debugger-snd-04"}
+    serviceAccount:
+      name: ffc-debugger
+    container:
+      imagePullPolicy: Always
+    deployment:
+      priorityClassName: default
+    containerConfigMap:
+      configServiceName: ${APPCONFIG_NAME}
+      configServiceMIClientId: ${APPCONFIG_MI_CLIENTID}
+      serviceMIClientId: ${clientId}
+    storageAccountPrefix: ${STORAGEACCOUNT_PREFIX}
+    enablePrivateEndpoint: ${ENABLE_PRIVATE_ENDPOINT}

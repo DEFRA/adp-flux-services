@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: ffc-debugger
+  namespace: flux-config
+  labels:
+    backstage.io/kubernetes-id: ffc-debugger
+    backstage.io/kubernetes-team: ccts-adp
+spec:
+  image: ${APPLICATION_ACR_NAME}.azurecr.io/image/ffc-debugger
+  interval: 3m0s
+  provider: azure
