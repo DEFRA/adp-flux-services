@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ffc-debugger-infra
-      version: 0.1.1-alpha.678264 # {"$imagepolicy": "flux-config:ffc-debugger-snd-04:tag"}
+      version: 0.1.1-alpha.679597 # {"$imagepolicy": "flux-config:ffc-debugger-snd-04:tag"}
   values:
     namespace: ${TEAM_NAMESPACE}
     fluxConfigNamespace: ${FLUX_CONFIG_NAMESPACE}
