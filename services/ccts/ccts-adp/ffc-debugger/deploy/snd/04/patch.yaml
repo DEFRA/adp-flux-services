@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     spec:
-      version: 0.1.1-alpha.679597 # {"$imagepolicy": "flux-config:ffc-debugger-snd-04:tag"}
+      version: 0.1.1-alpha.679825 # {"$imagepolicy": "flux-config:ffc-debugger-snd-04:tag"}
   values:
     environment: production
     name: ffc-debugger
     namespace: ccts-adp
     teamResourceGroupName: ${TEAM_RG}
-    image: sndadpinfcr4401.azurecr.io/image/ffc-debugger:0.1.1-alpha.679597 # {"$imagepolicy": "flux-config:ffc-debugger-snd-04"}
+    image: sndadpinfcr4401.azurecr.io/image/ffc-debugger:0.1.1-alpha.679825 # {"$imagepolicy": "flux-config:ffc-debugger-snd-04"}
     serviceAccount:
       name: ffc-debugger
     container:
