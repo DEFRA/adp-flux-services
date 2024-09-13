@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: ffc-debugger-dbmigration
-        image: sndadpinfcr4401.azurecr.io/image/ffc-debugger-dbmigration:0.1.1-alpha.681030 # {"$imagepolicy": "flux-config:ffc-debugger-dbmigration-snd-04"}
+        image: sndadpinfcr4401.azurecr.io/image/ffc-debugger-dbmigration:0.1.1-alpha.681089 # {"$imagepolicy": "flux-config:ffc-debugger-dbmigration-snd-04"}
         env:
         - name: POSTGRES_HOST
           value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
