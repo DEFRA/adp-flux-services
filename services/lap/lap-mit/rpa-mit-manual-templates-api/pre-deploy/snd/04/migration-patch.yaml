@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: rpa-mit-manual-templates-api-dbmigration
-        image: sndadpinfcr4401.azurecr.io/image/rpa-mit-manual-templates-api-dbmigration:0.1.2-alpha.701533 # {"$imagepolicy": "flux-config:rpa-mit-manual-templates-api-dbmigration-snd-04"}
+        image: sndadpinfcr4401.azurecr.io/image/rpa-mit-manual-templates-api-dbmigration:0.1.2-alpha.701574 # {"$imagepolicy": "flux-config:rpa-mit-manual-templates-api-dbmigration-snd-04"}
         env:
         - name: POSTGRES_HOST
           value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
