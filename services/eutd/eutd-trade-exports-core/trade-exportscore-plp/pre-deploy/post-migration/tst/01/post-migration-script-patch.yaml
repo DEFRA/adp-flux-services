@@ -31,4 +31,4 @@ spec:
         - name: PG_READER_AD_GROUP
           value: AAG-Azure-ADP-eutd-trade-exports-core-tst1-PostgresDB_Reader
         - name: DB_MIGRATION_VERSION
-          value: 3.0.29 # {"$imagepolicy": "flux-config:trade-exportscore-plp-dbmigration-tst-01:tag"}
+          value: 3.0.31 # {"$imagepolicy": "flux-config:trade-exportscore-plp-dbmigration-tst-01:tag"}
