@@ -11,3 +11,4 @@ resources:
 - ../../../ccts/ccts-adp-test/base/patch
 - ../../../fcp/fcp-demo/base/patch
 - ../../../eutd/eutd-trade-exports-core/base/patch
+- ../../../ffc/fcp-dal/base/patch
