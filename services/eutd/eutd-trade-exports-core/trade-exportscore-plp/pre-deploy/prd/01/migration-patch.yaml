@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: trade-exportscore-plp-dbmigration
-        image: prdadpinfcr1401.azurecr.io/image/trade-exportscore-plp-dbmigration:6.2.0 # {"$imagepolicy": "flux-config:trade-exportscore-plp-dbmigration-prd-01"}
+        image: prdadpinfcr1401.azurecr.io/image/trade-exportscore-plp-dbmigration:6.3.0 # {"$imagepolicy": "flux-config:trade-exportscore-plp-dbmigration-prd-01"}
         env:
         - name: POSTGRES_HOST
           value: ${SHARED_POSTGRES_SERVER_01}.postgres.database.azure.com
