@@ -11,4 +11,4 @@ spec:
     name: fcp-data-access-layer-api
   policy:
     semver:
-      range: '1.4.1'
+      range: '>=0.1.0-0'
