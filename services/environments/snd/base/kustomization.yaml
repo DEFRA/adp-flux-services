@@ -4,7 +4,6 @@ resources:
 - image-update.yaml
 - notification.yaml
 - ../../../ffc/ffc-ffd/base/patch
-- ../../../ffc/ffc-dal/base/patch
 - ../../../adp-platform/kustomize.yaml
 - ../../../eutd/eutd-trade-exports-ai/base/patch
 - ../../../ffc/ffc-find/base/patch
@@ -14,7 +13,6 @@ resources:
 - ../../../ncea/ncea-search/base/patch
 - ../../../ccts/ccts-adp/base/patch
 - ../../../crai/crai-mcu/base/patch
-- ../../../ffc/fcp-dal/base/patch
 - ../../../fcp/fcp-ea-walleys-quarry/base/patch
 - ../../../fcp/fcp-demo/base/patch
 - ../../../eutd/eutd-trade-exports-core/base/patch
