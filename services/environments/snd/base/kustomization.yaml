@@ -7,7 +7,6 @@ resources:
 - ../../../adp-platform/kustomize.yaml
 - ../../../eutd/eutd-trade-exports-ai/base/patch
 - ../../../ffc/ffc-find/base/patch
-- ../../../ffc/ffc-sfd/base/patch
 - ../../../lap/lap-mit/base/patch
 - ../../../ffc/fcp-find/base/patch
 - ../../../ncea/ncea-search/base/patch
@@ -15,6 +14,5 @@ resources:
 - ../../../crai/crai-mcu/base/patch
 - ../../../fcp/fcp-ea-walleys-quarry/base/patch
 - ../../../eutd/eutd-trade-exports-core/base/patch
-- ../../../fcp/fcp-sfd/base/patch
 - ../../../ccts/ccts-adp-test/base/patch
 - ../../../ccts-test/ttt-adp-test/base/patch
