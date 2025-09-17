@@ -4,7 +4,6 @@ resources:
 - image-update.yaml
 - notification.yaml
 - ../../../adp-platform/kustomize.yaml
-- ../../../fcp/fcp-sfd/base/patch
 - ../../../crai/crai-mcu/base/patch
 - ../../../ccts/ccts-adp/base/patch
 - ../../../ncea/ncea-search/base/patch
