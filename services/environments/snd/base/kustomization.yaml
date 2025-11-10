@@ -7,7 +7,6 @@ resources:
 - ../../../adp-platform/kustomize.yaml
 - ../../../eutd/eutd-trade-exports-ai/base/patch
 - ../../../ffc/ffc-find/base/patch
-- ../../../lap/lap-mit/base/patch
 - ../../../ffc/fcp-find/base/patch
 - ../../../ncea/ncea-search/base/patch
 - ../../../ccts/ccts-adp/base/patch
