@@ -5,7 +5,6 @@ resources:
 - notification.yaml
 - ../../../adp-platform/kustomize.yaml
 - ../../../ffc/ffc-find/base/patch
-- ../../../lap/lap-mit/base/patch
 - ../../../ccts/ccts-adp/base/patch
 - ../../../crai/crai-mcu/base/patch
 - ../../../fcp/fcp-ea-walleys-quarry/base/patch
