@@ -4,7 +4,6 @@ resources:
 - ../../base
 - ../../coreai-mcu-personas
 - ../../coreai-mcu-prompts
-- ../../core-ai-techradar
 - ../../mcu-techspike-ai-web
 - ../../coreai-mcu-frontend
 - ../../coreai-mcu-documents
